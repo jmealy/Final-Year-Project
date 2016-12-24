@@ -15,7 +15,6 @@ import sys
 
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -25,58 +24,25 @@ from sklearn import metrics
 
 
 if __name__ == "__main__":
-    # NOTE: we put the following in a 'if __name__ == "__main__"' protected
-    # block to be able to use a multi-core grid search that also works under
-    # Windows, see: http://docs.python.org/library/multiprocessing.html#windows
-    # The multiprocessing module is used as the backend of joblib.Parallel
-    # that is used when n_jobs != 1 in GridSearchCV
 
-    # the training data folder must be passed as first argument
+    # Load data and split to test/train
     movie_reviews_data_folder = sys.argv[1]
     dataset = load_files(movie_reviews_data_folder, shuffle=False)
-    print("n_samples: %d" % len(dataset.data))
-
-    # split the dataset in training and test set:
     docs_train, docs_test, y_train, y_test = train_test_split(
         dataset.data, dataset.target, test_size=0.25, random_state=None)
 
-    # TASK: Build a vectorizer / classifier pipeline that filters out tokens
+    # Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
     pipeline = Pipeline([
         ('vect', TfidfVectorizer(min_df=3, max_df=0.95,)),
         ('clf', LinearSVC(C=1000)),
     ])
-    text_clf = pipeline.fit(docs_train, y_train)
 
-    # TASK: Build a grid search to find out whether unigrams or bigrams are
-    # more useful.
-    # Fit the pipeline on the training set using grid search for the parameters
-    parameters = {'vect__ngram_range': [(1, 1), (1, 2), (2,2)],
-    }
-    print "yo"
-    grid_search = GridSearchCV(pipeline, parameters, n_jobs=-1)
-    grid_search = grid_search.fit(docs_train, y_train)
+    # create classifier and predict
+    sent_clf = pipeline.fit(docs_train, y_train)
+    y_predicted = sent_clf.predict(docs_test)
 
-    # TASK: print the cross-validated scores for the each parameters set
-    # explored by the grid search
-
-
-    # TASK: Predict the outcome on the testing set and store it in a variable
-    # named y_predicted
-    y_predicted = grid_search.predict(docs_test)
-
-
+    # mean accuracy and classification report.
     print np.mean(y_predicted == y_test)
-
-
-    # Print the classification report
     print(metrics.classification_report(y_test, y_predicted,
                                         target_names=dataset.target_names))
-
-    # Print and plot the confusion matrix
-    cm = metrics.confusion_matrix(y_test, y_predicted)
-    print(cm)
-
-    # import matplotlib.pyplot as plt
-    # plt.matshow(cm)
-    # plt.show()
