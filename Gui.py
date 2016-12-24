@@ -3,36 +3,39 @@
 import wx
 import os
 import time
+from wx.lib.mixins.listctrl import CheckListCtrlMixin, ListCtrlAutoWidthMixin
 
-
-ID_BUTTON = 100
 ID_EXIT = 200
-ID_SPLITTER = 300
 
 
-class MyListCtrl(wx.ListCtrl):
+class MyListCtrl(wx.ListCtrl , ListCtrlAutoWidthMixin):
     def __init__(self, parent, id):
         wx.ListCtrl.__init__(self, parent, id, style=wx.LC_REPORT)
+        # CheckListCtrlMixin.__init__(self)
+        ListCtrlAutoWidthMixin.__init__(self)
+        self.setResizeColumn(0)
 
         dir = os.listdir('.')
 
         self.InsertColumn(0, 'Name')
         self.InsertColumn(1, 'Ext')
-        self.InsertColumn(2, 'Size', wx.LIST_FORMAT_RIGHT)
+        self.InsertColumn(2, 'Size')
         self.InsertColumn(3, 'Modified')
+        # self.InsertColumn(4, 'Sentiment')
 
         self.SetColumnWidth(0, 220)
-        self.SetColumnWidth(1, 70)
+        self.SetColumnWidth(1, 50)
         self.SetColumnWidth(2, 100)
-        self.SetColumnWidth(3, 420)
+        self.SetColumnWidth(3, 150)
+        # self.SetColumnWidth(3, 150)
 
-        #self.InsertStringItem(0, '..')
+        self.InsertStringItem(0, '..')
 
-        for j, file in enumerate(dir):
-            (name, ext) = os.path.splitext(file)
+        for j, fil in enumerate(dir):
+            (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
-            size = os.path.getsize(file)
-            sec = os.path.getmtime(file)
+            size = os.path.getsize(fil)
+            sec = os.path.getmtime(fil)
             self.InsertStringItem(j, name)
             self.SetStringItem(j, 1, ex)
             self.SetStringItem(j, 2, str(size) + ' B')
@@ -45,74 +48,98 @@ class MyListCtrl(wx.ListCtrl):
 class MyFrame(wx.Frame):
     def __init__(self, parent, id, title):
         wx.Frame.__init__(self, parent, -1, title)
+        self.Maximize(True)
 
-        self.splitter = wx.SplitterWindow(self, ID_SPLITTER, style=wx.SP_BORDER)
-        self.splitter.SetMinimumPaneSize(50)
+        # Create a panel to make sure it looks right on all systems
+        self.panel = wx.Panel(self, wx.ID_ANY)
 
-        p1 = MyListCtrl(self.splitter, -1)
-        p2 = MyListCtrl(self.splitter, -1)
-        self.splitter.SplitVertically(p1, p2)
-
-        self.Bind(wx.EVT_SIZE, self.OnSize)
-        self.Bind(wx.EVT_SPLITTER_DCLICK, self.OnDoubleClick, id=ID_SPLITTER)
-
-        filemenu= wx.Menu()
-        filemenu.Append(ID_EXIT,"E&xit"," Terminate the program")
+        # create the Menubar items
+        filemenu = wx.Menu()
+        filemenu.Append(ID_EXIT, "E&xit", " Terminate the program")
         editmenu = wx.Menu()
-        netmenu = wx.Menu()
-        showmenu = wx.Menu()
-        configmenu = wx.Menu()
         helpmenu = wx.Menu()
 
+        # Add items to menubar
         menuBar = wx.MenuBar()
-        menuBar.Append(filemenu,"&File")
+        menuBar.Append(filemenu, "&File")
         menuBar.Append(editmenu, "&Edit")
-        menuBar.Append(netmenu, "&Net")
-        menuBar.Append(showmenu, "&Show")
-        menuBar.Append(configmenu, "&Config")
         menuBar.Append(helpmenu, "&Help")
         self.SetMenuBar(menuBar)
         self.Bind(wx.EVT_MENU, self.OnExit, id=ID_EXIT)
 
-        tb = self.CreateToolBar( wx.TB_HORIZONTAL | wx.NO_BORDER | wx.TB_FLAT | wx.TB_TEXT)
-        tb.AddSeparator()
-        tb.Realize()
+        # create list control to display files, and an input field
+        self.list_control = MyListCtrl(self.panel, -1)
+        self.list_control.SetColumnWidth(0, wx.LIST_AUTOSIZE)
 
-        self.sizer2 = wx.BoxSizer(wx.HORIZONTAL)
+        # Create a drop-down list menu containing filter options
+        list_options = ['File Type', 'Sentiment']
+        self.cb1 = wx.ComboBox(self.panel, -1, list_options[0],  size=(100,-1), choices=list_options,)
+        self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
+        self.cb2 = wx.ComboBox(self.panel, size=(100,-1), choices=['.txt', '.py'])
 
+        # Button to filter files
+        self.btn = wx.Button(self.panel, -1, "Filter Files")
+        self.btn.Bind(wx.EVT_BUTTON, self.onselect_btn)
 
-        button8 = wx.Button(self, ID_EXIT, "F10 Quit")
+        # Create top sizer and the two inner sizers to hold the list and header
+        topSizer = wx.BoxSizer(wx.VERTICAL)
+        inputSizer = wx.BoxSizer(wx.HORIZONTAL)
+        listSizer = wx.BoxSizer(wx.VERTICAL)
 
-        self.sizer2.Add(button8, 1, wx.EXPAND)
+        # Add components to inner sizers, and add those to the top sizer
+        inputSizer.Add(self.cb1, 0, wx.ALL, 5)
+        inputSizer.Add(self.cb2, 0, wx.ALL, 5)
+        inputSizer.Add(self.btn, 0, wx.ALL, 5)
+        listSizer.Add(self.list_control, 1, wx.EXPAND|wx.ALL)
+        topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
+        topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
 
-        self.Bind(wx.EVT_BUTTON, self.OnExit, id=ID_EXIT)
-
-        self.sizer = wx.BoxSizer(wx.VERTICAL)
-        self.sizer.Add(self.splitter,1,wx.EXPAND)
-        #self.sizer.Add(self.sizer2,0,wx.EXPAND)
-        self.SetSizer(self.sizer)
-
-        size = wx.DisplaySize()
-        self.SetSize(size)
-
-        self.sb = self.CreateStatusBar()
+        # put top sizer inside the panel and display
+        self.panel.SetSizer(topSizer)
+        topSizer.Fit(self)
         self.Center()
         self.Show(True)
 
+    def onselect_cb1(self, event):
+        """"""
+        list = []
+        self.cb2.Clear()
+        self.cb2.SetValue('')
+        print "You selected: " + self.cb1.GetStringSelection()
+        if self.cb1.GetStringSelection() == 'File Type':
+            list = ['.txt', '.py']
+        else:
+            list = ['Positive', 'Negative']
+        self.widget_maker(self.cb2, list)
+
+    def onselect_btn(self, event):
+        """"""
+        if  self.cb1.GetValue() == "File Type":
+            if self.cb2.GetValue() == ".txt":
+                print "txt"
+                # ADD FILTER SHIT HERE
+            else:
+                print ".py"
+
+
+    def widget_maker(self, widget, list):
+        """"""
+        widget.Clear()
+        for item in list:
+            widget.Append(item)
 
     def OnExit(self,e):
         self.Close(True)
 
-    def OnSize(self, event):
-        size = self.GetSize()
-        #self.splitter.SetSashPosition(size.x / 2)
-        #self.sb.SetStatusText(os.getcwd())
-        event.Skip()
-
-
-    def OnDoubleClick(self, event):
-        size =  self.GetSize()
-        #self.splitter.SetSashPosition(size.x / 2)
+    # def OnSize(self, event):
+    #     size = self.GetSize()
+    #     # self.splitter.SetSashPosition(size.x / 2)
+    #     # self.sb.SetStatusText(os.getcwd())
+    #     event.Skip()
+    #
+    # def OnDoubleClick(self, event):
+    #     size =  self.GetSize()
+    #     #self.splitter.SetSashPosition(size.x / 2)
 
 
 class FileManager(wx.App):
@@ -123,3 +150,10 @@ class FileManager(wx.App):
 
 app = FileManager(0)
 app.MainLoop()
+
+# TODO:
+# code to update the list goes in the onselect_btn method.
+# - change listview to objectlistview
+# - may need to create file objects
+# - implement search based on filetype
+# - clean up project and put on github
