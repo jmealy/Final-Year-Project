@@ -11,36 +11,42 @@ ID_EXIT = 200
 class MyListCtrl(wx.ListCtrl , ListCtrlAutoWidthMixin):
     def __init__(self, parent, id):
         wx.ListCtrl.__init__(self, parent, id, style=wx.LC_REPORT)
-        # CheckListCtrlMixin.__init__(self)
         ListCtrlAutoWidthMixin.__init__(self)
         self.setResizeColumn(0)
-
-        dir = os.listdir('.')
+        self.files = []
 
         self.InsertColumn(0, 'Name')
         self.InsertColumn(1, 'Ext')
         self.InsertColumn(2, 'Size')
         self.InsertColumn(3, 'Modified')
-        # self.InsertColumn(4, 'Sentiment')
+        self.InsertColumn(4, 'Sentiment')
 
         self.SetColumnWidth(0, 220)
         self.SetColumnWidth(1, 50)
         self.SetColumnWidth(2, 100)
         self.SetColumnWidth(3, 150)
-        # self.SetColumnWidth(3, 150)
+        self.SetColumnWidth(3, 150)
 
         self.InsertStringItem(0, '..')
 
-        for j, fil in enumerate(dir):
+        direc = os.listdir('.')
+
+        for j, fil in enumerate(direc):
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
             size = os.path.getsize(fil)
-            sec = os.path.getmtime(fil)
-            self.InsertStringItem(j, name)
-            self.SetStringItem(j, 1, ex)
-            self.SetStringItem(j, 2, str(size) + ' B')
-            self.SetStringItem(j, 3, time.strftime('%Y-%m-%d %H:%M', time.localtime(sec)))
+            modif = os.path.getmtime(fil)
+            f = File(name, ex, size, modif)
+            self.files.append(f)
 
+        self.display_files()
+
+    def display_files(self):
+        for j, f in enumerate(self.files):
+            self.InsertStringItem(j, f.name)
+            self.SetStringItem(j, 1, f.extension)
+            self.SetStringItem(j, 2, str(f.size) + ' B')
+            self.SetStringItem(j, 3, time.strftime('%Y-%m-%d %H:%M', time.localtime(f.last_modified)))
             if (j % 2) == 0:
                 self.SetItemBackgroundColour(j, '#e6f1f5')
 
@@ -148,12 +154,16 @@ class FileManager(wx.App):
         myFrame.Show(True)
         return True
 
+
+class File:
+    def __init__(self, name, ext, size, mod):
+        self.name = name
+        self.extension = ext
+        self.classification = None
+        self.size = size
+        self.last_modified = mod
+
+
+
 app = FileManager(0)
 app.MainLoop()
-
-# TODO:
-# code to update the list goes in the onselect_btn method.
-# - change listview to objectlistview
-# - may need to create file objects
-# - implement search based on filetype
-# - clean up project and put on github
