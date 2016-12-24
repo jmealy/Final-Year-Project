@@ -2,7 +2,7 @@
 
 Sentiment analysis can be casted as a binary text classification problem,
 that is fitting a linear classifier on features extracted from the text
-of the user messages so as to guess wether the opinion of the author is
+of the user messages so as to guess whether the opinion of the author is
 positive or negative.
 
 In this examples we will use a movie review dataset.
@@ -12,7 +12,10 @@ In this examples we will use a movie review dataset.
 # License: Simplified BSD
 
 import sys
+
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
@@ -39,16 +42,32 @@ if __name__ == "__main__":
 
     # TASK: Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
+    pipeline = Pipeline([
+        ('vect', TfidfVectorizer(min_df=3, max_df=0.95,)),
+        ('clf', LinearSVC(C=1000)),
+    ])
+    text_clf = pipeline.fit(docs_train, y_train)
 
     # TASK: Build a grid search to find out whether unigrams or bigrams are
     # more useful.
     # Fit the pipeline on the training set using grid search for the parameters
+    parameters = {'vect__ngram_range': [(1, 1), (1, 2), (2,2)],
+    }
+    print "yo"
+    grid_search = GridSearchCV(pipeline, parameters, n_jobs=-1)
+    grid_search = grid_search.fit(docs_train, y_train)
 
     # TASK: print the cross-validated scores for the each parameters set
     # explored by the grid search
 
+
     # TASK: Predict the outcome on the testing set and store it in a variable
     # named y_predicted
+    y_predicted = grid_search.predict(docs_test)
+
+
+    print np.mean(y_predicted == y_test)
+
 
     # Print the classification report
     print(metrics.classification_report(y_test, y_predicted,
