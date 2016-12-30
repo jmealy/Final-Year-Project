@@ -4,51 +4,17 @@ import wx
 import os
 import time
 from wx.lib.mixins.listctrl import CheckListCtrlMixin, ListCtrlAutoWidthMixin
+from ObjectListView import ObjectListView, ColumnDefn
+
 
 ID_EXIT = 200
 
 
-class MyListCtrl(wx.ListCtrl , ListCtrlAutoWidthMixin):
-    def __init__(self, parent, id):
-        wx.ListCtrl.__init__(self, parent, id, style=wx.LC_REPORT)
-        ListCtrlAutoWidthMixin.__init__(self)
-        self.setResizeColumn(0)
-        self.files = []
-
-        self.InsertColumn(0, 'Name')
-        self.InsertColumn(1, 'Ext')
-        self.InsertColumn(2, 'Size')
-        self.InsertColumn(3, 'Modified')
-        self.InsertColumn(4, 'Sentiment')
-
-        self.SetColumnWidth(0, 220)
-        self.SetColumnWidth(1, 50)
-        self.SetColumnWidth(2, 100)
-        self.SetColumnWidth(3, 150)
-        self.SetColumnWidth(3, 150)
-
-        self.InsertStringItem(0, '..')
-
-        direc = os.listdir('.')
-
-        for j, fil in enumerate(direc):
-            (name, ext) = os.path.splitext(fil)
-            ex = ext[1:]
-            size = os.path.getsize(fil)
-            modif = os.path.getmtime(fil)
-            f = File(name, ex, size, modif)
-            self.files.append(f)
-
-        self.display_files()
-
-    def display_files(self):
-        for j, f in enumerate(self.files):
-            self.InsertStringItem(j, f.name)
-            self.SetStringItem(j, 1, f.extension)
-            self.SetStringItem(j, 2, str(f.size) + ' B')
-            self.SetStringItem(j, 3, time.strftime('%Y-%m-%d %H:%M', time.localtime(f.last_modified)))
-            if (j % 2) == 0:
-                self.SetItemBackgroundColour(j, '#e6f1f5')
+class FileManager(wx.App):
+    def OnInit(self):
+        myFrame = MainFrame(None, -1, 'Machine Learning File Manager')
+        myFrame.Show(True)
+        return True
 
 
 class MainFrame(wx.Frame):
@@ -73,9 +39,8 @@ class MainFrame(wx.Frame):
         self.SetMenuBar(menuBar)
         self.Bind(wx.EVT_MENU, self.OnExit, id=ID_EXIT)
 
-        # create list control to display files, and an input field
-        self.list_control = MyListCtrl(self.panel, -1)
-        self.list_control.SetColumnWidth(0, wx.LIST_AUTOSIZE)
+        # create object list view to display files, and an input field
+        self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
         list_options = ['File Type', 'Sentiment']
@@ -96,7 +61,7 @@ class MainFrame(wx.Frame):
         inputSizer.Add(self.cb1, 0, wx.ALL, 5)
         inputSizer.Add(self.cb2, 0, wx.ALL, 5)
         inputSizer.Add(self.btn, 0, wx.ALL, 5)
-        listSizer.Add(self.list_control, 1, wx.EXPAND|wx.ALL)
+        listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
 
@@ -137,22 +102,31 @@ class MainFrame(wx.Frame):
     def OnExit(self,e):
         self.Close(True)
 
-    # def OnSize(self, event):
-    #     size = self.GetSize()
-    #     # self.splitter.SetSashPosition(size.x / 2)
-    #     # self.sb.SetStatusText(os.getcwd())
-    #     event.Skip()
-    #
-    # def OnDoubleClick(self, event):
-    #     size =  self.GetSize()
-    #     #self.splitter.SetSashPosition(size.x / 2)
 
+class ListView(ObjectListView):
+    def __init__(self, parent):
+        ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
+        self.files = []
+        direc = os.listdir('.')
+        for j, fil in enumerate(direc):
+            (name, ext) = os.path.splitext(fil)
+            ex = ext[1:]
+            size = os.path.getsize(fil)
+            modif = os.path.getmtime(fil)
+            f = File(name, ex, size, modif)
+            self.files.append(f)
 
-class FileManager(wx.App):
-    def OnInit(self):
-        myFrame = MainFrame(None, -1, 'Machine Learning File Manager')
-        myFrame.Show(True)
-        return True
+        self.setFiles()
+
+    def setFiles(self, data=None):
+        self.SetColumns([
+            ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
+            ColumnDefn("Extension", "left", 100, "extension"),
+            ColumnDefn("Size", "left", 100, "size"),
+            ColumnDefn("Last Modified", "left", 150, "last_modified"),
+            ColumnDefn("Classification", "left", 150, "classification")
+        ])
+        self.SetObjects(self.files)
 
 
 class File:
@@ -162,11 +136,6 @@ class File:
         self.classification = None
         self.size = size
         self.last_modified = mod
-
-
-
-
-
 
 
 
