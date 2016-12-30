@@ -4,6 +4,8 @@ import wx
 import os
 import time
 from wx.lib.mixins.listctrl import CheckListCtrlMixin, ListCtrlAutoWidthMixin
+from ObjectListView import ObjectListView, ColumnDefn
+
 
 ID_EXIT = 200
 
@@ -56,6 +58,8 @@ class MainFrame(wx.Frame):
         wx.Frame.__init__(self, parent, -1, title)
         self.Maximize(True)
 
+
+
         # Create a panel to make sure it looks right on all systems
         self.panel = wx.Panel(self, wx.ID_ANY)
 
@@ -73,9 +77,10 @@ class MainFrame(wx.Frame):
         self.SetMenuBar(menuBar)
         self.Bind(wx.EVT_MENU, self.OnExit, id=ID_EXIT)
 
-        # create list control to display files, and an input field
-        self.list_control = MyListCtrl(self.panel, -1)
-        self.list_control.SetColumnWidth(0, wx.LIST_AUTOSIZE)
+        # # create list control to display files, and an input field
+        # self.list_control = MyListCtrl(self.panel, -1)
+        # self.list_control.SetColumnWidth(0, wx.LIST_AUTOSIZE)
+        self.olv = OLV(self.panel)
 
         # Create a drop-down list menu containing filter options
         list_options = ['File Type', 'Sentiment']
@@ -96,7 +101,7 @@ class MainFrame(wx.Frame):
         inputSizer.Add(self.cb1, 0, wx.ALL, 5)
         inputSizer.Add(self.cb2, 0, wx.ALL, 5)
         inputSizer.Add(self.btn, 0, wx.ALL, 5)
-        listSizer.Add(self.list_control, 1, wx.EXPAND|wx.ALL)
+        listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
 
@@ -137,6 +142,7 @@ class MainFrame(wx.Frame):
     def OnExit(self,e):
         self.Close(True)
 
+
     # def OnSize(self, event):
     #     size = self.GetSize()
     #     # self.splitter.SetSashPosition(size.x / 2)
@@ -166,7 +172,27 @@ class File:
 
 
 
+class OLV(ObjectListView):
+    def __init__(self, parent):
+        ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
+        self.files = [File("wxPython in Action", "Robin Dunn",
+                                      "1932394621", "Manning"),
+                                 File("Hello World", "Warren and Carter Sande",
+                                      "1933988495", "Manning")
+                                 ]
 
+        self.setFiles()
+
+    def setFiles(self, data=None):
+        self.SetColumns([
+            ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
+            ColumnDefn("Extension", "left", 100, "extension"),
+            ColumnDefn("Size", "left", 100, "size"),
+            ColumnDefn("Last Modified", "left", 150, "last_modified"),
+            ColumnDefn("Classification", "left", 150, "classification")
+        ])
+
+        self.SetObjects(self.files)
 
 
 
