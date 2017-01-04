@@ -43,10 +43,11 @@ class MainFrame(wx.Frame):
         self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
-        list_options = ['File Type', 'Sentiment']
-        self.cb1 = wx.ComboBox(self.panel, -1, list_options[0],  size=(100,-1), choices=list_options,)
+        cb1_options = ['Extension','Classification']
+        cb2_options = ['txt', 'py']
+        self.cb1 = wx.ComboBox(self.panel, -1, cb1_options[0],  size=(100,-1), choices=cb1_options,)
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
-        self.cb2 = wx.ComboBox(self.panel, size=(100,-1), choices=['.txt', '.py'])
+        self.cb2 = wx.ComboBox(self.panel, size=(100,-1), choices=cb2_options)
 
         # Button to filter files
         self.btn = wx.Button(self.panel, -1, "Filter Files")
@@ -77,22 +78,15 @@ class MainFrame(wx.Frame):
         self.cb2.Clear()
         self.cb2.SetValue('')
         print "You selected: " + self.cb1.GetStringSelection()
-        if self.cb1.GetStringSelection() == 'File Type':
-            list = ['.txt', '.py']
+        if self.cb1.GetStringSelection() == 'Extension':
+            list = ['txt', 'py']
         else:
             list = ['Positive', 'Negative']
         self.widget_maker(self.cb2, list)
 
     def onselect_btn(self, event):
         """"""
-        self.olv.filter_me()
-        # if  self.cb1.GetValue() == "File Type":
-        #     if self.cb2.GetValue() == ".txt":
-        #         print "txt"
-        #         # ADD FILTER SHIT HERE
-        #     else:
-        #         print ".py"
-
+        self.olv.filter_me(self.cb1.GetValue(), self.cb2.GetValue())
 
 
     def widget_maker(self, widget, list):
@@ -123,15 +117,15 @@ class ListView(ObjectListView):
     def set_files(self, data=None):
         self.SetColumns([
             ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
-            ColumnDefn("Extension", "left", 100, "extension"),
+            ColumnDefn("Extension", "left", 100, "Extension"),
             ColumnDefn("Size", "left", 100, "size"),
             ColumnDefn("Last Modified", "left", 150, "last_modified"),
             ColumnDefn("Classification", "left", 150, "classification")
         ])
         self.SetObjects(self.files)
 
-    def filter_me(self):
-        filtered = [f for f in self.files if not f.extension == "py"]
+    def filter_me(self, attribute, value):
+        filtered = [f for f in self.files if not getattr(f, attribute) == value]
         self.SetObjects(filtered)
 
 
@@ -139,7 +133,7 @@ class ListView(ObjectListView):
 class File:
     def __init__(self, name, ext, size, mod):
         self.name = name
-        self.extension = ext
+        self.Extension = ext
         self.classification = None
         self.size = size
         self.last_modified = mod
