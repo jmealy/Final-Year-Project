@@ -85,12 +85,14 @@ class MainFrame(wx.Frame):
 
     def onselect_btn(self, event):
         """"""
-        if  self.cb1.GetValue() == "File Type":
-            if self.cb2.GetValue() == ".txt":
-                print "txt"
-                # ADD FILTER SHIT HERE
-            else:
-                print ".py"
+        self.olv.filter_me()
+        # if  self.cb1.GetValue() == "File Type":
+        #     if self.cb2.GetValue() == ".txt":
+        #         print "txt"
+        #         # ADD FILTER SHIT HERE
+        #     else:
+        #         print ".py"
+
 
 
     def widget_maker(self, widget, list):
@@ -116,9 +118,9 @@ class ListView(ObjectListView):
             f = File(name, ex, size, modif)
             self.files.append(f)
 
-        self.setFiles()
+        self.set_files()
 
-    def setFiles(self, data=None):
+    def set_files(self, data=None):
         self.SetColumns([
             ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
             ColumnDefn("Extension", "left", 100, "extension"),
@@ -127,6 +129,11 @@ class ListView(ObjectListView):
             ColumnDefn("Classification", "left", 150, "classification")
         ])
         self.SetObjects(self.files)
+
+    def filter_me(self):
+        filtered = [f for f in self.files if not f.extension == "py"]
+        self.SetObjects(filtered)
+
 
 
 class File:
