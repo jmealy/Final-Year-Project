@@ -3,8 +3,7 @@
 import wx
 import os
 import time
-from wx.lib.mixins.listctrl import CheckListCtrlMixin, ListCtrlAutoWidthMixin
-from ObjectListView import ObjectListView, ColumnDefn
+from ObjectListView import ObjectListView, ColumnDefn, Filter
 
 
 ID_EXIT = 200
@@ -83,15 +82,27 @@ class MainFrame(wx.Frame):
             list = ['Positive', 'Negative']
         self.widget_maker(self.cb2, list)
 
+    def onselect_cb2(self, event):
+        """"""
+        list = []
+        self.cb2.Clear()
+        self.cb2.SetValue('')
+        print "You selected: " + self.cb1.GetStringSelection()
+        if self.cb1.GetStringSelection() == 'File Type':
+            list = ['txt', 'py']
+        else:
+            list = ['Positive', 'Negative']
+        self.widget_maker(self.cb2, list)
+
     def onselect_btn(self, event):
         """"""
-        if  self.cb1.GetValue() == "File Type":
+        if self.cb1.GetValue() == "File Type":
             if self.cb2.GetValue() == ".txt":
                 print "txt"
                 # ADD FILTER SHIT HERE
             else:
                 print ".py"
-
+        self.olv.filter_view()
 
     def widget_maker(self, widget, list):
         """"""
@@ -113,23 +124,28 @@ class ListView(ObjectListView):
             ex = ext[1:]
             size = os.path.getsize(fil)
             modif = os.path.getmtime(fil)
-            f = File(name, ex, size, modif)
+            f = File(name, ex, size, time.ctime(modif))
             self.files.append(f)
 
-        self.setFiles()
+        self.set_files()
+        # self.filter_view()
 
-    def setFiles(self, data=None):
+    def set_files(self, data=None):
         self.SetColumns([
             ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
             ColumnDefn("Extension", "left", 100, "extension"),
             ColumnDefn("Size", "left", 100, "size"),
-            ColumnDefn("Last Modified", "left", 150, "last_modified"),
+            ColumnDefn("Last Modified", "left", 170, "last_modified"),
             ColumnDefn("Classification", "left", 150, "classification")
         ])
         self.SetObjects(self.files)
 
+    def filter_view(self):
+        self.files.pop(0)
+        self.SetObjects(self.files)
 
-class File:
+
+class File(object):
     def __init__(self, name, ext, size, mod):
         self.name = name
         self.extension = ext
