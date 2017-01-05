@@ -56,13 +56,14 @@ class MainFrame(wx.Frame):
         # Create top sizer and the two inner sizers to hold the list and header
         topSizer = wx.BoxSizer(wx.VERTICAL)
         inputSizer = wx.BoxSizer(wx.HORIZONTAL)
-        listSizer = wx.BoxSizer(wx.VERTICAL)
+        listSizer = wx.BoxSizer(wx.HORIZONTAL)
 
         # Add components to inner sizers, and add those to the top sizer
         inputSizer.Add(self.cb1, 0, wx.ALL, 5)
         inputSizer.Add(self.cb2, 0, wx.ALL, 5)
         inputSizer.Add(self.btn1, 0, wx.ALL, 5)
-        inputSizer.Add(self.btn2, 0, wx.ALL, 5)
+        inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
+        inputSizer.Add(self.btn2, 0, wx.ALIGN_RIGHT, wx.ALL, 5)
         listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
