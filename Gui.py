@@ -43,11 +43,10 @@ class MainFrame(wx.Frame):
         self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
-        cb1_options = ['Extension','Classification']
-        cb2_options = ['txt', 'py']
+        cb1_options = ['Extension', 'Classification']
         self.cb1 = wx.ComboBox(self.panel, -1, cb1_options[0],  size=(100,-1), choices=cb1_options,)
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
-        self.cb2 = wx.ComboBox(self.panel, size=(100,-1), choices=cb2_options)
+        self.cb2 = wx.ComboBox(self.panel, size=(100,-1))
 
         # Button to filter files
         self.btn = wx.Button(self.panel, -1, "Filter Files")
@@ -79,14 +78,14 @@ class MainFrame(wx.Frame):
         self.cb2.SetValue('')
         print "You selected: " + self.cb1.GetStringSelection()
         if self.cb1.GetStringSelection() == 'Extension':
-            list = ['txt', 'py']
+            list = ['All Files', 'txt', 'py']
         else:
-            list = ['Positive', 'Negative']
+            list = ['All Files', 'Positive', 'Negative']
         self.widget_maker(self.cb2, list)
 
     def onselect_btn(self, event):
         """"""
-        self.olv.filter_me(self.cb1.GetValue(), self.cb2.GetValue())
+        self.olv.filter_files(self.cb1.GetValue(), self.cb2.GetValue())
 
 
     def widget_maker(self, widget, list):
@@ -103,6 +102,10 @@ class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
         self.files = []
+        self.set_files()
+
+    def set_files(self, data=None):
+
         direc = os.listdir('.')
         for j, fil in enumerate(direc):
             (name, ext) = os.path.splitext(fil)
@@ -112,9 +115,6 @@ class ListView(ObjectListView):
             f = File(name, ex, size, modif)
             self.files.append(f)
 
-        self.set_files()
-
-    def set_files(self, data=None):
         self.SetColumns([
             ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
             ColumnDefn("Extension", "left", 100, "Extension"),
@@ -124,10 +124,12 @@ class ListView(ObjectListView):
         ])
         self.SetObjects(self.files)
 
-    def filter_me(self, attribute, value):
-        filtered = [f for f in self.files if not getattr(f, attribute) == value]
-        self.SetObjects(filtered)
-
+    def filter_files(self, attribute, value):
+        if value == 'All Files':
+            self.SetObjects(self.files)
+        else:
+            filtered = [f for f in self.files if getattr(f, attribute) == value]
+            self.SetObjects(filtered)
 
 
 class File:
