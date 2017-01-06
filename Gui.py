@@ -112,13 +112,13 @@ class ListView(ObjectListView):
         self.set_files()
 
     def set_files(self, data=None):
-
-        direc = os.listdir('.')
-        for j, fil in enumerate(direc):
+        direc = 'working_data/txt_sentoken/'
+        file_names = os.listdir(direc)
+        for j, fil in enumerate(file_names):
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
-            size = os.path.getsize(fil)
-            modif = os.path.getmtime(fil)
+            size = os.path.getsize(direc + fil)
+            modif = os.path.getmtime(direc + fil)
             f = File(name, ex, size, modif)
             self.files.append(f)
 

@@ -3,3 +3,5 @@ dump.py
 test.txt
 /.idea/
 .idea/workspace.xml
+working_data
+training_data
