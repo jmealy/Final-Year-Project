@@ -6,3 +6,4 @@ test.txt
 working_data
 training_data
 classifiers
+*.pyc

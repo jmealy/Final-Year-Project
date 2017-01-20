@@ -4,7 +4,8 @@ import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-
+from sentiment import classify
+# from Classify_Sentiment import classify
 
 ID_EXIT = 200
 
@@ -87,13 +88,13 @@ class MainFrame(wx.Frame):
         self.widget_maker(self.cb2, list)
 
     def onselect_btn1(self, event):
-        """"""
+        """Filter Button"""
         self.olv.filter_files(self.cb1.GetValue(), self.cb2.GetValue())
 
     def onselect_btn2(self, event):
-        """"""
-        self.olv.filter_files(self.cb1.GetValue(), self.cb2.GetValue())
-
+        """Classify Files Button"""
+        predicted_vals = classify(self.olv.file_contents)
+        self.olv.set_classes(predicted_vals)
 
     def widget_maker(self, widget, list):
         """"""
@@ -109,6 +110,7 @@ class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
         self.files = []
+        self.file_contents = []
         self.set_files()
 
     def set_files(self, data=None):
@@ -119,7 +121,10 @@ class ListView(ObjectListView):
             ex = ext[1:]
             size = os.path.getsize(direc + fil)
             modif = os.path.getmtime(direc + fil)
+            with file(direc + fil) as f:
+                contents = f.read()
             f = File(name, ex, size, modif)
+            self.file_contents.append(contents)
             self.files.append(f)
 
         self.SetColumns([
@@ -137,6 +142,12 @@ class ListView(ObjectListView):
         else:
             filtered = [f for f in self.files if getattr(f, attribute) == value]
             self.SetObjects(filtered)
+
+    def set_classes(self, classes):
+        """"""
+        for i, f in enumerate(self.files):
+            f.classification = classes[i]
+        self.SetObjects(self.files)
 
 
 class File:
