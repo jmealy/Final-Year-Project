@@ -4,3 +4,4 @@ test.txt
 /.idea/
 .idea/workspace.xml
 *.pyc
+classifiers
