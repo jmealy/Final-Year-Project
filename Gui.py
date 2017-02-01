@@ -5,7 +5,6 @@ import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
 from sentiment import classify
-# from Classify_Sentiment import classify
 
 ID_EXIT = 200
 
