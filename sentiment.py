@@ -31,29 +31,36 @@ def train():
     ])
 
     # create classifier from training data and return with target names
-    return pipeline.fit(docs_train, y_train), dict(enumerate(dataset.target_names))
+    return Classifier(pipeline.fit(docs_train, y_train), dict(enumerate(dataset.target_names)))
 
 
 def classify(files):
     path_clf = 'classifiers/sentiment.pkl'
     path_names = 'classifiers/sentiment_groups.pkl'
 
-    # Load classifier object and dict for mapping class names.
-    # Create and save if it does not already exist.
+    # Load classifier object. Create and save if it does not already exist.
     if os.path.isfile(path_clf) and os.path.isfile(path_names):
         with open(path_clf, 'rb') as fil:
             sentiment_clf = pickle.load(fil)
-        with open(path_names, 'rb') as fil:
-            target_names = pickle.load(fil)
     else:
-        sentiment_clf, target_names = train()
+        sentiment_clf = train()
         with open(path_clf, 'wb') as output:
             pickle.dump(sentiment_clf, output, pickle.HIGHEST_PROTOCOL)
-        with open(path_names, 'wb') as output:
-            pickle.dump(target_names, output, pickle.HIGHEST_PROTOCOL)
 
     # Use classifier to get classification values.
-    predicted = sentiment_clf.predict(files)
+    predicted = sentiment_clf.get_predictions(files)
 
     # Use dict with target names to get back the actual class values.
-    return map(target_names.get, predicted)
+    return map(sentiment_clf.get_groups(), predicted)
+
+
+class Classifier:
+    def __init__(self, cls, groups):
+        self.cls = cls
+        self.group_names = groups
+
+    def get_predictions(self, files):
+        return self.cls.predict(files)
+
+    def get_groups(self):
+        return self.group_names.get

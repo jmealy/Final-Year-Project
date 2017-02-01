@@ -91,13 +91,15 @@ class MainFrame(wx.Frame):
 
     def widget_maker(self, widget, list):
         """"""
-        direc = 'classifiers/'
-        classifiers = []
-        file_names = os.listdir(direc)
-        for fil in file_names:
-            fname = os.path.splitext(fil)[0]
-            if "_groups" not in fname:
-                classifiers.append(fname)
+        # fpath = 'classifiers/'
+        # classifiers = []
+        # file_names = os.listdir(fpath)
+        # for fil in file_names:
+        #     (name, ext) = os.path.splitext(fil)
+        #     if "_groups" not in name:
+        #         groups = name
+        #     else
+
 
         widget.Clear()
         for item in list:
