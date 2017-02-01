@@ -47,11 +47,9 @@ class MainFrame(wx.Frame):
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
         self.cb2 = wx.ComboBox(self.panel, size=(100,-1))
 
-        # Button to filter files
-        self.btn1 = wx.Button(self.panel, -1, "Filter Files")
+        # Button to classify files
+        self.btn1 = wx.Button(self.panel, -1, "Classify Files")
         self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
-        self.btn2 = wx.Button(self.panel, -1, "Classify Files")
-        self.btn2.Bind(wx.EVT_BUTTON, self.onselect_btn2)
 
         # Create top sizer and the two inner sizers to hold the list and header
         topSizer = wx.BoxSizer(wx.VERTICAL)
@@ -63,7 +61,7 @@ class MainFrame(wx.Frame):
         inputSizer.Add(self.cb2, 0, wx.ALL, 5)
         inputSizer.Add(self.btn1, 0, wx.ALL, 5)
         inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
-        inputSizer.Add(self.btn2, 0, wx.ALIGN_RIGHT, wx.ALL, 5)
+        # inputSizer.Add(self.btn2, 0, wx.ALIGN_RIGHT, wx.ALL, 5)
         listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
@@ -87,16 +85,20 @@ class MainFrame(wx.Frame):
         self.widget_maker(self.cb2, list)
 
     def onselect_btn1(self, event):
-        """Filter Button"""
-        self.olv.filter_files(self.cb1.GetValue(), self.cb2.GetValue())
-
-    def onselect_btn2(self, event):
         """Classify Files Button"""
         predicted_vals = classify(self.olv.file_contents)
         self.olv.set_classes(predicted_vals)
 
     def widget_maker(self, widget, list):
         """"""
+        direc = 'classifiers/'
+        classifiers = []
+        file_names = os.listdir(direc)
+        for fil in file_names:
+            fname = os.path.splitext(fil)[0]
+            if "_groups" not in fname:
+                classifiers.append(fname)
+
         widget.Clear()
         for item in list:
             widget.Append(item)
@@ -115,7 +117,7 @@ class ListView(ObjectListView):
     def set_files(self, data=None):
         direc = 'working_data/txt_sentoken/'
         file_names = os.listdir(direc)
-        for j, fil in enumerate(file_names):
+        for fil in file_names:
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
             size = os.path.getsize(direc + fil)
@@ -135,15 +137,15 @@ class ListView(ObjectListView):
         ])
         self.SetObjects(self.files)
 
-    def filter_files(self, attribute, value):
-        if value == 'All Files':
-            self.SetObjects(self.files)
-        else:
-            filtered = [f for f in self.files if getattr(f, attribute) == value]
-            self.SetObjects(filtered)
+    # def filter_files(self, attribute, value):
+    #     if value == 'All Files':
+    #         self.SetObjects(self.files)
+    #     else:
+    #         filtered = [f for f in self.files if getattr(f, attribute) == value]
+    #         self.SetObjects(filtered)
 
     def set_classes(self, classes):
-        """"""
+        """Assign classifications to files in list and display them."""
         for i, f in enumerate(self.files):
             f.classification = classes[i]
         self.SetObjects(self.files)

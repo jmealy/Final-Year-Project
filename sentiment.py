@@ -36,7 +36,7 @@ def train():
 
 def classify(files):
     path_clf = 'classifiers/sentiment.pkl'
-    path_names = 'classifiers/target_names.pkl'
+    path_names = 'classifiers/sentiment_groups.pkl'
 
     # Load classifier object and dict for mapping class names.
     # Create and save if it does not already exist.
