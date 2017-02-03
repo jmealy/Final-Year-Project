@@ -34,12 +34,12 @@ def train():
     return Classifier(pipeline.fit(docs_train, y_train), dict(enumerate(dataset.target_names)))
 
 
-def classify(files):
-    path_clf = 'classifiers/sentiment.pkl'
-    path_names = 'classifiers/sentiment_groups.pkl'
-
+def classify(files, classifier_name):
+    """"""
+    # CHECKING if classifier exists is redundant. name came from list of existing classifiers. Maybe get rid, depending.
+    path_clf = 'classifiers/' + classifier_name + '.pkl'
     # Load classifier object. Create and save if it does not already exist.
-    if os.path.isfile(path_clf) and os.path.isfile(path_names):
+    if os.path.isfile(path_clf):
         with open(path_clf, 'rb') as fil:
             sentiment_clf = pickle.load(fil)
     else:

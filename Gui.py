@@ -4,7 +4,7 @@ import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-from sentiment import classify
+from classify import classify
 
 ID_EXIT = 200
 
@@ -42,13 +42,13 @@ class MainFrame(wx.Frame):
         self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
-        cb1_options = ['Extension', 'Classification']
-        self.cb1 = wx.ComboBox(self.panel, -1, cb1_options[0],  size=(100,-1), choices=cb1_options,)
+        self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
+        self.widget_maker(self.cb1)
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
-        self.cb2 = wx.ComboBox(self.panel, size=(100,-1))
 
         # Button to classify files
         self.btn1 = wx.Button(self.panel, -1, "Classify Files")
+        self.btn1.Disable()
         self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
 
         # Create top sizer and the two inner sizers to hold the list and header
@@ -58,7 +58,6 @@ class MainFrame(wx.Frame):
 
         # Add components to inner sizers, and add those to the top sizer
         inputSizer.Add(self.cb1, 0, wx.ALL, 5)
-        inputSizer.Add(self.cb2, 0, wx.ALL, 5)
         inputSizer.Add(self.btn1, 0, wx.ALL, 5)
         inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
         # inputSizer.Add(self.btn2, 0, wx.ALIGN_RIGHT, wx.ALL, 5)
@@ -73,37 +72,21 @@ class MainFrame(wx.Frame):
         self.Show(True)
 
     def onselect_cb1(self, event):
-        """"""
-        list = []
-        self.cb2.Clear()
-        self.cb2.SetValue('')
-        print "You selected: " + self.cb1.GetStringSelection()
-        if self.cb1.GetStringSelection() == 'Extension':
-            list = ['All Files', 'txt', 'py']
-        else:
-            list = ['All Files', 'Positive', 'Negative']
-        self.widget_maker(self.cb2, list)
+        # Enable the Classify Button only when a classifier is selected.
+        self.btn1.Enable()
 
     def onselect_btn1(self, event):
         """Classify Files Button"""
-        predicted_vals = classify(self.olv.file_contents)
+        predicted_vals = classify(self.olv.file_contents, self.cb1.GetStringSelection())
+        # Update classification column with the predicted classifications.
         self.olv.set_classes(predicted_vals)
 
-    def widget_maker(self, widget, list):
-        """"""
-        # fpath = 'classifiers/'
-        # classifiers = []
-        # file_names = os.listdir(fpath)
-        # for fil in file_names:
-        #     (name, ext) = os.path.splitext(fil)
-        #     if "_groups" not in name:
-        #         groups = name
-        #     else
-
-
+    def widget_maker(self, widget):
+        """Get all the existing classifiers and display in the combobox as options"""
         widget.Clear()
-        for item in list:
-            widget.Append(item)
+        for fil in os.listdir('classifiers/'):
+            # adds name of classifier file to combobox
+            widget.Append(os.path.splitext(fil)[0])
 
     def OnExit(self,e):
         self.Close(True)
@@ -112,9 +95,9 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.files = []
+        self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
-        self.set_files()
+        self.set_files()  # Call method to populate the ListView.
 
     def set_files(self, data=None):
         direc = 'working_data/txt_sentoken/'
