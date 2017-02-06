@@ -4,7 +4,7 @@ import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-from classify import classify
+from sentiment import classify
 
 ID_EXIT = 200
 

@@ -10,6 +10,7 @@ from sklearn import metrics
 import pickle
 import os.path
 
+
 def train():
     """
     Create a classifier object using sentiment training data
