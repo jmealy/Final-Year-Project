@@ -51,6 +51,7 @@ class MainFrame(wx.Frame):
         self.btn1.Disable()
         self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
         self.btn2 = wx.Button(self.panel, -1, "Create Classifier")
+        self.btn2.Bind(wx.EVT_BUTTON, self.onselect_btn2)
 
         # Create top sizer and the two inner sizers to hold the list and header
         topSizer = wx.BoxSizer(wx.VERTICAL)
@@ -81,6 +82,11 @@ class MainFrame(wx.Frame):
         predicted_vals = classify(self.olv.file_contents, self.cb1.GetStringSelection())
         # Update classification column with the predicted classifications.
         self.olv.set_classes(predicted_vals)
+
+    def onselect_btn2(self, event):
+        """"""
+        frame = SecondFrame()
+        frame.Show()
 
     def widget_maker(self, widget):
         """Get all the existing classifiers and display in the combobox as options"""
@@ -144,6 +150,15 @@ class File:
         self.classification = None
         self.size = size
         self.last_modified = mod
+
+class SecondFrame(wx.Frame):
+    """"""
+    # ----------------------------------------------------------------------
+    def __init__(self):
+        """Constructor"""
+        wx.Frame.__init__(self, None, title="Second Frame")
+        panel = wx.Panel(self)
+        txt = wx.StaticText(panel, label="I'm the second frame!")
 
 
 
