@@ -50,6 +50,7 @@ class MainFrame(wx.Frame):
         self.btn1 = wx.Button(self.panel, -1, "Classify Files")
         self.btn1.Disable()
         self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
+        self.btn2 = wx.Button(self.panel, -1, "Create Classifier")
 
         # Create top sizer and the two inner sizers to hold the list and header
         topSizer = wx.BoxSizer(wx.VERTICAL)
@@ -58,9 +59,9 @@ class MainFrame(wx.Frame):
 
         # Add components to inner sizers, and add those to the top sizer
         inputSizer.Add(self.cb1, 0, wx.ALL, 5)
+        inputSizer.Add(self.btn2, 0, wx.ALL, 5)
+        # inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
         inputSizer.Add(self.btn1, 0, wx.ALL, 5)
-        inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
-        # inputSizer.Add(self.btn2, 0, wx.ALIGN_RIGHT, wx.ALL, 5)
         listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
