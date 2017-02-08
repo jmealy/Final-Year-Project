@@ -158,89 +158,68 @@ class PopupWindow(wx.Frame):
     # ----------------------------------------------------------------------
     def __init__(self):
         """Constructor"""
-        wx.Frame.__init__(self, None, title="Create Classifier", size= (500, 200),
+        wx.Frame.__init__(self, None, title="Create Classifier", size= (550, 200),
                           style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)
 
+        # define sizers and grid layout of popup
         panel = wx.Panel(self)
-
-
+        dir_sizer = wx.BoxSizer(wx.HORIZONTAL)
         topSizer = wx.BoxSizer(wx.VERTICAL)
+        grid = wx.FlexGridSizer(3, 2, 9, 100)
 
-        fgs = wx.FlexGridSizer(3, 2, 9, 100)
+        # define text and input boxes
+        txt1 = wx.StaticText(panel, label="Classifier Name:")
+        txt2 = wx.StaticText(panel, label="Training Data Directory:")
+        input1 = wx.TextCtrl(panel)
+        # make this input a class variable so it can be modified from the button handler
+        self.input2 = wx.TextCtrl(panel, size=(255, 30))
+        # define buttons
+        dir_btn = wx.Button(panel, label="...", size=(30, 30))
+        dir_btn.Bind(wx.EVT_BUTTON, self.on_dir)
 
-        title = wx.StaticText(panel, label="Classifier Name")
-        author = wx.StaticText(panel, label="Training Data")
+        # add directory dialogue and text input to sizer
+        dir_sizer.Add(self.input2, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
+        dir_sizer.Add(dir_btn)
 
-        tc1 = wx.TextCtrl(panel)
-        tc2 = wx.TextCtrl(panel, size=(250, 30))
+        # add all elements to the grid layout
+        grid.AddMany([txt1, (input1, 1, wx.EXPAND), txt2,
+                      dir_sizer])
 
-        s = wx.BoxSizer(wx.HORIZONTAL)
-        databtn = wx.Button(panel, label="...", size=(30, 30))
-        databtn.Bind(wx.EVT_BUTTON, self.onselect_data_btn)
-        s.Add(tc2, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
-        s.Add(databtn)
+        grid.AddGrowableCol(1, 2)
 
-
-        fgs.AddMany([(title), (tc1, 1, wx.EXPAND), (author),
-                     (s)])
-
-        fgs.AddGrowableRow(2, 1)
-        fgs.AddGrowableCol(1, 1)
-
+        # sizer to hold "close" & "ok" buttons
         hbox = wx.BoxSizer(wx.HORIZONTAL)
-        btn1 = wx.Button(panel, label='Ok', size=(70, 30))
-        hbox.Add(btn1)
-        btn2 = wx.Button(panel, label='Close', size=(70, 30))
-        hbox.Add(btn2, flag=wx.LEFT | wx.BOTTOM, border=5)
+        ok_btn = wx.Button(panel, label='Ok', size=(70, 30))
+        ok_btn.Bind(wx.EVT_BUTTON, self.on_ok)
+        close_btn = wx.Button(panel, label='Close', size=(70, 30))
+        close_btn.Bind(wx.EVT_BUTTON, self.on_close)
+        hbox.Add(ok_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
+        hbox.Add(close_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
 
-        topSizer.Add(fgs, proportion=1, flag=wx.ALL | wx.EXPAND, border=15)
+        topSizer.Add(grid, proportion=1, flag=wx.ALL | wx.EXPAND, border=15)
         topSizer.Add(hbox, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
         panel.SetSizer(topSizer)
 
-
-
-        # name_txt = wx.StaticText(self.panel, label="Classifier Name: ")
-        # name_field = wx.TextCtrl(self.panel, value="", size=(200, 20))
-        # data_field = wx.TextCtrl(self.panel, value="", size=(200, 20))
-        # data_txt = wx.StaticText(self.panel, label="Training Data: ")
-        # data_btn = wx.Button(self.panel, label="...")
-        # data_btn.Bind(wx.EVT_BUTTON, self.onselect_data_btn)
-        #
-        # # Sizers to display each row of inputs
-        # topSizer = wx.BoxSizer(wx.VERTICAL)
-        # Gs = wx.GridSizer(4, 4, 5, 5)
-        #
-        # # nameSizer = wx.BoxSizer(wx.HORIZONTAL)
-        # # dataSizer = wx.BoxSizer(wx.HORIZONTAL)
-        # #
-        # # # Add components to inner sizers, and add those to the top sizer
-        # # nameSizer.Add(name_txt, 0, wx.EXPAND | wx.ALL)
-        # # nameSizer.Add((150, -1), 1, flag=wx.EXPAND | wx.ALIGN_RIGHT)
-        # # nameSizer.Add(name_field, 0, wx.EXPAND | wx.ALIGN_RIGHT)
-        # # dataSizer.Add(data_txt, 0, wx.EXPAND | wx.ALL)
-        # # dataSizer.Add((150, -1), 1, flag=wx.EXPAND | wx.ALIGN_RIGHT)
-        # # dataSizer.Add(data_btn, 0, wx.EXPAND | wx.ALL)
-        # # dataSizer.Add(data_field, 0, wx.EXPAND | wx.ALL)
-        #
-        # topSizer.Add(nameSizer, 0, wx.EXPAND | wx.ALL, border=15)
-        # topSizer.Add(dataSizer, 0, wx.EXPAND | wx.ALL, border=15)
-        #
-        # # put top sizer inside the panel and display
-        # self.panel.SetSizer(topSizer)
-
-    def onselect_data_btn(self, event):
+    def on_dir(self, event):
         """
-        Show the DirDialog and print the user's choice to stdout
+        Show the DirDialog and print the user's choice to input box
         """
-        # dlg = wx.DirDialog(self, "Choose a directory:",
-        #                    style=wx.DD_DEFAULT_STYLE
-        #                    # | wx.DD_DIR_MUST_EXIST
-        #                    # | wx.DD_CHANGE_DIR
-        #                    )
-        # if dlg.ShowModal() == wx.ID_OK:
-        #     print "You chose %s" % dlg.GetPath()
-        # dlg.Destroy()
+        dlg = wx.DirDialog(self, "Choose a directory:",
+                           style=wx.DD_DEFAULT_STYLE
+                           # | wx.DD_DIR_MUST_EXIST
+                           # | wx.DD_CHANGE_DIR
+                           )
+        if dlg.ShowModal() == wx.ID_OK:
+            self.input2.SetValue(dlg.GetPath())
+        dlg.Destroy()
 
+    def on_close(self, event):
+        """"""
+        self.Close(True)
+
+    def on_ok(self, event):
+        """"""
+        self.Close(True)
 
 
 

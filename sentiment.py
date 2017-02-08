@@ -11,7 +11,7 @@ import pickle
 import os.path
 
 
-def train():
+def train(direc):
     """
     Create a classifier object using sentiment training data
     :return: classifier object
@@ -44,9 +44,10 @@ def classify(files, classifier_name):
         with open(path_clf, 'rb') as fil:
             sentiment_clf = pickle.load(fil)
     else:
-        sentiment_clf = train()
-        with open(path_clf, 'wb') as output:
-            pickle.dump(sentiment_clf, output, pickle.HIGHEST_PROTOCOL)
+        print "classifier does not exist :("
+        # sentiment_clf = train(direc)
+        # with open(path_clf, 'wb') as output:
+        #     pickle.dump(sentiment_clf, output, pickle.HIGHEST_PROTOCOL)
 
     # Use classifier to get classification values.
     predicted = sentiment_clf.get_predictions(files)
