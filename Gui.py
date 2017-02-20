@@ -4,7 +4,7 @@ import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-from sentiment import classify
+from sentiment import classify, create_classifier
 
 ID_EXIT = 200
 
@@ -27,7 +27,9 @@ class MainFrame(wx.Frame):
 
         # create the Menubar items
         filemenu = wx.Menu()
-        filemenu.Append(ID_EXIT, "E&xit", " Terminate the program")
+        filemenu.Append(ID_EXIT, "&Exit", " Terminate the program")
+        m_open = filemenu.Append(101, '&Open', 'Open a new directory of Documetns')
+        self.Bind(wx.EVT_MENU, self.on_open, m_open)
         editmenu = wx.Menu()
         helpmenu = wx.Menu()
 
@@ -44,7 +46,7 @@ class MainFrame(wx.Frame):
 
         # Create a drop-down list menu containing filter options
         self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
-        self.widget_maker(self.cb1)
+        self.display_classifiers()
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
         # Button to classify files
@@ -86,15 +88,19 @@ class MainFrame(wx.Frame):
 
     def onselect_btn2(self, event):
         """"""
-        frame = PopupWindow()
+        frame = PopupWindow(self)
         frame.Show()
 
-    def widget_maker(self, widget):
+    def display_classifiers(self):
         """Get all the existing classifiers and display in the combobox as options"""
-        widget.Clear()
+        self.cb1.Clear()
         for fil in os.listdir('classifiers/'):
             # adds name of classifier file to combobox
-            widget.Append(os.path.splitext(fil)[0])
+            self.cb1.Append(os.path.splitext(fil)[0])
+
+    def on_open(self, event):
+        # Enable the Classify Button only when a classifier is selected.
+        print "yaa"
 
     def OnExit(self,e):
         self.Close(True)
@@ -108,8 +114,10 @@ class ListView(ObjectListView):
         self.set_files()  # Call method to populate the ListView.
 
     def set_files(self, data=None):
-        direc = 'working_data/txt_sentoken/'
+        # direc = 'working_data/txt_sentoken/'
+        direc = 'working_data/languages_html/'
         file_names = os.listdir(direc)
+
         for fil in file_names:
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
@@ -144,22 +152,15 @@ class ListView(ObjectListView):
         self.SetObjects(self.files)
 
 
-class File:
-    def __init__(self, name, ext, size, mod):
-        self.name = name
-        self.Extension = ext
-        self.classification = None
-        self.size = size
-        self.last_modified = mod
-
-
 class PopupWindow(wx.Frame):
     """"""
     # ----------------------------------------------------------------------
-    def __init__(self):
+    def __init__(self, parent_window):
         """Constructor"""
         wx.Frame.__init__(self, None, title="Create Classifier", size= (550, 200),
                           style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)
+        # get reference to the MainFrame window calling the popup. Allows popup to update the list controll of parent.
+        self.parent_window = parent_window
 
         # define sizers and grid layout of popup
         panel = wx.Panel(self)
@@ -167,37 +168,38 @@ class PopupWindow(wx.Frame):
         topSizer = wx.BoxSizer(wx.VERTICAL)
         grid = wx.FlexGridSizer(3, 2, 9, 100)
 
+        # input values for user to enter: classifier name and location of training data
+        # make them as class variables so they can be accessed by methods
+        self.name_input = wx.TextCtrl(panel)
+        self.dir_input = wx.TextCtrl(panel, size=(255, 30))
+
         # define text and input boxes
         txt1 = wx.StaticText(panel, label="Classifier Name:")
         txt2 = wx.StaticText(panel, label="Training Data Directory:")
-        input1 = wx.TextCtrl(panel)
-        # make this input a class variable so it can be modified from the button handler
-        self.input2 = wx.TextCtrl(panel, size=(255, 30))
         # define buttons
         dir_btn = wx.Button(panel, label="...", size=(30, 30))
         dir_btn.Bind(wx.EVT_BUTTON, self.on_dir)
 
         # add directory dialogue and text input to sizer
-        dir_sizer.Add(self.input2, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
+        dir_sizer.Add(self.dir_input, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
         dir_sizer.Add(dir_btn)
 
         # add all elements to the grid layout
-        grid.AddMany([txt1, (input1, 1, wx.EXPAND), txt2,
+        grid.AddMany([txt1, (self.name_input, 1, wx.EXPAND), txt2,
                       dir_sizer])
 
-        grid.AddGrowableCol(1, 2)
-
         # sizer to hold "close" & "ok" buttons
-        hbox = wx.BoxSizer(wx.HORIZONTAL)
+        bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
         ok_btn = wx.Button(panel, label='Ok', size=(70, 30))
         ok_btn.Bind(wx.EVT_BUTTON, self.on_ok)
         close_btn = wx.Button(panel, label='Close', size=(70, 30))
         close_btn.Bind(wx.EVT_BUTTON, self.on_close)
-        hbox.Add(ok_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
-        hbox.Add(close_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
+        bottom_sizer.Add(ok_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
+        bottom_sizer.Add(close_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
 
+        # put grid and the two buttons withing bottom_sizer into topsizer
         topSizer.Add(grid, proportion=1, flag=wx.ALL | wx.EXPAND, border=15)
-        topSizer.Add(hbox, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
+        topSizer.Add(bottom_sizer, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
         panel.SetSizer(topSizer)
 
     def on_dir(self, event):
@@ -210,16 +212,29 @@ class PopupWindow(wx.Frame):
                            # | wx.DD_CHANGE_DIR
                            )
         if dlg.ShowModal() == wx.ID_OK:
-            self.input2.SetValue(dlg.GetPath())
+            self.dir_input.SetValue(dlg.GetPath())
         dlg.Destroy()
 
     def on_close(self, event):
-        """"""
+        """Close Popup window"""
         self.Close(True)
 
     def on_ok(self, event):
-        """"""
+        """confirm selections. Create and save the new classifier"""
+        # call method from sentiment.py module to create and save classifier with given attributes
+        create_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
+        # update parent window's classifier list
+        self.parent_window.display_classifiers()
         self.Close(True)
+
+
+class File:
+    def __init__(self, name, ext, size, mod):
+        self.name = name
+        self.Extension = ext
+        self.classification = None
+        self.size = size
+        self.last_modified = mod
 
 
 

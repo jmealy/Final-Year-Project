@@ -11,18 +11,16 @@ import pickle
 import os.path
 
 
-def train(direc):
+def create_classifier(classifier_name, traindata_path):
     """
-    Create a classifier object using sentiment training data
-    :return: classifier object
+    Create and save a classifier object using given name and training data
     """
+
     # Load data and split to test/train
-    movie_reviews_data_folder = 'training_data/txt_sentoken'
-    dataset = load_files(movie_reviews_data_folder, shuffle=False)
+    train_data = load_files(traindata_path, shuffle=False)
     # test variables unused. Probably a cleaner way of doing this.
     docs_train, docs_test, y_train, y_test = train_test_split(
-        dataset.data, dataset.target, test_size=0.0, random_state=True)
-    temp = docs_train[0]
+        train_data.data, train_data.target, test_size=0.0, random_state=True)
 
     # Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
@@ -32,7 +30,12 @@ def train(direc):
     ])
 
     # create classifier from training data and return with target names
-    return Classifier(pipeline.fit(docs_train, y_train), dict(enumerate(dataset.target_names)))
+    cls = Classifier(pipeline.fit(docs_train, y_train), dict(enumerate(train_data.target_names)))
+
+    # save classifier to classifiers folder using name given by user
+    path_clf = 'classifiers/' + classifier_name + '.pkl'
+    with open(path_clf, 'wb') as output:
+        pickle.dump(cls, output, pickle.HIGHEST_PROTOCOL)
 
 
 def classify(files, classifier_name):
@@ -45,9 +48,6 @@ def classify(files, classifier_name):
             sentiment_clf = pickle.load(fil)
     else:
         print "classifier does not exist :("
-        # sentiment_clf = train(direc)
-        # with open(path_clf, 'wb') as output:
-        #     pickle.dump(sentiment_clf, output, pickle.HIGHEST_PROTOCOL)
 
     # Use classifier to get classification values.
     predicted = sentiment_clf.get_predictions(files)
