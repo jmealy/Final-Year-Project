@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.svm import LinearSVC
 from sklearn.pipeline import Pipeline
@@ -15,12 +16,14 @@ def create_classifier(classifier_name, traindata_path):
     """
     Create and save a classifier object using given name and training data
     """
+    remove_incompatible_files(traindata_path)
 
     # Load data and split to test/train
     train_data = load_files(traindata_path, shuffle=False)
     # test variables unused. Probably a cleaner way of doing this.
     docs_train, docs_test, y_train, y_test = train_test_split(
         train_data.data, train_data.target, test_size=0.0, random_state=True)
+
 
     # Build a vectorizer / classifier pipeline that filters out tokens
     # that are too rare or too frequent
@@ -54,6 +57,29 @@ def classify(files, classifier_name):
 
     # Use dict with target names to get back the actual class values.
     return map(sentiment_clf.get_groups(), predicted)
+
+
+def remove_incompatible_files(path):
+    """
+    Finds the filenames that are incompatible with `CountVectorizer`. These files are usually not compatible with UTF8!
+    parameter `path` is the absolute or relative path of the training data's root directory.
+    returns a list of strings.
+    """
+
+    count_vector = sklearn.feature_extraction.text.CountVectorizer()
+    files = sklearn.datasets.load_files(path)
+    incompatible_files = []
+    for i in range(len(files.filenames)):
+        try:
+            count_vector.fit_transform(files.data[i:i + 1])
+        except UnicodeDecodeError:
+            incompatible_files.append(files.filenames[i])
+        except ValueError:
+            pass
+
+    for f in incompatible_files:
+        print 'deleting incompatible files'
+        os.remove(f)
 
 
 class Classifier:

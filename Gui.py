@@ -4,7 +4,7 @@ import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-from sentiment import classify, create_classifier
+import sentiment
 
 ID_EXIT = 200
 
@@ -82,7 +82,7 @@ class MainFrame(wx.Frame):
 
     def onselect_btn1(self, event):
         """Classify Files Button"""
-        predicted_vals = classify(self.olv.file_contents, self.cb1.GetStringSelection())
+        predicted_vals = sentiment.classify(self.olv.file_contents, self.cb1.GetStringSelection())
         # Update classification column with the predicted classifications.
         self.olv.set_classes(predicted_vals)
 
@@ -115,9 +115,9 @@ class ListView(ObjectListView):
 
     def set_files(self, data=None):
         # direc = 'working_data/txt_sentoken/'
-        direc = 'working_data/languages_html/'
+        direc = 'working_data/topics/'
+        sentiment.remove_incompatible_files(direc)
         file_names = os.listdir(direc)
-
         for fil in file_names:
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
@@ -222,7 +222,7 @@ class PopupWindow(wx.Frame):
     def on_ok(self, event):
         """confirm selections. Create and save the new classifier"""
         # call method from sentiment.py module to create and save classifier with given attributes
-        create_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
+        sentiment.create_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
         # update parent window's classifier list
         self.parent_window.display_classifiers()
         self.Close(True)
