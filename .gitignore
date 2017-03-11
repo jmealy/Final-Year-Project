@@ -7,3 +7,5 @@ test.txt
 classifiers
 training_data
 working_data
+lda_example.py
+lda_example_alternate.py
