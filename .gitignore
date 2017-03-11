@@ -5,3 +5,5 @@ test.txt
 .idea/workspace.xml
 *.pyc
 classifiers
+training_data
+working_data
