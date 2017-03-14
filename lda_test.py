@@ -57,13 +57,16 @@ def create_lda_model(name, data_path):
 
     print corpus_tfidf
 
-    corpus_lda = ldamodel[corpus_tfidf]
-    lista = []
-    for item in corpus_lda:
-        lista.append(item)
-        print item
+    topic_distributions = ldamodel[corpus_tfidf]
+
+    topic_classifications = []
+    for i in topic_distributions:
+        best_topic_index = max(i, key=lambda x:x[1])[0]
+        topic_classifications.append("Topic " + str(best_topic_index))
+
+    print topic_classifications
 
 
 # create sample documents
-working_data = "/home/james/PycharmProjects/final-year-project/working_data/3topics/"
+working_data = "/home/james/PycharmProjects/final-year-project/working_data/single_doc/"
 create_lda_model('', working_data)

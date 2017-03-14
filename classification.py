@@ -79,8 +79,20 @@ def create_lda_classifier(classifier_name, data_path):
     corpus = [dictionary.doc2bow(text) for text in tokenized_documents]
 
     # generate LDA model
-    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=3, id2word=dictionary, passes=20)
-    save_classifier(LdaClassifier(ldamodel, corpus), classifier_name)
+    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=2, id2word=dictionary, passes=20)
+
+    tfidf = gensim.models.TfidfModel(corpus)
+    corpus_tfidf = tfidf[corpus]
+    topic_distributions = ldamodel[corpus_tfidf]
+
+    print(ldamodel.show_topics(num_topics=2, num_words=5))
+
+    topic_classifications = []
+    for i in topic_distributions:
+        best_topic_index = max(i, key=lambda x:x[1])[0]
+        topic_classifications.append("Topic " + str(best_topic_index))
+
+    return topic_classifications
 
 
 def classify(files, classifier_name):

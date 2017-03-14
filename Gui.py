@@ -249,7 +249,8 @@ class PopupWindow(wx.Frame):
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
             classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
         if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
-            classification.create_lda_classifier(self.name_input.GetValue(), working_data)
+            topics = classification.create_lda_classifier(self.name_input.GetValue(), working_data)
+            self.parent_window.olv.set_classes(topics)
 
         # update parent window's classifier list
         self.parent_window.display_classifiers()
