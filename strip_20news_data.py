@@ -46,10 +46,7 @@ def strip_newsgroup_footer(text):
 
 
 def strip_digits(doc):
-
     return doc.translate(None, '0123456789')
-
-# def strip_small_words(doc):
 
 
 
@@ -65,10 +62,3 @@ def strip_dataset(dataset):
     return stripped
 
 
-# direc = "/home/james/PycharmProjects/final-year-project/working_data/single_doc/"
-# X = []
-# for fil in os.listdir(direc):
-#     with file(direc + fil) as f:
-#         X.append(f.read())
-#
-# print X[1].translate(None, '0123456789')

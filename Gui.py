@@ -1,12 +1,12 @@
 #!/usr/bin/python
-
 import wx
 import os
 import time
 from ObjectListView import ObjectListView, ColumnDefn
-import sentiment
+import classification
 
 ID_EXIT = 200
+working_data = 'working_data/3topics/'
 
 
 class FileManager(wx.App):
@@ -18,7 +18,7 @@ class FileManager(wx.App):
 
 class MainFrame(wx.Frame):
     def __init__(self, parent, id, title):
-        """constructor"""
+        """Constructor method. This will set up the components of the main window, and their sizes and positions."""
         wx.Frame.__init__(self, parent, -1, title)
         self.Maximize(True)
 
@@ -49,14 +49,16 @@ class MainFrame(wx.Frame):
         self.display_classifiers()
         self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
-        # Button to classify files
+        # Button to classify files.
         self.btn1 = wx.Button(self.panel, -1, "Classify Files")
+        # button is greyed out untill classifier is selected.
         self.btn1.Disable()
         self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
+        # Button to create a custom classifier.
         self.btn2 = wx.Button(self.panel, -1, "Create Classifier")
         self.btn2.Bind(wx.EVT_BUTTON, self.onselect_btn2)
 
-        # Create top sizer and the two inner sizers to hold the list and header
+        # Create top sizer and the two inner sizers to hold the list and header bar
         topSizer = wx.BoxSizer(wx.VERTICAL)
         inputSizer = wx.BoxSizer(wx.HORIZONTAL)
         listSizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -77,12 +79,12 @@ class MainFrame(wx.Frame):
         self.Show(True)
 
     def onselect_cb1(self, event):
-        # Enable the Classify Button only when a classifier is selected.
+        # [tk] open up working files
         self.btn1.Enable()
 
     def onselect_btn1(self, event):
         """Classify Files Button"""
-        predicted_vals = sentiment.classify(self.olv.file_contents, self.cb1.GetStringSelection())
+        predicted_vals = classification.classify(self.olv.file_contents, self.cb1.GetStringSelection())
         # Update classification column with the predicted classifications.
         self.olv.set_classes(predicted_vals)
 
@@ -99,7 +101,7 @@ class MainFrame(wx.Frame):
             self.cb1.Append(os.path.splitext(fil)[0])
 
     def on_open(self, event):
-        # Enable the Classify Button only when a classifier is selected.
+        # open working data [tk]
         print "yaa"
 
     def OnExit(self,e):
@@ -114,16 +116,18 @@ class ListView(ObjectListView):
         self.set_files()  # Call method to populate the ListView.
 
     def set_files(self, data=None):
-        # direc = 'working_data/txt_sentoken/'
-        direc = 'working_data/topics/'
-        sentiment.remove_incompatible_files(direc)
-        file_names = os.listdir(direc)
+        """
+        Description needed.[tk]
+        """
+        #
+        classification.remove_incompatible_files(working_data)
+        file_names = os.listdir(working_data)
         for fil in file_names:
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
-            size = os.path.getsize(direc + fil)
-            modif = os.path.getmtime(direc + fil)
-            with file(direc + fil) as f:
+            size = os.path.getsize(working_data + fil)
+            modif = os.path.getmtime(working_data + fil)
+            with file(working_data + fil) as f:
                 contents = f.read()
             f = File(name, ex, size, modif)
             self.file_contents.append(contents)
@@ -137,13 +141,6 @@ class ListView(ObjectListView):
             ColumnDefn("Classification", "left", 150, "classification")
         ])
         self.SetObjects(self.files)
-
-    # def filter_files(self, attribute, value):
-    #     if value == 'All Files':
-    #         self.SetObjects(self.files)
-    #     else:
-    #         filtered = [f for f in self.files if getattr(f, attribute) == value]
-    #         self.SetObjects(filtered)
 
     def set_classes(self, classes):
         """Assign classifications to files in list and display them."""
@@ -166,35 +163,44 @@ class PopupWindow(wx.Frame):
         panel = wx.Panel(self)
         dir_sizer = wx.BoxSizer(wx.HORIZONTAL)
         topSizer = wx.BoxSizer(wx.VERTICAL)
-        grid = wx.FlexGridSizer(3, 2, 9, 100)
+        grid = wx.FlexGridSizer(4, 2, 9, 100)
 
         # input values for user to enter: classifier name and location of training data
         # make them as class variables so they can be accessed by methods
+        self.type_input = wx.ComboBox(panel, -1, '',  size=(135, -1))
+        self.type_input.Append('Text Classifier (Supervised)')
+        self.type_input.Append('Topic Modelling (Unsupervised)')
+        self.type_input.Bind(wx.EVT_COMBOBOX, self.onselect_type)
         self.name_input = wx.TextCtrl(panel)
         self.dir_input = wx.TextCtrl(panel, size=(255, 30))
+        self.dir_input.Disable()
 
-        # define text and input boxes
-        txt1 = wx.StaticText(panel, label="Classifier Name:")
-        txt2 = wx.StaticText(panel, label="Training Data Directory:")
-        # define buttons
-        dir_btn = wx.Button(panel, label="...", size=(30, 30))
-        dir_btn.Bind(wx.EVT_BUTTON, self.on_dir)
+        # define text for the input boxes
+        type_txt = wx.StaticText(panel, label="Classifier Type:")
+        name_txt = wx.StaticText(panel, label="Classifier Name:")
+        dir_txt = wx.StaticText(panel, label="Training Data Directory:")
+
+        # define button for choosing training data directory
+        self.dir_btn = wx.Button(panel, label="...", size=(30, 30))
+        self.dir_btn.Bind(wx.EVT_BUTTON, self.on_dir)
+        self.dir_btn.Disable()
 
         # add directory dialogue and text input to sizer
         dir_sizer.Add(self.dir_input, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
-        dir_sizer.Add(dir_btn)
+        dir_sizer.Add(self.dir_btn)
 
         # add all elements to the grid layout
-        grid.AddMany([txt1, (self.name_input, 1, wx.EXPAND), txt2,
+        grid.AddMany([type_txt, (self.type_input, 1, wx.EXPAND), name_txt, (self.name_input, 1, wx.EXPAND), dir_txt,
                       dir_sizer])
 
-        # sizer to hold "close" & "ok" buttons
+        # Define "close" & "ok" buttons, and wrap in a sizer (bottom sizer).
         bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        ok_btn = wx.Button(panel, label='Ok', size=(70, 30))
-        ok_btn.Bind(wx.EVT_BUTTON, self.on_ok)
+        self.ok_btn = wx.Button(panel, label='Ok', size=(70, 30))
+        self.ok_btn.Disable()
+        self.ok_btn.Bind(wx.EVT_BUTTON, self.on_ok)
         close_btn = wx.Button(panel, label='Close', size=(70, 30))
         close_btn.Bind(wx.EVT_BUTTON, self.on_close)
-        bottom_sizer.Add(ok_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
+        bottom_sizer.Add(self.ok_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
         bottom_sizer.Add(close_btn, flag=wx.LEFT | wx.BOTTOM, border=5)
 
         # put grid and the two buttons withing bottom_sizer into topsizer
@@ -213,18 +219,44 @@ class PopupWindow(wx.Frame):
                            )
         if dlg.ShowModal() == wx.ID_OK:
             self.dir_input.SetValue(dlg.GetPath())
+            self.ok_btn.Enable()
         dlg.Destroy()
 
-    def on_close(self, event):
-        """Close Popup window"""
-        self.Close(True)
+    def onselect_type(self, event):
+        """"""
+        if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
+            self.ok_btn.Enable()
+            # Clear and disable classifier name and trainging data input as they are not needed
+            self.dir_input.Clear()
+            self.dir_input.Disable()
+            self.dir_btn.Disable()
+
+        # if supervised text classifier is selected, enable relavent inputs
+        if self.type_input.GetValue() == 'Text Classifier (Supervised)':
+            self.dir_input.Enable()
+            self.dir_btn.Enable()
+            # Disable ok button untill required information is input by user
+            self.ok_btn.Disable()
 
     def on_ok(self, event):
         """confirm selections. Create and save the new classifier"""
-        # call method from sentiment.py module to create and save classifier with given attributes
-        sentiment.create_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
+
+        # if name field is empty, use default name.
+        if self.name_input.GetValue() == "":
+            self.name_input.SetValue('new_classifier')
+
+        # Create the new classifier using the appropriate function, depending on what classifier type is selected
+        if self.type_input.GetValue() == 'Text Classifier (Supervised)':
+            classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
+        if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
+            classification.create_lda_classifier(self.name_input.GetValue(), working_data)
+
         # update parent window's classifier list
         self.parent_window.display_classifiers()
+        self.Close(True)
+
+    def on_close(self, event):
+        """Close Popup window"""
         self.Close(True)
 
 
