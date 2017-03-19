@@ -39,10 +39,15 @@ def create_supervised_classifier(classifier_name, traindata_path):
     save_classifier(cls, classifier_name)
 
 
-def create_lda_classifier(classifier_name, data_path):
+def create_lda_classifier(data_path, num_topics):
     """
     [tk]
     """
+
+    if not num_topics:
+        num_topics = 5
+        print "not num_topics"
+
     documents = []
     for fil in os.listdir(data_path):
         with file(data_path + fil) as f:
@@ -79,13 +84,13 @@ def create_lda_classifier(classifier_name, data_path):
     corpus = [dictionary.doc2bow(text) for text in tokenized_documents]
 
     # generate LDA model
-    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=2, id2word=dictionary, passes=20)
+    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=num_topics, id2word=dictionary, passes=20)
 
     tfidf = gensim.models.TfidfModel(corpus)
     corpus_tfidf = tfidf[corpus]
     topic_distributions = ldamodel[corpus_tfidf]
 
-    print(ldamodel.show_topics(num_topics=2, num_words=5))
+    print(ldamodel.show_topics(num_topics=num_topics, num_words=5))
 
     topic_classifications = []
     for i in topic_distributions:

@@ -154,16 +154,15 @@ class PopupWindow(wx.Frame):
     # ----------------------------------------------------------------------
     def __init__(self, parent_window):
         """Constructor"""
-        wx.Frame.__init__(self, None, title="Create Classifier", size= (550, 200),
+        wx.Frame.__init__(self, None, title="Create Classifier", size= (550, 320),
                           style=wx.DEFAULT_FRAME_STYLE ^ wx.RESIZE_BORDER ^ wx.MAXIMIZE_BOX)
         # get reference to the MainFrame window calling the popup. Allows popup to update the list controll of parent.
         self.parent_window = parent_window
 
         # define sizers and grid layout of popup
         panel = wx.Panel(self)
-        dir_sizer = wx.BoxSizer(wx.HORIZONTAL)
         topSizer = wx.BoxSizer(wx.VERTICAL)
-        grid = wx.FlexGridSizer(4, 2, 9, 100)
+        grid = wx.FlexGridSizer(6, 2, 9, 100)
 
         # input values for user to enter: classifier name and location of training data
         # make them as class variables so they can be accessed by methods
@@ -171,12 +170,26 @@ class PopupWindow(wx.Frame):
         self.type_input.Append('Text Classifier (Supervised)')
         self.type_input.Append('Topic Modelling (Unsupervised)')
         self.type_input.Bind(wx.EVT_COMBOBOX, self.onselect_type)
+        self.numtopics_input = wx.TextCtrl(panel)
+        self.chk_box = wx.CheckBox(panel)
+        self.chk_box.Bind(wx.EVT_CHECKBOX, self.onselect_checkbox)
+        self.cls_input = wx.ComboBox(panel, -1, '',  size=(135, -1))
         self.name_input = wx.TextCtrl(panel)
         self.dir_input = wx.TextCtrl(panel, size=(255, 30))
+
+        # Disable inputs to start. Need to choose classifier first
+        self.chk_box.Disable()
+        self.cls_input.Disable()
+        self.name_input.Disable()
+        self.numtopics_input.Disable()
         self.dir_input.Disable()
+
 
         # define text for the input boxes
         type_txt = wx.StaticText(panel, label="Classifier Type:")
+        numtopics_txt = wx.StaticText(panel, label="Number of Topics:")
+        chk_txt = wx.StaticText(panel, label="Use Existing Classifier?")
+        cls_txt = wx.StaticText(panel, label="Select Existing Classifier:")
         name_txt = wx.StaticText(panel, label="Classifier Name:")
         dir_txt = wx.StaticText(panel, label="Training Data Directory:")
 
@@ -186,12 +199,13 @@ class PopupWindow(wx.Frame):
         self.dir_btn.Disable()
 
         # add directory dialogue and text input to sizer
+        dir_sizer = wx.BoxSizer(wx.HORIZONTAL)
         dir_sizer.Add(self.dir_input, 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
         dir_sizer.Add(self.dir_btn)
 
         # add all elements to the grid layout
-        grid.AddMany([type_txt, (self.type_input, 1, wx.EXPAND), name_txt, (self.name_input, 1, wx.EXPAND), dir_txt,
-                      dir_sizer])
+        grid.AddMany([type_txt, (self.type_input, 1, wx.EXPAND), numtopics_txt, self.numtopics_input, chk_txt, self.chk_box, cls_txt, (self.cls_input, 1, wx.EXPAND),
+                      name_txt, (self.name_input, 1, wx.EXPAND), dir_txt, dir_sizer])
 
         # Define "close" & "ok" buttons, and wrap in a sizer (bottom sizer).
         bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
@@ -227,16 +241,33 @@ class PopupWindow(wx.Frame):
         if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
             self.ok_btn.Enable()
             # Clear and disable classifier name and trainging data input as they are not needed
+            self.numtopics_input.Enable()
             self.dir_input.Clear()
             self.dir_input.Disable()
             self.dir_btn.Disable()
+            self.chk_box.Disable()
+            self.cls_input.Disable()
+            self.name_input.Disable()
 
         # if supervised text classifier is selected, enable relavent inputs
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
             self.dir_input.Enable()
             self.dir_btn.Enable()
-            # Disable ok button untill required information is input by user
+            self.chk_box.Enable()
+            self.name_input.Enable()
+            # Disable ok button until required information is input by user
             self.ok_btn.Disable()
+            self.numtopics_input.Disable()
+
+    def onselect_checkbox(self, event):
+        if self.chk_box.GetValue():
+            self.cls_input.Enable()
+            self.name_input.Disable()
+            self.dir_input.Disable()
+        else:
+            self.cls_input.Disable()
+            self.name_input.Enable()
+            self.dir_input.Enable()
 
     def on_ok(self, event):
         """confirm selections. Create and save the new classifier"""
@@ -249,7 +280,20 @@ class PopupWindow(wx.Frame):
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
             classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
         if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
-            topics = classification.create_lda_classifier(self.name_input.GetValue(), working_data)
+            num_topics = self.numtopics_input.GetValue()
+            if not num_topics:
+                # default value for num_topics
+                num_topics = 5
+            else:
+                # ensure that the value entered for num topics is an integer.
+                try:
+                    num_topics = int(num_topics)
+                except ValueError:
+                    wx.MessageDialog(self, "Number of Topics: must be an integer", "Warning!",
+                                     wx.OK | wx.ICON_WARNING).ShowModal()
+                    return
+            # create lda model using working data and number of topics entered by the user.
+            topics = classification.create_lda_classifier(working_data, num_topics)
             self.parent_window.olv.set_classes(topics)
 
         # update parent window's classifier list
