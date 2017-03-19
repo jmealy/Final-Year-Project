@@ -45,18 +45,19 @@ class MainFrame(wx.Frame):
         self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
-        self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
-        self.display_classifiers()
-        self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
+        self.btn_import = wx.Button(self.panel, -1, "Classify Files")
+        #self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
+        #self.display_classifiers()
+        #self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
         # Button to classify files.
-        self.btn1 = wx.Button(self.panel, -1, "Classify Files")
+        self.btn_classify = wx.Button(self.panel, -1, "Classify Files")
         # button is greyed out untill classifier is selected.
-        self.btn1.Disable()
-        self.btn1.Bind(wx.EVT_BUTTON, self.onselect_btn1)
+        self.btn_classify.Disable()
+        self.btn_classify.Bind(wx.EVT_BUTTON, self.onselect_btn_classify)
         # Button to create a custom classifier.
-        self.btn2 = wx.Button(self.panel, -1, "Create Classifier")
-        self.btn2.Bind(wx.EVT_BUTTON, self.onselect_btn2)
+        self.btn_export = wx.Button(self.panel, -1, "Create Classifier")
+        self.btn_export.Bind(wx.EVT_BUTTON, self.onselect_btn_export)
 
         # Create top sizer and the two inner sizers to hold the list and header bar
         topSizer = wx.BoxSizer(wx.VERTICAL)
@@ -64,10 +65,10 @@ class MainFrame(wx.Frame):
         listSizer = wx.BoxSizer(wx.HORIZONTAL)
 
         # Add components to inner sizers, and add those to the top sizer
-        inputSizer.Add(self.cb1, 0, wx.ALL, 5)
-        inputSizer.Add(self.btn2, 0, wx.ALL, 5)
+        inputSizer.Add(self.btn_import, 0, wx.ALL, 5)
+        inputSizer.Add(self.btn_export, 0, wx.ALL, 5)
         # inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
-        inputSizer.Add(self.btn1, 0, wx.ALL, 5)
+        inputSizer.Add(self.btn_classify, 0, wx.ALL, 5)
         listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
@@ -78,27 +79,27 @@ class MainFrame(wx.Frame):
         self.Center()
         self.Show(True)
 
-    def onselect_cb1(self, event):
+    def onselect_btn_classify(self, event):
         # [tk] open up working files
-        self.btn1.Enable()
+        self.btn_classify.Enable()
 
-    def onselect_btn1(self, event):
-        """Classify Files Button"""
-        predicted_vals = classification.classify(self.olv.file_contents, self.cb1.GetStringSelection())
-        # Update classification column with the predicted classifications.
-        self.olv.set_classes(predicted_vals)
+    # def onselect_btn_classify(self, event):
+    #     """Classify Files Button"""
+    #     #predicted_vals = classification.classify(self.olv.file_contents, self.cb1.GetStringSelection())
+    #     # Update classification column with the predicted classifications.
+    #     self.olv.set_classes(predicted_vals)
 
-    def onselect_btn2(self, event):
+    def onselect_btn_export(self, event):
         """"""
         frame = PopupWindow(self)
         frame.Show()
 
-    def display_classifiers(self):
-        """Get all the existing classifiers and display in the combobox as options"""
-        self.cb1.Clear()
-        for fil in os.listdir('classifiers/'):
-            # adds name of classifier file to combobox
-            self.cb1.Append(os.path.splitext(fil)[0])
+    # def display_classifiers(self):
+    #     """Get all the existing classifiers and display in the combobox as options"""
+    #     self.cb1.Clear()
+    #     for fil in os.listdir('classifiers/'):
+    #         # adds name of classifier file to combobox
+    #         self.cb1.Append(os.path.splitext(fil)[0])
 
     def on_open(self, event):
         # open working data [tk]
@@ -321,7 +322,6 @@ class PopupWindow(wx.Frame):
             self.parent_window.olv.set_classes(topics)
 
         # update parent window's classifier list
-        self.parent_window.display_classifiers()
         self.Close(True)
 
     def on_close(self, event):
