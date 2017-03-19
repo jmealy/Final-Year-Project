@@ -45,19 +45,20 @@ class MainFrame(wx.Frame):
         self.olv = ListView(self.panel)
 
         # Create a drop-down list menu containing filter options
-        self.btn_import = wx.Button(self.panel, -1, "Classify Files")
+        self.btn_import = wx.Button(self.panel, -1, "Import Files")
+        self.btn_import.Bind(wx.EVT_BUTTON, self.onselect_btn_import)
         #self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
         #self.display_classifiers()
         #self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
         # Button to classify files.
-        self.btn_classify = wx.Button(self.panel, -1, "Classify Files")
+        self.btn_export = wx.Button(self.panel, -1, "Classify Files")
         # button is greyed out untill classifier is selected.
-        self.btn_classify.Disable()
-        self.btn_classify.Bind(wx.EVT_BUTTON, self.onselect_btn_classify)
-        # Button to create a custom classifier.
-        self.btn_export = wx.Button(self.panel, -1, "Create Classifier")
+        self.btn_export.Disable()
         self.btn_export.Bind(wx.EVT_BUTTON, self.onselect_btn_export)
+        # Button to create a custom classifier.
+        self.btn_classify = wx.Button(self.panel, -1, "Create Classifier")
+        self.btn_classify.Bind(wx.EVT_BUTTON, self.onselect_btn_classify)
 
         # Create top sizer and the two inner sizers to hold the list and header bar
         topSizer = wx.BoxSizer(wx.VERTICAL)
@@ -66,9 +67,9 @@ class MainFrame(wx.Frame):
 
         # Add components to inner sizers, and add those to the top sizer
         inputSizer.Add(self.btn_import, 0, wx.ALL, 5)
-        inputSizer.Add(self.btn_export, 0, wx.ALL, 5)
-        # inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
         inputSizer.Add(self.btn_classify, 0, wx.ALL, 5)
+        # inputSizer.Add((150, -1), 1, flag = wx.EXPAND | wx.ALIGN_RIGHT)
+        inputSizer.Add(self.btn_export, 0, wx.ALL, 5)
         listSizer.Add(self.olv, 1, wx.EXPAND|wx.ALL)
         topSizer.Add(inputSizer, 0, wx.EXPAND|wx.ALL, border=15)
         topSizer.Add(listSizer, 1, wx.EXPAND|wx.ALL, border=15)
@@ -79,27 +80,26 @@ class MainFrame(wx.Frame):
         self.Center()
         self.Show(True)
 
-    def onselect_btn_classify(self, event):
-        # [tk] open up working files
-        self.btn_classify.Enable()
-
-    # def onselect_btn_classify(self, event):
-    #     """Classify Files Button"""
-    #     #predicted_vals = classification.classify(self.olv.file_contents, self.cb1.GetStringSelection())
-    #     # Update classification column with the predicted classifications.
-    #     self.olv.set_classes(predicted_vals)
-
     def onselect_btn_export(self, event):
         """"""
+        # [tk] open up working files
+
+    def onselect_btn_import(self, event):
+        """Import Files Button"""
+        dlg = wx.DirDialog(self, "Choose a directory:",
+                           style=wx.DD_DEFAULT_STYLE
+                           # | wx.DD_DIR_MUST_EXIST
+                           # | wx.DD_CHANGE_DIR
+                           )
+        if dlg.ShowModal() == wx.ID_OK:
+            self.olv.directory = dlg.GetPath() +'/'
+            self.olv.set_files()
+        dlg.Destroy()
+
+    def onselect_btn_classify(self, event):
+        """Open window to create and use a classifier"""
         frame = PopupWindow(self)
         frame.Show()
-
-    # def display_classifiers(self):
-    #     """Get all the existing classifiers and display in the combobox as options"""
-    #     self.cb1.Clear()
-    #     for fil in os.listdir('classifiers/'):
-    #         # adds name of classifier file to combobox
-    #         self.cb1.Append(os.path.splitext(fil)[0])
 
     def on_open(self, event):
         # open working data [tk]
@@ -112,23 +112,26 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
+        self.directory = ''
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
-        self.set_files()  # Call method to populate the ListView.
+        # self.set_files()  # Call method to populate the ListView.
 
     def set_files(self, data=None):
         """
         Description needed.[tk]
         """
-        #
-        classification.remove_incompatible_files(working_data)
-        file_names = os.listdir(working_data)
+        #clear old values
+        self.files = []
+        self.file_contents = []
+        classification.remove_incompatible_files(self.directory)
+        file_names = os.listdir(self.directory)
         for fil in file_names:
             (name, ext) = os.path.splitext(fil)
             ex = ext[1:]
-            size = os.path.getsize(working_data + fil)
-            modif = os.path.getmtime(working_data + fil)
-            with file(working_data + fil) as f:
+            size = os.path.getsize(self.directory + fil)
+            modif = os.path.getmtime(self.directory + fil)
+            with file(self.directory + fil) as f:
                 contents = f.read()
             f = File(name, ex, size, modif)
             self.file_contents.append(contents)
@@ -297,7 +300,7 @@ class PopupWindow(wx.Frame):
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
             # check if you need to create a new classifier, or use a saved one.
             if self.chk_box.GetValue():
-                labels = classification.load_supervised_classifier(self.name_input.GetValue(),self.dir_input.GetValue(),
+                labels = classification.load_supervised_classifier(self.cls_input.GetValue(),
                                                           self.parent_window.olv.file_contents)
             else:
                 labels = classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue(),
