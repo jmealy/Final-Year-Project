@@ -14,11 +14,19 @@ from nltk.stem.porter import PorterStemmer
 from gensim import corpora, models
 from strip_20news_data import strip_dataset
 
+# ------------------ Supervised classifier methods---------------------------------#
 
-def create_supervised_classifier(classifier_name, traindata_path):
-    """
-    Create and save a classifier object using given name and training data
-    """
+
+def load_supervised_classifier(classifier_name, files):
+    """ Load classifier object from classifier directory"""
+    path_clf = 'classifiers/' + classifier_name + '.pkl'
+    with open(path_clf, 'rb') as fil:
+        classifier = pickle.load(fil)
+    return classifier.get_predictions(files)
+
+
+def create_supervised_classifier(classifier_name, traindata_path, files):
+
     remove_incompatible_files(traindata_path)
 
     # Load data and split to test/train
@@ -35,11 +43,14 @@ def create_supervised_classifier(classifier_name, traindata_path):
     ])
 
     # create classifier from training data and return with target names
-    cls = SupervisedClassifier(pipeline.fit(docs_train, y_train), dict(enumerate(train_data.target_names)))
-    save_classifier(cls, classifier_name)
+    classifier = SupervisedClassifier(pipeline.fit(docs_train, y_train), dict(enumerate(train_data.target_names)))
+    save_classifier(classifier, classifier_name)
+    return classifier.get_predictions(files)
+
+# ------------------ UnSupervised classifier methods---------------------------------#
 
 
-def create_lda_classifier(data_path, num_topics):
+def classify_unsupervised_lda(data_path, num_topics):
     """
     [tk]
     """
@@ -100,26 +111,14 @@ def create_lda_classifier(data_path, num_topics):
     return topic_classifications
 
 
-def classify(files, classifier_name):
-    """"""
-    classifier = load_classifier(classifier_name)
-    # Use classifier to get classification values.
-    return classifier.get_predictions(files)
-
-
-def load_classifier(classifier_name):
-    """ Load classifier object from classifier directory"""
-    path_clf = 'classifiers/' + classifier_name + '.pkl'
-    with open(path_clf, 'rb') as fil:
-        return pickle.load(fil)
-
-
 def save_classifier(classifier, classifier_name):
     """ Saves a classifier to the classifiers directory using name given by user"""
     path_clf = 'classifiers/' + classifier_name + '.pkl'
     with open(path_clf, 'wb') as output:
         pickle.dump(classifier, output, pickle.HIGHEST_PROTOCOL)
 
+
+# ------------------------- Classifier Classes ----------------------------------------------#
 
 class SupervisedClassifier:
     """
@@ -138,15 +137,15 @@ class SupervisedClassifier:
         return self.group_names.get
 
 
-class LdaClassifier:
-    """
-    """
-    def __init__(self, model, corpus):
-        self.model = model
-        self.corpus = corpus
-
-    def get_predictions(self, files):
-        """Returns list of predicted labels for the files"""
+# class LdaClassifier:
+#     """
+#     """
+#     def __init__(self, model, corpus):
+#         self.model = model
+#         self.corpus = corpus
+#
+#     def get_predictions(self, files):
+#         """Returns list of predicted labels for the files"""
 
 
 # MOVE TO ANOTHER MODULE

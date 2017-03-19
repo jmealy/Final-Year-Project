@@ -174,6 +174,8 @@ class PopupWindow(wx.Frame):
         self.chk_box = wx.CheckBox(panel)
         self.chk_box.Bind(wx.EVT_CHECKBOX, self.onselect_checkbox)
         self.cls_input = wx.ComboBox(panel, -1, '',  size=(135, -1))
+        self.display_classifiers()
+        self.cls_input.Bind(wx.EVT_COMBOBOX, self.onselect_cls_input)
         self.name_input = wx.TextCtrl(panel)
         self.dir_input = wx.TextCtrl(panel, size=(255, 30))
 
@@ -222,6 +224,17 @@ class PopupWindow(wx.Frame):
         topSizer.Add(bottom_sizer, flag=wx.ALIGN_RIGHT | wx.RIGHT, border=10)
         panel.SetSizer(topSizer)
 
+    def display_classifiers(self):
+        """Get all the existing classifiers and display in the combobox as options"""
+        self.cls_input.Clear()
+        for fil in os.listdir('classifiers/'):
+            # adds name of classifier file to combobox
+            self.cls_input.SetStringSelection(os.path.splitext(fil)[0])
+            self.cls_input.Append(os.path.splitext(fil)[0])
+
+    def onselect_cls_input(self, event):
+        self.ok_btn.Enable()
+
     def on_dir(self, event):
         """
         Show the DirDialog and print the user's choice to input box
@@ -249,7 +262,7 @@ class PopupWindow(wx.Frame):
             self.cls_input.Disable()
             self.name_input.Disable()
 
-        # if supervised text classifier is selected, enable relavent inputs
+        # if supervised text classifier is selected, enable relevant inputs
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
             self.dir_input.Enable()
             self.dir_btn.Enable()
@@ -258,16 +271,19 @@ class PopupWindow(wx.Frame):
             # Disable ok button until required information is input by user
             self.ok_btn.Disable()
             self.numtopics_input.Disable()
+            self.chk_box.SetValue(False)
 
     def onselect_checkbox(self, event):
         if self.chk_box.GetValue():
             self.cls_input.Enable()
             self.name_input.Disable()
             self.dir_input.Disable()
+            self.dir_btn.Disable()
         else:
             self.cls_input.Disable()
             self.name_input.Enable()
             self.dir_input.Enable()
+            self.dir_btn.Enable()
 
     def on_ok(self, event):
         """confirm selections. Create and save the new classifier"""
@@ -278,7 +294,15 @@ class PopupWindow(wx.Frame):
 
         # Create the new classifier using the appropriate function, depending on what classifier type is selected
         if self.type_input.GetValue() == 'Text Classifier (Supervised)':
-            classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue())
+            # check if you need to create a new classifier, or use a saved one.
+            if self.chk_box.GetValue():
+                labels = classification.load_supervised_classifier(self.name_input.GetValue(),self.dir_input.GetValue(),
+                                                          self.parent_window.olv.file_contents)
+            else:
+                labels = classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue(),
+                                                            self.parent_window.olv.file_contents)
+            self.parent_window.olv.set_classes(labels)
+
         if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
             num_topics = self.numtopics_input.GetValue()
             if not num_topics:
@@ -293,7 +317,7 @@ class PopupWindow(wx.Frame):
                                      wx.OK | wx.ICON_WARNING).ShowModal()
                     return
             # create lda model using working data and number of topics entered by the user.
-            topics = classification.create_lda_classifier(working_data, num_topics)
+            topics = classification.classify_unsupervised_lda(working_data, num_topics)
             self.parent_window.olv.set_classes(topics)
 
         # update parent window's classifier list
