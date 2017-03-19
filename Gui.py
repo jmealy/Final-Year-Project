@@ -51,11 +51,10 @@ class MainFrame(wx.Frame):
         #self.display_classifiers()
         #self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
-        # Button to classify files.
-        self.btn_export = wx.Button(self.panel, -1, "Classify Files")
-        # button is greyed out untill classifier is selected.
-        self.btn_export.Disable()
+        # Button to export files to structured directory based on classifications. Disable until labels are available.
+        self.btn_export = wx.Button(self.panel, -1, "Export Files")
         self.btn_export.Bind(wx.EVT_BUTTON, self.onselect_btn_export)
+        self.btn_export.Disable()
         # Button to create a custom classifier.
         self.btn_classify = wx.Button(self.panel, -1, "Create Classifier")
         self.btn_classify.Bind(wx.EVT_BUTTON, self.onselect_btn_classify)
@@ -291,7 +290,7 @@ class PopupWindow(wx.Frame):
 
     def on_ok(self, event):
         """confirm selections. Create and save the new classifier"""
-
+        labels = []
         # if name field is empty, use default name.
         if self.name_input.GetValue() == "":
             self.name_input.SetValue('new_classifier')
@@ -305,7 +304,6 @@ class PopupWindow(wx.Frame):
             else:
                 labels = classification.create_supervised_classifier(self.name_input.GetValue(), self.dir_input.GetValue(),
                                                             self.parent_window.olv.file_contents)
-            self.parent_window.olv.set_classes(labels)
 
         if self.type_input.GetValue() == 'Topic Modelling (Unsupervised)':
             num_topics = self.numtopics_input.GetValue()
@@ -321,10 +319,10 @@ class PopupWindow(wx.Frame):
                                      wx.OK | wx.ICON_WARNING).ShowModal()
                     return
             # create lda model using working data and number of topics entered by the user.
-            topics = classification.classify_unsupervised_lda(working_data, num_topics)
-            self.parent_window.olv.set_classes(topics)
-
+            labels = classification.classify_unsupervised_lda(working_data, num_topics)
         # update parent window's classifier list
+        self.parent_window.olv.set_classes(labels)
+        self.parent_window.btn_export.Enable()
         self.Close(True)
 
     def on_close(self, event):

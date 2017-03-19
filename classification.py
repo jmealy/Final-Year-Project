@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
-from gensim import corpora, models
+from gensim import corpora
 from strip_20news_data import strip_dataset
 
 # ------------------ Supervised classifier methods---------------------------------#
