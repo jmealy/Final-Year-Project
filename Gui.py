@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import wx
 import os
+from shutil import copyfile
 import time
 from ObjectListView import ObjectListView, ColumnDefn
 import classification
@@ -47,9 +48,6 @@ class MainFrame(wx.Frame):
         # Create a drop-down list menu containing filter options
         self.btn_import = wx.Button(self.panel, -1, "Import Files")
         self.btn_import.Bind(wx.EVT_BUTTON, self.onselect_btn_import)
-        #self.cb1 = wx.ComboBox(self.panel, -1, 'Choose Classifier',  size=(135, -1))
-        #self.display_classifiers()
-        #self.cb1.Bind(wx.EVT_COMBOBOX, self.onselect_cb1)
 
         # Button to export files to structured directory based on classifications. Disable until labels are available.
         self.btn_export = wx.Button(self.panel, -1, "Export Files")
@@ -81,7 +79,27 @@ class MainFrame(wx.Frame):
 
     def onselect_btn_export(self, event):
         """"""
-        # [tk] open up working files
+        dlg = wx.DirDialog(self, "Choose target directory:", style=wx.DD_DEFAULT_STYLE)
+        if dlg.ShowModal() == wx.ID_OK:
+            chosen_dir = dlg.GetPath() +'/'
+
+        src_dir = self.olv.directory
+        files = self.olv.files
+        for cls in self.olv.classes:
+            # create directory to hold files.
+            target_dir = chosen_dir + cls + "/"
+            if not os.path.exists(target_dir):
+                os.makedirs(target_dir)
+            # copy files of each label into the appropriate directory.
+            for f in files:
+                target_file = target_dir + f.name + "." + f.extension
+                src_file = src_dir + f.name + "." + f.extension
+                if f.classification == cls:
+                    copyfile(src_file, target_file)
+
+
+
+                    # create dump in the files
 
     def onselect_btn_import(self, event):
         """Import Files Button"""
@@ -111,10 +129,11 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.directory = ''
+        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/txt_sentoken/'
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
-        # self.set_files()  # Call method to populate the ListView.
+        self.classes = []
+        self.set_files()
 
     def set_files(self, data=None):
         """
@@ -149,6 +168,9 @@ class ListView(ObjectListView):
         """Assign classifications to files in list and display them."""
         for i, f in enumerate(self.files):
             f.classification = classes[i]
+        # self.classes is a list of all unique classes in the files. Used in export function.
+        self.classes = list(set(classes))
+        # Apply the classifications to the files.
         self.SetObjects(self.files)
 
 
@@ -333,7 +355,7 @@ class PopupWindow(wx.Frame):
 class File:
     def __init__(self, name, ext, size, mod):
         self.name = name
-        self.Extension = ext
+        self.extension = ext
         self.classification = None
         self.size = size
         self.last_modified = mod

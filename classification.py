@@ -14,7 +14,7 @@ from nltk.stem.porter import PorterStemmer
 from gensim import corpora
 from strip_20news_data import strip_dataset
 
-# ------------------ Supervised classifier methods---------------------------------#
+# ------------------ Supervised classifier methods--------------------------------- #
 
 
 def load_supervised_classifier(classifier_name, files):
