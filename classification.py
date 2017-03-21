@@ -101,12 +101,20 @@ def classify_unsupervised_lda(data_path, num_topics):
     corpus_tfidf = tfidf[corpus]
     topic_distributions = ldamodel[corpus_tfidf]
 
-    print(ldamodel.show_topics(num_topics=num_topics, num_words=5))
+    topic_names = []
+    for i, topic in enumerate(ldamodel.show_topics(num_topics=num_topics, num_words=5, formatted=False)):
+        # extract the topic words from the list of tuples
+        topic_words = [el[0] for el in topic[1]]
+        topic_names.append('Topic' + str(i) + ': ' + ' '.join(topic_words))
+        print topic_names
+
+    # print(ldamodel.show_topics(num_topics=num_topics, num_words=5, formatted=False))
 
     topic_classifications = []
+    # For each document, record the topic that best describes it.
     for i in topic_distributions:
         best_topic_index = max(i, key=lambda x:x[1])[0]
-        topic_classifications.append("Topic " + str(best_topic_index))
+        topic_classifications.append(topic_names[best_topic_index])
 
     return topic_classifications
 

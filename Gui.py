@@ -97,10 +97,6 @@ class MainFrame(wx.Frame):
                 if f.classification == cls:
                     copyfile(src_file, target_file)
 
-
-
-                    # create dump in the files
-
     def onselect_btn_import(self, event):
         """Import Files Button"""
         dlg = wx.DirDialog(self, "Choose a directory:",
@@ -129,7 +125,7 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/txt_sentoken/'
+        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/3topics/'
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
         self.classes = []
@@ -145,22 +141,19 @@ class ListView(ObjectListView):
         classification.remove_incompatible_files(self.directory)
         file_names = os.listdir(self.directory)
         for fil in file_names:
-            (name, ext) = os.path.splitext(fil)
-            ex = ext[1:]
             size = os.path.getsize(self.directory + fil)
             modif = os.path.getmtime(self.directory + fil)
             with file(self.directory + fil) as f:
                 contents = f.read()
-            f = File(name, ex, size, modif)
+            f = File(fil, size, modif)
             self.file_contents.append(contents)
             self.files.append(f)
 
         self.SetColumns([
             ColumnDefn("Name", "left", 220, "name", isSpaceFilling=True),
-            ColumnDefn("Extension", "left", 100, "Extension"),
             ColumnDefn("Size", "left", 100, "size"),
             ColumnDefn("Last Modified", "left", 150, "last_modified"),
-            ColumnDefn("Classification", "left", 150, "classification")
+            ColumnDefn("Classification", "left", 300, "classification")
         ])
         self.SetObjects(self.files)
 
@@ -341,7 +334,7 @@ class PopupWindow(wx.Frame):
                                      wx.OK | wx.ICON_WARNING).ShowModal()
                     return
             # create lda model using working data and number of topics entered by the user.
-            labels = classification.classify_unsupervised_lda(working_data, num_topics)
+            labels = classification.classify_unsupervised_lda(self.parent_window.olv.directory, num_topics)
         # update parent window's classifier list
         self.parent_window.olv.set_classes(labels)
         self.parent_window.btn_export.Enable()
@@ -353,9 +346,8 @@ class PopupWindow(wx.Frame):
 
 
 class File:
-    def __init__(self, name, ext, size, mod):
+    def __init__(self, name, size, mod):
         self.name = name
-        self.extension = ext
         self.classification = None
         self.size = size
         self.last_modified = mod
