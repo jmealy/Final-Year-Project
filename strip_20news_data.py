@@ -1,7 +1,5 @@
 import os
 import re
-from string import digits
-
 
 def strip_newsgroup_header(text):
     """
@@ -61,4 +59,19 @@ def strip_dataset(dataset):
 
     return stripped
 
+
+data_path = '/home/james/PycharmProjects/final-year-project/working_data/20news-bydate-test/'
+
+
+for dir in os.listdir(data_path):
+    for fil in os.listdir(data_path + dir):
+        with open(data_path + dir + '/' + fil, 'r+') as f:
+            text = f.read()
+            text = strip_newsgroup_header(text)
+            text = strip_newsgroup_quoting(text)
+            text = strip_newsgroup_footer(text)
+            text = strip_digits(text)
+            f.seek(0)
+            f.write(text)
+            f.truncate()
 

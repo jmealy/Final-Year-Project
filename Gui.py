@@ -125,7 +125,7 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/3topics/'
+        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/20news_4topics/'
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
         self.classes = []
@@ -135,7 +135,7 @@ class ListView(ObjectListView):
         """
         Description needed.[tk]
         """
-        #clear old values
+        # clear old values
         self.files = []
         self.file_contents = []
         classification.remove_incompatible_files(self.directory)

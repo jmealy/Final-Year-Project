@@ -32,7 +32,7 @@ def create_supervised_classifier(classifier_name, traindata_path, files):
     # Load data and split to test/train
     train_data = load_files(traindata_path, shuffle=False)
     # test variables unused. Probably a cleaner way of doing this.
-    docs_train, docs_test, y_train, y_test = train_test_split(
+    train_documents, docs_test, train_labels, y_test = train_test_split(
         train_data.data, train_data.target, test_size=0.0, random_state=True)
 
     # Build a vectorizer / classifier pipeline that filters out tokens
@@ -42,8 +42,10 @@ def create_supervised_classifier(classifier_name, traindata_path, files):
         ('clf', LinearSVC(C=1000)),
     ])
 
+    processed_documents = pipeline.fit(train_documents, train_labels)
+
     # create classifier from training data and return with target names
-    classifier = SupervisedClassifier(pipeline.fit(docs_train, y_train), dict(enumerate(train_data.target_names)))
+    classifier = SupervisedClassifier(pipeline.fit(train_documents, train_labels), dict(enumerate(train_data.target_names)))
     save_classifier(classifier, classifier_name)
     return classifier.get_predictions(files)
 
@@ -86,8 +88,6 @@ def classify_unsupervised_lda(data_path, num_topics):
         tokens = [p_stemmer.stem(i) for i in tokens]
         # remove small words
         tokens = [i for i in tokens if len(i) > 2]
-        # remove digits
-        tokens = [x for x in tokens if not any(c.isdigit() for c in x)]
         # add tokens to list
         tokenized_documents.append(tokens)
 
@@ -132,10 +132,12 @@ def save_classifier(classifier, classifier_name):
 
 class SupervisedClassifier:
     """
+    An to hold a classifier with a method for predicting the labels of files.
+    Contains a map of label indices  to strings called labels.
     """
-    def __init__(self, cls, groups):
+    def __init__(self, cls, labels):
         self.cls = cls
-        self.label_names = groups
+        self.label_names = labels
 
     def get_predictions(self, files):
         """Returns list of predicted labels for the files"""
