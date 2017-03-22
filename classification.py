@@ -186,7 +186,7 @@ def remove_incompatible_files(path):
         raw = data.lower()
         tokens = tokenizer.tokenize(raw)
         try:
-            tokens = [p_stemmer.stem(i) for i in tokens]
+            tokens = p_stemmer.stem(tokens[0])
         except UnicodeDecodeError:
             incompatible_files.append(path + fil)
 
