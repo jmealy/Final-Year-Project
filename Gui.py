@@ -92,8 +92,8 @@ class MainFrame(wx.Frame):
                 os.makedirs(target_dir)
             # copy files of each label into the appropriate directory.
             for f in files:
-                target_file = target_dir + f.name + "." + f.extension
-                src_file = src_dir + f.name + "." + f.extension
+                target_file = target_dir + f.name
+                src_file = src_dir + f.name
                 if f.classification == cls:
                     copyfile(src_file, target_file)
 
@@ -138,7 +138,7 @@ class ListView(ObjectListView):
         # clear old values
         self.files = []
         self.file_contents = []
-        classification.remove_incompatible_files(self.directory)
+        classification.remove_sklearn_incompatible(self.directory)
         file_names = os.listdir(self.directory)
         for fil in file_names:
             size = os.path.getsize(self.directory + fil)

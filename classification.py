@@ -12,7 +12,7 @@ from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 from gensim import corpora
-from strip_20news_data import strip_dataset
+from strip_20newsgroups import strip_dataset
 
 # ------------------ Supervised classifier methods--------------------------------- #
 
@@ -27,7 +27,7 @@ def load_supervised_classifier(classifier_name, files):
 
 def create_supervised_classifier(classifier_name, traindata_path, files):
 
-    remove_incompatible_files(traindata_path)
+    remove_sklearn_incompatible(traindata_path)
 
     # Load data and split to test/train
     train_data = load_files(traindata_path, shuffle=False)
@@ -54,10 +54,12 @@ def classify_unsupervised_lda(data_path, num_topics):
     """
     [tk]
     """
-
+    remove_nltk_incompatible(data_path)
     if not num_topics:
         num_topics = 5
         print "not num_topics"
+
+    remove_nltk_incompatible(data_path)
 
     documents = []
     for fil in os.listdir(data_path):
@@ -147,19 +149,8 @@ class SupervisedClassifier:
         return self.label_names.get
 
 
-# class LdaClassifier:
-#     """
-#     """
-#     def __init__(self, model, corpus):
-#         self.model = model
-#         self.corpus = corpus
-#
-#     def get_predictions(self, files):
-#         """Returns list of predicted labels for the files"""
-
-
 # MOVE TO ANOTHER MODULE
-def remove_incompatible_files(path):
+def remove_sklearn_incompatible(path):
     """
     Finds the filenames that are incompatible with `CountVectorizer`. These files are usually not compatible with UTF8!
     parameter `path` is the absolute or relative path of the training data's root directory.
@@ -177,11 +168,24 @@ def remove_incompatible_files(path):
         except ValueError:
             pass
 
+    # remove the incompatible files.
+    for f in incompatible_files:
+        print 'deleting incompatible files'
+        os.remove(f)
+
+
+def remove_nltk_incompatible(path):
+    """
+    Finds the filenames that are incompatible with `CountVectorizer`. These files are usually not compatible with UTF8!
+    parameter `path` is the absolute or relative path of the training data's root directory.
+    returns a list of strings.
+    """
+    incompatible_files = []
     # get files incompatible with nltk
     tokenizer = RegexpTokenizer(r'\w+')
     p_stemmer = PorterStemmer()
     for fil in os.listdir(path):
-        with file(path + fil) as f:
+        with open(path + '/' + fil) as f:
             data = f.read()
         raw = data.lower()
         tokens = tokenizer.tokenize(raw)

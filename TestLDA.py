@@ -5,7 +5,7 @@ import gensim
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.porter import PorterStemmer
 from stop_words import get_stop_words
-from strip_20news_data import strip_dataset
+from strip_20newsgroups import strip_dataset
 
 
 def create_lda_model(name, data_path):

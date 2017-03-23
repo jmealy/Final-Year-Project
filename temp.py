@@ -12,7 +12,7 @@ from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 from gensim import corpora
-from strip_20news_data import strip_dataset
+from strip_20newsgroups import strip_dataset
 
 # ------------------ Supervised classifier methods--------------------------------- #
 
