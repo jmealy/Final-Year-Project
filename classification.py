@@ -12,8 +12,6 @@ from nltk.tokenize import RegexpTokenizer
 from stop_words import get_stop_words
 from nltk.stem.porter import PorterStemmer
 from gensim import corpora
-from strip_20newsgroups import strip_dataset
-
 # ------------------ Supervised classifier methods--------------------------------- #
 
 
@@ -67,7 +65,8 @@ def classify_unsupervised_lda(data_path, num_topics):
             documents.append(f.read())
 
     # strip documents of digits, headers, etc.
-    documents = strip_dataset(documents)
+    # documents = strip_dataset(documents)
+
     # tokenizer
     tokenizer = RegexpTokenizer(r'\w+')
     # create English stop words list
@@ -76,7 +75,6 @@ def classify_unsupervised_lda(data_path, num_topics):
     p_stemmer = PorterStemmer()
     # list for tokenized documents in loop
     tokenized_documents = []
-
     # loop through document list
     for i in documents:
         # clean and tokenize document string
