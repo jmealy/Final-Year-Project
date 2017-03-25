@@ -125,7 +125,7 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/20news_4topics/'
+        self.directory = 'working_data/movie_reviews_test/'
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
         self.classes = []
@@ -142,7 +142,7 @@ class ListView(ObjectListView):
         file_names = os.listdir(self.directory)
         for fil in file_names:
             size = os.path.getsize(self.directory + fil)
-            modif = os.path.getmtime(self.directory + fil)
+            modif = time.ctime(os.path.getmtime(self.directory + fil))
             with file(self.directory + fil) as f:
                 contents = f.read()
             f = File(fil, size, modif)
