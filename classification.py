@@ -25,7 +25,7 @@ def load_supervised_classifier(classifier_name, files):
 
 def create_supervised_classifier(classifier_name, traindata_path, files):
 
-    remove_sklearn_incompatible(traindata_path)
+    #remove_sklearn_incompatible(traindata_path)
 
     # Load data and split to test/train
     train_data = load_files(traindata_path, shuffle=False)
@@ -71,6 +71,8 @@ def classify_unsupervised_lda(data_path, num_topics):
     tokenizer = RegexpTokenizer(r'\w+')
     # create English stop words list
     en_stop = get_stop_words('en')
+    #en_stop.append('can')
+
     # Create p_stemmer of class PorterStemmer
     p_stemmer = PorterStemmer()
     # list for tokenized documents in loop
@@ -97,14 +99,16 @@ def classify_unsupervised_lda(data_path, num_topics):
     corpus = [dictionary.doc2bow(text) for text in tokenized_documents]
 
     # generate LDA model
-    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=num_topics, id2word=dictionary, passes=20)
+    ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=num_topics,
+                                               id2word=dictionary, passes=20)
 
     tfidf = gensim.models.TfidfModel(corpus)
     corpus_tfidf = tfidf[corpus]
     topic_distributions = ldamodel[corpus_tfidf]
 
     topic_names = []
-    for i, topic in enumerate(ldamodel.show_topics(num_topics=num_topics, num_words=5, formatted=False)):
+    for i, topic in enumerate(ldamodel.show_topics(num_topics=num_topics,
+                                                   num_words=5, formatted=False)):
         # extract the topic words from the list of tuples
         topic_words = [el[0] for el in topic[1]]
         topic_names.append('Topic' + str(i) + ': ' + ' '.join(topic_words))
@@ -157,6 +161,7 @@ def remove_sklearn_incompatible(path):
     # First get files incompatible with sklearn.
     count_vector = sklearn.feature_extraction.text.CountVectorizer()
     files = sklearn.datasets.load_files(path)
+
     incompatible_files = []
     for i in range(len(files.filenames)):
         try:
@@ -188,7 +193,9 @@ def remove_nltk_incompatible(path):
         raw = data.lower()
         tokens = tokenizer.tokenize(raw)
         try:
-            tokens = p_stemmer.stem(tokens[0])
+            #tokens = p_stemmer.stem(tokens[0])
+            tokens = [p_stemmer.stem(i) for i in tokens]
+
         except UnicodeDecodeError:
             incompatible_files.append(path + fil)
 

@@ -4,10 +4,10 @@ import os
 from shutil import copyfile
 import time
 from ObjectListView import ObjectListView, ColumnDefn
+from hurry.filesize import size, alternative
 import classification
 
 ID_EXIT = 200
-working_data = 'working_data/3topics/'
 
 
 class FileManager(wx.App):
@@ -54,7 +54,7 @@ class MainFrame(wx.Frame):
         self.btn_export.Bind(wx.EVT_BUTTON, self.onselect_btn_export)
         self.btn_export.Disable()
         # Button to create a custom classifier.
-        self.btn_classify = wx.Button(self.panel, -1, "Create Classifier")
+        self.btn_classify = wx.Button(self.panel, -1, "Classify Files")
         self.btn_classify.Bind(wx.EVT_BUTTON, self.onselect_btn_classify)
 
         # Create top sizer and the two inner sizers to hold the list and header bar
@@ -125,7 +125,7 @@ class MainFrame(wx.Frame):
 class ListView(ObjectListView):
     def __init__(self, parent):
         ObjectListView.__init__(self, parent,  wx.ID_ANY, style=wx.LC_REPORT | wx.SUNKEN_BORDER)
-        self.directory = 'working_data/movie_reviews_test/'
+        self.directory = '/home/james/PycharmProjects/final-year-project/working_data/20news_2topic/'
         self.files = []  # Files being displayed in the ListView.
         self.file_contents = []
         self.classes = []
@@ -139,13 +139,14 @@ class ListView(ObjectListView):
         self.files = []
         self.file_contents = []
         classification.remove_sklearn_incompatible(self.directory)
+        classification.remove_nltk_incompatible(self.directory)
         file_names = os.listdir(self.directory)
         for fil in file_names:
-            size = os.path.getsize(self.directory + fil)
+            fsize = size(os.path.getsize(self.directory + fil), system=alternative)
             modif = time.ctime(os.path.getmtime(self.directory + fil))
             with file(self.directory + fil) as f:
                 contents = f.read()
-            f = File(fil, size, modif)
+            f = File(fil, fsize, modif)
             self.file_contents.append(contents)
             self.files.append(f)
 
@@ -229,7 +230,7 @@ class PopupWindow(wx.Frame):
 
         # Define "close" & "ok" buttons, and wrap in a sizer (bottom sizer).
         bottom_sizer = wx.BoxSizer(wx.HORIZONTAL)
-        self.ok_btn = wx.Button(panel, label='Ok', size=(70, 30))
+        self.ok_btn = wx.Button(panel, label='Classify', size=(70, 30))
         self.ok_btn.Disable()
         self.ok_btn.Bind(wx.EVT_BUTTON, self.on_ok)
         close_btn = wx.Button(panel, label='Close', size=(70, 30))

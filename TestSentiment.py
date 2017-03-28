@@ -45,7 +45,8 @@ def classify():
         ('clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42)),
     ])
     avg = 0
-    for i in range(1, 11):
+    runs = 10
+    for i in range(0, runs):
         docs_train, docs_test, y_train, y_test = train_test_split(
             dataset.data, dataset.target, test_size=0.25)
 
@@ -58,9 +59,7 @@ def classify():
         print i, accuracy
         avg += accuracy
 
-        # print(metrics.classification_report(y_test, y_predicted,
-        #                                     target_names=dataset.target_names))
-    print avg/10
+    print avg/runs
 
 
 if __name__ == "__main__":

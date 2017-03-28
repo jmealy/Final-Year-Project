@@ -47,18 +47,6 @@ def strip_digits(doc):
     return doc.translate(None, '0123456789')
 
 
-# def strip_dataset(dataset):
-#     stripped = []
-#     for doc in dataset:
-#         doc = strip_newsgroup_header(doc)
-#         doc = strip_newsgroup_quoting(doc)
-#         doc = strip_newsgroup_footer(doc)
-#         doc = strip_digits(doc)
-#         stripped.append(doc)
-#
-#     return stripped
-
-
 data_path = '/home/james/PycharmProjects/final-year-project/working_data/20news-bydate-test/'
 
 
