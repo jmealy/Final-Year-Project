@@ -1,0 +1,5 @@
+Does any one know if the  is timing/pin compatible with the .. 
+It seems the  has in iheirent bug with cts/rts handshaking and i need
+a suitable pin replacement to put in my serial card... possibly a buffered
+version perhaps?
+

@@ -1,0 +1,27 @@
+From: push@media.mit.edu (Pushpinder Singh)
+Subject: re: Centris  Video Problem - I'm having it also!
+Date: Sat,  Apr  :: GMT
+ 
+ 
+I'm having exactly the same problem.  Again, it's fine when I switch to 
+colors or a smaller monitor.  My configuration is:
+ 
+Model: Centris  with  MB/ HD,  VRAM, no cards
+Monitor: MAG MXF with " monitor adaptor (for resolution of *)
+ 
+I just discovered the problem a little while ago after plugging in my
+new MAG monitor.  It seems to appear either when scrolling through a
+window or when using Alpha or Word and I enter <return>.
+ 
+My guess is bad VRAMs as well.  I really hope it isn't a design flaw.  Is
+anyone at Apple listening?
+ 
+Pushpinder Singh
+push@media.mit.edu
+ 
+***********************************
+
+    Try finding an init called Basic color monitor.  This should clear
+up some probs with Centris 's and vga type monitors.  I know it
+exists, somewhere I have a binhexed copy, but I don't know where and
+never got around to installing it.  I have this problem on my sony .

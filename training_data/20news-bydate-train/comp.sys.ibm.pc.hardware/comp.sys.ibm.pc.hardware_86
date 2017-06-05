@@ -1,0 +1,37 @@
+To following up my own note:
+: :
+: : It looks like everything works as advertised but I am disappointed
+: : with the speed.  I'm using an Intel  internal .k modem in the PC
+: : with Telebit .k on the Unix end, which are currently limited to
+: : .Kbits by the Unix com link. To get a quantitative comparison, I
+: : did 'cat file' where "file" is  kbyte uncompressed ascii text, and
+: : it took  seconds to scroll through an X window over the modem link,
+: :  chars/sec.  Using the identical hardware and Procomm+FW the same
+: : "cat file' takes  seconds,  chars/sec.  BTW, I use NCD PC XView
+: : on my PC at work (HP) every day for the same Unix access from a PC over
+: : a LAN and like that just fine.  The same 'cat file' scrolls by in
+: : ~ seconds on the LAN connection.
+
+I just tried a few experiments. I cat'd a -byte file ( lines)
+under various scenarios:
+
+PC-Xview for DOS in a full-screen OS/ window (xx):     sec
+Telix (DOS) in an OS/ window (xsx):                   sec!
+Telix (DOS) is a full-screen OS/ window (standard VGA):         sec
+Telix (DOS) in a Windows . window (xx):              sec
+UW/WIN in a seamless OS/ window (xx):        gave up after  min!
+UW/WIN in Windows . (xx):           faster, but gave up after  min
+UW/WIN in a seamless OS/ window using pg        sec, could have been a
+                                                little faster (I had to keep
+                                                hitting the space bar)
+
+I was using an ATI Wonder XL video card, by the way.
+
+So PC-Xview for DOS looks pretty good (and the line-by-line scrolling
+in OS/ desktop looks pathetic, although full-page redraws are pretty
+good).
+
+I tried it under PC-Xview using my normal (xbold or x) font,
+and with a very small font, and there was no difference in the times.
+The modem receive light was on pretty solidly, so it looks like the
+bottleneck was the -baud modem, not the screen drawing.

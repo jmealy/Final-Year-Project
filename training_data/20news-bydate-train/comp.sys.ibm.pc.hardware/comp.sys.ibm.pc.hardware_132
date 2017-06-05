@@ -1,0 +1,8 @@
+On my DX- (really , not DX), my AT bus is set to CLK/.
+
+At . MHz, I have no problems.  Soundblaster Pro, Zoom . FXM, RLL
+controller, etc.  All work fine.
+
+If I set it to  ( MHz), I simply don't get past the POST routines.
+
+I doubt you could actually damage much by playing with it.

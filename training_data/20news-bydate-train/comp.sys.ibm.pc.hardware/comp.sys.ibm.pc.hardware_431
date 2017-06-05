@@ -1,0 +1,34 @@
+I am trying to help a friend of mine get the second serial port on his DTK
+I/O Plus II card working and it does not want to cooperate. The documentation
+is no help at all. As an example, it says 'The serial port can be changed to
+COM from COM by moving jumpers.' but does not say what jumpers to move!! :-(
+
+There are  banks of jumpers. The first one is labeled as follows:
+C
+C
+S
+P
+P
+G
+
+The second bank is labeled "IRQ" and has the following labels:
+C
+S
+
+
+S
+C
+S
+
+I have determined that the C & C jumpers tell it to address the first
+serial port as COM or COM. The P,P jumpers tell it to use the printer
+port as LPT or LPT. I am guessing that the "G" enables the game port and
+the "S" SHOULD enable the second serial port, but I can't get it to work. I
+have tried numerous setting on the IRQ bank without success. I assume that
+this bank must tell the card which IRQ's to use for both ports, but I don;t
+know how.  Any suggestions would be greatly appreciated!!
+
+EBD
+-- 
+Elliot Dierksen   "Is that a real poncho... I mean is that a Mexican poncho or
+                   is that a Sears  poncho?  Hmmm... no foolin'..." -- F. Zappa

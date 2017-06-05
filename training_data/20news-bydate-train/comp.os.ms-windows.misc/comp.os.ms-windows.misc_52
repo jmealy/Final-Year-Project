@@ -1,0 +1,27 @@
+I don't believe IRQ is the problem. I tried a mouse on COM, IRQ (the
+usual place) and it still did not like it. Simply, Windows seems to only
+support mice on COM or COM. The funny part is, though, that
+Microsoft's own mouse driver (.xx) was quite happy with my mouse
+sitting on COM. Why can't Windows use the mouse driver, or at least
+support COM? :-)
+
+
+I've tried this too. Actually, I wanted to be able to use my second
+modem (COM/IRQ) from Windows. It still will not talk to that modem. I
+created two profiles, AMSTRAD (for my Amstrad modem on COM/IRQ) and
+MAESTRO (for my Maestro on COM/IRQ). It will not talk to the Maestro
+at all.
+
+
+Nor here. (Windows .).
+
+
+I've seen nothing like that. I've experimented with Logitech's mouse
+driver too, with no sucess.
+
+
+If you have a SoundBlaster Pro, it should support IRQ as well.
+Finally, a board that supports IRQs >. The only one I have (except my
+IDE controller).
+
+hamish

@@ -1,0 +1,632 @@
+Thanks to all who responded to my original post.  I got the number for
+Western Digital tech support and determined that I need to upgrade the
+BIOS to the Super BIOS.  It will handle hard drives with up to  read/
+write heads and up to  cylinders.  The upgrade is $, payable by
+check or money order.  Send to:
+
+	Western Digital Corporation
+	Technical Support Group
+	P.O. Box 
+	Irvine, CA  -
+
+The Super BIOS is for any WD XT hard drive controller card in the
+WD series.
+
+The BIOS on my system would only handle up to mb drives.
+
+The responses to my request for help follow my .sig.  Warning: It's long.
+
+Keith
+
+--
+_____________________________
+__-----____--___--__-----____	D. Keith Rice
+__--__--___--__--___--__--___	University of North Texas
+__--___--__--_--____--___--__	Department of Computer Science
+__--___--__----_____--__--___	Denton, Texas, USA
+__--___--__--_--____--_--____
+__--__--___--__--___--__--___	drice@ponder.csci.unt.edu
+__-----____--___--__--___--__	drice@cs.unt.edu
+_____________________________
+
+<========================== responses below ==========================>
+
+From ravalent@mailbox.syr.edu Sat Apr   :: 
+Received: from mailbox.syr.EDU by ponder (./.)
+	id AA; Sat,  Apr  :: -
+From: ravalent@mailbox.syr.edu (Bob Valentine)
+Received: from mothra.syr.EDU by mailbox.syr.edu (./CNS)
+	id AA; Sat,  Apr  :: EST
+Received: by mothra.syr.EDU (./Spike-.)
+	id AA; Sat,  Apr  :: EST
+Date: Sat,  Apr  :: EST
+Message-Id: <.AA@mothra.syr.EDU>
+To: drice@ponder
+Status: OR
+
+To: drice@ponder.csci.unt.edu
+Subject: Re: Drive/Controller Compatibility
+Newsgroups: comp.sys.ibm.pc.hardware
+In-Reply-To: <drice.@ponder>
+Organization: Syracuse University, Syracuse, NY
+Cc: 
+
+
+     Ah, finally a question I can answer.   I mess with this older
+stuff alot.   Kinda fun.  )
+
+     First problem I can forsee is that the ST- will not be
+compadible with that WD card unless it has the right bios rom.  
+
+    Check the numbers on it.  It should be the only non-smt chip on
+the board.  Slightly below center, and left.    The bios should read 
+either :     -- or
+             --x
+
+     If the last  digits are , you got problems.
+
+
+    Looks right.   W and W are factory jumped (with a trace) between
+pins  and  to select the primary controller address.
+
+
+    Looks right.
+  
+[art deleted]
+
+
+      I notice you left out the S jumper table settings.   Those are
+what control what drive the controller thinks it has.   If you have
+the -- rom, set it like this:
+
+               + +    open
+               + +    open             
+               + +    open        
+               + +    open
+               + +    closed
+               + +    closed
+               + +    open
+               + +    open
+
+    Note:   those are how WD runs the numbers on the jumper block.
+Top to bottom.   +'s represent the jumper pins.    Pins ,, and 
+select the first drive setting (drive ) and pins , and  select the
+second drive (drive ).   
+
+      If you have the - rom, it's a auto-config, and I'll have
+to look up how to do it... I don't have the big book right here.
+
+
+      See above.  You might have problems if the S jumpers are not
+right.   Also,  at the risk of being insulting, make sure the cables
+are on right and good. ).    On the jumper on the , try moving it
+to the opposite side of the drive.    It's one or the other.   
+     The narrow data cable goes to J.   I've thrown it on J a few
+times and banged my head for a day.....
+
+
+     Dunno.    IBM roms had to be later than //.   A quick way
+to check is to boot dos and run debug.   Enter:
+       
+        -d f:fff fffc    (the - is the debug prompt)
+   
+    This will return the rom date, if it's of any use.
+
+
+      If I oversimplified any of the above, I appologize.     It's
+just hard to know what caliber of person I'm talking to. ).
+
+                     -->   Bob Valentine  <--  
+                  --> ravalent@mailbox.syr.edu <--  
+
+
+
+From chpp@unitrix.utr.ac.za Mon Apr   :: 
+Received: from unitrix.utr.ac.za by ponder (./.)
+	id AA; Mon,  Apr  :: -
+Received: by unitrix.utr.ac.za (Smail... #)
+	id mnfpMA-XC; Mon,  Apr  : GMT
+Message-Id: <mnfpMA-XC@unitrix.utr.ac.za>
+From: chpp@unitrix.utr.ac.za (Prof P. Piacenza)
+Subject: ST
+To: drice@ponder
+Date: Mon,  Apr  :: + (GMT)
+X-Mailer: ELM [version . PL]
+Mime-Version: .
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: bit
+Content-Length:      
+Status: OR
+
+
+If you are using a TWISTED -way cable then move the jumper 
+on your drive to the neighbouring pins   :::::::.  Make sure that
+the twisted cable is for a hard disk (and not a floppy disk) - the
+coloured stripe (pin ) should be furthest from the twist.
+
+This may also help.
+
+
+                             PRODUCTS FOR XT SYSTEMS
+     
+     
+     HARD DISK CONTROLLERS FOR MFM HARD DISK DRIVES
+                                  Reference NOTE .
+     
+          
+          WDA-WX, feature FR - Half-slot size hard disk controller 
+          card with an ST/ST interface.  It supports  MFM drives 
+          with up to  heads and  cylinders and is jumper 
+          configurable for secondary addressing and default drive tables.  
+          Built in ROM BIOS supports non-standard drive types, virtual 
+          drive formatting, dual drive operation, bad track formatting and 
+          dynamic formatting.  This board features a power connector for 
+          filecard applications and it will also operate in AT systems. 
+          Please note that this controller card will be unavailable from 
+          the manufacturer (Western Digital) after March, .  Reference 
+          NOTE .
+          
+          WDXT-GEN, feature FR - Half-slot size hard disk controller 
+          card with an ST/ST interface.  It  supports  MFM hard 
+          disk drives with up to  heads and  cylinders.  Built-in ROM 
+          BIOS supports non-standard drive types, virtual drive 
+          formatting, dual drive operation, bad track formatting and 
+          dynamic formatting.  Please note that this controller card will 
+          be unavailable from the manufacturer (Western Digital) after 
+          March, .
+          
+          WDA-WX, feature FR - Half-slot size disk controller 
+          card  with an ST/ST interface.  It supports  MFM drives 
+          with up to  heads and  cylinders and is jumper 
+          configurable for secondary addressing and default drive tables.  
+          Built in ROM BIOS supports non-standard drive types, virtual 
+          drive formatting, dual drive operation, bad track formatting and 
+          dynamic formatting.  This board features a power connector for 
+          filecard applications and it will also operate in AT systems.  
+          Reference NOTE .
+          
+          WDXT-GEN, feature FR - Half-slot size hard disk controller   
+          card with an ST/ST interface.  It supports  MFM hard disk 
+          drives with up to  heads and  cylinders.  Built-in ROM BIOS 
+          supports non-standard drive types, virtual drive formatting, 
+          dual drive operation, bad track formatting and dynamic 
+          formatting.  Reference NOTE .
+          
+          
+     
+     HARD DISK CONTROLLERS FOR RLL HARD DISK DRIVES
+                                  Reference NOTE .
+     
+          
+          WD-X, feature FR - Half-slot size hard disk controller 
+          card with an ST/ST interface.  It supports  RLL hard disk 
+          drives with up to  heads and  cylinders and is jumper 
+          configurable for secondary addressing and default drive tables.  
+          Built in ROM BIOS supports non-standard drive types, virtual 
+          drive formatting, dual drive operation, bad track formatting and 
+          dynamic formatting.  This board features a power connector for 
+          filecard applications and it will also operate in AT systems.   
+          Please note that this controller card will be unavailable from 
+          the manufacturer (Western Digital) after March, .  Reference 
+          NOTE .
+          
+          WDA-X, feature R - Half-slot size hard disk controller 
+          with an ST/ST interface.  It supports  RLL drives with up 
+          to  heads and  cylinders. Built-in ROM BIOS supports non-
+          standard drive types, virtual drive formatting, bad track 
+          formatting and dynamic formatting.  Please note that this 
+          controller card will be unavailable from the manufacturer     
+          (Western Digital) after March, .
+          
+          WD-X, feature FR - Half-slot size hard disk controller  
+          card with an ST/ST interface.  It supports  RLL hard    
+          disk drives with up to  heads and  cylinders and is jumper 
+          configurable for secondary addressing and default drive tables.  
+          Built in ROM BIOS supports non-standard drive types, virtual    
+          drive formatting, dual drive operation, bad track formatting     
+          and dynamic formatting.  This board features a power connection 
+          for filecard applications and it will also operate in AT 
+          systems.  Reference NOTE .
+          
+          WDA-X, feature FR - Half-slot size hard disk 
+          controller  with an ST/ST interface.  It supports  RLL 
+          drives with up to  heads and  cylinders.  Built-in ROM 
+          BIOS supports non-standard drive types, virtual drive 
+          formatting, bad track formatting and dynamic formatting.
+          
+          NOTE :  AT&T  - The AT&T  and the AT&T  PLUS 
+          contain system BIOS chips that support the hard disk drive.  
+          When using a Western Digital XT controller card the system will 
+          not "boot."  To solve this problem, one of the ROM BIOS chips 
+          must be disabled.  To disable the BIOS on your Western Digital  
+          XT controller card, you must remove the jumper at position W- 
+          or add a jumper at position R- (depending on which model of XT 
+          controller you are using).
+          
+                                       --
+
+
+          
+          NOTE :  TANDY  SYSTEMS - The WDA-WX, WDA-WX, 
+          WDXT-GEN and the WD-X can be modified to operate in 
+          Tandy  series computers, models SX, TX and the original or 
+          "A" version.  These computers utilize an interrupt of  (IRQ) 
+          instead of IRQ, the IBM standard.  To modify the WDA-WX or 
+          the WD-X to operate in these systems, you must cut the 
+          etch between pin  and pin  at jumper position W-.  Then 
+          solder pin  and pin  at the position (W-).  To complete the 
+          modification, a jumper must be added to position  of switch S- 
+          ( rows of  pins).  PLEASE NOTE THAT ANY PHYSICAL MODIFICATION 
+          TO YOUR WESTERN DIGITAL HARD DISK CONTROLLER VOIDS THE WARRANTY 
+          ON YOUR BOARD.  To modify the WDA-WX, WDXT-GEN or the 
+          WD-X for your Tandy  system, a zero ohm resister must 
+          be soldered to jumper position W-.  This will change the 
+          interrupt from IRQ to IRQ.
+     
+     
+     XT CONTROLLERS FOR FLOPPY DISK DRIVES
+     
+          
+          WDA-FOX - Half-slot floppy disk controller for XT or AT  
+          systems.  Four versions of the board are available:
+                Feature F supports two floppy disk drives.
+                Feature F supports four floppy disk drives and includes 
+                an optional -pin control, data and power connector and 
+                an optional -pin power connector.
+                Feature F supports two floppy disk drives and includes
+                a ROM BIOS that will enable your system to recognize 
+                floppy disk drive that may not be supported by your AT
+                system ROM BIOS.  The optional ROM BIOS will also allow
+                this controller card to operate high density floppy disk
+                drives in an XT system.
+                Feature F supports four floppy disk drives and includes
+                an optional -pin control, data and power connector, an
+                optional -pin power connector and a ROM BIOS that will 
+                enable your system to recognize floppy disk drives that 
+                may not be supported by your AT system ROM BIOS.  The 
+                optional ROM BIOS will also allow this controller card to 
+                operate high density floppy disk drives in an XT system.
+                
+                
+                                       --
+
+
+
+                             PRODUCTS FOR AT SYSTEMS
+     
+      
+     HARD DISK CONTROLLERS FOR MFM HARD DISK DRIVES - NO FLOPPY SUPPORT
+     
+          
+          WD-WAH, feature FR - Hard disk controller card with an   
+          ST/ST interface.  It supports  MFM drives with up to  
+          heads and  cylinders, : interleave.
+          
+          WDV-MM, feature FR - Hard disk controller card with an  
+          ST/ST interface. It supports  MFM drives with up to   
+          heads and  cylinders, : interleave.  The "V" boards can   
+          run in high speed AT systems ( to  megahertz system speed).
+          
+          WD-WAH , feature FR - Hard disk controller card with     
+          an ST/ST interface.  It supports  MFM drives with up to 
+           heads and  cylinders, : interleave.
+              
+          WDV-MM, feature FR - Hard disk controller card with an  
+          ST/ST interface.  It supports  MFM drives with up to   
+          heads and  cylinders, : interleave and faster data     
+          transfer due to "look ahead caching."  The "V" boards can run in 
+          high speed AT systems ( to  megahertz system speed).
+          
+          
+     HARD DISK CONTROLLERS FOR MFM HARD DISK DRIVES AND FLOPPY DISK DRIVES
+     
+     
+          WD-WA, feature FR - Hard disk controller card with an  
+          ST/ST interface, full AT form factor.  It supports  MFM 
+          drives with up to   heads and  cylinders, at : 
+          interleave and  floppy disk drives (K and . MB).
+          
+          WDA-WA, feature FR - Hard disk controller card with an 
+          ST/ST interface, full XT form factor.  It supports  MFM 
+          drives with up to  heads and  cylinders, at : interleave 
+          and  floppy disk drives (K and . MB).
+          
+          WDV-MM, feature FR - Hard disk controller card with an  
+          ST/ST interface.  It supports a maximum of  MFM drives 
+          with up to   heads and  cylinders at : interleave, and  
+          floppy disk drives (-/" K, .Mb; -/" K, .Mb).   
+          The "V" boards can run in high speed AT systems, ( to  
+          megahertz system speed).
+          
+          WDV-MM, feature FR - Hard disk controller card with an   
+          ST/ST interface.  It supports a maximum of  MFM drives 
+          with up to  heads and  cylinders at : interleave and 
+          faster data transfer due to "look ahead caching" and  floppy 
+          disk drives (-/" K, . Mb; -/" K, . Mb).  The 
+          "V" boards can run in high speed AT systems, ( to  megahertz 
+          system speed).
+          
+     
+                                       --
+
+
+     HARD DISK CONTROLLERS FOR RLL HARD DISK DRIVES - NO FLOPPY SUPPORT 
+     
+          
+          WD-RAH - Hard disk controller card with an ST/ST 
+          interface.  It supports  RLL hard disk drives with up to   
+          heads and  cylinders at : interleave. 
+          
+          WDV-SR - Hard disk controller card with an ST/ST 
+          interface.  It supports a maximum of  RLL hard disk drives with 
+          up to  heads and  cylinders at : interleave. The "V" 
+          boards can run in high speed AT systems ( to  megahertz 
+          system speed).
+                Feature FR includes an optional ROM BIOS that allows 
+                the user to define the drive's parameters. 
+                Feature FR does not include the ROM BIOS and you must  
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+          
+          WD-RAH - Hard disk controller card with an ST/ST 
+          interface.  It supports a maximum of  RLL hard disk drives with 
+          up to  heads and  cylinders, : interleave.
+                Feature FR includes an optional ROM BIOS that provides  
+                additional drive parameter tables.
+                Feature FR does not include the ROM BIOS and you must   
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+          
+          WDV-SR - Hard disk controller card with an ST/ST     
+          interface.  It supports  RLL hard disk drives with up to  
+          heads and  cylinders, : interleave and faster data 
+          transfer due to "look ahead caching."  The "V" boards can run in 
+          high speed AT  systems ( to  megahertz system speed).
+                Feature FR includes an optional ROM BIOS that allows  
+                the user to define the drive's parameters.           
+                Feature FR does not include the ROM BIOS and you must  
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+                 
+     
+     HARD DISK CONTROLLERS FOR RLL HARD DISK DRIVES AND FLOPPY DISK DRIVES
+     
+     
+          WD-RA, feature FR -  Hard disk controller card with an  
+          ST/ST interface.  It supports a maximum of  RLL hard disk 
+          drives with up to   heads and  cylinders, at : 
+          interleave, and  floppy disk drives (-/" K, . Mb).
+          
+          
+     
+                                       --
+
+          
+          WDV-SR -  Hard disk controller card with an ST/ST    
+          interface.  It supports a maximum of  RLL hard disk drives with 
+          up to  heads and  cylinders, at : interleave, and  
+          floppy disk drives, (-/" K, . Mb; -/" K, . 
+          Mb).  The "V" boards run in high speed AT systems ( to  
+          megahertz system speed).
+                Feature FR includes an optional ROM BIOS that allows   
+                the user to define the drive's parameters.
+                Feature R does not include the ROM BIOS and you must
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+          
+          WDV-SR -  Hard disk controller card with an ST/ST   
+          interface.  It supports a maximum of  RLL hard disk drives with 
+          up to  heads,  cylinders and  floppy disk drives (-/" 
+          K, . Mb; -/" K, . Mb).   It also features : 
+          interleave and faster data transfer due to  "look ahead 
+          caching".  The "V" boards can run in high speed AT  systems ( 
+          to  megahertz system speed).              
+                Feature FR includes an optional ROM BIOS that allows 
+                the user to define the drive's parameters.
+                Feature R does not include the ROM BIOS and you must   
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+                 
+     
+     HARD DISK CONTROLLERS FOR ESDI HARD DISK DRIVES - NO FLOPPY SUPPORT -
+     
+          
+          WDA-WAH - This controller card will support up to  ESDI 
+          hard disk drives,  megabit per second data transfer rate and 
+          : interleave.        
+                Feature FR  includes an optional ROM BIOS with "shadow 
+                RAM" that will enable the controller card to interface 
+                with all types of ESDI drives without modifying the system 
+                ROM BIOS.
+                Feature FR does not include the ROM BIOS and you must 
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+          WDV-SE/ME - This controller card will support up to  ESDI 
+          hard disk drives,  megabit per second data transfer rate and 
+          : interleave.  The "V" boards can run in high speed AT 
+          systems, ( to  megahertz system speed).
+                Feature FR includes an optional ROM BIOS with "shadow 
+                RAM" that will enable the controller card to interface 
+                with all types of ESDI drives without modifying the system 
+                ROM BIOS.
+                Feature FR does not include the ROM BIOS and you must 
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+                                       --
+      
+     HARD DISK CONTROLLERS FOR ESDI HARD DISK DRIVES AND FLOPPY DISK 
+     DRIVES
+     
+          
+          WDA-WA - This controller card will support up to  ESDI 
+          hard disk drives,  megabit per second data transfer rate, : 
+          interleave and  floppy disk drives (-/" K, . Mb; -/" 
+          K, . Mb).
+                Feature FR includes an optional ROM BIOS with "shadow 
+                RAM" that will enable the controller card to interface 
+                with all types of ESDI drives without modifying the system 
+                ROM BIOS.
+                Feature FR does not include the ROM BIOS and you must 
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+          
+          WDV-SE/ME - This controller card will support up to  ESDI 
+          hard disk drives,  megabit per second data transfer rate, : 
+          interleave and  floppy drives (-/" K, . Mb; -/" 
+          K, . Mb).  The "V" boards can run in high speed AT systems 
+          ( to  megahertz bus speed).
+                Feature FR includes an optional ROM BIOS with "shadow 
+                RAM" that will enable the controller card to interface 
+                with all types of ESDI drives without modifying the system 
+                ROM BIOS.
+                Feature FR does not include the ROM BIOS and you must 
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameters.
+                
+                
+          WDA-WA - This controller card will support up to  ESDI 
+          hard disk drives,  megabit per second data transfer rate, : 
+          interleave and  floppy disk drives (-/" K, . Mb; -/" 
+          K, . Mb).  This board also has a serial port and parallel 
+          port.
+                Feature FR includes an optional ROM BIOS with "shadow 
+                RAM" that will enable the controller card to interface 
+                with all types of ESDI drives without modifying the system 
+                ROM BIOS.
+                Feature FR does not include the ROM BIOS and you must 
+                use the drive tables on your system's ROM BIOS that must 
+                contain the appropriate drive parameter. 
+                
+                
+                                       --
+
+
+      
+     HARD DISK CONTROLLERS FOR SCSI HARD DISK DRIVES
+     
+          
+          -ASC - A SCSI host adapter that serves as an interface 
+          between the AT bus and the SCSI bus.  All necessary drivers and 
+          receivers are included, permitting direct cable connections to 
+          the SCSI bus through a  pin connector and to the AT bus 
+          through two edge connectors.  The -ASC utilizes jumper  
+          configurable options that enable the address space, DMA channels 
+          and interrupt requests to be selected to suit the end user's 
+          application.  The board also features word data transfer at  
+          megabytes per second (synchronous), an on-board floppy disk 
+          controller and a ROM BIOS.  Please note that the -ASC 
+          operates using standard DOS . or DOS . only.
+          
+          -FASST - This SCSI host adapter card provides the same 
+          features as the -ASC plus additional support capabilities 
+          using software developed by Columbia Data Products.  The -
+          FASST will support MS-DOS .-., Compaq DOS ., PC-DOS ., 
+          PC-MOS/ version ., XENIX, Microsoft Windows, Novell and 
+          Sytos tape backup.
+          
+          WDATXT-FASST KIT - An "unintelligent" SCSI host adapter that is 
+          compatible with the IBM XT, AT and compatible systems.  It uses 
+          a  pin external SCSI bus "D" connector with a standard  pin 
+          internal SCSI cable.  The WDATXT-FASST can be used as  both a 
+          target and an initiator and it serves as an excellent tool for 
+          SCSI designers.  It also provides a low cost alternative for end-
+          users desiring to install a SCSI peripheral device such as a 
+          hard disk drive or a tape backup unit. The kit includes an -bit 
+          SCSI HBA board, manual, FASST software diskettes and an internal 
+          SCSI cable.
+          
+          SYTOS TAPE BACKUP - (Utility for -FASST) - FASST-SYTOS - 
+          FASST version of Sytos tape backup utilities.  MS-DOS 
+          compatible, it runs with FASST software products Revision .+.
+          
+          
+     HARD DISK CONTROLLERS FOR PS/ MODEL , ,  SYSTEMS  
+     (MICROCHANNEL ARCHITECTURE)
+     
+          
+          WDV-MC, feature FR - Hard disk controller with an 
+          ST/ST interface for microchannel systems.  It supports  
+          MFM drives with up to  heads and  cylinders, : 
+          interleave and faster data transfer due to "look ahead 
+          caching."  The"V" boards can run in high speed AT systems ( to 
+           megahertz system speed).
+          
+     
+                                       --
+
+
+          
+          WDV-MC, feature FR - This controller card will support 
+          up to  ESDI hard disk drives,  megabit per second transfer 
+          rate and it contains a ROM BIOS with "shadow RAM" that will 
+          enable the controller card to interface with all types of ESDI 
+          hard disk drives without modifying the system BIOS.  It uses : 
+          interleave.  The "V" boards can run in high speed AT systems, 
+          ( to  megahertz bus speed).
+          
+          
+     
+     CONTROLLERS FOR FLOPPY DISK DRIVES ONLY
+     
+          
+          WDA-FOX - Half-slot floppy disk controller for XT or AT 
+          systems.  Four versions of the board are available:
+                Feature F supports two floppy disk drives.
+                Feature F supports four floppy disk drives and includes 
+                an optional -pin control, data and power connector and 
+                an optional -pin power connector.
+                Feature F supports two floppy disk drives and includes 
+                a ROM BIOS that will enable your system to recognize     
+                floppy disk drives that may not be supported by your AT 
+                system ROM BIOS.  The optional ROM BIOS will also allow 
+                this controller card to operate high density floppy disk
+                drives in an XT system.
+                Feature F supports four floppy disk drives and includes 
+                an optional -pin control, data and power connector, an 
+                optional -pin power connector and a ROM BIOS that will 
+                enable your system to recognize floppy disk drives that 
+                may not be supported by your AT system ROM BIOS.  The 
+                optional ROM BIOS will also allow this controller card to 
+                operate high density floppy disk drives in an XT system.
+                
+
+
+-- 
+    Prof. L. Piacenza - Chemistry Department - University of Transkei
+    Internet: chpp@unitrix.utr.ac.za  (preferred).  Tel. --
+    Internet: sppp@hippo.ru.ac.za
+
+
+From necis!mydual.uucp!olson@transfer.stratus.com Mon Apr   :: 
+Received: from transfer.stratus.com by ponder (./.)
+	id AA; Mon,  Apr  :: -
+Received: from necis.UUCP by transfer.stratus.com (./.-jjm)
+	id AA; Mon,  Apr  :: EDT
+Received: from mydual by necis.necis.ma.nec.com id aa;  Apr  : EDT
+Received: by mydual.UUCP (./smail./--)
+	id AA; Mon,  Apr  :: EST
+Date: Mon,  Apr  :: EST
+From: "Kirtland H. Olson" <mydual!olson@transfer.stratus.com>
+Message-Id: <.AA@mydual.UUCP>
+To: drice@ponder
+Subject: Re: Drive/Controller Compatibility
+Newsgroups: comp.sys.ibm.pc.hardware
+In-Reply-To: <drice.@ponder>
+Organization: The Harvard Group, -
+Reply-To: necis!olson%mydual.uucp@transfer.stratus.com
+Cc: 
+Status: OR
+
+Suggest you move jumper on drive rightward one position.
+
+Regards,
+
+      --Kirt

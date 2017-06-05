@@ -1,0 +1,21 @@
+I am having trouble obtaining the specified standby current drain from
+a MCA Real Time Clock.  Has anyone out there had some experience
+in doing this?  The specs call for a few sequences to be met before
+standby mode is activated, and are a bit hard to decipher on that, but
+I thought that I had it worked out.  However, with a kHz crystal the
+lowest current drain I can acheive at .V Vcc is uA.  This is
+three times the specified MAXIMUM under the conditions I am attempting
+to create.
+
+I have done the following things:
+
+) Made sure that RESET/ is asserted for Trlh after powerup, and AS is
+   low during this time.
+
+
+) Made sure that there is a cycle on AS after the negation of RD/ or
+   WR/ during which STBY/ was asserted.
+
+What am I doing wrong?
+
+Thanks very much,

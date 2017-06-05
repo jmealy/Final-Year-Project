@@ -1,0 +1,10 @@
+I have been unable to get COM  to work - diagnostic programs such as msd show
+nothing installed.  I think the software options are OK - is there a known
+hardware conflict and/or workaround for this problemand CD ROM
+System is a GK DX/ tower with ATI video card
+Ports are set as follows 
+  On board COMa = COM IRQ to external device
+  Internal modem = COM  IRQ
+  DFIO port card primary port = COM  IRQ  mouse
+  On board COM B = COM  IRQ   <--- DOES NOT WORK
+I have run this from a boot disk with only command.com to eliminate softwar

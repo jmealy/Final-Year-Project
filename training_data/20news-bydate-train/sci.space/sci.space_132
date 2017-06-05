@@ -1,0 +1,98 @@
+Forwarded from Neal Ausman, Galileo Mission Director
+
+                                GALILEO
+                     MISSION DIRECTOR STATUS REPORT
+                             POST-LAUNCH
+                         April  - , 
+
+SPACECRAFT
+
+.  On April , real-time commands were sent, as planned, to reacquire
+celestial reference after completion of the Low Gain Antenna (LGA-)
+swing/Dual Drive Actuator (DDA) hammer activities.
+
+.  On April , the EJ- (Earth-Jupiter #) sequence memory load was uplinked
+to the spacecraft without incident.  This sequence covers spacecraft activity
+from April ,  to June ,  and includes a window for the Radio Relay
+Antenna (RRA) slew test on April , .  The command loss timer was set to
+ days as a part of this sequence memory load.
+
+.  On April  and , a NO-OP command was sent to reset the command loss
+timer to  hours, its planned value during this mission phase.
+
+.  On April , cruise science Memory Readouts (MROs) were performed for the
+Extreme Ultraviolet Spectrometer (EUV), Dust Detector (DDS), and Magnetometer
+(MAG) instruments.  Preliminary analysis indicates the data was received
+properly.
+
+.  On April , an Ultra-Stable Oscillator (USO) test was performed to verify
+the health status of the USO and to collect gravitational red shift experiment
+data; long term trend analysis is continuing.
+
+.  On April , a bps modulation index test was performed to determine the
+optimal Signal-to-Noise Ratio (SNR) when transmitting at bps.  Preliminary
+analysis of the data suggests that the present pre-launch selected modulation
+index is near the optimal level.
+
+.  On April , cruise science Memory Readouts (MROs) were performed for the
+Extreme Ultraviolet Spectrometer (EUV) and Magnetometer (MAG) instrument.
+Preliminary analysis indicates the data was received properly.
+
+.  On April , a periodic RPM (Retro-Propulsion Module) -Newton thruster
+flushing maintenance activity was performed; all  thrusters were flushed
+during the activity.  Thruster performance throughout the activity was nominal.
+
+.  The AC/DC bus imbalance measurements have not exhibited significant
+changes (greater than  DN) throughout this period.  The AC measurement reads
+ DN (. volts).  The DC measurement reads  DN (. volts).  These
+measurements are consistent with the model developed by the AC/DC special
+anomaly team.
+
+. The Spacecraft status as of April , , is as follows:
+
+       a)  System Power Margin -   watts
+       b)  Spin Configuration - Dual-Spin
+       c)  Spin Rate/Sensor - .rpm/Star Scanner
+       d)  Spacecraft Attitude is approximately  degrees
+           off-sun (lagging) and  degrees off-earth (leading)
+       e)  Downlink telemetry rate/antenna- bps(coded)/LGA-
+       f)  General Thermal Control - all temperatures within
+           acceptable range
+       g)  RPM Tank Pressures - all within acceptable range
+       h)  Orbiter Science- Instruments powered on are the PWS,
+           EUV, UVS, EPD, MAG, HIC, and DDS
+       i)  Probe/RRH - powered off, temperatures within
+           acceptable range
+       j)  CMD Loss Timer Setting -  hours
+           Time To Initiation -  hours
+
+
+GDS (Ground Data Systems):
+
+.  Galileo participated in a second DSN (Deep Space Network) acceptance test
+for the DSN Telemetry Phase  Upgrade on April , , using CTA-
+(Compatibility Test Area ).  The purpose of this test was to verify
+the flow of Galileo telemetry data through the new Telemetry Group Controller
+(TGC) and the Telemetry Channel Assembly (TCA).  The TGC/TCA is the replacement
+for the current Telemetry Processing Assembly (TPA).  Seven different telemetry
+rates were run for this test; all ran well on both the MTS (MCCC Telemetry
+Subsystem) and the AMMOS MGDS V. GIF with the exception of bps.  The
+bps rate had some trouble staying in lock; it appears the TGC/TCA was
+not metering the data correctly.  Further comparisons between the MGDS and MTS
+data from this test are being conducted. MVT (Mission Verification Test) of
+the TGC/TCA system is expected to begin May , .
+
+
+TRAJECTORY
+
+     As of noon Thursday, April , , the Galileo Spacecraft trajectory
+status was as follows:
+
+	Distance from Earth         ,, km (. AU)
+	Distance from Sun           ,, km (. AU)
+	Heliocentric Speed          , km per hour
+	Distance from Jupiter       ,, km
+	Round Trip Light Time        minutes,  seconds
+
+
+SPECIAL TOPIC

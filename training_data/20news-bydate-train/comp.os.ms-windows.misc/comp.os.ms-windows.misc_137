@@ -1,0 +1,5 @@
+
+I haven't seen this particular problem, but another place you might
+check is if your BIOS is doing video shadowing--Diamond wants that
+turned off.  That might cause a memory conflict as well.  Good
+luck.  Hope this helps, Chris Loschen, Brandeis U.

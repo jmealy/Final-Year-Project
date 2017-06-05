@@ -1,0 +1,13 @@
+No, but some OS's ( COHERENT , etc ) are able to drive one of the ports in
+polled mode without using the IRQ. In your example, after accessing the
+modem, the mouse won't work until you reboot, because the IRQ is used by
+the modem.
+
+
+Yes, you can change the IRQ's for com/, but it depends on your other
+hardware. com uses IRQ, com IRQ.  If you have only one printerport 
+( IRQ ), you can change com to IRQ ( normally nd printer ). For com,
+you can assign IRQ, if its free. As far as I know, no other IRQ can be
+used until your I/O-card is bit and caould access IRQ's > .
+
+Michael

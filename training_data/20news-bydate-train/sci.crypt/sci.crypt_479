@@ -1,0 +1,9 @@
+> > :Thousands?  Tens of thousands?  Do some arithmetic, please...  Skipjack
+ > > :has ^ possible keys.
+ > >
+ > > We don't yet know if all  bits count.
+ >
+ > That doesn't worry me at all; they're not going to cheat at something
+ >they can get caught at.  And key size is one of the things that can be
+ >verified externally.  Feed lots of random key/input pairs into the
+ >chip, then see what happens to the output....

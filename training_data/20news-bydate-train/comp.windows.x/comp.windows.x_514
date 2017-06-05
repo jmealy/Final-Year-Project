@@ -1,0 +1,37 @@
+I created a pixmap or drawable window, then used XDrawLine() function 
+drawed a line as below fingure:
+
+		width = 
+	================================
+	|				|
+	|				|
+	|			p	|
+	|			\	|
+	|			 \	| height = 
+	|			  \	|
+	|			   \	|
+	|			    \	|
+	|			     \	|
+	|			      \	|
+	|			       \|p
+	|				| 
+	|===============================| \
+					    \
+					     p
+
+	I created the pixmap or drawable window only with size x.
+But I draw line from p(x=,y=) to p(x=,y=).
+My question is, dose the XDrawLine function can finger out that correct
+p(x and y) for me? If you calculate x and y. 
+
+x = ;
+
+@ = art tan ((  - )/( - )) = . degrees;
+
+y =  + x/tan(@) =  + /tan(.) = . ~= (integer) .
+
+How do I prove XDrawLine() give me the right x, y or not?
+Please don't ask me why I don't created a x pixmap. No, I don't
+wan to. 
+
+Thanks in advance!

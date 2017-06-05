@@ -1,0 +1,11 @@
+How about MB/s for -bit VLB or MB/s for QuickRing {Apple's
+implimentation of VLB (Byte /:)} QuickRing is interesting in that
+it allows interleaving with other card so that the MB/s can be divided 
+among many cards at the same time {NuBus  and MCA are about the only card 
+interfaces able to DO anything with that kind of speed and even NuBus 
+ditzes around at ~MB/s with a burst mode: MB/s.
+"MCA {Also called Micro Channel}
+ IBM's  and -bit bus; "allows use of more than one CPU in a computer" 
+ (DCT) and anything can talk to anything, >>as fast as the two components 
+ involved can handle it.<< Never took off because it was incompatible with ISA 
+ and EISA.  Planned to be bus interface of IBM PowerPC  (Carl Jabido).

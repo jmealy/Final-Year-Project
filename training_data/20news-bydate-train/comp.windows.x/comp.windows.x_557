@@ -1,0 +1,15 @@
+I've used XR with classics set for both x and x (you
+can choose which resolution you want in the PROM monitor before
+booting).  One person had trouble with XR that was fixed by
+using the multi-screen version.  Here's how our version was built.
+(You can just copy /usr/local/XR/bin/Xsun from farside.rutgers.edu
+if you just want to see whether this version will work.)
+
+  R distribution installed,
+        from pub/R/mit-[-] and contrib-[-] on export.lcs.mit.edu
+  patches  -  installed,
+	from pub/R/fixes on export
+  R Xsun Multi-screen patches installed, 
+	from contrib/R.Xsun.multi-screen* on export, -Mar-
+  Solaris . patches installed, release /update ,
+	from contrib/R.SunOS.patch* on export, -Mar-

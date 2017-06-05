@@ -1,0 +1,39 @@
+: >>
+: >>Dear friend,
+: >>  The RISC means "reduced instruction set computer". The RISC usually has 
+: >>small instruction set so as to reduce the circuit complex and can increase 
+: >>the clock rate to have a high performance. You can read some books about
+: >>computer architecture for more information about RISC.
+: >
+: >hmm... not that I am an authority on RISC ;-) but I clearly remember
+: >reading that the instruction set on RISC CPUs is rather large.
+: >The difference is in addressing modes - RISC instruction sets are not
+: >as orthogonal is CISC.
+
+The original RISCs had small instruction sets, and simple ones. The
+idea was that a) every instruction should be completable in a single
+clock cycle and b) to have no microcode and c) extensive pipelines.
+
+A few comparisons (from Patterson: Reduced Instruction set computers.
+CACM V. , ):
+
+CPU		Year	Instructions	Microcode
+---		----	------------	---------
+IBM /				Kb
+DEC VAX /				Kb
+IBM 					
+UCB RISC 				
+Stanford MIPS				
+
+While researching for the VLSI VAX, DEC discovered that % of the VAX
+microcode is there to support % of the instruction set which
+accounted for a mere .% of all instructions executed. The uVAX 
+subsetted the architecture onto a single chip and used a software
+emulator for these very complex instructions, the full VLSI uVAX
+included the entire instruction set, was - times more copmlex but
+only ranm % faster.
+
+CPU		Chips	Microcode	Transistors
+---		-----	---------	-----------
+uVAX 			K		K
+VLSI uVAX		K		K

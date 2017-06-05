@@ -1,0 +1,14 @@
+B
+)>>>>>>>>> Votre host est mal configure... <<<<<<<<<<<<
+
+
+)Bonjour Sylvain,
+)	J'ai travaille avec le hc il y a  ans et je ne me souviens pas de toutes les possibilites mais je vais quand meme essayer de t'aider.
+
+)	Je ne crois pas que downloader une programme directement dans le eeprom soit une bonne idee (le eeprom a une duree de vie limitee a   cycles il me semble). Le communication break down vient peut-etre du fait que le eeprom est long a programmer (ms par  bytes mais c'est a verifier) et que les delais de transfer de programme s vers la memoire sont excedes. Normalement, les transferts en RAM du code s est plus rapide car le RAM est plus rapide que le eeprom en ecriture.
+
+)	C'est tout ce que ma memoire me permet de me souvenir!
+
+)Bonne chance,
+
+Oh yeah easy for him to say!...

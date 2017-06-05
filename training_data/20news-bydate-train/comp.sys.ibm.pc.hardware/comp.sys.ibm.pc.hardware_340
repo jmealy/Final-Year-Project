@@ -1,0 +1,39 @@
+Hi,
+
+I have a few enquiries about PC's and compatibles in general.. Some software
+others hardware orientated.. (Probably the wrong newsgroup .... as everyone 
+claims..)
+
+Anyway..
+
+) Does any one happen to have the board jumper details for a Trident 
+SVGA graphics card (MB) or even what the dip switches do on the end.. Mine
+already works fine (albeit slow) and after having blown up a monitor I found 
+out which switch controlled the interlace/non interlace facility.. 
+
+But I'm curious as to why there are  dip switches on the card with apparantly
+little use..
+
+) Secondly, does anyone know why Commodore had to be so crazed in their design
+of the PC- motherboard with respect to the RAM.. (IE  +  or  +K) ??
+
+) Can anyone supply pin details for the expansion ports for a pc ( or  bit
+) .. or even a sample circuit to cause an irq when a button is pressed...
+(Yeah I know its a piece of cake.. I'm lazy )
+
+) Software wise.. Anyone care to divulge some tips on accessing expanded RAM
+on a PC (from a program written in Turbo C++).... 
+
+For instance, using farcoreleft() and coreleft() return only memory available
+from the base K regardless of combinations of EMM etc etc...
+What I want is to be able to use the RAM above and beyond the MB boundary...
+
+I'm not certain whether farmalloc / new actually uses it anyway but I'll 
+suspect not .. 
+
+) Also.. what half brained wit created DOS so as not to be re-entrant??????
+   As a follow on, does anyone have any comments about the use of DOS calls
+    to C from within a DOS interrupt? Ie will changing the stack size on
+   entry be of use.. Two articles I've read on the subject have given 
+   conflicting views... Does anyone have any views on writing direct to
+   screen memory in terms of portability?

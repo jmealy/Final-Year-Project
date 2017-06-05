@@ -1,0 +1,26 @@
+ALL this shows is that YOU don't know much about SCSI.
+
+SCSI- {with a SCSI- controler chip} range is indeed -MB/s
+and that is ALL you have right about SCSI
+SCSI- {With a SCSI- controller chip}: -MB/s with MB/s burst {-bit}
+ Note the INCREASE in SPEED, the Mac Quadra uses this version of SCSI-
+ so it DOES exist. Some PC use this set up too.
+SCSI- {-bit/SCSI- mode}:          -MB/s with MB/s burst
+SCSI- {-bit/wide or fast mode}:  -MB/s with MB/s burst
+SCSI- {-bit/wide AND fast}:     -MB/s with MB/s burst
+ 
+By your OWN data the "Although SCSI is twice as fast as ESDI" is correct
+With a SCSI- controller chip SCSI- can reach MB/s which is indeed
+"% faster than IDE" {% of . is .}. ALL these SCSI facts have been
+posted to this newsgroup in my Mac & IBM info sheet {available by FTP on 
+sumex-aim.stanford.edu (...) in the info-mac/report as 
+mac-ibm-compare[version #].txt (It should be  but  may still be there)}
+
+Part of this problem is both Mac and IBM PC are inconsiant about what SCSI
+is which.  Though it is WELL documented that the Quadra has a SCSI- chip
+an Apple salesperson said "it uses a fast SCSI- chip" {Not at a MB/s,
+MB/s burst it does not. SCSI- is MB/s maximum synchronous and Quadra
+uses ANsynchronous SCSI which is SLOWER}  It seems that Mac and IBM see
+SCSI- interface and think 'SCSI-' when it maybe a SCSI- interface driven
+in the machine by a SCSi- controller chip in -bit mode {Which is MUCH
+FASTER then true SCSI- can go}.

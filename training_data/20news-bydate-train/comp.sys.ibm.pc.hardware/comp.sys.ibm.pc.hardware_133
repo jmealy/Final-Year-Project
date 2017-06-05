@@ -1,0 +1,13 @@
+Not completly true.  For AT class and later machines, IRQ is
+reserved for LPT.  Since it's rare to have a second parallel
+port in a PC, it's usually a good safe choice if you need an
+interrupt.
+
+On the other hand, we just ran into a problem with that here
+at work on a Gateway computer (DX-V).  It has a Modem on COM,
+a Mouse on COM, and the other serial port was set to COM (which
+normally uses the same interrupt as COM).  We had a real fight
+with a board when trying to use IRQ, and discoverd the problem
+was that Gateway had set it up such that COM used IRQ.  As soon
+as we disabled COM, our problems went away.  Grumble ... after
+several days of trying to figure out why the interrupt didn't work.

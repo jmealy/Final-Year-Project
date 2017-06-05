@@ -1,0 +1,11 @@
+I have a Paradise SVGA with Mb, the c chip (D). The docs say that
+I can display the following modes : xxk colours and xxk cols
+if I have the RAMDAC HiColor Chip. I have checked the board and I do have
+such a chip. Now, the problem is that I can't get this mode to work !
+Graphics Workshop . claims that it can display  bit images dithered
+down to  bit colour with my board, but it doesn't work. I have tried
+writing some assembler code to get the modes working and I have found out
+that each pixel is addressed by a word (  bit ), but only the lower  bits
+are considered ( this happens in x mode, the x mode refuses to
+work i.e. remains in text mode ).
+Could someone please help me.

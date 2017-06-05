@@ -1,0 +1,18 @@
+=>There is a free unix, linux, that has cc, ~c++, fortran ( fc ),
+=>Xwindows and many other features besides, with a large number of utilities
+=>that can be optionally added. And there is also a free BSD I believe.
+=>Both these unix's are quite robust. You can check out comp.os.linux
+
+i dunno about linux, but for bsd, don't forget networking
+(well tested, at that), NFS, a fast, incredibly stable filesystem,
+and the list goes on...  -)
+
+for us bsd folk, look in comp.os.bsd.*.
+
+
+
+
+chris
+moderator of comp.os.bsd.announce, anti-politician, and sometime evangelist
+--
+Chris G. Demetriou                                    cgd@cs.berkeley.edu

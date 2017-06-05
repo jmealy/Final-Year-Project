@@ -1,0 +1,24 @@
+To incrementally update the contents of windows, I use the following trick:
+
+	. Set the window background to None,
+	. Call XClearArea(display, window, , , , , True),
+	. Restore the window background to its correct value.
+
+The call to XClearArea does not repaint the window background, but still
+generates exposure events for visible parts of the window.
+
+In order to let my application know that these expose events must be handled
+incrementally (something is already displayed on the screen and may need to
+be erased), I encapsulate the  operations with  self addressed client
+messages, which preserve asynchronicity between the client and the server.
+
+XGrabServer(display)
+client message (start-incremental)
+ 	background None
+	XClearArea
+	Restore background 
+client message (end-incremental)
+XUngrabServer(display)
+
+The GrabServer prevents other events to be inserted by the server in the
+critical section.

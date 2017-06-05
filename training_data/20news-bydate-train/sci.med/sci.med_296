@@ -1,0 +1,9 @@
+: "% of diseases" is not the same thing as "% of patients".
+
+   In a world with one curable disease that strikes  people, and nine
+   incurable diseases which strikes one person each, medical science will cure
+   % of the patients and report that % of diseases have no therapy.
+
+: A disease would be counted among the % untreatable if nothing better than
+   a placebo were known.  Of course MDs are ethically bound to not knowingly
+   dispense placebos...

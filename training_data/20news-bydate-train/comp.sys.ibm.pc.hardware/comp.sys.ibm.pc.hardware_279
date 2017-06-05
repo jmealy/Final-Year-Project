@@ -1,0 +1,10 @@
+We are trying to connect an Olivetti XM " floppy drive as the second
+drive on a Panasonic  machine.  It seems to sort of talk to it (gets it
+spinning and stepping) but gives a "Disk not ready" error.
+
+There are two jumpers (which seem to work best open), a  position DIP
+switch, and a  position DIP switch.  We don't know how to set the DIP
+switches and think that may be the problem.
+
+Any information, or advice (other than "junk the stupid thing" :) would be
+most appreciated, thanks.  (email reply preferred).

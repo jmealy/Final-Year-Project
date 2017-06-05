@@ -1,0 +1,13 @@
+I'm trying to set up an IPX for another group. I copied all the
+X stuff that I compiled on my / (which runs SunOS ..) using
+gcc ., and most things run just fine. however, I did find a
+couple of bugs, and when I try to recompile those clients on the IPX
+(which runs ..), I get
+
+ld: Undefined symbol
+   _XShapeQueryExtension
+   _XShapeCombineMask
+
+I know that I can include libXext and get rid of those messages,
+but I can't figure out why I get them on the IPX and not on the
+/. any ideas?

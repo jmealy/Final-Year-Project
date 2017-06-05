@@ -1,0 +1,21 @@
+This isn't entirely true. It is true that TrueType fonts are
+larger than their ATM counterparts, but ATM fonts *do* get minimal
+compression. Running Stacker . report generator, I get:
+
+	 File Type:      Compression Ratio:
+	 -------------   ------------------
+	 *.TTF (TrueType)     .:.
+	 *.PFB (ATM)          .:.
+	 *.PFM (ATM Metric)  .:.
+
+Although the metric files are small, they compress quite largely.
+And, as you can see, even the regular .PFB files have *some* compression.
+
+So, doing the math on one such comparitive font file:
+
+TTF Times =  bytes/. =  bytes (compressed)
+PFB Times =  bytes/. =  bytes (Compressed)
+
+You still win out, even if the ATM Times font *isn't* compressed.
+
+Your mileage may vary depending on compression program.

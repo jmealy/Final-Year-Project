@@ -1,0 +1,5 @@
+We have been using Iterated Systems compression board to compress 
+pathology images and are getting ratios of : to : without too
+much loss in quality. It is taking about  mins per image to compress,
+on a Mhz  but decompression is almost real time on a  in software 
+alone.

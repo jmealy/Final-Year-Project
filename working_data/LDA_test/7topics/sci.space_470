@@ -1,0 +1,13 @@
+
+The Command Loss Timer is part of the fault protection scheme of the
+spacecraft.  If the Command Loss Timer ever countdowns to zero, then the
+spacecraft assumes it has lost communications with Earth and will go 
+through a set of predetermined steps to try to regain contact.  The
+Command Loss Timer is set to  hours and reset about once a week during 
+the cruise phase, and is set to a lower value during an encounter phase.  
+     ___    _____     ___
+    /_ /|  /____/ \  /_ /|     Ron Baalke         | baalke@kelvin.jpl.nasa.gov
+    | | | |  __ \ /| | | |     Jet Propulsion Lab |
+ ___| | | | |__) |/  | | |__   M/S - Telos | The aweto from New Zealand
+/___| | | |  ___/    | |/__ /| Pasadena, CA  | is part caterpillar and
+

@@ -1,0 +1,26 @@
+Hi!
+
+I think VGA-Copy can do what you need. 
+If you create a new floppy for your a: drive (that is the  /"), turn on
+the "modify" switch of vga-copy.
+When you boot using this diskette, a message appears:
+
+This is no system disk, you can
+) replace disk with another,
+) boot from Harddisk or
+) switch drives and reboot (that is, a: becomes b:, b: becomes a:)
+Type your choice:
+
+When you select the third item, you can boot from b: which is now called a: .
+Seems to work very good, for example booting drdos from the installation disks
+in ." format was no problem for a friend of mine (I have only a ." a: drive)
+
+Hope that helps
+Robert
+
+P.S.: VGA-Copy is shareware, so it's easy to get. Newest Version seems to be . .
+
+-- 
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+

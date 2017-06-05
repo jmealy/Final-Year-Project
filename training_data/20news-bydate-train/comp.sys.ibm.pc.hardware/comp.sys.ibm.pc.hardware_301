@@ -1,0 +1,72 @@
+If you only do read/print then there is no reason for the joystick stuff
+not to take % of the time even if it is efficient.
+
+
+The truth is that int H joystick reading IS slow. I read it directly
+from the hardware port. Note that doing so exposes you to intermittent
+disturbance from interrupts, so you may want to read (say) twice in a
+row and keep the lower results. Don't just turn interrupts off, it may
+prove detrimental to the health of any high speed comms and other
+devices.
+
+Here is an example of how to do this:
+
+/* ------------------------------ joy.c ------------------------------------- */
+
+/* An example of how to read PC joystick port by polling the hardware port
+ * directly.
+ * Uses inp()/outp() for byte port access.
+ * Will timeout when 'int count=' counts up to zero.
+ * This sample reads one port (A is presented and B is in the comments).
+ * You can read both at once by merging the two, but it will time out
+ * when either joystick is not connected.
+ *
+ * There is no need to optimize this routine since it runs for as long as
+ * the joystick circuitry needs.
+ *
+ * Written by Eyal Lebedinsky (eyal@ise.canberra.edu.au).
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <conio.h>
+
+extern int readjoy (int *x, int *y, int *b, int *b);
+
+#define JOYPORT	x
+
+#define	XJOY	x	/* for joystick B use x */
+#define	YJOY	x	/* for joystick B use x */
+#define XYMASK	(XJOY|YJOY)
+#define	BUT	x	/* for joystick B use x */
+#define	BUT	x	/* for joystick B use x */
+
+int					/* returns  if ok */
+readjoy (int *x, int *y, int *b, int *b)
+{
+	register int	count;
+	register char	temp, joy;
+
+	temp = (char)XYMASK;
+	count = ;
+	outp (JOYPORT, );		/* set trigger */
+	do {
+		temp ^= (joy = (char)inp (JOYPORT));
+		if (temp & XJOY)
+			*x = count;
+		if (temp & YJOY)
+			*y = count;
+	} while (++count && ((temp = joy) & XYMASK));
+	*b = !(joy & BUT);
+	*b = !(joy & BUT);
+
+	return (!count);
+}
+
+/* This main() is for demonstration.
+*/
+
+int
+main ()
+{
+	int	rc, x, y, b, b;

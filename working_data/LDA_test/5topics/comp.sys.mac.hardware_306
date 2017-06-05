@@ -1,0 +1,103 @@
+Hello all!
+
+For few past days I've been fighting to get My NEC Multisync D
+(predecessor of FG) to work properly with the internal video of Mac
+IIvi.
+
+With a VGA-adapter (as described in Dale Adams' posting about Quadra
+video) it works, only some minor interferences occur, small enough not
+to prevent any action on screen to be visible & clear.
+
+But because the scanrates & stuff of D are well enough for emulating
+Apple " RGB, I first made an adapter, then got one fron the local
+distributor of NEC.
+With both adapters I can get a picure, which looks excellent most of
+the time or every now and then.
+But with radical changes on screen (opening palettes, large windows
+etc.) there are major interferences in sync. The picture either tilts
+sideways or scrables up totally. Even when it is clear, there are some
+"spiky" interferences on horizontal line alignment when accessing
+pull-downs etc.
+With the self-made adapter, almost identical to the VGA one, only
+sense pins differ, it is sometimes impossible to even boot up with a
+picture clear enough to shut down from menu...
+With the adapter from NEC, everything is well most of the time, but
+sometimes the picture tilts badly sideways or the sync is completely
+lost. But not nearly as often as with the self-made one.
+
+I know, with self made adapters there can always be interference, but
+with the one provided by NEC... where's the source of this interference?
+
+I'll give you the pinouts of the whole mess, and I hope that you can,
+at least someone (please try =) figure out what could be the best pin
+assignment for NEC D.
+I am going to make a completely new cable with maximum shieldings and
+isolations, as soon as someone figures out how the pins should be
+arranged, especially syncs and groundings.
+
+Yes, I have checked that the monitor is not defective, it works
+perfectly well with all PC graphic adapters up to x pixels and
+also Atari Hz monochrome, which I am using now with it.
+
+Here are the pinouts & stuff:
+
+ pin mini D-sub (NEC D)		 pin D-sub (Mac, at least Quadra)
+
+  Red Video				  Red GND
+  Green Video				  Red Video
+  Blue Video				  Composite Sync
+  GND					  Sense 
+  GND					  Green Video
+  Red GND				  Green GND
+  Green GND				  Sense 
+  Blue GND				  NC
+  NC					  Blue Video
+ GND					 Sense 
+ GND					 C.Sync & V.Sync GND
+ NC					 V.Sync
+ H.Sync				 Blue GND
+ V.Sync				 H.Sync GND
+ NC					 H.Sync
+SHELL GND				SHELL GND
+
+
+
+Connection suggested by Apple for VGA/SVGA, sense pins changed to
+emulate Apple " with Multisync (my self-made adapter)
+
+Multisync (pin mini D-sub)	Mac (pin D-sub)
+	  
+	    ---------------------- 
+	    ---------------------- 
+	    ---------------------- 
+	    ---------------------- 
+	    ---------------------- 
+	    ---------------------- 
+	   ---------------------- 
+	   ---------------------- 
+	   ---------------------- 
+				     (sense) grounded to  (sync GND)
+
+
+Connection measured from an adapter to make NEC FG/FG 
+emulate Apple " (adapter provided by NEC representative)
+
+	NEC ( mini)   	Mac ()
+
+	   ----------------------- 
+	   ----------------------- 
+	   ----------------------- 
+	   ----------------------- SHELL GND, , , , 
+	   ----------------------- same as above
+	   ----------------------- same...
+	   ----------------------- same...
+	   ----------------------- same...
+	  ----------------------- same...
+	  ----------------------- same...
+	  ----------------------- 
+	    * Not Connected! *
+	
+
+Well, I am waiting for your solutions...
+
+And thanks!

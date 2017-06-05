@@ -1,0 +1,27 @@
+A good vocoder like ours will give you  bits per second locked at
+full rate (it's a variable rate voice activity vocoder).  If you want
+less quality, cut that to  bps (half rate).  At full rate variable
+you could put two full-duplex conversations on a V.bis modem.  This
+requires a DSP or ASICs, though.  An RS- has a CPU that could
+probably do it in real-time, because it has the add-and-multiply
+instruction and a few other DSP things.
+
+If you want to do speech in real-time you need about  samples a
+second (for not very good voice) with your  bit samples (ISDN is 
+-bit samples a second), which is  kbps.  You could do a fast :
+compression on that to get it down to  kbps, which is just about
+V.bis.  The quality at this point is very bleah, but it should work.
+Now add in the time for your encryption method.  You're going to need
+sampling hardware, which is no problem on a new Mac, an Amiga.  Or a
+PC with a SoundBlaster card (just because they're so popular and cheap
+- you could also build a simple ADC).  The problem with the
+SoundBlaster is that it doesn't seem to be full duplex - you can't
+sample and play backq at the same time, making a two-way conversation
+a bit tough.  The special hardware or a more capable sound card may be
+required.
+
+The only thing that worries me is that : compression - the
+SoundBlaster can do it automatically in hardware, but other than that
+I don't have a good feel for how processor intensive it is, so I can't
+estimate how fast a PC you'd need.
+

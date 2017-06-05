@@ -1,0 +1,9 @@
+
+
+
+There is a way in SYS.INI to turn off RAM parity checking (unfortunately,
+my good Windows references are at home, but any standard Win reference
+will tell you how to do it. If not, email back to me.) That weird memory
+may be producing phony parity errors. Danger is, if you turn checkling off,
+you run the slight risk of data corruption due to a missed real error.
+

@@ -1,0 +1,17 @@
+No, the A is able to operate in a  MHz system, the  can only
+take  MHz without problems.
+
+If you see a  made by MOS or CSG, take it, its a A.
+
+
+I know no fixed version of the . There are different possibilities
+to work around this bug. The easiest is to tie _CTS to GND and
+use _DSR or _DCD as _CTS. It should be easy to fix the software,
+_DSR is bit  and DCD ist bit  of the Status Register (Read 
+with RS = low and RS = high).
+
+Using the _CTS-line can lead into big trouble. The  _instantly_
+stops transmission if _CTS goes high. This means, that you may
+get only a half byte...
+
+Gerrit

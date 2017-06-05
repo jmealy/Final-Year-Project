@@ -1,0 +1,19 @@
+Acorn Replay running on a MHz ARM  processor (the ARM  is about % slower
+than the ARM ) does this in software (off a standard CD-ROM).  bit colour at
+about the same resolution (so what if the computer only has  bit colour
+support, real-time dithering too...). The D/O is supposed to have a couple of
+DSPs - the ARM being used for housekeeping.
+
+
+A MHz ARM xx should clock around  ARM MIPS, say  flat out. Depends
+really on the surrounding system and whether you are talking ARMx or ARMxx
+(the latter has a cache, and so is essential to run at this kind of speed with
+slower memory).
+
+I'll stop saying things there 'cos I'll hopefully be working for ARM after
+graduation...
+
+Mike
+
+PS Don't pay heed to what reps from Philips say; if the D/O doesn't beat the
+   pants off DI then I'll eat this postscript.

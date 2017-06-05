@@ -1,0 +1,8 @@
+I have a DEC NT DX that has an Adaptec SCSI controller, hard disk
+and cd-rom drive. When I add a COMM Ethernet card (C) and reboot
+the system I receive an error message that a boot device cannot be
+found. Pull the COMM card and reboot, everything is fine. I've moved
+the controller and COMM card to various slots, different positions
+(slot before the controller, slot after the controller) with the
+same result. DEC hasn't responded to the problem yet. Any help would
+be appreciated.

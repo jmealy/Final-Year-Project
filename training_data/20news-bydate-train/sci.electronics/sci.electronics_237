@@ -1,0 +1,23 @@
+In four replies, I've seen no hard numbers, so here goes:  For traces
+on the outside (not inner layers), expect, in  oz copper, at  amps,
+the following temperature rises versus width.  This is from Sams'
+"Reference Data for Engineers," seventh edition, Pg -, which claims
+in turn to be from MIL-STD-C...
+
+    width   Temp rise
+    inches  degrees C
+    ------  ---------
+     .	
+     .	 
+     .	 
+     .	 
+     .	 
+     .	 
+
+At  amps, the rise for the . width is only about  degrees.
+Power goes as square of the current, plus the copper resistance goes
+up as temperature goes up...  Certainly ." (~mm) traces should be 
+ample for what you want to do.  And  ounce copper almost cuts the 
+required width in half.  (I'd do  oz at about ." width myself, 
+I think...given that the _rated_ current is  amps and the  is
+a transient or fault condition.)

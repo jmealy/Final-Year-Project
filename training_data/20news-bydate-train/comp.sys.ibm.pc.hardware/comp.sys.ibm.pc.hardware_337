@@ -1,0 +1,33 @@
+[Stuff about the connection between IDE and IDA deleated]
+If IDE speed come from IDA WHERE does the .MB/s sighted for IDE come from?
+
+SCSI is not complex. It is just the way the industry uses and talks about it.
+There are THREE key differences in SCSI; the controller chip, the port, and
+the software.  THAT IS IT.
+Let us look as SCSi in from THIS stand point.
+
+SCSI-: asynchronous and synchronous modes {SOFTWARE SCSI DRIVER ONLY}
+ asynchronous is slower then synchronous mode {only -MB/s vs. -MB/s}
+ synchronous speeds can be reached by most SCSi- divices with a
+ rewrite of the software driver {As is the case for the Mac Quadra.}
+
+SCSI- {-bit}: THIS is the main source for the confusion. This differs from
+ SCSI- ONLY in the controler chip in most machines.  In the Mac and some PCs
+ this is called 'fast SCSI-' because it uses SCSI- ports and software drivers
+ AND can produce SCSI- SPEEDS through SCSI- INSPITE of this even in the 
+ slower asynchronous mode.  Average speed in asynchronous SCSi- mode 
+ -MB/s with MB/s{See in both Quadras and higher end PCs} Synchronous
+ mode just allows a higher burst rate {/MB/s}
+
+SCSI- {-bit}: TWO versions-Wide/Fast.  Wide SCSI- requires TWO things
+ over -bit SCSI-:  a SCSI- software driver and a wide SCSI port on the
+ machine and the external device.
+ Fast SCSI- also requires TWO things over -bit SCSI-: SCSI- driver
+ software and that the RECIEVING devise support -bit fast SCSI-.
+ Speed of both is the same: -MB/s with MB/s burst.
+
+SCSI- {-bit}:  Also know as Wide AND Fast SCSI.  Over -bit SCSI- this
+ requires: SCSI- driver software, wide SCSI- port, and that the RECIEVING
+ devices ALSO have a -bit mode SCSI- chip.  As expected this is VERY
+ expencive.  Speed: -MB/s with MB/s bursts
+ 

@@ -1,0 +1,15 @@
+Sorry, Bryan, this is not quite correct. Remember the VGALIB package that comes
+with Linux/SLS? It will switch to VGA xx mode *without* Xwindows.
+So at least it is *possible* to write a GIF viewer under Linux. However I don't
+think that there exists a similar SVGA package, and viewing GIFs in x is
+not very nice.
+
+Best Regards,
+
+Arno
+
+-- 
+--------------------------------------------------------------------------------
+Arno Schaefer				ENSIMAG, e Annee
+Email: schaefer@silene.imag.fr
+Tel.: ()    			:-)

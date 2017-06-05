@@ -1,0 +1,12 @@
+There is a multi threaded xlib version written.
+Do an archie search for mt-xlib:
+Host export.lcs.mit.edu
+
+    Location: /contrib
+      DIRECTORY drwxr-xr-x          Jul    mt-xlib
+    Location: /contrib/mt-xlib-.
+           FILE -rw-r--r--       Jan  :  mt-xlib-xhib.ps.Z
+           FILE -rw-r--r--      Jan  :  mt-xlib.tar.Z
+    Location: /contrib/mt-xlib
+           FILE -rw-r--r--       Jul    mt-xlib-xhib.ps.Z
+           FILE -rw-r--r--      Jul    mt-xlib.tar.Z

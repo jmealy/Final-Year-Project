@@ -1,0 +1,12 @@
+A silly question: I frequently edit small files and need to make copies of them
+on several floppy diskettes of the same size and format, but my computer is
+only equipped with one ." HD drive and one ." HD drive; can't I do the
+copying without swapping files temporarily to my hard disk (which is .% full)
+using standard MSDOS . commands? I know
+diskcopy a: a:
+works but for small selections of files,
+xcopy a:*.txt a:
+does not!
+Maybe I'll have to write my own file copy command in C, but the idea does not
+amuse me.
+Thanks for your help.

@@ -1,0 +1,23 @@
+Hello,
+
+	I have a sx ISA machine with Pheonix BIOS.  Currently I have  
+ megabytes of RAM installed via eight  MG SIMMS on the motherboard: ie.  
+both banks are full, and there is no space for more SIMMS.  I am thinking  
+of running OS on my machine and Possibly Linux with X windows, and I know  
+that more RAM would be helpful.  However with SIMMS, the only solution I  
+can see is to sell my  Megs for about $, and by  mg SIMMS for about  
+$ used. Apart from the fact that I can't afford the price right now,  
+the entire process of selling RAM and buying it used probably means that  
+the machine might be down for a number of days which I would rather  
+avoid...
+
+So my question is, do the AT RAM boards that plug into a free slot work  
+well with a  ISA machine. I have seen some being sold used for about  
+$ with  Mg with space for another Mg's.  If these boards do work, how  
+do they do it?  Is a device driver needed, or will the BIOS pickup the  
+extra RAM as it does with the SIMMS on the mother board? I know that the  
+ISA expansions slots are -bits and  SIMM memory is  bits, so  
+probably all of this is just wishful thinking... However any help is truly  
+appreciated.
+
+-Eric

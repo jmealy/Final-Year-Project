@@ -1,0 +1,40 @@
+Hi Netters!
+
+I'm looking at purchasing some sort of backup solution.  After you read about
+my situation, I'd like your opinion.  Here's the scenario:
+
+.  There are two computers in the house.  One is a small  (MB IDE drive).
+    The other is a DX ( SCSI drive w/ Adaptec  controller).  Both 
+    systems have PC TOOLS and will use Central Point Backup as the backup / 
+    restore program.  Both systems have ." and ." floppies.
+
+.  The computers are not networked (nor will they be anytime soon).
+
+From what I have seen so far, there appear to be at least  possible
+solutions (I'm sure there are others I haven't thought about).  For these 
+options, I would appreciate hearing from anyone who has tried them or sees 
+any flaws (drive type X won't coexist with device Y, etc.) in my thinking 
+(I don't know very much about these beasts):
+
+.  Put .MB floppy drives (or a combination drive) on each system.
+    Can someone supply cost and brand information?  What's a good brand?
+    What do the floppies themselves cost?
+
+
+.  Put an internal tape backup unit on the  using my SCSI adapter, and
+    continue to back up the  with floppies.  Again, can someone recommend a
+    few manufacturers?  The only brand I remember is Colorado Memories.  Any
+    happy or unhappy users (I know about the compression controversy)?
+ 
+
+.  Connect an external tape backup unit on the  using my SCSI adapter, and
+    (maybe?) connect it to the  somehow (any suggestions?)
+
+
+.  Install a Floptical drive in each machine.  Again, any gotcha's or 
+    recommendations for manufacturers?  
+
+I appreciate your help.  You may either post or send me e-mail.  I will
+summarize all responses for the net.
+
+Thanks,

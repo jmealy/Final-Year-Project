@@ -1,0 +1,181 @@
+Here is the OPI (Offensive Production Index) for all AL players with at
+least  at bats.
+
+It is early in the season so there are some very high numbers.  Last years
+leader was Frank Thomas at ..
+
+Teams are denoted by an * as the first character of the name and each
+player has his team preceeding his name.
+
+The equations used are found at the end of the post.
+
+Comments and suggestions are welcome.
+
+Kevin
+
+League OPI: .
+League BA:  .
+League SLG: .
+League OBA: .
+
+Rank Player                 OPI     BA    SLG    OBA
+-----------------------------------------------------
+    Tor,carter            .  .  .  .
+    Cle,baerga            .  .  .  .
+    Det,phillips          .  .  .  .
+    Oak,mcgwire           .  .  .  .
+    Tor,white             .  .  .  .
+    Bal,anderson          .  .  .  .
+    NYY,owen              .  .  .  .
+    Oak,rhenderson        .  .  .  .
+    Mil,thon              .  .  .  .
+   Oak,browne            .  .  .  .
+   Tex,palmer            .  .  .  .
+   Det,gibson            .  .  .  .
+   Cle,howard            .  .  .  .
+   NYY,tartabull         .  .  .  .
+   Tex,rodriguez         .  .  .  .
+   Tex,gonzalez          .  .  .  .
+   Bos,zupcic            .  .  .  .
+   Sea,felder            .  .  .  .
+   Oak,blankenship       .  .  .  .
+   Min,puckett           .  .  .  .
+   NYY,oneill            .  .  .  .
+   Cle,belle             .  .  .  .
+   Sea,buhner            .  .  .  .
+   Mil,hamilton          .  .  .  .
+   Det,whitaker          .  .  .  .
+   Det,fielder           .  .  .  .
+   Tor,sprague           .  .  .  .
+   Whi,cora              .  .  .  .
+   Whi,raines            .  .  .  .
+   NYY,kelly             .  .  .  .
+   Bos,quintana          .  .  .  .
+   Sea,tmartinez         .  .  .  .
+   Cal,gonzales          .  .  .  .
+   Whi,burks             .  .  .  .
+   Cal,snow              .  .  .  .
+   Whi,karkovice         .  .  .  .
+   *Cleveland            .  .  .  .
+   Cle,sorrento          .  .  .  .
+   Sea,amaral            .  .  .  .
+   Bos,cooper            .  .  .  .
+   Min,winfield          .  .  .  .
+   Cal,curtis            .  .  .  .
+   Bos,mvaughn           .  .  .  .
+   Oak,steinbach         .  .  .  .
+   *Oakland              .  .  .  .
+   NYY,maas              .  .  .  .
+   Kan,joyner            .  .  .  .
+   Min,knoblauch         .  .  .  .
+   Bos,greenwell         .  .  .  .
+   Oak,brosius           .  .  .  .
+   Tor,olerud            .  .  .  .
+   Bal,mercedes          .  .  .  .
+   *NYYankees            .  .  .  .
+   Bal,hoiles            .  .  .  .
+   Mil,kmak              .  .  .  .
+   Oak,dhenderson        .  .  .  .
+   Cle,lofton            .  .  .  .
+   Min,larkin            .  .  .  .
+   Bos,dawson            .  .  .  .
+   Cle,camartinez        .  .  .  .
+   Det,gladden           .  .  .  .
+   Cal,polonia           .  .  .  .
+   *California           .  .  .  .
+   *Detroit              .  .  .  .
+   Det,tettleton         .  .  .  .
+   Cal,disarcina         .  .  .  .
+   Cal,easley            .  .  .  .
+   Bal,baines            .  .  .  .
+   Tex,franco            .  .  .  .
+   Whi,ljohnson          .  .  .  .
+   Sea,vizquel           .  .  .  .
+   NYY,bwilliams         .  .  .  .
+   Mil,gvaughn           .  .  .  .
+   Min,hrbek             .  .  .  .
+   Bal,cripken           .  .  .  .
+   *Seattle              .  .  .  .
+   Cal,salmon            .  .  .  .
+   Kan,mcreynolds        .  .  .  .
+   *Toronto              .  .  .  .
+   *Texas                .  .  .  .
+   Min,pagliarulo        .  .  .  .
+   *WhiteSox             .  .  .  .
+   Kan,hiatt             .  .  .  .
+   Whi,guillen           .  .  .  .
+   Whi,thomas            .  .  .  .
+   Kan,mcrae             .  .  .  .
+   *Boston               .  .  .  .
+   Cle,hill              .  .  .  .
+   NYY,mattingly         .  .  .  .
+   *Baltimore            .  .  .  .
+   Bal,gomez             .  .  .  .
+   *Minnesota            .  .  .  .
+   Whi,fisk              .  .  .  .
+   Cle,jefferson         .  .  .  .
+   Oak,neel              .  .  .  .
+   Cal,cdavis            .  .  .  .
+   Bos,fletcher          .  .  .  .
+   *Milwaukee            .  .  .  .
+   Det,livingstone       .  .  .  .
+  Tor,ralomar           .  .  .  .
+  *KansasCity           .  .  .  .
+  Oak,bordick           .  .  .  .
+  Tex,canseco           .  .  .  .
+  Sea,valle             .  .  .  .
+  Bal,devereaux         .  .  .  .
+  Kan,lind              .  .  .  .
+  Mil,surhoff           .  .  .  .
+  Kan,brett             .  .  .  .
+  Whi,bell              .  .  .  .
+  Cle,salomar           .  .  .  .
+  Mil,jaha              .  .  .  .
+  Det,fryman            .  .  .  .
+  NYY,boggs             .  .  .  .
+  Tex,bripken           .  .  .  .
+  Min,mack              .  .  .  .
+  Min,harper            .  .  .  .
+  Cle,fermin            .  .  .  .
+  Bos,rivera            .  .  .  .
+  Mil,spiers            .  .  .  .
+  Mil,yount             .  .  .  .
+  Tor,schofield         .  .  .  .
+  Tex,hulse             .  .  .  .
+  Sea,griffey           .  .  .  .
+  Sea,obrien            .  .  .  .
+  Kan,macfarlane        .  .  .  .
+  Oak,sierra            .  .  .  .
+  Kan,jose              .  .  .  .
+  Bos,hatcher           .  .  .  .
+  Sea,blowers           .  .  .  .
+  Whi,ventura           .  .  .  .
+  Tex,palmeiro          .  .  .  .
+  Bal,reynolds          .  .  .  .
+  Kan,mayne             .  .  .  .
+  Cal,myers             .  .  .  .
+  NYY,nokes             .  .  .  .
+  Bos,calderon          .  .  .  .
+  Bos,pena              .  .  .  .
+  Tor,molitor           .  .  .  .
+  Det,deer              .  .  .  .
+  Det,cuyler            .  .  .  .
+  Tor,borders           .  .  .  .
+  Whi,grebeck           .  .  .  .
+  Bal,gdavis            .  .  .  .
+  Tex,dascenzo          .  .  .  .
+  Min,leius             .  .  .  .
+  Mil,reimer            .  .  .  .
+  Tor,djackson          .  .  .  .
+  Tex,gill              .  .  .  .
+  Kan,gagne             .  .  .  .
+
+      .*B + .*B + .*B + .*HR + .*BB + .*(SB-*CS)
+OPI = ----------------------------------------------------------------
+                              AB - H
+
+BA = H / AB
+
+SLG = (H + B + *B + *HR) / AB
+
+OBA = (H + BB) / (AB + BB)

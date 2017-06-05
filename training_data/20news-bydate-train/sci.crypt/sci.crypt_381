@@ -1,0 +1,23 @@
+The only way to view this method of generating unit keys is as a back-door.
+What else can you call a key deterministically generated from the serial
+number?
+
+
+ To generate the unit key for a serial number N, the -bit value N is
+   first padded with a fixed -bit block to produce a -bit block N.
+   S and S are then used as keys to triple-encrypt N, producing a
+   -bit block R:
+
+	   R = E[D[E[N; S]; S]; S] .
+
+   Similarly, N is padded with two other -bit blocks to produce N and
+   N, and two additional -bit blocks R and R are computed:  
+
+	   R = E[D[E[N; S]; S]; S] 
+	   R = E[D[E[N; S]; S]; S] .
+
+   R, R, and R are then concatenated together, giving  bits. The
+   first  bits are assigned to U and the second  bits to U.  The
+   rest are discarded.  The unit key U is the XOR of U and U.  U and U
+   are the key parts that are separately escrowed with the two escrow
+   agencies.

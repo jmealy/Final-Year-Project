@@ -1,0 +1,15 @@
+I've just managed to get xdm running from an NCR  (an SVR  box
+running XFree .) to my NCD XDisplay.  It's pretty much working, but
+I'm encountering a weird error.  I'm attempting to start an xterm from
+my .xsession file, but nothing happens.  Redirecting stderr to a file
+using 'exec >$HOME/.xerrors' in .xsession reveals the error message:
+
+  "xterm: Error , errno : Not owner"
+
+Now, if I start xterm from the window manager, or from the command line,
+it works fine.  And starting other clients, like the window manager (mwm),
+and a clock, from my .xsession also works.
+
+Anyone encountered this?  Suggestions?
+
+aTdHvAaNnKcSe

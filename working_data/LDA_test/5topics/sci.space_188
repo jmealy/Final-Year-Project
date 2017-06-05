@@ -1,0 +1,51 @@
+Reading from a Amoco Performance Products data sheet, their
+ERL- resin with T carbon fiber reinforcement has a compressive
+strength of , psi.  It has a density of . lb/cu in,
+therefore the theoretical height for a constant section column
+that can just support itself is . million inches, or , ft,
+or  Statute miles.
+
+Now, a real structure will have horizontal bracing (either a truss
+type, or guy wires, or both) and will be used below the crush strength.
+Let us assume that we will operate at % of the theoretical 
+strength.  This gives a working height of  miles for a constant
+section column.  
+
+A constant section column is not the limit on how high you can
+build something if you allow a tapering of the cross section
+as you go up.  For example, let us say you have a , pound
+load to support at the top of the tower (for simplicity in
+calculation).  This requires . square inches of column cross
+sectional area to support the weight.  The mile of structure
+below the payload will itself weigh , lb, so at  mile 
+below the payload, the total load is now , lb, a .% increase.
+
+The next mile of structure must be .% thicker in cross section
+to support the top mile of tower plus the payload.  Each mile
+of structure must increase in area by the same ratio all the way
+to the bottom.  We can see from this that there is no theoretical
+limit on area, although there will be practical limits based
+on how much composites we can afford to by at $/lb, and how
+much load you need to support on the ground (for which you need
+a foundation that the bedrock can support.
+
+Let us arbitrarily choose $ billion as the limit in costruction
+cost.  With this we can afford perhaps ,, lb of composites,
+assuming our finished structure costs $/lb.  The $/lb figure
+is just for materials cost.  Then we have a tower/payload mass
+ratio of .:.  At a .% mass ratio per mile, the tower
+height becomes  miles.  This is clearly above the significant
+atmosphere.  A rocket launched from the top of the tower will still
+have to provide orbital velocity, but atmospheric drag and g-losses
+will be almost eliminated.  G-losses are the component of
+rocket thrust in the vertical direction to counter gravity,
+but which do not contribute to horizontal orbital velocity.  Thus
+they represent wasted thrust.  Together with drag, rockets starting
+from the ground have a % velocity penalty to contend with.
+
+This analysis is simplified, in that it does not consider wind
+loads.  These will require more structural support over the first
+ miles of height.  Above that, the air pressure drops to a low
+enough value for it not to be a big factor.
+
+Dani Eder

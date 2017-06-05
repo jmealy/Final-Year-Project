@@ -1,0 +1,31 @@
+My package is based on several articles about non-standard radiosity and
+some unpublished methods.
+
+The main articles are:
+
+-  Cohen, Chen, Wallace, Greenberg : 
+    A Progressive Refinement Approach to fast Radiosity Image Generation
+     Computer Graphics (SIGGRAPH), V. (No. ), pp -, August 
+
+-  Silion, Puech
+    A General Two-Pass Method Integrating Specular and Diffuse Reflection
+    Computer Graphics (SIGGRAPH), V(No. ), pp-, July  
+
+
+I do not use hemi-cubes. I have no special hardware (SUN SPARCstation).
+
+
+Use anonymous as username and your e-mail address as password.
+
+
+
+Stephan.
+
+
+----------------------------------------------------------------------------
+
+ Stephan Amann     SIG Computer Graphics, University of Berne, Switzerland
+           amann@iam.unibe.ch
+	   Tel +    	   Fax +    
+
+ Projects: Radiosity, Raytracing, Computer Graphics

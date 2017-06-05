@@ -1,0 +1,6 @@
+
+
+I had this very same problem, and did 'work around' by turning parity checking off, but that only
+worked while I was in windows, and the parity error would occur immediately after exiting
+windows, however,the problem turned out to be  chip simms vs  chip simms.  I can't use  chip simms in my 
+computer, and when I replaced them, the problem vanished, forever.

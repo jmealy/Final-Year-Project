@@ -1,0 +1,52 @@
+As most of you know, we have recently changed our standard VESA local-bus
+video card from our own NCR-based card to the new Diamond Stealth  VLB card
+for packages , , and  (package # still has the NCR "screamer').  We also have
+added the $ upgrade from the Stealth  or NCR to the Diamond Viper to our
+product list.  Below are the comparisons of the different cards in the
+configurations we will offer:
+
+                     NCR              Stealth  VLB        Viper VLB
+Ox Colors       ,           ,,K,K,.M ,,K,K,.M *
+OOxOO Colors       ,           ,,K,K        ,,K,K *
+x Colors      ,           ,                ,
+x Colors                                        
+Video Processor      NCR CE+      S C             Weitek Power 
+Video RAM            M               M                    M
+Max RAM addressable
+  by Vid Processor   M               M                    M
+RAM Type             DRAM             DRAM                  VRAM
+User RAM Upgrade?    No (no sockets)  No (no sockets)       Yes (thru
+Diamond)
+Ox Refresh      - Hz         -   Hz            -   Hz
+OOxOO Refresh      - Hz         -   Hz            -   Hz
+x Refresh     - Hz         -   Hz            -   Hz
+Oxl Refresh     Hz            -   Hz            -   Hz
+ pin VESA
+  Feature Connector  No               Yes                   No 
+Conflict with xE
+  port addr (COM)   No               YES*                  No*
+Drivers for:
+  Win .            Yes              Yes                   Yes
+  ACad    //    Yes              Yes                   Yes
+  ACad             No               Yes**                 Yes**
+  VESA               Yes              Yes                   Yes
+  OS/,     WinNT    NO***            NO***                 NO***
+Win . WINMARKS     .M****         M****              M****
+
+
+^L
+*    Viper VLB with M of video RAM also gives OOxOO .M, x K &
+     K, and xl   color.  S-based cards, since they are downward
+     compatible, will have the conflict with E.  Diamond admits conflict will
+     exist with the Stealth .  The prelim Viper manual incorrectly lists the 
+     S port addresses.  No conflict. 
+
+
+**   AutoCAD  drivers are now currently available for Stealth, SpeedSTAR
+     X, Stealth  VLB, and Viper VLB.  They can only be obtained from
+     Diamond Tech Support, -- and NOT on any BBS. 
+
+**   OS/ . is supported for Standard VGA for all cards.  SVGA drivers
+     available in the near future.  Windows NT is not released yet, and no
+     drivers are available currently.  Diamond hopes to have all current
+     products supported in the Win NT release, on the NT disks.

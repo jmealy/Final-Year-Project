@@ -1,0 +1,48 @@
+Hi Guys,
+
+	It has been a long time since I wrote a program using X. I am trying to 
+	get myself re-familiarize with X. I would appreciate your help regarding
+	the following problem.
+
+	I am trying to compile a simple X program on sun running sunOS ... 
+	using
+	cc -o ex ex.c -lXaw -lXmu -lXt -lXext -lX -lm
+	I am getting an error
+
+	ld: Undefined symbol
+		_get_wmShellWidgetClass
+		_get_applicationShellWidgetClass
+
+
+ The simple program I tried to compile is given below.
+
+#include <stdio.h>
+#include <X/Intrinsic.h>
+#include <X/StringDefs.h>
+#include <X/Xaw/Form.h>
+
+main(argc,argv)
+int 	argc;
+char	**argv;
+{
+	Widget	topLevel;
+	Widget	frame;
+
+	topLevel = XtInitialize("ex","Ex",NULL,, &argc,**argv);
+	frame = XtCreateManagedWidget("Form",formWidgetClass,topLevel,NULL,);
+	XtRealizeWidget(topLevel);
+	XtMainLoop();
+}
+
+
+
+
+	I got the same error when I tried to build "xpostit" using the Imakefile
+	provided with the software.
+
+	I have compiled X programs before (not on this machine, but on other 
+	machines running sunOS . and X R). I did not get this error message
+	Can anybody tell me why I am getting these messages.
+
+	I would appreciate if you can email your responses to me at
+	azn@ruts.ccc.amdahl.com.

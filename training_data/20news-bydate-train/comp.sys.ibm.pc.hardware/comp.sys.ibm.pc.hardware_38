@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------
+Anonymous,
+
+I saw a posting about the choice between DX- and a DX-.
+I was wondering: although a DX- is faster because of the path to it's
+external cache, shouldn't the choice be the DX- as that one can be
+made to work properly with a local-bus? I mean, cache speed is one thing,
+but all your speed will be blocked during video I/O, so just get that
+faster... 
+I'm willing to speculate that the DX- with local-bus will be - times 
+as fast as the DX- and probably as expensive (or cheap ;-)!

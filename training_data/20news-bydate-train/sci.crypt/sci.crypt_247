@@ -1,0 +1,8 @@
+[..stuff deleted]
+
+I can buy a DES keysearch machine off the shelf now for approx $K, but
+it is not sold by that name. Go buy a circuit emulation machine (eg. Quickturn)
+containing a bunch of FPGAs, (say  to  's), and program each
+to be a DES search engine. Lets say  chips, running at Mhz = G tests/sec.
+Time is e sec max =  weeks,  weeks average. Can't wait that long?
+Buy a bigger machine.

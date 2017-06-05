@@ -1,0 +1,32 @@
+patrickd@wpi.WPI.EDU (Lazer) writes ...
+
+Specs for the  can fill a  page book.  Some highlights are...
+-bit address space w/ -bit data width.   -bit integer registers 
+&  -bit floating point registers.  K copyback capable caches,
+-way set associative.  Typical . clocks/integer instruction.  
+clocks for a floating point multiply.
+
+(interesting aside: the  can multiply two -bit floating point
+numbers in less time than it can multiply two -bit integers)
+
+
+More of the same but with multiple instruction dispatching.  Figure
+about . clocks per instruction typical (my guess).  But the Motorola
+guys are pretty bright, it may be less.
+
+
+Call Motorola.  I'm not typing it all in.
+
+
+I'm predicting that both the x and x lines are reaching their
+ends.  New experimental processors have -bit data pathways and can
+schedule up to  out of  instructions each clock cycle.  That sort
+of trick can't really be done with CISC architectures.
+
+I finally saw some details on the /Pentium and was not greatly
+impressed.  They've finally done some work on the FPU to get it up to
+speed, but otherwise it's only going to be a x speedup.  And to get
+that they're using two integer units, larger caches, and a branch
+target buffer.  Yes, I know they're talking about MHz processors.
+Big whoop.  Designing a MHz board is difficult and really
+expensive.  Priced ns memory chips lately?

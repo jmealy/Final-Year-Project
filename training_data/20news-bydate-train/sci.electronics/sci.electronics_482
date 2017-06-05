@@ -1,0 +1,21 @@
+Here's the scoop.  When you get your home brew receiver working, would
+you be willing to share it with the rest of us?  I always wanted to
+build my own but never have the time to fool around and design it.
+
+pin :  signal ground
+pin :  signal
+pin :  always hot + volts
+pin :  + volts, hot only when preamp is turned on
+pin :  infrared repeater connectors
+
+The infrared repeater jacks on the back of the preamp are not connected
+to anything inside the preamp except the  pin connector pin #.  There
+is a  ohm resistor between the two jacks, with a .K from pin  to
+ground.
+
+The signal pin # in the preamp is summed with the built in IR receiver.
+They use a chip called CXA and a BJT to amplify the signal.  I would
+imagine the logical way would be to duplicate this circuit and use
+it as the external receiver.
+
+If you need more info, let me know.

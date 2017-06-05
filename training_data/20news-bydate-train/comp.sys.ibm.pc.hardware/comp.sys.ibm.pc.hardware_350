@@ -1,0 +1,22 @@
+[much discussion about switching ." and ." drives removed]
+
+Another (albeit strange) option is using a program like  II
+(available via anonymous FTP at many major sites), or FDFORMAT
+(also available via anonymous FTP), that allows you to format
+.HD disks to .Meg, or ."HD disks to .Meg (along with
+many MANY other formats!) so you can DISKCOPY (yes, the broken
+MeSsy-DOS DISKCOPY!) the ." disks onto ." disks or vice
+versa...  I use this techniques with "NON-DOS" self-booting 
+game disks on my old Tandy , and it works...  Another program
+named Teledisk (shareware--available on many major BBS's) will
+also make the weird format disks, provided you have  II
+or FDFormat installed....  Some disks that won't DISKCOPY
+properly can be readily Teledisk'd into the proper format...
+At least this is a software solution for a hardware/BIOS 
+deficiency, eh? 
+
+
+--
+Joseph Zbiciak                         imuc@camelot.bradley.edu
+[====Disclaimer--If you believe any of this, check your head!====]
+------------------------------------------------------------------

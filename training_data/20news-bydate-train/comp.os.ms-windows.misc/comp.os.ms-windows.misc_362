@@ -1,0 +1,5 @@
+I've pursued and researched this question over the last month or so because I have the same requirements you do......and the long and short of it is that the windows mouse drivers don't accept mice at any but com and com using irq or irq unless you buy special drivers from someone who has them.....I've talked to Mouse Systems who say their driver doesn't support other than com and com as above , but who claim to be releasing one that will SOON!??.
+
+The other alternative seems to be possible, but in one case prohibitively expensive, i.e.  port card for $??????!!, and in the other, the author(s) of PowerBBS for Windows claim to have a  port serial card with buffered  UARTS and drivers for windows to match (i.e. com irq) for $......
+
+The second paragraph is hearsay, because I haven't checked it out yet.....but intend to as soon as I can free up $ <g>

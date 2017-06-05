@@ -1,0 +1,13 @@
+When I first setup windows using the self load mode It grabbed about
+ megs of swap file space, my  meg HD was nearly empty at that time.
+I deleted windows for a time and recently reloaded, now my HD is nearly full
+and windows just took  megs.
+I have read somewhere that the best rule of thumb is have your
+permanent swap file the same size as your regular RAM size.  I have  megs
+of RAM and windows took  meg perm swap file.  Works very well.
+In fact with my available HD space, about  megs it won't let me make
+the swap file any bigger.
+You should change your virtual mem swap file to  megs I think
+that is what you said your RAM was.
+
+C-ya..... /\/\artin

@@ -1,0 +1,44 @@
+I write:
+ 
+ 
+and a
+(You've
+hardware
+The
+the
+set
+same
+programs
+programs
+forget
+having
+ 
+After comparing the above strings with my AT commands reference guide, I
+came up with:
+ATZLNX&DS=^M
+This is entered in the 'Initialize' box on the 'Modem Preferences' in Zterm.
+Quick summary of each commmand:
+Z	- Reset modem to User Profile .
+L	- Speaker volume at  (fairly quiet)
+N	- Ring volume at  (fairly quiet)
+X	- Display connect info according to setting  (see manual)
+&D	- Assume DTR (computer) is always on
+S=	- Dial speed at  (as fast as ZyXEL can handle)
+
+In FirstClass, I used this same string, with the addition of S= right
+before the S command, in the setup box.  This disables the auto-answer 
+function of the modem for FirstClass.  I based my modem setting on the Supra
+.FAX, and just changed the above mentioned string.
+
+In Telefinder, I based my setting on the Zoom V - HH setting.  I changed
+the 'Modem Initialization' string to the same one I used for FirstClass, and
+everything seems to work fine.
+
+Sorry it took so long to get this summary out.  If someone wants to forward
+this to the /info-mac/reports directory at sumex-aim, it might save other
+newbie ZyXEL users like myself the trouble of setting up their strings, and
+also save the net some redundant messages.  If anyone else has something
+to add, feel free.
+
+Marcus
+mlobbia@ucsd.edu

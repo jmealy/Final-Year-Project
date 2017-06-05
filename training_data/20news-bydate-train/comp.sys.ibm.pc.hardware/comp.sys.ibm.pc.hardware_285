@@ -1,0 +1,43 @@
+Since the Mac uses ONLY SCSI- for hard drives YES the "figure includes a
+hundred $$$ for SCSI drivers"  This is sloppy people and DUMB.
+
+Ok once again with the SCSI spec list:
+SCSI- {with a SCSI- controler chip} synchronous range is indeed -MB/s
+ asynchronous range is slower at -MB/s.
+SCSI- {With a SCSI- controller chip}: -MB/s with MB/s burst {-bit}
+ Note the INCREASE in SPEED, the Mac Quadra uses this version of SCSI-
+ so it DOES exist. Some PCs use this set up too.
+
+SCSI- {-bit/SCSI- mode}:          -MB/s with MB/s burst
+{for those who want SCSI- but don't want to pay for the -bit or -bit
+ hardware or mess with the SCSI- software controllers.  Usable by SCSI-
+ devices with close to -bit SCSI- speeds}
+SCSI- {-bit/wide or fast mode}:  -MB/s with MB/s burst
+SCSI- {-bit/wide AND fast}:     -MB/s with MB/s burst
+
+On the other interfaces let DXB@psuvm.psu.edu speak:
+Again synchronous and asynchronous modes with asynchronous much slower
+ {Range -MB/s}
+
+One problem is the inconsitant use of the term 'SCSI' in articles and by
+people.  Its PROPER meaning is "The set of SCSI interfaces composed of
+SCSI- AND SCSI-"
+Look at the inconsitant use of SCSI in the below quote:
+(My comments in {})
+
+PC Magazine April , : "Although SCSI is twice as fast as ESDI,
+{This is asynchronous SCSI- with a SCSI- chip} % faster than IDE..."
+{this is BOTH asynchronous SCSI- with a SCSI- chip AND -bit SCSI-}
+To read CONSITANTLY the quote SHOULD read:
+{asynchronous SCSI- with a SCSI- chip}
+"Although asynchronous SCSI- is twice as fast as ESDI, one third the 
+speed of IDE..."
+or {asynchronous SCSI- with a SCSI- chip or -bit SCSI-}
+"Although SCSI- with a SCSI- chip and -bit SCSI- are eight times as fast as
+ESDI, % faster than IDE..."
+
+NOTE the NONUSE of 'SCSI' by itself.  This eliminates ambaguity.
+
+SCSI- drivers are somewhat reasonable while -bit and -bit SCSI- drivers 
+are VERY expansive {-bit SCSI- can use SCSI- drivers with little speed
+degridation(the Mac Quadra does EXACTLY this.)}

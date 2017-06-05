@@ -1,0 +1,48 @@
+MG>> 	I went buying SIMMs recently, and the sales person told me that 
+the
+MG>> are -chip SIMMs and -chip SIMMs, and one cannot use them interchan
+MG>> If you use one, you have to use all of the same type.
+
+don't believe everything you are told.  I can tell you that mixing them 
+between 'banks' ok, and I can't see why mixing in one bank is not unless 
+they are of different speeds ( e.g. mixing of ns and ns SIMMs in one 
+bank ).  The two only differ in the type of chips it uses.  Assuming that 
+the SIMMS are Mx (  bit wide ), here is the two equivalent 
+configuration.  The -chip SIMM uses two -bit wide Mbit (M of -bit 
+nibbles ) and one -bit wide Mbit chip ( for a total of -bit wide Mbyte 
+).  The -bit SIMM uses nine -bit wide Mbit chips.  These are equivalent 
+because of the way that it is 'pinned' on the SIMM board.  At the SIMM 
+interface, they both act as -bit wide MByte SIMMS ( *+=* ).  [sorry 
+if too techie for ya].
+
+
+MG>> 	Similarly, one cannot plug in two MB SIMMs and one MB SIMMs to 
+gi
+MG>> the system a total of  MEG. Why is that so ?? If my system supports
+MG>> of  MEG (it has  SIMM slots), can I plug in  MB SIMMs to give my
+MG>> MB ??
+
+That sounds correct.  the problem is that if your computer takes -bit 
+wide SIMMs, you can not mix different sizes in one bank.  Why you ask?  
+Simple,  if you understand why there is banks.  Assuming you have a -bit 
+CPU ( DX or  ), the data bus (e.g. the mechanism to retrieve data 
+from memory ) is -bits wide, so the computer expects to see  bits when 
+it asks for data.  To get that bandwidth ( -bit wide ), the motherboard 
+links  Mx ( one bit is not data, but parity, so I will ignore that in 
+this simple explaination ) to get bits [ (-)*= bits ].  That means 
+that a SIMM in a bank stores only / of the  bit wide data.  If you 
+have a -bit bus, two Mx SIMMs are linked together to get -bit wide 
+data, which is the reason why  banks are  SIMMs wide, and -bit banks 
+are  SIMMs wide.  If your computer required Mx ( e.g. -bit wide data 
+with  parity bits, used in some PS/s and ASTs ), you could upgrade by 
+one SIMM at a time.
+
+Hope that this message is not over your head, but the answer to your 
+question was not simple.  I could of just said, 'because I said so.'
+
+-rdd    
+
+---
+ . WinQwk .b# . Unregistered Evaluation Copy
+ * KMail .d W-NET HQ, halk.ann-arbor.mi.us, +    or 
+                                                  

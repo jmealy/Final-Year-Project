@@ -1,0 +1,74 @@
+TDIP.TXT - Jeffrey E. Hundstad (jgum@vax.mankato.msus.edu)
+
+                     Switch Settings on the Trident C
+
+----------------------------------\         /-----------------|
+               |-----------| |-------------------| |-----------
+                   VGA Graphics Adapter Layout # (-DRAM)
+
+----------------------------------\         /-----------------|
+               |-----------| |-------------------| |-----------
+                VGA Graphics Adapter Layout # (// - DRAM)
+
+----------------------------------\         /-----------------|
+               |-----------| |-------------------| |-----------
+                VGA GRaphics Adapter Layout # (// - DRAM)
+
+.  Dip Switches
+.  DB- connector: For analog monitors.
+.  DB- connector: for TTL monitors. (* NOTE #)
+.  Jumers J, J, J, J (J for layouts # and #, J for layout #)
+.  Video BIOS: Basic Input/Ouput System.
+.  TVGA  Chip: VGA GRaphics chip.
+.  Edge connector: For IBM PC/XT, PC/AT and compatible systems.
+.  Video DRAM: up to MB
+.  Feature connector: For special applications.
+. Video DAC
+. Jumper Blocks JP and JP (// board only)
+* NOTE # - Hardware option.  Feature not present for all board versions.
+
+Switch settings for the  switch dip box (# from figures).
+
+Switch :  Scan Rate
+  On  - Less than KHz (default)
+  Off - -Khz
+
+Switch :  Fast and Slow Address Decode
+  Off - Fast address decode (default)
+  On  - Slow address decode
+
+Switch :  / bit Data Path
+  Off - -bit data path (default)
+  On  - -bit data path
+
+
+Jumper settings
+
+J:  Settings for IRQ
+          
+   xxx     xxx
+ Off (def)   On
+
+J:  Settings for Bus Size Detections
+            x
+ x          x
+ x         
+Autodetect  Standard Interface
+(def)
+
+J:  Settings for DRAM Configuration
+                             
+   ----          |  |             ----
+   ----          |  |             ----
+                             
+
+    Two DRAM      Four DRAM      Eight DRAM
+
+J:  DRAM Clock Select
+          
+   xxx     xxx
+  MHz     MHz
+Two DRAM   / DRAM
+
+
+SW & SW

@@ -1,0 +1,17 @@
+I need help binding some value to the HOME and END keys on my keyboard.  I have an
+rs/ w/ aix..ext running XRpl mit dist.  I'm using a PC running eXceed
+for windows as my xterminal.  The HOME and END keys do not send a value, and my
+application needs them to be defined.  I used this in my Xdefaults to define the
+keys:
+
+varnet*VT.Translations: #override \
+    <Key>Home: string("\[~") \n\
+    <Key>End: string("\[~")
+
+Then I xterm -name varnet.  This works perfect, however the  and the  key on my
+keypad are also defined as \[~ and \[~.
+
+Any ideas?  Help please.
+
+Thanks.
+

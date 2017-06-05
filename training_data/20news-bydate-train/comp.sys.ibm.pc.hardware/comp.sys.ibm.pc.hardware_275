@@ -1,0 +1,8 @@
+I got two very similar sounding boards for dirt cheap, too. Their Assy
+numbers were not -series, but your description fits otherwise. They
+are Com C's aka Etherlink Plus cards. Check out ftp.com.com, there
+are drivers and diagnostic programs for just about any and all Com
+cards. I concluded that my card was the  after I ran their diagnostic
+program for C succesfully ("..passes with flying colours") :)
+
+Anybody know of packet drivers for these cards under OS/..?

@@ -1,0 +1,10 @@
+VESA local bus motherboard,
+MB RAM,
+K cache,
+. & . Floppy,
+ MB Hard Drive,
+IDE controller (HD&FD)
+S/P/G
+Local Bus MB SVGA Video Card,
+" SVGA Monitor (.dpi)
+Mini Tower, -key Keyboard

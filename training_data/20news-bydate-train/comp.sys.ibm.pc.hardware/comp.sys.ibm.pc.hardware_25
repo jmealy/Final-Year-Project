@@ -1,0 +1,47 @@
+Please help if you can with the following strange problem:
+
+  The Maxtor  drive in my  clone would from time to
+  time, for no obvious reason spin down completely (one can
+  tell by the sound) and simply refuse to be accessed. DOS
+  reacts with an error (Drive D: cannot be accessed or
+  something the like). Unfortunately, I cannot just reproduce
+  the error. Sometimes it occurs more often, sometimes
+  less. The last time it happened was when I wanted to 
+  demonstrate some software to a colleague.
+    I would like to know if anybody has experienced similar
+  problems. I don't like to take the thing to the dealer
+  only to be told that there's nothing wrong with it. I
+  checked the other post in this group about Maxtor, and
+  I don't seem to be the only one who has problems. However,
+  no one describes the same problem, and I also have a 
+  different configuration.
+
+  Thanx in advance for any e-mailed help. 
+  
+  Peter
+
+LIST OF EQUIPMENT
+  Computer "Mandax" Mainboard -, MB
+  Adaptec  SCSI Master
+  Maxtor LXTS SCSI-II Hard Drive
+  NEC CDR- CD-ROM Reader (problem remains with CD-ROM removed)
+  ET VGA Card
+
+CONFIG.SYS
+  files=
+  device=C:\dos\setver.exe
+  device=C:\windows\himem.sys
+  device=C:\system\aspidos.sys
+  device=C:\system\aswcdnec.sys /d:neccd
+  DOS=HIGH
+  COUNTRY=,,C:\dos\country.sys
+  device=C:\dos\display.sys CON=(EGA,,)
+
+AUTOEXE.BAT
+  C:\windows\smartdrive.sys
+  PATH=C:\windows;c:\dos
+  SET TEMP=C:\dos
+  MODE CON CODEPAGE PREPARE=(() C:\DOS\EGA.CPI)
+  MODE CON CODEPAGE SELECT=
+  KEYB SG,,C:\DOS\KEYBOARD.SYS
+  C:\SYSTEM\MSCDEX /D:NECCD /L:d /v

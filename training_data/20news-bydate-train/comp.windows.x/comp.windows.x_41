@@ -1,0 +1,61 @@
+Try this:
+-------------------------------------------------------------------------------
+#include <stdio.h>
+#include <X/Xlib.h>
+#include <X/Xutil.h>
+
+Display *dpy;
+int	screen;
+XColor	*xclrs,*xclrp;
+XID	cmap;
+int	cells,i,j,red,green,blue,got;
+
+
+
+main()
+{
+ dpy = XOpenDisplay(NULL);
+ screen = DefaultScreen(dpy);
+ cells = DisplayCells(dpy,screen);
+
+ cmap = XCreateColormap(dpy,RootWindow(dpy,screen),DefaultVisual(dpy,screen),);
+
+ xclrs = (XColor *)malloc(cells * sizeof(*xclrs));
+
+
+ xclrp = xclrs; 
+ for (i=; i<cells; i++) { xclrp->pixel = i; xclrp->flags = ; xclrp++; };
+
+ XQueryColors(dpy,DefaultColormap(dpy,screen),xclrs,cells);
+ XStoreColors(dpy,cmap,xclrs,cells);
+ XInstallColormap(dpy,cmap);
+ got = ;
+
+ while(got) {
+  xclrp = xclrs;
+  got = ;
+  for(i=; i<cells; i++)  {
+   if(xclrp->red < ) {xclrp->red += ; got = ;};
+   if(xclrp->green < ) {xclrp->green +=; got=;};
+   if(xclrp->blue < ) {xclrp->blue +=; got=;};
+   xclrp ++;
+  }
+  XStoreColors(dpy,cmap,xclrs,cells);
+/*  XInstallColormap(dpy,cmap); */
+ }
+ got = ;
+ while(got) {
+  xclrp = xclrs;
+  got = ;
+  for(i=; i<cells; i++)  {
+   if(xclrp->red > ) {xclrp->red -= ; got = ;};
+   if(xclrp->green > ) {xclrp->green -=; got=;};
+   if(xclrp->blue > ) {xclrp->blue -=; got=;};
+   xclrp ++;
+  }
+  XStoreColors(dpy,cmap,xclrs,cells);
+/*  XInstallColormap(dpy,cmap); */
+ }
+}
+--------------------------------------------------------------------------
+It will work on any PseudoColor XServer. (hopefully :)

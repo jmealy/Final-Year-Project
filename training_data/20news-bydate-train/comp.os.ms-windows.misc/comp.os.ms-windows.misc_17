@@ -1,0 +1,8 @@
+Are you using Windows . or .? If you're still on ., . devotes about
+twice as much memory to these and runs out much less frequently. If .,
+you might use one of the resource monitors (such as the one that comes with
+the Windows . Resource Kit or one of the many shareware ones available)
+to see which programs are hogging the resources (every icon, internal
+graphics brush, etc. in every program running uses a certain amount of
+this limited memory area. Also, some don't give it back when they're
+finished).

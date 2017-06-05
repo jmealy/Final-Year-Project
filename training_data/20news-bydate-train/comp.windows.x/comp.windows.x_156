@@ -1,0 +1,14 @@
+Version . of Xew widgets is available at
+
+	export.lcs.mit.edu: contrib/Xew-..tar.Z
+	export.lcs.mit.edu: contrib/Xew-..README
+
+For better details, check the README. (For extensive details, you have
+to with Xew-..ps.Z, still haven't had time to update this one).
+
+No new functionality has been added since . version. Raster widget
+handles now expose events slightly more intelligently than before
+(really had to do this when I added a simple program that uses XR
+Athena Porthole and Panner widgets). The program demo/viewer.c is
+very simple demonstration of panner/porthole usage (copied
+from'editres' actually :-)

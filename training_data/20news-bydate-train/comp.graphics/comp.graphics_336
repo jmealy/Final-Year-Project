@@ -1,0 +1,67 @@
+There is a new version of the RTrace ray-tracing package (..) at
+asterix.inescn.pt [...] in directory pub/RTrace.
+Check the README file.
+
+RTrace now can use the SUIT toolkit to have a nice user interface.
+Compile it with -DSUIT or modify the Makefile.
+SUIT is available at suit@uvacs.cs.virginia.edu
+I have binaries of RTrace with SUIT for SUN Sparc, SGI Indigo
+and DOS/GO.
+Please contact me if interested.
+
+****************************************
+
+The MAC RTrace . port is in directory pub/RTrace/Macintosh
+Thanks to Reid Judd (reid.judd@east.sun.com) and
+Greg Ferrar (gregt@function.mps.ohio-state.edu).
+
+****************************************
+
+Small changes were done since version .., mainly:
+
+. Now it is possible to discard backface polygons and triangles
+   for fast preview...
+
+. The support program scnsff has been reworked to use temp files.
+
+****************************************
+
+Here goes a short description of current converters from
+CAD/molecular/chemistry packages to the SCN format.
+
+The package programs are related as below (those marked with * have been
+modified)
+
+	       iritscn
+     IRIT ----------------|
+                          |               NFF (nffclean, nffppp)
+	        solscn   |                |
+    ACAD ---------------|                | nffsff
+                          |                |
+	        molscn	  v    scnsff*    v	rtrace*
+   ALCHEMY  -----------> SCN -----------> SFF ----------> PIC or PPM
+			  ^      cpp                           |
+	        pdbscn   |                                 picmix
+     PDB -----------------|                                 picblend
+			  |                                 ppmmix*
+	       chemscn   |                                 ppmblend*
+   CHEMICAL --------------|
+                          |
+                dsscn*  |
+  D STUDIO --------------|
+                          |
+                ivscn*   |
+ IRIS Inventor -----------|
+
+****************************************
+
+The DOS port of RTrace is in pub/RTrace/PC- (rtrac.arj,
+utils.arj and image.arj). See the README file there.
+Requires DJGPP GO DOS extender (version . included), which can be
+found in directory pub/PC/djgpp (and in many sites around netland).
+There are also demo scenes, manuals and all the source code...
+
+****************************************
+
+Please feel free to get it and use it.
+Hope you like it.

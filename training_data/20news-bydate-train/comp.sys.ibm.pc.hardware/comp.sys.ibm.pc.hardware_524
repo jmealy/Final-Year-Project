@@ -1,0 +1,32 @@
+Hi there.  We just bought a  DX/ Gateway system with a  meg ATI
+Ultra Pro video card.  Everything seems to work fine except for the
+Windows Drivers for x  bit, and x and x  bit
+modes.  The fonts and icons start deteriorating after windows startup,
+and within minutes of use, everything on the screen is totally
+unintelligible.  Naturally, I called Gateway tech support to inquire
+about this.  The technician asked me about the drivers, and I told him it
+was version ., build .  He told me that the  and  bit drivers for
+the ATI Ultra Pro simply do not work!!!  Is this true?  If so, I'm simply
+amazed.  How could this be?  The strange thing is I would have expected
+to see some discussion on here (unless the subject has made the FAQ!!!).
+
+One very suspicious point that came up later was that he stated that none
+of the Windows Accelerator boards have working  and/or  bit drivers
+for Windows ..  I easily challenged him on that because I've been
+running a Diamond x in  bit mode at home for  months now, and I have
+"Well, Diamond has been working on those drivers much longer."  Anyway, I
+just wanted to see if anyone else had any trouble and what they did about
+it.  Any feedback will be appreciated.
+
+The system configuration is:
+
+Gateway  DX/ Local Bus
+ Megs Ram
+SCSI HD & CD-ROM
+Ultrastor F Local Bus SCSI controller
+ATI Ultra Pro Local Bus with MB VRAM
+DOS .
+Windows .
+Mach  drivers version . (build )
+
+Thanks in advance.

@@ -1,0 +1,38 @@
+We have a program written with XR and Motif ...  It runs fine on the Sun
+XR server and MacX.  When that program is run under the Sparc  and the
+OW server, the program crashed itself along with the server.  It crashed before
+the first window had showed up.
+
+I got the following error from X.
+XIO:  fatal IO error  (Broken pipe) on X server "perot:."
+      after  requests ( known processed) with  events remaining.
+      The connection was probably broken by a server shutdown or KillClient.
+
+I have run the program with xmon and below is the last twenty lines or so from
+xmon before both the program and server crashed.
+
+           ............REQUEST: GetProperty
+                        delete: False
+                        window: WIN 
+                      property: ATM 
+                          type: ATM 
+                   long-offset: 
+                                        ..............REPLY: GetProperty
+                                                     format: 
+                                                       type: <NONE>
+                                                bytes-after: 
+           ............REQUEST: GetInputFocus
+                                        ..............REPLY: GetInputFocus
+                                                  revert-to: Parent
+                                                      focus: WIN d
+           ............REQUEST: ChangeProperty
+                          mode: Replace
+                        window: WIN 
+                      property: ATM 
+                          type: ATM 
+                        format: 
+                          data:                 
+           ............REQUEST: GetInputFocus
+
+Please email to me if you have any idea of the above problem.
+Thanks in advance.

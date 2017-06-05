@@ -1,0 +1,12 @@
+Yes.
+
+I use HC and others commerically for this purpose so rest assured it 
+works fine. In one case I route bit serial digital audio using these and it 
+is difficult to see any signal degradation at all which surprised me given 
+some pretty fast edges. HC is spec'd at something like -dB @ MHz into 
+ ohms. The more complex types are generally a little slower and more 
+resistive.
+
+Plain  series are not so good at handling v logic.
+
+Remember that the output load is seen by the input device.

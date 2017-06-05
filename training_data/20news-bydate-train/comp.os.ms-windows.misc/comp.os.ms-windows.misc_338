@@ -1,0 +1,8 @@
+Does anyone know what the vfintd. device is used for in windows .?
+It's under the [enh] section as
+	device=c:\dos\vfintd.
+
+After upgrading to dos  on several machines (different types), some include
+it, some don't.
+
+Any ideas?

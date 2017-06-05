@@ -1,0 +1,15 @@
+From the Maxtor Product Specification and OEM Manual, Doc.  Rev. F,
+page :
+
+         J, ()                 J ()            POWER
+      |xxxxxxxxxx|        |XXXXXXXXXXXXXXXXX|       | UUUU |
++-----+          +--------+                 +-------+      |
+
+
+The only option you "should" jumper is the drive select, shown as "CC"
+above.  There is also a drive power-up option jumper (elsewhere on the
+drive's board) but the odds of that having been unset are slim.
+
+Since the B "normally" has only one HD, you would jumper betwwwn "C" to
+select the first (possible) drive address; if the  is your second drive
+on the B, then jumper between "C".

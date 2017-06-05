@@ -1,0 +1,134 @@
+To those interested in the new ATI Ultra Cards:
+
+I had posted some questions regarding the new ATI Ultra Pro cards and
+had asked confirmation of some opinions.
+
+This message is a summary of the responses. Thanks to all of you that
+replied.
+
+
+
+a) The higher memory limits apply to ISA cards only, as far as I know.  The VLB
+   and EISA version should have no problems.
+ 
+b) I'm pretty sure from my experience that the ISA version doesn't
+   work in systems with over M Ram.  There is supposed to be way
+   of switching the "memory aperture" feature off to prevent this,
+   but apparently it doesn't work.  I posted some "help me" messages
+   on the net and people indicated that the EISA card didn't have this
+   problem.
+
+c) FALSE
+
+d) The VLB card, which I have, allows you to set memory aperture over M
+   by using their configuration software.  No messing with jumpers necessary.
+
+   The M problem is probably valid only for ISA cards.
+
+
+
+a) Again, the memory aperture need only be disabled if you have more than M RAM
+   (EISA and VLB) or  M (ISA).  M should not be a problem for you. 
+ 
+b) Dunno.
+
+c) Depends on the bus. YES if ISA, NO if EISA or Localbus
+
+
+
+a) Nope.  I can use x at hz, -bit and x at hz, -bit, all
+   non-interlaced.
+
+b) Yes - According to PC Magazine, they've tested a local bus version
+   that does x in -bit which may or may not be interlaced.
+
+c) Not for the Pro. Sometimes for the Plus.
+
+   Some modes may run only interlaced on certain monitors. This has nothing to 
+   do with  bits ... only with screen size. Note that for  bit color
+   and Windows you MUST have  megs, memory size calculations notwithstanding.
+
+
+
+a) They aren't perfect, but are much improved.  I don't recall the last time which
+   I had to leave mach  mode (ATI GUP mode) and switch to  or VGA mode due
+   to software incompatibility.
+
+b) True.  Many people recommended going back to Build  or .
+
+c) They appear to be excellent, but have a few bugs. For example, certain
+   graphs with dashed lines in Mathcad . do not print correctly, though they
+   do display OK on the screen. They are about par for fancy cards ..
+   other accelerated cards also have bugs.
+
+d) Overall, I like the card, even if driver performance is somewhat less than
+   satisfactory.  I am running the *  Color mode as that is all my
+   NT driver for October NT version seems to allow.
+
+   I will say this that Color performance is not quite as nice as a Diamond
+   Stealth VRAM, but I have not been able to try out a lot of the options on
+   the old driver.
+
+
+
+a) It's quite fast, but whether or not its the fastest is open to debate.
+ 
+b) Yes - I'll admit it was very very fast in -bit mode, which is what
+   I wanted to use it for.  Too bad it crashed (in many different ways)
+   every  minutes or so...
+
+c) Depends on many many things.
+
+
+
+a) I like it.
+
+b) Well - PC Magazine seems to think it is.
+
+c) Yes, this appears to be true :-)
+
+d) As to greatest thing since sliced bread, I doubt it.  Better cards are
+   coming out.  Who knows, maybe ATI will come out with something faster yet.
+   Several reviews I read rated one Pycon Winjet card as a superior performer 
+   at a cheaper price except for availability of drivers, which Pycon was 
+   developing at that time.  (PC Magazine, about two months or so back)
+
+   Overall, the card has a lot of potential, but you have to be able to use it.
+ 
+
+-----------------------------------------------------------------------------
+That is the end of the questions. These were the most discussed items in this
+group so I thought they needed confirmation. For those of you not familiar
+with the card I have included a summary here (from an ATI ad since I don't have
+an Graphics Ultra yet.)
+
+ATI Graphics Ultra Plus:
+- Accelerated x at K colours
+- True colour(.M) at x
+- Multimedia Video Acceleration (for Indeo Video,RLE and Video  compressed)
+  Stretch full motion video windows to full size
+- Fast VGA
+- Includes  button mouse (ISA versions only)
+- Anti-aliased fonts (ed. avail in  colour mode only,I think)
+- Real-time pan and zoom across large virtual windows desktop
+- Around a / length card size
+- Priced from $ U.S.
+
+ATI Graphics Ultra Pro:
+- Everything in Graphics Ultra Plus
+- Faster performance with VRAMS
+- Accelerated x at  colours Hz non-interlaced
+- Available in ISA, EISA and Microchannel
+- Priced from $ U.S.
+
+ATI Technologies
+() -
+
+I hope this summary can be of use to you.
+
+Al
+
+P.S.  I am not associated with ATI Technologies in any way other
+      than having used their previous ATI Ultra card for a few
+      years (which I generally liked).
+

@@ -1,0 +1,72 @@
+This is the official Request for Discussion (RFD) for the creation of two
+new newsgroups for Microsoft Windows NT.  This is a second RFD, replacing
+the one originally posted in January ' (and never taken to a vote).  The
+proposed groups are described below:
+
+NAME: 	 comp.os.ms-windows.nt.setup
+STATUS:  Unmoderated.
+PURPOSE: Discussions about setting up and installing Windows NT, and about
+	 system and peripheral compatability issues for Windows NT.
+
+NAME:	 comp.os.ms-windows.nt.misc
+STATUS:	 Unmoderated.
+PURPOSE: Miscellaneous non-programming discussions about using Windows NT,
+	 including issues such as security, networking features, console
+	 mode and Windows . (Win) compatability.
+
+RATIONALE:
+	Microsoft NT is the newest member of the Microsoft Windows family
+	of operating systems (or operating environments for those who wish
+	to argue about the meaning of an "OS").  The family ranges from
+	Modular Windows through Windows . and Windows for Workgroups to
+	Windows NT at the high end.  To date, Microsoft has shipped over
+	, beta copies and pre-release SDKs of Windows NT -- the
+	actual release is slated for May/June '.
+
+	While Windows NT has an entirely new design internally, it shares
+	an application programming interface with the other members of the
+	Windows family; its Win API includes the Win API used in Win-
+	dows ., and the Wins API subset (Win less threads, networking
+	and security) can be used to create -bit applications for
+	Windows ..
+
+	The user interface is also practically identical to that of Windows
+	., with the addition of logins and a few other features.  It uses
+	Program Manager, File Manager and other applets, and generally pre-
+	sents an identical appearance to the user.  Many of the announced
+	Windows NT applications are ports of existing Windows . apps, and
+	NT also runs existing . applications.
+
+	Thus, it appears logical that Windows NT should share the following
+	groups with the other members of the Windows family:
+		comp.os.ms-windows.apps
+		comp.os.ms-windows.programmer.tools
+		comp.os.ms-windows.programmer.misc
+		comp.os.ms-windows.programmer.win
+	
+	The following groups are also clearly applicable to Windows NT as
+	well as Windows .:
+		comp.os.ms-windows.announce
+		comp.os.ms-windows.advocacy
+	
+	In conclusion, the only clear argument for the separation of the
+	Windows . and Windows NT hierarchies is different internal
+	structures of Windows . and Windows NT.  And yet operating
+	systems such as OS/, Macintosh OS, Xenix and Coherent all have
+	undergone major rewrites without having been split into separate
+	newsgroup hierarchies.
+
+	Further, Windows . is due for a major rewrite itself in  --
+	when the fully -bit, protected-mode and with-DOS-built-in next-
+	generation Windows, "Chicago", debuts next year, surely it should
+	remain in the same hierarchy.  And what, then, would be the jus-
+	tification for separating Windows NT from other Windows versions?
+
+
+DISCUSSION PERIOD:
+	The discussion period will run from  April,  to  May, .  
+
+VOTING:
+	The CFV (Call for Votes) will be issued around  May, , based on
+	the feedback received during the discussion period.  No votes will
+	be accepted prior to the CFV.

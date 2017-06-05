@@ -1,0 +1,314 @@
+Here is one by Andrew "Graphics Gems" Glassner that I got from a
+collegue of mine.  I think I fiddled with it a little bit to make it
+deal with whatever bizarre problem I was working on at the time but it
+is known to work.
+
+							spl
+			       - - - -
+/* spheres
+    ASG      Feb 
+    spl Thu Mar   :: EST 
+*/
+#include <stdio.h>
+#include <math.h>
+
+#define PI .
+
+struct Point_struct {
+        double x, y, z;
+};
+
+static double radius;
+static double xorg;
+static double yorg;
+static double zorg;
+
+do_sphere( r, freq, x, y, z )
+
+  double r;
+  int freq;
+  double x;
+  double y;
+  double z;
+
+  {
+
+    int pole;
+    double northy, southy, poley;
+    double rtheta, rtheta, ntheta, ntheta, magicangle;
+    double theta, thetastart, thisy, den, t;
+    struct Point_node *pnp;
+    struct Point_struct p, p, p, p, n, n, n, n, pt;
+
+    radius = r;
+    xorg = x;
+    yorg = y;
+    zorg = z;
+
+/* north pole */
+
+    magicangle = .*PI/.;
+    northy = radius*sin(magicangle);
+    southy = -radius*sin(magicangle);
+    for (pole=; pole<; pole++) {
+
+      if (pole==) {
+
+        poley=radius;   
+        thisy=northy; 
+        thetastart=.; 
+
+      }
+      else { 
+
+        poley= -radius; 
+        thisy=southy; 
+        thetastart=.; 
+
+      }
+      for ( theta = thetastart; theta < .; theta += . ) {
+
+        rtheta = theta*PI/.;
+        rtheta = (theta+.)*PI/.;
+        p.x = .;  
+        p.y = poley;  
+        p.z = .;  
+        p.x = radius*cos(rtheta);
+        p.y = thisy;
+        p.z = radius*sin(rtheta);
+        p.x = radius*cos(rtheta);
+        p.y = thisy;
+        p.z = radius*sin(rtheta);
+
+        if (pole==) {
+
+/* make ring go the other way so normals are right */
+
+          pt.x = p.x;  
+          pt.y = p.y;  
+          pt.z = p.z;  
+          p.x = p.x;  
+          p.y = p.y;  
+          p.z = p.z;  
+          p.x = pt.x;  
+          p.y = pt.y;  
+          p.z = pt.z;  
+
+        }
+
+        den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+        den = sqrt(den);
+
+        if (den != .) {
+
+          t = radius / den; 
+          p.x *= t;  
+          p.y *= t;  
+          p.z *= t;
+
+        }
+
+        den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+        den = sqrt(den);
+
+        if (den != .) {
+
+          t = radius / den; 
+          p.x *= t;  
+          p.y *= t;  
+          p.z *= t;
+
+        }
+
+        den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+        den = sqrt(den);
+
+        if (den != .) {
+
+          t = radius / den; 
+          p.x *= t;  
+          p.y *= t;  
+          p.z *= t;
+
+        }
+
+        subdivide_tri(&p,&p,&p,freq);
+
+      }
+
+    }
+
+/* now the body */
+
+    for (theta=.; theta<.; theta += .) {
+
+      rtheta = theta*PI/.;  
+      rtheta = (theta+.)*PI/.;
+      ntheta = (theta+.)*PI/.; 
+      ntheta = (theta+.)*PI/.;
+      p.x = radius*cos(rtheta);   
+      p.y = northy;  
+      p.z = radius*sin(rtheta);
+      p.x = radius*cos(rtheta);  
+      p.y = northy;  
+      p.z = radius*sin(rtheta);
+      p.x = radius*cos(ntheta);   
+      p.y = southy;  
+      p.z = radius*sin(ntheta);
+      p.x = radius*cos(ntheta);  
+      p.y = southy;  
+      p.z = radius*sin(ntheta);
+
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+
+      if (den != .) {
+
+        t = radius / den; 
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+
+      if (den != .) {
+
+        t = radius / den; 
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+      if (den != .) {
+
+        t = radius / den; 
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+      if (den != .) {
+
+        t = radius / den; 
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+
+      subdivide_tri(&p,&p,&p,freq);
+      subdivide_tri(&p,&p,&p,freq);
+
+    }
+
+    return;
+
+  }
+
+#define norm_pt(v) { register double r = sqrt( ( ( v )->x * ( v )->x ) + \
+                                               ( ( v )->y * ( v )->y ) + \
+                                               ( ( v )->z * ( v )->z ) ); \
+                     ( v )->x /= r; \
+                     ( v )->y /= r; \
+                     ( v )->z /= r; \
+                    }
+
+subdivide_tri(p,p,p,a)
+
+  struct Point_struct *p, *p, *p;
+  int a;
+
+  {
+
+    struct Point_struct n, n, n;
+    struct Point_struct p, p, p;
+    double den, t;
+
+    if (a>) {
+
+      p.x = (p->x+p->x)/.;
+      p.y = (p->y+p->y)/.;
+      p.z = (p->z+p->z)/.;
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+      if (den != .) {
+
+        t = radius / den;
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+      p.x = (p->x+p->x)/.;
+      p.y = (p->y+p->y)/.;
+      p.z = (p->z+p->z)/.;
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z); 
+      den = sqrt(den);
+      if (den != .) {
+
+        t = radius / den;
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+      p.x = (p->x+p->x)/.;
+      p.y = (p->y+p->y)/.;
+      p.z = (p->z+p->z)/.;
+      den = (p.x*p.x)+(p.y*p.y)+(p.z*p.z);  
+      den = sqrt(den);
+      if (den != .) {
+
+        t = radius / den;
+        p.x *= t;  
+        p.y *= t;  
+        p.z *= t;
+
+      }
+      subdivide_tri(p,  &p,&p,a-);
+      subdivide_tri(&p, p, &p,a-);
+      subdivide_tri(&p,&p, p, a-);
+      subdivide_tri(&p,&p,&p,a-);
+
+    } else {
+
+      n.x = p->x;  
+      n.y = p->y;  
+      n.z = p->z;  
+      norm_pt(&n);
+      n.x = p->x;  
+      n.y = p->y;  
+      n.z = p->z;  
+      norm_pt(&n);
+      n.x = p->x;  
+      n.y = p->y;  
+      n.z = p->z;  
+      norm_pt(&n);
+
+/* nothing special about this poly */
+
+      printf( "%f %f %f  %f %f %f\n", p->x + xorg,
+                                      p->y + yorg,
+                                      p->z + zorg,
+                                      n.x, n.y, n.z );
+      printf( "%f %f %f  %f %f %f\n", p->x + xorg,
+                                      p->y + yorg,
+                                      p->z + zorg,
+                                      n.x, n.y, n.z );
+      printf( "%f %f %f  %f %f %f\n", p->x + xorg,
+                                      p->y + yorg,
+                                      p->z + zorg,
+                                      n.x, n.y, n.z );
+
+    }
+
+    return;
+
+  }

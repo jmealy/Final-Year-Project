@@ -1,0 +1,69 @@
+Forwarded from Neal Ausman, Galileo Mission Director
+
+                                 GALILEO
+                     MISSION DIRECTOR STATUS REPORT
+                               POST-LAUNCH
+                           April  - , 
+
+
+SPACECRAFT
+
+.  On April , cruise science Memory Readouts (MROs) were performed for the
+Extreme Ultraviolet Spectrometer (EUV), Dust Detector (DDS), and Magnetometer
+(MAG) instruments.  Preliminary analysis indicates the data was received
+properly.
+
+.  On April , a Command Detector Unit Signal-to-Noise Ratio (CDUSNR) test
+and a Radio Frequency Subsystem Automatic Gain Control (RFSAGC) test were
+performed using the LGA- (Low Gain Antenna #) over DSS- (Madrid  meter
+antenna) and DSS- (Madrid  meter antenna), respectively.  Data analysis
+is in process.  These tests are periodically performed to provide detailed
+information relative to the telecom command hardware integrity.
+
+.  On April , a NO-OP command was sent to reset the command loss timer to
+ hours, its planned value during this mission phase.
+
+.  On April , the first of two suppressed carrier/DSN (Deep Space Network)
+advanced receiver characterization tests was performed over DSS- (Goldstone
+ meter antenna).  The spacecraft modulation index was varied from  degrees
+to  degrees for a range of ground receiver bandwidth settings.
+
+.  The AC bus imbalance measurement has not exhibited significant change
+(greater than  DN) throughout this period but the DC bus imbalance
+measurement has.  The AC measurement reads  DN (. volts).  The DC
+measurement has ranged from  DN (. volts) to  DN (. volts) and
+currently reads  DN (. volts).  These measurements are consistent with
+the model developed by the AC/DC special anomaly team.
+
+.  The Spacecraft status as of April , , is as follows:
+
+       a)  System Power Margin -   watts
+       b)  Spin Configuration - Dual-Spin
+       c)  Spin Rate/Sensor - .rpm/Star Scanner
+       d)  Spacecraft Attitude is approximately  degrees
+           off-sun (lagging) and  degrees off-earth (leading)
+       e)  Downlink telemetry rate/antenna- bps(coded)/LGA-
+       f)  General Thermal Control - all temperatures within
+           acceptable range
+       g)  RPM Tank Pressures - all within acceptable range
+       h)  Orbiter Science- Instruments powered on are the PWS,
+           EUV, UVS, EPD, MAG, HIC, and DDS
+       i)  Probe/RRH - powered off, temperatures within
+           acceptable range
+       j)  CMD Loss Timer Setting -  hours
+           Time To Initiation -  hours
+
+
+TRAJECTORY
+
+     As of noon Thursday, April , , the Galileo Spacecraft trajectory
+status was as follows:
+
+	Distance from Earth         ,, km (. AU)
+	Distance from Sun           ,, km (. AU)
+	Heliocentric Speed          , km per hour
+	Distance from Jupiter       ,, km
+	Round Trip Light Time        minutes,  seconds
+
+
+SPECIAL TOPIC

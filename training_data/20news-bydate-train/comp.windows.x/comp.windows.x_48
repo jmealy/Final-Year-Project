@@ -1,0 +1,170 @@
+I don't know how many hours you've spent on this, but the Sun User
+Group makes XR available on CD-ROM to its members. The . disk
+has both sources and binaries and it sells for $.  I've tagged a
+table of contents and an orderform on below if anyone's interested.
+
+Alex Newman
+
+----------------------------------------------------------------------------
+Alex Newman	() - voice	My life may be stressful,
+troll@sug.org	() - fax	but at least it's not boring
+Sun User Group *  Beacon St., # * Brookline, MA 
+----------------------------------------------------------------------------
+
+
+
+
+SUG CD . is XR and GNU on a CDROM, priced at $ to SUG
+members, including a caddy!
+
+SUG's emphasis has always been on supplying the greatest possible
+service and value-added to our members.  Last year, the SUG  disk
+contained plug-and-play XR, MB of additional essential binaries,
+almost MB of Sun patches, fully-indexed archives of Sun-related net
+postings, priced at only $.
+
+Our aim this year has been to reduce the price for disks which can be
+produced inexpensively, but to continue to supply as much value-added
+as possible.  To accomplish this, we will be putting out a two disk
+set, the first containing what's ready and needed now, the second
+available later in ', containing more SPARC binaries and other
+useful material not found on previous disks.
+
+The SUG . disk, which was assembled by Robert A. Bruce, contains
+a lot of essential source code, and we decided it would be a great
+service to make it available right away to our members (and this
+pricing makes this a good opportunity to become a member!) for $ per
+disk (including one of those hard-to-find caddies!).  If you are not a
+SUG member, you can become one for an additional $ if you live
+within the US or $ outside.
+
+The SUG . CDROM is an ISO  disk (which means it can be used
+by PC, Macintosh, and other workstations as well), and contains a
+total of MB of material, including:
+
+XR SOURCES AND CORE BINARIES (for SPARC) as of several weeks after
+the initial distribution, thus, four fixes and the the MIT contrib-
+distribution are included (MB of material).  Binaries for: X Xsun
+XsunMono appres atobm auto_box bdftopcf beach_ball bitmap bmtoa
+constype editres fs fsinfo fslsfonts fstobdf ico imake kbd_mode
+listres lndir makedepend maze mkdirhier mkfontdir oclock plbpex puzzle
+resize showfont showrgb startx twm viewres xperf xperfcomp xauth
+xbiff xcalc xclipboard xclock xcmsdb xcmstest xconsole xcutsel
+xditview xdm xdpr xdpyinfo xedit xev xeyes xfd xfontsel xgas xgc xhost
+xinit xkill xload xlogo xlsatoms xlsclients xlsfonts xmag xman xmh
+xmkmf xmodmap xon xpr xprop xrdb xrefresh xset xsetroot xstdcmap xterm
+xwd xwininfo xwud
+
+COPIES OF CONTRIBUTED X SOURCES (from export.lcs.mit.edu/contrib),
+which were then uncompressed/untarred into source directories (MB).
+These are sources only, and some of them were (after the date of
+production of this disk) included in the MIT contrib- and contrib-
+distributions.
+
+GNU SOURCES WHICH WERE uncompressed/untarred into source directories
+(MB).
+
+SPARC BINARIES (and needed libraries) for these GNU programs: ap ar
+as basename bash bison cat cc ccplus chgrp chmod chown ci cmp co
+comm compress cp cpio cpp ctags cut cvs date dd df diff diff dir
+dirname du egrep elvis emacs env etags expand expr fgrep find
+findperl flex fold g++ g++dep g++filt gawk gcc gdb ginstall gnuchess
+gnuchessn gnuchessr gnugo gnuplot gnuplot_x gprof grep hph head id
+ident indent ispell ld ld++ less ln locate logname ls m make merge
+mkdir mkfifo mkmodules mknod mt mv nice nm oleo paste pathchk perl pr
+printenv printf ranlib rcs rcsdiff rcsinfo rcsmerge rcstest ref refont
+rlog rm rmdir rmt sp screen sed size sleep split strip stty sum tac
+tail taintperl tar tee test time touch tput tty uname unexpand uniq
+vdir virec whoami xargs xchess yes zmore
+
+AN ARCHIVE OF COMP.SOURCE.X postings, volume  through volume
+(MB).  Parts are supplied just as posted.  You get to put together
+the pieces, compile, install, etc.
+
+Cost: SUG members: $; Non-members: additional $ within the US, $
+	elsewhere 
+Shipping & Handling: $ inside the USA; $ elsewhere
+
+Mail to: Sun User Group, Inc.
+	 Suite 
+	  Beacon Street
+	 Brookline, MA  
+	 USA
+
+	() -	voice
+	() -	fax
+
+
+The Sun User Group also accepts Visa and MasterCard via telephone or
+electronically.
+
+
+--------------------- cut here and return completed form ---------------------
+
+                                 The SUGCD .
+                                     ORDER FORM
+
+The price of the CD is $.
+
+Shipping and handling: Add $ (USA) or $ (Intl.)
+
+If you are not a member of the Sun User Group, add $ (USA) or $
+(International) to the above sums for membership.  You must be a SUG
+member to purchase the CD-ROM.  I enclose a US $ check for:
+
+                    __$  (SUG member in the USA)
+                    __$  (SUG member outside the USA)
+                    __$ (Includes membership inside the USA)
+                    __$ (Includes international membership)
+
+
+ Name__________________________________ Signature___________________________
+
+ Company Name_______________________________________________________________
+
+ SUG Membership #(if known)_________________________________________________
+
+ Electronic Mail Address____________________________________________________
+
+ Telephone Number___________________________________________________________
+
+ Check Enclosed_____             Mastercard_____  Visa_____
+
+ Credit Card #__________________________________  Exp. date.________________
+
+ Card Holder:__________________________ Signature:__________________________
+
+ Ship to:                                Bill to:
+
+ ______________________________________  ___________________________________
+
+ ______________________________________  ___________________________________
+
+ ______________________________________  ___________________________________
+
+ ______________________________________  ___________________________________
+
+-------------------------------------------------------------------------
+
+[   ]  I hereby authorize the Sun User Group to renew my membership
+        and charge my credit card automatically on an annual basis.
+
+[   ]  I do not wish my name to be included in non-Sun User
+        Group mailings.
+
+[   ]  I do not wish my name to be published in the Sun User
+        Group member directory.
+
+[   ]  I wish to be added to the Sun User Group electronic
+	mailing-list (members only)
+
+
+                  OUTSIDE THE U.S. ONLY:
+
+Individuals outside of the USA may find using their credit cards easier
+than purchasing US$ checks as this eliminates bank charges.
+
+-------------------------------------------------------------------------
+                   Sun User Group
+                    Beacon Street, Suite 
+                   Brookline, MA  

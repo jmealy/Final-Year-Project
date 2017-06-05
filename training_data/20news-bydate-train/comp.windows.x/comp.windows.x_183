@@ -1,0 +1,10 @@
+I'd like to compile Xr on a Sony NWS- running NEWS .c.  The
+X distribution has support for this config, and the release notes say
+it has been tested on the machine.  BUT, also in the release notes,
+nothing from Sony is listed under the supported servers.  What am I
+supposed to use for my r X server then?  How can the OS be supported,
+but not the hardware? Is there something in the r binaries that can
+be used as the r server? These may seem like silly questions, but
+I'm *really* confused.
+-- 
+mike@hopper.acs.virginia.edu 

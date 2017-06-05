@@ -1,0 +1,17 @@
+[This belongs in comp.windows.x.iunix - I've redirected followups]
+
+
+I know for a fact that the EISA version of the Orchid ProDesigner IIS
+works.  However, an EISA SVGA card is likely a waste of money.
+
+When XFree . comes out, with support for accelerated chipsets, ISA,
+EISA, and VLB will all be supported.
+
+The more important question is "what chipsets are supported?".  The bus
+is basically irrelevent as a compatibility issue.
+
+--
+David Wexelblat <dwex@mtgzfs.att.com>  () -  Fax: () -
+AT&T Bell Laboratories,  Laurel Ave - F-, Middletown, NJ  
+
+XFree requests should be addressed to <xfree@physics.su.oz.au>

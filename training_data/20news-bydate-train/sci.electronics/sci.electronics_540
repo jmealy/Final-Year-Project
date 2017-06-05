@@ -1,0 +1,12 @@
+I'd like to see this info as well.  As for wavelength, I think
+you're primarily going to find two -  nM +/- a bit, and/or  nM
++/- a bit.  Usually it is about  nM either way.  The two most common
+I have seen were  and  but I have also heard of  and .
+I'm not sure that the  nM one way or another will make a great deal of
+difference.
+
+	Another suggestion - find a brand of TV that uses an IR remote,
+and go look at the SAMS photofact for it.  You can often find some very
+detailed schematics and parts list for not only the receiver but the
+transmitter as well, including carrier freq. specs. and tone decoding
+specs. if the system uses that.

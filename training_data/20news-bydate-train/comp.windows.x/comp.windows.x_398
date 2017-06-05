@@ -1,0 +1,18 @@
+Well, after massaging the Dec.cf, osf.def, (can't remember the exact names)
+from OSF into my normal XR distribution, everything compiles and links
+fine, but xterm doesn't run.
+
+
+Warning: Representation size  must match superclass's to override background
+Warning: translation table syntax error: Modifier or '<' expected
+Warning: ... found while parsing 'p^#j?;'P)=#'
+X Error of failed request:  BadColor (invalid Colormap parameter)
+  Major opcode of failed request:   (X_AllocNamedColor)
+  Resource id in failed request:  x
+  Serial number of failed request:  
+  Current serial number in output stream:  
+
+Other than this, all the other core X stuff seems to be working OK.  Any
+hints/tips appreciated, patches would be primo.
+
+Thanks.

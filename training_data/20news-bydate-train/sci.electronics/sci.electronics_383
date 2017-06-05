@@ -1,0 +1,41 @@
+pin      function
+       led supply voltage
+       latch data input b
+       latch data input a
+       left decimal point cathode
+       latch strobe input
+       omitted
+       common gnd
+       blanking input
+       omitted
+      right decimal point cathode
+      omitted
+      latch data input d
+      latch data input c
+      logic supply voltage (v)
+
+LATCH STROBE INPUT, pin , when low, the data in the latches follow the data on the latch data
+                             inputs.  When high, the data in the latches will not change.  If the
+                               display is blanked and then restored while the enable input is high,
+                               the previous character will again be displayed.
+
+BLANKING INPUT, pin ,    When high, the display is blanked regardless of the levels of the other
+                              inputs.  When low, a character is displayed as determined by the data
+                              in the latches.  The blanking input may be pulsed for intensity modulation.
+
+LATCH DATA INPUTS, pins ,,,,   Data on these inputs are entered into the latches when the enable
+                                          input is low.  The binary weights of these inputs are A = ,
+                                          B = , C = , D = 
+
+DECIMAL POINT CATHODES, pins , ,   These LEDS are not connected to the logic chip.  If a decimal point
+                                          is used, an external resistor or other current limiting
+                                          mechanism must be connected in series with it.
+
+LED SUPPLY, pin             This connection permits the user to save on regulated Vcc current by using
+                                 a separate LED supply, or it may be externally connected to the logic
+                                 supply (Vcc).
+
+LOGIC SUPPLY (Vcc), pin       Separate Vcc connection for the logic chip
+
+COMMON GROUND, pin ,      This is the vegative termnal for all logic and LED currents except for the
+                              decimal points.

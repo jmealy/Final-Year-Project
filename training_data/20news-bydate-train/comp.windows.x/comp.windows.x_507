@@ -1,0 +1,11 @@
+Hi, looking for any advice or suggestions about a problem I'm
+having with MIT XR's editres, in particular under twm variants.
+
+For a start,  times out of  (but NOT always) editres won't
+grab a widget tree when running on our NCD (Decwindows) Xterms,
+which I'm told will be fixed when the R (not R) XDm is installed.
+OK, so I tried running it on a Sun, running real R, on the same
+network - I get a widget tree, but it's ALWAYS for 'TWM Icon Manager'
+
+Anybody know of any patches for (a) twm or (b) editres that I should
+look at?

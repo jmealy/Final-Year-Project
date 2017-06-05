@@ -1,0 +1,7 @@
+My MDC cipher (which uses any one-way hash function as a CFB-mode stream
+cipher, the current implementation uses MD) uses a key of up to  bits
+(that is, you can use a -bit key if you want and copy it over the entire
+-bit range, or you can use the entire  bits).  Runtime is
+independant of key size, the system runs slightly slower than MD itself.
+I presume RC and RC use a similar system (or possibly they just hash an
+arbitrary-length key down to n bits, maybe , using something like MD).

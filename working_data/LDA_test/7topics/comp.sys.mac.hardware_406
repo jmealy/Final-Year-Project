@@ -1,0 +1,57 @@
+Hi.  I think I have a problem with the stereo sound output on my Quadra
+, but I am not totally sure because my roomate has the same problem
+on his PowerBook .  Any info or experience anyopne has would be
+greatly appreciated.
+
+When I hook my Quadra up to my home stereo system, the following types
+of sounds (mono, as far as I can tell) all play fine through BOTH
+speakers:
+
+system beeps  (already provided ones such as Indigo and ones I record)
+
+Armor Alley
+Spectre
+Spaceward Ho!
+
+
+But, the following games only play out of the left channel:
+
+Lemmings
+Out of This World  (awesome game, BTW)
+Glider .
+OIDS
+
+
+But still, STEREO system beeps do play in stereo, through BOTH speakers.
+(The one I'm specifically referrring to is Apocolyptic Beginning, which
+my roommate downloaded from some ftp site (sumex?))
+
+
+All of the symptoms are the same on my rommates  (he can't run
+OOTW because he doesn't have color).
+
+We're both running system .
+
+
+
+Does anyone with Lemmings or the other three games I mentioned above get
+sound out of both speakers on a Mac II class, Quadra, LC, PowerBook  or
+greater, Centris, SE/, etc... (stereo) machine?
+
+I used to have a Mac II, and I sort of rememeber Lemmings playing in
+stereo on that machine, not just on the left channel.  (I could be
+mistaken, though.  If there were a problem with the Quad 's and PB
+'s, I am wondering why the system beeps still play in stereo?  If there
+isn't a problem with our machines, I wonder why the  games above are
+apparantly written to support only one channel of stereo when they
+could just use mono sounds so the mono sound would at least come out of
+both speakers  (like Spectre, etc. do)?
+
+Quadra 's and PowerBook 's have the same ROMS (to my knowledge),
+so maybe this is a ROM problem?  (if so, though, why wouldn't System .
+patch over this problem?)
+
+
+
+
+Thanks for any help you can provide!

@@ -1,0 +1,13 @@
+: >I have a SoundBlaster board in a -SX PC, and I have it
+: >jumpered to IRQ , port h.  Will this conflict with my
+: >parallel port?  I just have an IDE controller, a multi-IO board
+: >with ser, Par port and a VGA board.  Should I choose
+: >another IRQ besides ?  Or is IRQ  safe to use on  Motherboards?
+
+: Recently I was adding a modem to my computer, and I noticed that LPT uses
+: IRQ- and so does my SB card (h).  I've never had a problem, but I'm
+: just wondering why not.  I thought this would cause a conflict.  
+
+I would also like an explanation of this. If anyone can explain
+why the SB Pro and LPT  can share an IRQ, please do so.
+Thanks

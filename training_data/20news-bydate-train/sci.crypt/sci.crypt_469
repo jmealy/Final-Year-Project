@@ -1,0 +1,56 @@
+[Prof. Denning's description of SkipJack mostly omitted]
+
+	CHIP STRUCTURE
+	The Clipper Chip contains a classified -bit block encryption
+	algorithm called "Skipjack."  The algorithm uses  bit keys (compared
+	with  for the DES) and has  rounds of scrambling (compared with 
+	for the DES).  It supports all  DES modes of operation.  Throughput is
+	 Mbits a second. [...]
+
+	F, an -bit family key that is common to all chips
+	N, a -bit serial number
+	U, an -bit secret key that unlocks all messages encrypted
+		 with the chip
+	The key K and message stream M (i.e., digitized voice) are then
+	fed into the Clipper Chip to produce two values:
+
+  	   E[M; K], the encrypted message stream, and 
+	   E[E[K; U] + N; F], a law enforcement block.  
+
+Three questions:
+) It looks like each  bits of input gives you * bits of output:
+		E[M;K] =  bits
+		E[K;U] = E[  bits ] =  bits
+		E[ E[K;U], N ; F ] = E[  +  bits ] =  bits
+   Do you really need to transmit all  bits each time,
+   or do you only transmit the  bits of wiretap block at the beginning?   
+   All  would be really obnoxious for bandwidth-limited applications
+   like cellular phones (or even regular phones over 
+
+) how do the  DES modes interact with the two-part output?
+   Do the various feedback modes only apply to the message block,
+   or also to the wiretap block?  Or, if the wiretap block is only
+   transmitted at the beginning, does it get incorporated into
+   everything through feedback modes, but not during ECB mode?
+
+) Does the Clipper Chip check the wiretap block itself?
+   Does the block have to be present at all?
+   Since the receiving chip doesn't know the transmitter's U,
+   it presumably can't check the validity of E[K;U], so it's 
+   limited to checking the *form* of the wiretap block,
+   and maybe checking the serial number for reasonableness
+   (unless there's some sort of back-door structure that lets
+   it recognize a valid E[K;U].)
+   
+   In that case, can you replace the wiretap block with a DIFFERENT
+   wiretap block, presumably an old valid one to avoid attracting attention?
+   (The chip won't do it, so you postprocess the output.)
+   Regular people can do one with their own serial number and a dummy key;
+   paranoid people can use someone else's serial number.
+
+   On the other hand, if I could think of that solution so easily,
+   presumably the NSA could too - have they done something to block it,
+   like use message encryption that's really E[M; K,U,N] ?
+
+
+	Thanks!

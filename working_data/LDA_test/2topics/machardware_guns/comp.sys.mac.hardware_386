@@ -1,0 +1,21 @@
+But the interesting comparision is how fast clock-cycle chips
+you can get - an Alpha is WAY slow at  MHz, but blazes at
+ MHz.
+
+
+
+But the  is (or will soon be) available in  MHz version,
+making it "comparable" to a DX-
+
+
+I think you have that one turned around; they have faster clock
+cycles but less power behind each cycle. Not to mention that the
+Intel instruction stream is BYTE-oriented (longest Intel instruction
+is  bytes; what an odd number :-) which makes it hard to do any
+intelligent memory subsystem.
+
+Cheers,
+
+					/ h+
+-- 
+ -- Jon W{tte, h+@nada.kth.se, Mac Hacker Deluxe --

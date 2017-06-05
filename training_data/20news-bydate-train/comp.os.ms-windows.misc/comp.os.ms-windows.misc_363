@@ -1,0 +1,19 @@
+ATM will do nothing for your TrueType fonts.  If your TrueType fonts are
+sufficient for your needs, don't run ATM.  I have a lot of fonts that I can
+install either as Type- PostScript (under ATM) or as TrueType.  I have
+noticed that:
+
+    .	TrueType font files are at least / larger than their Type-
+	equivalents.  If you are using a disk compressor, though, be aware
+	that TrueType fonts will compress, whereas Type- fonts will not
+	(they are encrypted).
+
+    .	With a  dpi laser printer, the "artificial bold" version of a
+	TrueType font is indistingishable from the original, forcing me to
+	install the actual bold (and bold-italic, etc.) variants if I want
+	to use them.  Type- PostScript fonts under ATM generate a visually
+	distinct bold variant from the base font.  I realize that the
+	artificial bold font that ATM generates is aesthetically inferior
+	to the hand-generated bold TrueType variant, but it is sufficient
+	for my needs, and not having to install bold variants saves me %
+	on disk space (uncompressed).

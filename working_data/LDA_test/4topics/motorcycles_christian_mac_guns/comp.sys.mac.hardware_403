@@ -1,0 +1,9 @@
+The following postscript works for LaserWriter IIg's with version  roms
+
+%!
+ serverdict begin exitserver
+<< /FactoryDefaults true >> setsystemparams
+systemdict begin
+realtime  add
+{ dup realtime le { pop exit } if } loop
+quit

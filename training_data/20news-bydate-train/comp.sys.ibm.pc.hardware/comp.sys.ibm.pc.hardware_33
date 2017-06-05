@@ -1,0 +1,22 @@
+B
+BK>Is it possible to plug in ns or ns SIMMs into a motherboard saying
+BK>wants ns simms? 
+
+You shouldn't have troubles.  I have heard of machines having problems 
+with slower than recommended memory speeds, but never faster.  
+
+BK>Also, is it possible to plug in SIMMs of different
+BK>speeds into the same motherboard?  ie -  megs of ns and  megs of 
+BK>or something like that?
+
+Sure.  I have  ns SIMMs in one bank and  ns SIMMS in the other ( I 
+have a  ).  I wouldn't recommend mixing speeds within a bank, just to 
+be on the safe side.
+
+-rdd    
+rdesonia@erim.org
+
+---
+ . WinQwk .b# . Unregistered Evaluation Copy
+ * KMail .d W-NET HQ, halk.ann-arbor.mi.us, +    or 
+                                                      

@@ -1,0 +1,29 @@
+Hi,
+
+	I have a few question about graphics programming in VGA/SVGA :
+
+. How VESA standard works?  Any documentation for VESA standard?
+
+. At a higher resolution than xx or xx VGA mode,
+   where the video memory A-AFFFF is no longer sufficient to hold
+   all info, what is the trick to do fast image manipulation?  I
+   heard about memory mapping or video memory bank switching but know
+   nothing on how it is implemented.   Any advice, anyone?  
+
+. My interest is in xx mode.  Should this mode be called
+   SVGA mode?  What is the technique for fast image scrolling for the
+   above mode?  How to deal with different SVGA cards?
+
+
+  Your guidance to books or any other sources to the above questions
+would be greatly appreciated.  Please send me mail.
+
+
+  Thanks in advance!
+
+
+
+************************************************************************
+*                         Tiang   T.    Foo                            *
+*		      tiang@uokmax.ecn.uoknor.edu 		       *
+************************************************************************    

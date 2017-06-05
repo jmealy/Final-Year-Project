@@ -1,0 +1,8 @@
+
+It appears as if the problem is related to the /'s need for very fast
+(and clean) signal transitions.  I got some email (Vielen Dank, Thomas) stating
+that Motorola provides a solution for this problem in their  manual.  
+Since my manual () predates the  MHz /s I couldn't find it.
+Could someone please email me the specifics?
+		Thanks
+			Christian

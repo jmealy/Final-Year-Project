@@ -1,0 +1,28 @@
+[snip]
+(the DO is not a !!!)
+[snip]
+
+
+The DO box is based on an ARM RISC processor, one or two custom graphics
+chips, a DSP, a double-speed CDROM, and MB of RAM/VRAM. (I'm a little
+fuzzy on the breakdown of the graphics chips and RAM/VRAM capacity).
+
+It was demonstrated at a recent gathering at the Electronic Cafe in
+Santa Monica, CA. From DO, RJ Mical (of Amiga/Lynx fame) and Hal
+Josephson (sp?) were there to talk about the machine and their plan. We
+got to see the unit displaying full-screen movies using the CompactVideo codec
+(which was nice, very little blockiness showing clips from Jaws and Backdraft)
+... and a very high frame rate to boot (like fps).
+
+Note however that the DO's screen resolution is x.
+
+CompactVideo is pretty amazing... I also wanted to point out that QuickTime
+does indeed slow down when one dynamically resizes material as was stated
+above... I'm sure if the material had been compressed at the large size
+then it would play back fine (I have a Q and do this quite a bit). The
+price of generality... personally I don't use the dynamic sizing of movies
+often, if ever. But playing back stuff at its original size is plenty quick
+on the latest  machines.
+
+I'm not sure how a Centris/MHz  stacks up against the  MHz ARM in
+the DO box. Obviously the ARM is faster, but how much?

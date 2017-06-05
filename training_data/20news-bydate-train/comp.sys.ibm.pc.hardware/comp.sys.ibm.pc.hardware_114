@@ -1,0 +1,4 @@
+I also use IRQ .  But there is one disadvantage.  Some games assume that
+the board is using IRQ  and have no way to adjust this setting.  I had
+trouble with some of the Lucas Films games.
+-- 

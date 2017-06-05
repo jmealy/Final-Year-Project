@@ -1,0 +1,36 @@
+Forwarded from the Mars Observer Project
+
+                       MARS OBSERVER STATUS REPORT
+                             April , 
+                              : AM PDT
+
+Flight Sequence C is active, the Spacecraft subsystems and instrument
+payload performing well in Array Normal Spin and outer cruise
+configuration, with uplink and downlink via the High Gain Antenna; uplink
+at  bps, downlink at the  K Engineering data rate.
+
+As a result of the spacecraft entering Contingency Mode on April , all
+payload instruments were automatically powered off by on-board fault
+protection software.  Gamma Ray Spectrometer Random Access Memory
+was successfully reloaded on Monday, April .  To prepare for
+Magnetometer Calibrations which were rescheduled for execution in Flight
+Sequence C on Tuesday and Wednesday of next week, a reload of Payload
+Data System Random Access Memory will take place this morning
+beginning at : AM.
+
+Over this weekend, the Flight Team will send real-time commands to
+perform Differential One-Way Ranging to obtain additional data for
+analysis by the Navigation Team.  Radio Science Ultra Stable Oscillator
+testing will take place on Monday .
+
+The Flight Sequence C uplink will occur on Sunday, April , with
+activation at Midnight, Monday evening April .  C has been modified to
+include Magnetometer Calibrations which could not be performed in C due
+to Contingency Mode entry on April .  These Magnetometer instrument
+calibrations will allow the instrument team to better characterize the
+spacecraft-generated magnetic field and its effect on their instrument.
+This information is critical to Martian magnetic field measurements
+which occur during approach and mapping phases. MAG Cals will require
+the sequence to command the spacecraft out of Array Normal Spin state
+and perform slew and roll maneuvers to provide the MAG team data points
+in varying spacecraft attitudes and orientations.

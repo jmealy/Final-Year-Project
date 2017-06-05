@@ -1,0 +1,132 @@
+================ ------------------------------------------------------------
+ |||||||| SciP+Fi  ction set in C-Sci\programming environs list by Ian Feldman
+ ..........:::::: ---------------------------------------- ---- --------------
+ Written by:_____ _Book Title_; publisher'year, pp         v.           ISBN
+ -----------       =============================== ------- ==== ##############
+     John Brunner _Shockwave Rider_; Ray/Ballantine' $_______ ---
+                   "cracking the net to free information for the common good"
+      Pat Cadigan _Mindplayers_; ("an absolute must-have" --Bruce Sterling)
+      Pat Cadigan _Synners_; Bantam $; (virtual reality)_______ ---
+ Orson Scott Card _Lost Boys_; Harper Collins'; (programmer and family     \
+                   encounters strange events in North Carolina)
+     Denise Danks _Frame Grabber_; St.Martin's, hrdb [GBP]____ ---
+                   computer-illiterate journalix tracks down murderer via BBS
+    Toni Dwiggins _Interrupt_; ("a techno-mystery set in Silicon Valley")
+    Michael Frayn _The Tin Men_; Fontana, ("inspired lunacy" but out of print)
+    David Gerrold _When HARLIE was One Release ._; Bantam'__ ---
+   William Gibson _Count Zero_; (computers as gods, part of a trilogy)
+   William Gibson _Mona Lisa Overdrive_; (virtual reality)______ ---
+   William Gibson _Burning Chrome_; (cyberpunk short stories)___ ---
+   William Gibson _Neuromancer_; (industrial espionage)_________ ---
+                   (author guilty of inventing the cyberpunk genre)
+      James Hogan _The Genesis Machine_; Del Ray' $__________ ---
+      James Hogan _Thrice Upon A Time_; ("time travel for information")
+      James Hogan _The Two Faces of Tomorrow_; Del Ray'_______ ---
+                   ultimate test of AI-OS by letting it run a spacelab -> amok
+    Stanislaw Lem _His Master's Voice_; (failed attempt to decode ET-message)
+       Tom Maddox _HALO_ ("remarkable SF of robots & artificial intelligence")
+ George RR Martin _Nightflyers_; Tor Books'___________________ ---
+      R A MacAvoy _Tea with the Black Dragon_; ("mystery around a computer   \
+                   fraud situation; computing bits ring true.")
+ Vonda N McIntyre _Steelcollar Worker_; in Analog Nov'; (blue-collar VR)
+     Marge Piercy _Body of Glass_; Penguin', pp; (data piracy++) review \
+                   finger "books=Body_of_Glass%danny"@orthanc.cs.su.oz.au
+ ---> David Pogue _Hard-Drive_; Diamond' $, pp____________ ---X
+                   (*programmer dies in accident, leaves no documentation    \
+                   behind; software firms fight for market share with virii; \
+                   "right out of the pages of MacWorld" --Steve Brock)
+   Richard Powers _The Gold Bug Variations_; Morrow ', (famous molecular   \
+                   scientist ponders on the ?why? of love, life in EDP dept.)
+      Paul Preuss _Human Error_; (nanotech computer infects brain-damaged kid)
+    Thomas J Ryan _The Adolescence of P_; ACE'_______________ ---
+                   (runaway AI experiment takes over mainframes, wrecks havoc)
+   Bruce Sterling _The Difference Engine_; (with W Gibson) Bantam'; finger \
+                   "books=The_Difference_Engine%danny"@orthanc.cs.su.oz.au
+      Cliff Stoll _The Cuckoo's Egg_; (non-fiction but reads like one); review
+                   FTP <garbo.uwasa.fi>; /mac/tidbits//tb_-Mar-.etx
+     Tom T Thomas _ME_; ("smart computers")
+     Vernor Vinge _Across Realtime_; Baen Books_____________ [several titles \
+     Vernor Vinge _Tatja Grimm's World_; Baen Books__________ soon available \
+     Vernor Vinge _The Witling_; Baen Books___________________ as Millennium \
+     Vernor Vinge _Threats and Other Promises_; Baen Books_____ Books in UK]
+     Vernor Vinge _True Names & Other Dangers_; Baen Books'___ ---
+     Vernor Vinge _A Fire Upon The Deep_; Tor Books, p, $___ ---
+                   ("essentially about the future of the Internet")
+      John Varley _Press Enter_; ("Short story, gruesome, but good")
+       Ed Yourdon _Silent Witness_; ("Computer crime caper story; gumshoe    \
+                   has to explain intricacies of computer OS to girlfriend")
+ Herbert W Franke _Das Zentrum der Milchstrasse_; ("the center of the galaxy")
+ Herbert W Franke _Letzte Programmierer_; ("'the last programmer';           \
+                   I do NOT mean Frank Herbert!")
+       Emil Zopfi _Computer Fuer  Nacht_; Limmat Verlag, Switzerland
+       Emil Zopfi _Jede Minute Kostet  Franken_; (last  in German; last  \
+                   "set in the commercial computing world of the early 's")
+ -----------------------------------------------------------------------------
+ current version of this list via `finger "scip+fi%danny"@orthanc.cs.su.oz.au'
+ -----------------------------------------------------------------------------
+ compiled ; % mail -s "additions/ comments/ updates --->" ianf@random.se
+ ================ ============================================= ==============
+
+
+
+     Statistical breakdown
+--------------------------
+ +-- --------------------- SciP+Fiction -----+------------+------------------+
+ | # nominations /title    ~~~~~~~~~~~~         /author    # books nominated |
+ +-- =========== ----------------------------+ =========== ================= +
+ |  _The Adolescence of P-_; Ryan          |    Vinge            titles |
+ |  _Neuromancer_; Gibson                   |   Gibson            titles |
+ |  _True Names and Other Dangers_; Vinge   |     Ryan   _The Adolescence..|
+ |  _Shockwave Rider_; Brunner              |  Brunner   _Shockwave Rider_ |
+ |  _When H.A.R.L.I.E was One_; Gerrold     |  Gerrold   _When H.A.R.L.I.E.|
+ |  _A Fire Upon The Deep_; Vinge           |    Hogan             titles |
+ |  _Threats and Other Promises_; Vinge     |      Lem   _Fiasco_HMV_Solar.|
+ +-- ----------------------------------------+ ----------- ----------------- +
+ | # total nominations: ; authors: ; female: ?; sent in by:  readers |
+ +======== ================ ============ ============ =======================+
+
+
+       Contributions by [unsorted FIFO]:
+----------------------------------------
+ From: sbrock@teal.csn.org (Steve Brock)
+ From: "John Lacey" <johnl@cs.indiana.edu>
+ From: malloy@nprdc.navy.mil (Sean Malloy)
+ From: thom kevin gillespie <thom@silver.ucs.indiana.edu>
+ From: Paul Christopher Workman <pwl+@andrew.cmu.edu>
+ From: kellys@code.code.com (Kelly Sorensen)
+ From: whughes@lonestar.utsa.edu (William W. Hughes)
+ From: North_TJ@cc.curtin.edu.au (Tim North)
+ From: LORETI@FNAL.FNAL.GOV (Maurizio Loreti)
+ From: Stephen Hart <stephenh@cs.mun.ca>
+ From: Duane F Marble <dmarble@magnus.acs.ohio-state.edu>
+ From: Matthias Neeracher <neeri@iis.ee.ethz.ch>
+ From: Wolfram Wagner <ww@mpi-sb.mpg.de>
+ From: webb@tsavo.HKS.COM (Peter Webb)
+ From: setzer@ssd.comm.mot.com (Thomas Setzer)
+ From: kevles@acf.NYU.EDU (Beth Kevles)
+ From: dp@world.std.com (Jeff DelPapa)
+ From: rsquires@cyclops.eece.unm.edu (Roger Squires)
+ From: hartman@uLogic.com (Richard Hartman)
+ From: Vernor Vinge <vinge%saturn@sdsu.edu>
+ From: Paul Lebeau <plebeau@cix.compulink.co.uk>
+ From: "Lawrence Rounds" <ljr@beach.cis.ufl.edu>
+ From: phydeaux@cumc.cornell.edu (David Weingart)
+ From: chgs@vaxa.strath.ac.uk (By learning+courtesy)
+ From: Rowan Fairgrove <rowanf@cache.crc.ricoh.com>
+ From: peterc@suite.sw.oz.au.sw.oz.au (Peter Chubb,x,,)
+ From: Gara Pruesse <gara@cs.toronto.edu>
+ From: russell@alpha.ersys.edmonton.ab.ca (Russell Schulz)
+ From: ahm@spatula.rent.com (Andreas Meyer)
+ From: jon@cs.washington.edu (Jon Jacky)
+ From: eugene@nas.nasa.gov (Eugene N. Miya)
+ From: "A.M.MAIR" <CHGS@VAXB.STRATHCLYDE.AC.UK>
+ From: mengel@dcdmwm.fnal.gov (Marc Mengel)
+ From: Roger Scowen <rss@seg.npl.co.uk>
+ From: kevino@clbooks.com (Kevin Oster -- System Administrator)
+ From: chavey@cs.wisc.edu (Darrah Chavey)
+ From: Vonda McIntyre <mcintyre@cpac.washington.edu>
+ From: Bruce Sterling <bruces@well.sf.ca.us>
+ From: "Scott Thomas Yabiku" <yabi@midway.uchicago.edu>
+ From: Thomas Adshead <uad@dircon.co.uk>
+ From: Paul Andrews <.@CompuServe.COM>
+ ===== ======================================= ---------> MUCHO thanks to all!

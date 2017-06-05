@@ -1,0 +1,28 @@
+{Michael Fulbright} said
+   "Analog switches/Balanced"
+      to <All> on --  :
+ MF> I am trying to build a synchronous demodulator and I've hit a snag.
+ MF> In my application I want to be able to change the gain of an
+ MF> op amp amplifier from  to -, controlable via a digital input.
+ MF> The most obvious way I've come up with is to use analog switches
+ MF> to adjust the gain of the op amp. The only analog switch I have
+ MF> experience with it the . Unfortunately I want to switch an
+ MF> AC signal which goes from about -V to V, and the  is only
+ MF> for positive signals.
+
+    How about using a  it has a seperate ground for the
+    analog outputs.  It would get you  bits.
+
+ MF> Another part which caught my eye was the Analog Devices AD. This
+ MF> is a balanced demodulator which appears to fill exactly the need I
+ MF> have. The data sheet was somewhat skimpy on application notes. Could
+ MF> someone comment on using this chip for the following application?
+
+    Or how about a multiplying D/A convertor?  This is
+    essentiallty what you are makeing.
+
+
+                Stephen Cyberman@Toz.Buffalo.NY.US
+             Mangled on Fri  --  at ::
+
+... Catch the Blue Wave!

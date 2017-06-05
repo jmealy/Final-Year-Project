@@ -1,0 +1,995 @@
+Archive-name: x-faq/part
+Last-modified: //
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get patches to XR?
+
+	The release of new public patches by the MIT X Consortium is announced
+in the comp.windows.x.announce newsgroup.
+
+	Patches themselves are available via ftp from export and from other
+sites from which X is available. They are now also distributed through the 
+newsgroup comp.sources.x. Some source re-sellers may be including patches in 
+their source distributions of X.
+
+	People without ftp access can use the xstuff mail server. It now has 
+ patches for XR [/].  Send to xstuff@expo.lcs.mit.edu the Subject line
+		send fixes #
+where # is the name of the patch and is usually just the number of the patch.
+
+	Here are a few complications:
+	) fix  is in four parts; you need to request "a", "b", "c" and 
+"d" separately
+	) the file sunGX.uu, which was part of an earlier patch, was 
+re-released with patch  [note: the file doesn't work with Solaris]
+	) fix  is in two parts: "a" and "b"
+	) fix  is in three parts: "a", "b", and "c"
+	) fix  is in two parts: "a" and "b"
+	) fix  replaces the Rfix-test for the X Test Suite, which 
+previously was optional
+	) fix  also needs PEXlib.tar.Z, which you can obtain from xstuff
+by asking for "PEXlib.uu.[]".
+	) fix  is in  parts, "a" through "i"
+
+----------------------------------------------------------------------
+Subject:  )  What is the xstuff mail-archive?
+
+	The xstuff server is a mail-response program. That means that you mail 
+it a request, and it mails back the response.
+	Any of the four possible commands must be the first word on a line. The
+xstuff server reads your entire message before it does anything, so you can 
+have several different commands in a single message (unless you ask for help). 
+The xstuff server treats the "Subject:" header line just like any other line 
+of the message.
+	The archives are organized into a series of directories and 
+subdirectories.  Each directory has an index, and each subdirectory has an 
+index. The top-level index gives you an overview of what is in the 
+subdirectories, and the index for each subdirectory tells you what is in it.
+
+	) The command "help" or "send help" causes the server to send you a 
+more detailed version of this help file.
+	) if your message contains a line whose first word is "index", then 
+the server will send you the top-level index of the contents of the archive. If
+there are other words on that line that match the name of subdirectories, then 
+the indexes for those subdirectories are sent instead of the top-level index. 
+For example, you can say "send index fixes" (or "index fixes"). A message that 
+requests an index cannot request data.
+	) if your message contains a line whose first word is "send", then the
+xstuff server will send you the item(s) named on the rest of the line. To name 
+an item, you give its directory and its name. For example
+                send fixes   a b 
+	You may issue multiple send requests. The xstuff server contains many 
+safeguards to ensure that it is not monopolized by people asking for large 
+amounts of data. The mailer is set up so that it will send no more than a fixed
+amount of data each day. If the work queue contains more requests than the 
+day's quota, then the unsent files will not be processed until the next day. 
+Whenever the mailer is run to send its day's quota, it sends the requests out 
+shortest-first.
+	) Some mailers produce mail headers that are unusable for extracting 
+return addresses.  If you use such a mailer, you won't get any response.  If 
+you happen to know an explicit path, you can include a line like
+        path foo%bar.bitnet@mitvma.mit.edu
+or
+        path bar!foo!frotz
+in the body of your message, and the daemon will use it.
+
+	The xstuff server itself can be reached at xstuff@expo.lcs.mit.edu. If 
+your mailer deals in "!" notation, try sending to 
+{someplace}!mit-eddie!expo.lcs.mit.edu!xstuff.
+
+[based on information from the MIT X Consortium, /, /.]
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get XR (source and binaries)?
+
+	Integrated Computer Solutions, Inc., ships XR on half-inch, 
+quarter-inch, and TK formats. Call -- for ordering information.
+
+	The Free Software Foundation (--) sells XR on half-inch 
+tapes and on QIC- cartridges.  
+
+	Yaser Doleh (doleh@math-cs.kent.EDU; P.O. Box , Kent, OH ) is
+making XR available on HP format tapes,  track, and Sun cartridges. [/]
+
+	European sites can obtain a free XR distribution from Jamie Watson,
+who may be reached at chx!pan!jw or jw@pan.uu.ch. [/]
+
+	Non Standard Logics (+ ()    ; requests@nsl.fr) makes source
+available.
+
+	IXI Limited (+   ) is selling XR source on quarter-inch 
+cartridge formats and on ." and ." floppy, with other formats available on
+request. [IXI, /]
+
+	Virtual Technologies (--) provides the entire XR 
+compressed source release on a single QIC- quarter-inch cartridge and also on
+.meg or . meg floppies upon request. [Conor Cahill 
+(cpcahil@virtech.uu.net) /]
+
+	Young Minds (--) makes the R and GNU distributions available
+on a full-text-indexed CD-ROM.
+
+[Note that some distributions are media-only and do not include docs.]
+
+	XR is ftp-able from export.lcs.mit.edu; these sites are preferable, 
+though, and are more direct:
+
+                        Machine                  Internet      FTP
+    Location            Name                     Address       Directory
+    --------            -------                  --------      -------------
+() West USA            gatekeeper.dec.com       ...      pub/X/R
+    Central USA         mordred.cs.purdue.edu    ...    pub/X/R
+() Central USA         giza.cis.ohio-state.edu  ...  pub/X.VR
+    Southeast USA       uunet.uu.net             ...   X/R
+() Northeast USA       crl.dec.com              ...  pub/X/R
+() UK Janet            src.doc.ic.ac.uk         ...  X.VR
+    UK niftp            uk.ac.ic.doc.src                       <XVR>
+() Australia           munnari.oz.au            ...  X.V/R
+
+The giza.cis.ohio-state.edu site, in particular, is known to have much of the
+contrib stuff that can be found on export. 
+
+The release is available to DEC Easynet sites as CRL::"/pub/X/R".
+
+Sites in Australia may contact this address: ftp.Adelaide.EDU.AU [...]
+and check the directory pub/X/R. The machine shadows export and archives
+comp.sources.x. (Mark Prior, mrp@ucs.adelaide.edu.au, /)
+
+Note: a much more complete list is distributed as part of the introductory 
+postings to comp.sources.x.
+
+A set of XR binaries built by Tom Roell (roell@informatik.tu-muenchen.de) 
+for the /ix will available from export.lcs.mit.edu in /contrib and in 
+/pub/i/XR from ... in Europe. Stephen Hite 
+(shite@sinkhole.unf.edu) can also distribute to folks without ftp facilities 
+via disks sent SASE; contact him for USmail and shipping details. [/] In 
+addition, the binaries are available via uucp from szebra [---, TB+ 
+(PEP); ogin:nuucp sword:nuucp] in /usr/xbbs/bbs/x.  In addition, the source is
+on zok in /usrX/i.Rserver/. [/] In addition, if you are in the US, the 
+latest SVR binary (April ), patches, and fonts are available on 
+piggy.ucsb.edu (...) in the directory /pub/X, same filenames as 
+above. (Please use after pm Pacific, as these are large files.) [/]
+
+A set of HP / binaries is available on hpcvaaz.cv.hp.com (...)
+as ~ftp/pub/MitXR/libs.x.Z. [/]
+
+A set of XR binaries for the NeXT .x have been made available by Howie Kaye
+on cunixf.cc.columbia.edu
+
+A set of binaries by John Coolidge (coolidge@cs.uiuc.edu) for the Mac running 
+A/UX . is available from wuarchive.wustl.edu in the file
+(/archive/systems/aux/XR/Xupdate.tar.Z). Also in XR/diffs is a set of 
+patches for making XR with shared libraries with mkshlib.
+
+A complete distribution of SCO XR binaries by Baruch Cochavy 
+(blue@techunix.technion.ac.il) can be found on uunet. The server is Roell's 
+X .b, compiled for ET based SVGA boards.
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get OSF/Motif?
+	
+	You can obtain either OSF/Motif source or binaries from a number of 
+vendors. 
+	Motif .. source is now available; it is based on XR.
+	Motif . is based on the R. Intrinsics and is currently [/] at 
+...
+	An OSF/Motif source license must be obtained from OSF before source can
+be obtained from the Open Software Foundation or any value-added vendor for
+any version. Call the Direct Channels Desk at OSF at -- for ordering 
+information.
+	Various hardware vendors produce developer's toolkits of binaries, 
+header files, and documentation; check your hardware vendor, particularly if
+that vendor is an OSF member. 
+	In addition, independent binary vendors produce Motif toolkits for
+machines for which Motif is not supported by a vendor; the kits include varied 
+levels of bug-fixing and support for shared libraries and are based on widely
+divergent version of Motif:
+	Quest (--) sells kits for Suns, as well; 
+	IXI (+   ) offers kits for Sun and Sun. 
+	NSL (+ ()    ; requests@nsl.fr) offers kits for the Sun  
+and Sun .
+	Bluestone Consulting makes a kit for Sun systems.
+	ICS (--) makes several binary kits, notably for Sun, DEC.
+	HP and DEC have announced support for Motif on Sun systems.
+	Unipalm (+---) currently offers for Sun systems a Motif 
+Development Kit including XR and based on Motif ... The US distributor is
+Expert Object Corp (--).
+	BIM ships Motif . binaries for Suns. Shared library support is 
+included. Contact Alain Vermeiren (av@sunbim.be) or Danny Backx (db@sunbim.be) 
+at +().. (Fax : +()..) (Belgium).
+	SILOGIC (+ ...) ships Motif . and Motif . on Sun 
+machines.
+	S.I. Systems offers Motif . for Solaris .; info: --- in
+USA and Canada.
+	Metro Link Inc. (--, sales@metrolink.com; in Europe contact
+ADNT, ( )  , UniVision (UK) Ltd. ()    ) ships an 
+implementation of XR and Motif .. (including a shared-library 
+implementation of libXm.a) for the / Unix market.  Motif .. is 
+also available for Sun Sparc based workstations. It has also announced 
+Motif . for Solaris systems.
+
+----------------------------------------------------------------------
+Subject:  )  Does Motif work with XR? XR?
+
+	Motif . is based on XR.
+	Motif ., available in source form from OSF as of August , uses 
+the "vanilla" XR Intrinsics, where "vanilla" means "with just a few 
+patches"; the file fix-osf which OSF distributes is obsoleted by MIT's patches 
+-.  The file fix-osf-.. distributed with the .. version or its 
+subsequent modification needs to be applied after MIT fix-, though.
+
+	Motif .. to .. will work with XR if XR is compiled with
+-DMOTIFBC; .. and later should work with the vanilla R, although there are 
+some known new geometry-management problems.
+	
+----------------------------------------------------------------------
+Subject:  )  Where can I get toolkits implementing OPEN LOOK?
+
+	Sun's XView has a SunView-style API. A version is on the XR tape;
+the latest [/] . sources are on export in contrib/xview/.
+	XView and X binaries for the Sun i ("roadrunner") are available for 
+ftp from svin.win.tue.nl (...), directory pub/XR_i.
+	Supported binaries of XView . or . include: 
+
+XView for non-Sun Platforms  (domestic and selected international vendors).
+Several are also available from Sun; contact your local sales office.
+
+Amiga		GfxBase, Inc.		 Ellwell Drive
+(AmigaDOS)	() -		Milpitas, CA 
+		Fax: () -
+
+SGI
+Sony (NEWS-OS)
+IBM RS/
+HP 
+DECstation	UniPress Software	 Lincoln Highway
+(Ultrix)	() -		Edison, NJ 
+		Fax: () -
+
+		UniPress Software, Ltd.		PO Box 
+		---			Viking House
+		Fax: ---		Nelson Street
+						Douglas, Isle of Man
+						United Kingdom
+
+DEC VAXstation	TGV			 Mission Street
+(VMS)		() TGV-		Santa Cruz, CA 
+		() -
+		Fax: () -
+
+		Unipalm Ltd.			- St. Neots Road
+		--			Hardwick
+		Fax: --		Cambridge CB QJ
+						England
+
+Intel 	Quarterdeck Office	 Pico Boulevard
+(DOS)		Systems			Santa Monica, CA 
+		() -
+		Fax: () -
+
+Intel 	SunSoft Corporation	 Center Drive West
+(Interactive	--		Suite 
+ UNIX and				Los Angeles, CA  
+ SCO UNIX)	
+
+Stardent	Scripps Institute	Clinic MB-
+(Stellix OS	Fax: () -	 N. Torrey Pines Road
+ and Titan OS)	Include mailstop MB-	La Jolla, CA 
+		By ftp: ... in pub/binary/{Xview.README,XView.tar.Z}
+
+	AT&T's OPEN LOOK GUI . Xt-based toolkit is now generally available 
+[/]; contact ---UNIX# for information. Binaries are produced
+for SPARC systems by International Quest Corporation (--). A version
+of the toolkit is also produced under the name OLIT by Sun. 
+	More recent versions of OLIT have been ported to IBM  and DEC MIPS 
+by both UniPress and ICS. OLIT is also available for HP from Melillo Consulting
+(--). MJM (Somerset, NJ) makes OLIT . for HP xx series running
+HPUX ., DECstations, and RS/s [thanks to Joanne Newbauer, 
+jo@attunix.att.com, --.]
+
+	Sun is shipping OpenWindows .; contact your local sales 
+representative for more details; the package includes toolkit binaries and 
+header files.
+
+	ParcPlace's (formerly Solbourne's) extensible C++-based Object 
+Interface Library, which supports run-time selection between Open Look or 
+Motif, is available from --. [/]
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get other X sources? (including R modifications)
+
+	The MIT Software Center ships the X Test Suite on tape.
+
+	A multi-threaded version of Xlib based on XR patch  is now 
+available for anonymous FTP from (new version /):
+        DEC on gatekeeper.dec.com (...) in /pub/X/contrib/mt-xlib-.
+        MIT on export.lcs.mit.edu (...) in /contrib/mt-xlib-.
+
+	HP has made available drivers to permit the building of the XR
+sample server on the HP  Series  workstations; the files are on
+export.lcs.mit.edu in ~ftp/contrib/R.HP.SRV. [/]
+
+	User-contributed software is distributed through the newsgroup
+comp.sources.x, moderated by Chris Olson (chris@imd.sterling.com); also check 
+that group for posting information.
+
+	Richard Hesketh (rlh@ukc.ac.uk) has been creating a list of freely-
+available X sources.  The list is stored on export.lcs.mit.edu in contrib as
+x-source-list.Z. It lists the main storage locations for the program and 
+international sites from which it may be ftp'ed.
+
+	The machine export.lcs.mit.edu has a great deal of user-contributed
+software in the contrib/ directory; a good deal of it is present in current or 
+earlier versions on the XR, XR, and XR contrib tapes. There are also
+directories for fixes to contrib software.  The file on export in
+contrib/-index.txt is a quick overall index of the software in that area,
+provided by Daniel Lewart (d-lewart@uiuc.edu).
+
+	These sites used to and may still mirror export and are of particular 
+use for Australasia: Anonymous ftp: ftp.Adelaide.EDU.AU; ACSnet Fetchfile: 
+sirius.ua.oz.
+
+	The material on giza.cis.ohio-state.edu, which tends to duplicate 
+the export archives, is also available via anonymous UUCP from osu-cis, at TB+ 
+and V. speeds.  Write to uucp@cis.ohio-state.edu (same as osu-cis!uucp) for 
+instructions. [the archive is now maintained by Karl Kleinpaste]
+
+	A new west-coast UUCP X Archive is administered by Mark Snitily 
+(mark@zok.uucp) and contains the full X distribution, the XTEST
+distribution, an entire archive of comp.sources.x and other goodies.
+	The machine zok has a TB+ modem which will connect to .K, , 
+ baud (in that order).  The anonymous UUCP account is UXarch with password 
+Xgoodies.  The modem's phone number is --.
+	A sample Systems (or L.sys) entry might be:
+   		zok Any ACU   in:--in: UXarch word: Xgoodies
+	To get a current listing of the files that are available, download
+the file "/usrX/ls-lR.Z".
+	A full subject index of the comp.sources.x files is available in the
+file "/usrX/comp.sources.x/INDEX".
+	The machine has just the one modem, so please do not fetch large 
+amounts of data at one sitting.
+[courtesy Mark Snitily, /]
+
+In addition, UUNET Source Archives (--) tracks comp.sources.x and 
+provides MB+ of compressed programs on  bpi tapes or /" tapes.  It 
+also mirrors export/contrib in its packages/X directory.
+	
+----------------------------------------------------------------------
+Subject:  )! Where can I get interesting widgets?
+
+	The Free Widget Foundation (FWF) library sponsored by Brian Totty 
+(totty@cs.uiuc.edu) is now [/] available on a.cs.uiuc.edu (...) 
+in pub/fwf-v..shar.Z. The set of widgets there is intended to form the basis
+for future contributions. To be added to the discussion list, send to
+listserv@cs.uiuc.edu a message saying "subscribe <listname> <your-full-name>"
+where <listname> is one of free-widgets-announce, free-widgets-development, or 
+free-widgets-bugs.  Version . is current; look for . in /.
+	The Xew widget set contains widgets for data representation.  Version 
+. [/] is on export contrib/Xew-..tar.Z.
+	Peter Ware's Xo "Open Widget" set, which has Motif-like functionality, 
+is on archive.cis.ohio-state.edu as pub/Xo/Xo-..tar.Z [/].
+	The AthenaTools Plotter Widget Set Version -beta [/] maintained by
+Peter Klingebiel (klin@iat.uni-paderborn.de) includes many graph and plotting 
+widgets; a copy is on export in plotter.vb.tar.Z, plotter.doc.tar.Z,
+plotter.afm.tar.Z, and plotter.README. The latest versions may in fact be on
+ftp@uni-paderborn.de (...) in /unix/tools.
+	An advance version of Marc Quinton's Motif port of the FWF MultiList 
+widget is in ftp.stna.stna.dgac.fr:pub/MultiList.tar.Z [...].
+	Additional widgets are available on the contrib/ portion of the XR
+tapes; these include the Xcu set.
+	Paul Johnston's (johnston@spc.jpl.nasa.gov) X Control Panel widget set
+emulates hardware counterparts; sources are on export.lcs.mit.edu in 
+Xc-..tar.Z.
+	O'Reilly Volume , Doug Young's book, the Asente/Swick book, and Jerry 
+Smith's "Object-oriented Programming with the X Window System Toolkits" all 
+include details on writing widgets and include several useful widgets; sources 
+are typically on export and/or UUNET. 
+	The Dirt interface builder includes the libXukc widet set which extends
+the functionality of Xaw. 
+	A graph widget and other D-plot and D-contour widgets by Sundar 
+Narasimhan (sundar@ai.mit.edu) are available from ftp.ai.mit.edu as
+/com/ftp/pub/users/sundar/graph.tar.Z. The graph widget has been updated [/]
+with documentation and histogram capabilities.
+	A graph widget is available from ftp.stna.stna.dgac.fr in
+pub/Graph.tar.Z; it uses a segment list for drawing and hence supports a zoom
+operation.
+	Ken Lee's Xm widget (demo) that uses Display PostScript to draw labels 
+at a non-horizontal angle is on export in contrib/dpslabel.tar.Z.
+	The Table widget (works like troff TBL tables) is available in several
+flavors, one of which is with the Widget Creation Library release.
+	Bell Communications Research has developed a Matrix widget for complex
+application layouts; it's on export in contrib/Xbae-widgets-..tar.Z [/. 
+The distribution also includes a "caption" widget to associate labels with 
+particular GUI components. (/)
+	Dan Connolly's (connolly@convex.COM) XcRichText interprets RTF data;
+it's on export as contrib/XcRichText-..tar.Z.
+	The XmGraph Motif-based graphing widget is on iworks.ecn.uiowa.edu in
+/comp.hp/GUI_classic/XmGraph.tar.Z although it may not be stable.
+	A TeX-style Layout widget by Keith Packard is described in the 
+proceedings of the th MIT Technical Conference (O'Reilly X Resource volume );
+source is available on export contrib/Layout.tar.Z.
+
+	A version of Lee Iverson's (leei@McRCIM.McGill.EDU) image-viewing tool
+is available as contrib/vimage-...tar.Z on export.lcs.mit.edu.  The package 
+also includes an ImageViewPort widget and a FileDialog widget. [/;/] 
+	In addition, the PEXt toolkit by Rich Thomson (rthomson@dsd.es.com) is 
+available on export as PEXt.tar.Z; it includes a PEX widget making it easier to
+use PEX in Xt-based programs.
+	A Motif port of the Xaw clock widget is in ftp.stna.stna.dgac.fr
+in pub/Clock.tar.Z.
+	A modification of the Xaw ScrollBar widget which supports the arrowhead
+style of other toolkits is on export in contrib/Xaw.Scrollbar.mta.Z.
+
+	A beta . (/) release of the R Xaw widgets with a D visual 
+appearance by Kaleb Keithley (kaleb@thyme.jpl.nasa.gov) is available on export 
+in contrib/Xawd/R/Xawd-..tar.Z. The library, which is binary-compatible 
+with the MIT Xaw, implements a D subclass which handles the extra drawing.
+
+Also:
+	The Xmt "Motif Tools", Dovetail Systems's shareware library of  
+widgets and many convenience functions, is available from 
+export.lcs.mit.edu:contrib and ftp.ora.com:/pub/xbook/Xmt in xmt-README and 
+xmt-..tar.Z.
+	The Xtra XWidgets set includes widgets for pie and bar charts, XY 
+plots, Help, spreadsheets, data entry forms, and line and bar graphs.  Contact 
+Graphical Software Technology at -- (info@gst.com) for information.
+	The XRT/graph widget, available for Motif, XView and OLIT, displays
+X-Y plots, bar and pie charts, and supports user-feedback, fast updates and
+PostScript output. Contact KL Group Inc. at -- (info@klg.com).
+	A set of data-entry widgets for Motif is available from Marlan 
+Software, -- (gwg@world.std.com).
+	A set of graph widgets is available from Expert Database Systems
+(--).
+	A set of OSF/Motif compound widgets and support routines for D
+visualization is available from Ms Quek Lee Hian, National Computer Board,
+Republic of Singapore; Tel : (); Fax : (); 
+leehian@iti.gov.sg, leehian@itivax.bitnet.
+	The ICS Widget Databook includes a variety of control widgets and 
+special-purpose widgets, available on a variety of platforms.  Information: 
+--, info@ics.com.
+	Information on graphing tools may be obtained from info@TomSawyer.com 
+(+---, fax: +---).
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get a good file-selector widget?
+
+	The Free Widget Foundation set offers a FileSelector widget, with 
+separate directory path and file listing windows, and the FileComplete, which
+has emacs-style file completion and ~ expansion. 
+	Other available file-requestor widgets include the XiFileSelector from 
+Iris Software's book, the xdbx file-selector extracted by David Nedde 
+(daven@wpi.wpi.edu), and the FileNominator from the aXe distribution.
+	The GhostView, Xfig, and vimage packages also include file-selector 
+widgets.
+
+----------------------------------------------------------------------
+Subject:  )  What widget is appropriate to use as a drawing canvas?
+
+	Some widget sets have a widget particularly for this purpose -- a
+WorkSpace or DrawingArea which doesn't display anything but lets your Xt 
+application know when it has been re-exposed, resized, and when it has received
+user key and mouse input. 
+	The best thing to do for other widget sets -- including the Athena set 
+-- is to create or obtain such a widget; this is preferable to drawing into a 
+core widget and grabbing events with XtAddEventHandler(), which loses a number 
+of benefits of Xt and encapsulation of the functionality .  
+	At least one version has been posted to comp.sources.x (name???). 
+	The publicly-available programs xball and xpic include other versions. 
+	The Athena Widget manual (mit/doc/Xaw/Template in the R distribution) 
+includes a tutorial and source code to a simple widget which is suitable for 
+use. 
+	The Free Widget Foundation set contains a Canvas widget.
+
+----------------------------------------------------------------------
+Subject:  )  What is the current state of the world in X terminals?
+
+Jim Morton (jim@applix.com) posts quarterly to comp.windows.x a list of 
+manufacturers and terminals; it includes pricing information. 
+
+Notable buyers-guide surveys include:
+	- the September  issue of Systems Integration
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get an X server with a touchscreen or lightpen?
+
+	Labtam (+   , fax +   ) offers a " Surface 
+Acoustic Wave touch-screen option on its Xengine terminals.
+	Tektronix (---) provides an X terminal with the Xtouch 
+touch-screen. This terminal may also be resold through Trident Systems
+(--).
+	Metro Link (--) supports the EloGraphics Serial Touch Screen 
+Controllers.
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get an X server on a PC (DOS or Unix)?
+
+	MIT XR already provides a server to many / *Unixes* with 
+support for many of the popular video graphics adapters; and for other 
+non-MSDOS PCs you can obtain a server from these sources:
+
+	XFree (formerly X .E) is an enhanced version of X ., which 
+was distributed with XR; it includes many bug fixes, speed improvements, and
+other enhancements. Source for version . [/] is on export.lcs.mit.edu in 
+pub/contrib, ftp.physics.su.oz.au in /X, and ftp.win.tue.nl in /pub/X. In
+addition, binaries are on ftp.physics.su.oz.au, and ftp.win.tue.nl among other 
+systems. Info: x@physics.su.oz.au.
+	Note: this package obsoletes Glenn Lai's Speedup patches for an 
+enhanced XR server for  UNIXes with ET boards (SpeedUp.tar.Z on 
+export).
+
+
+	Metro Link Inc. (--, sales@metrolink.com; in Europe contact
+ADNT, ( )  ) ships an implementation of XR for the / Unix
+market.
+
+	SGCS offers X Version ., based on Thomas Roell's XR two-headed
+server, in binary and source form. Information: --, info@sgcs.com.
+
+	ISC, SCO, UHC, and other well-known operating-system vendors typically
+offer X servers.
+
+	For MSDOS PCs:
+
+Daniel J. McCoy (mccoy@gothamcity.jsc.nasa.gov) has started posting monthly a 
+list of non-UNIX servers for PCs, Macs, and Amigas; it includes pricing 
+information. The current copy is kept on export in contrib as 
+XServers-NonUNIX.txt.Z. 
+
+An article on PC X servers appears in the March ,  Open Systems Today.
+
+	Also of possible use:
+
+	Net-I from Programit (--) enables communication among 
+DOS, OS/ and Unix machines and can be used to display PC sessions on your
+Unix X display.
+
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get an X server on a Macintosh running MacOS?
+
+	eXodus from White Pine Software (--) runs on any Mac with
+at least MB of memory and runs the X server within a standard Macintosh 
+window.  Version . [/] supports intermixing of X and Mac windows and
+the ADSP protocol. The version supports the SHAPE extension and includes
+DECwindows support.
+
+	Apple's MacX runs on MacPlus or newer machines with >= MB of memory
+and system software .. or later. Version . is fully XR-based.  It 
+supports full ICCCM-compatible cut and paste of text AND graphics between the 
+Macintosh and X worlds, the SHAPE extension (including SHAPEd windows on the 
+Macintosh desktop), an optional built-in ICCCM-compliant window manager, XR 
+fonts and colors, a built-in BDF font compiler, and built-in standard 
+colormaps. Upgrades to MacX are available by ftp from aux.support.apple.com. 
+Info: --.  
+	[Note: MacX is also the name of a vax-mac xmodem transfer utility.]
+
+	Also: 
+
+	Liken (---UNIX or info@qualix.com) software enables monochrome
+ Mac applications to run on a SPARC system running X. 
+	Xport (---UNIX (--) or xport@qualix.com) enables Mac 
+applications to display on an X-based workstation by turning the Mac into an X 
+client.
+	Intercon has a product called Planet-X which enables Mac applications
+to display on an X server.
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get X for the Amiga?
+
+	The new Amiga  machines offer an X server and OPEN LOOK tools and
+libraries on a full SVR implementation.
+
+        GfxBase, Inc. provides "X R." for the AmigaDos computer; it 
+contains XR clients, fonts, etc., and a Release  color server. An optional 
+programmer's toolkit includes the header files, libraries, and sample programs.
+Info from GfxBase, --. [Dale Luck 
+(uunet!{cbmvax|pyramid}!boing!dale); /]
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get a fast X server for a workstation?
+
+	The R server should be among the fastest available for most machines.
+
+	Sun sells a "Direct Xlib" product which improves rendering for 
+applications running on the same machine as the X server; the replacement Xlib
+library accesses graphics hardware directly using Sun's Direct Graphics Access 
+(DGA) technology.
+
+	International Quest Corporation (--) has an optimized R 
+server for Sun/ under SunOS ..
+
+	Unipalm have R Servers for Sun and Sparc platforms. These are 
+optimised to use graphics hardware and will run with Sunview. Information:
++   or xtech@unipalm.co.uk.
+
+	Xgraph's Xtool (--) is an X server implemented in SunView 
+which boasts impressive results on Sun  and SPARC systems. [/]
+
+Several companies are making hardware accellerator boards:
+
+	Dupont Pixel Systems (--), for Sun.
+
+	Megatek's (--) X-cellerator board for the Sun  and Sun  is 
+based on the TI ; the company claims performance improvements of x to 
+x over the sample XR server.
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get a server for my high-end Sun graphics board?
+
+        Takahashi Naoto (Electrotechnical Laboratory, ntakahas@etl.go.jp) has 
+modified the MIT XR server to support the Sun CG, CG, and CG boards.  
+The files are on export in contrib/Xsun-.[].tar.Z.  Note that both files 
+are necessary to build Xsun-..
+
+	The JPL R Xsun Multi-screen server is a general purpose replacement
+for the MIT server/ddx/sun layer; it provides for the screen to be split among
+several monitors and implements several other features above the MIT 
+implementation. Available on export.lcs.mit.edu in the file
+contrib/R.Xsun.multi-screen.tar.Z. [Kaleb Keithley, kaleb@thyme.jpl.nasa.gov,
+/; the file was updated  Mar .]
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get an "X terminal" server for my low-end Sun /?
+
+	Seth Robertson (seth@ctr.columbia.edu) has written Xkernel; the current
+version [. as of /, . expected RSN] is on sol.ctr.columbia.edu 
+[...] in /pub/Xkernel.gamma. It turns a Sun / into a pseudo- X 
+terminal; most of the overhead of the operating system is side-stepped, so it 
+is fairly fast and needs little disk space.
+	A similar approach is to run the regular X server by making /etc/init
+a shell script which does the minimal setup and then invokes Xsun, like this
+example script from mouse@larry.mcrcim.mcgill.EDU:
+
+#! /bin/sh
+exec >/dev/console >&
+/etc/fsck -p /dev/nd
+case $? in
+ 	)	;;
+ 	)	/etc/reboot -q -n
+ 		;;
+ 	)	echo ND fsck failed - get help
+ 		/etc/halt
+ 		;;
+ 	)	echo Interrupted
+ 		/etc/reboot
+ 		;;
+ 	*)	echo Unknown error in reboot fsck - get help
+ 		/etc/halt
+ 		;;
+esac
+/bin/dd if=/tmp-fs of=/dev/nd bs= count= >/dev/null >&
+/etc/mount /dev/nd /tmp
+/etc/ifconfig le netmask ... broadcast ...
+/etc/mount -o ro apollo:/u/x/lib /local/lib/X
+/etc/route add default ...  >/dev/null
+set `/etc/ifconfig le`
+exec /Xsun -once -multidisp -mux -query \
+	`(sh -vn </local/lib/X/xdm-servers/$ >&)`
+
+----------------------------------------------------------------------
+Subject:  )  What terminal emulators other than xterm are available?
+
+	PCS has rewritten xterm from scratch using a multi-widget approach that
+can be used by applications. A version is on the R contrib tape and on
+export in contrib/emu.tar.Z [/]. For more information, contact 
+me@dude.pcs.com.
+
+	mxterm, a Motif-based xterm is available from the Paderborner 
+ftp-Server ftp@uni-paderborn.de (...), file 
+/unix/X/more_contrib/mxterm.tar.Z.
+
+	The Color Terminal Widget provides ANSI-terminal emulation compatible
+with the VTx series; a version is on export in contrib/CTW-..tar.Z. A
+Motif version is on ftp.stna.stna.dgac.fr in pub/Term-..tar.Z.
+	
+	kterm .. is an XR-based vt/vt (and Tektronix ) terminal
+emulator that supports display of Chinese, Japanese, and Korean text (in VT 
+mode).  Also supported are: ANSI color sequences, multi-byte word selection, 
+limited Compound Text support, and tab and newline preservation in selections.
+kterm .. is also available from these anonymous ftp sites:
+	clr.nmsu.edu:pub/misc/kterm-...tar.Z  [...]
+	export.lcs.mit.edu:contrib/kterm-...tar.Z  [...]
+	kum.kaist.ac.kr:pub/unix/Xstuffs/kterm-...tar.Z  [...]
+[courtesy of Mark Leisher <mleisher@nmsu.edu> ]
+
+	kterm-...tar.Z is now on export [/].
+
+	mterm, by mouse@larry.McRCIM.McGill.EDU, is an X terminal emulator
+which includes ANSI X. and DEC emulation modes.  mterm can be had by ftp to 
+larry.mcrcim.mcgill.edu (...), in X/mterm.src/mterm.ball-o-wax.
+
+	Cxterm is a Chinese xterm, which supports both GB- and the 
+so-called Big- encoding.  Hanzi input conversion mechanism is builtin in 
+cxterm.  Most input methods are stored in external files that are loaded at run
+time.  Users can redefine any existing input methods or create their own ones.
+The XR cxterm is the rewritten of cxterm (version ..) based on XR 
+xterm; it is in the R contrib software.  [thanks to Zhou Ning 
+<zhou@tele.unit.no> and Steinar Bang <uunet!idt.unit.no!steinarb>.]
+
+	XVT is available on export's contrib in xvt-..tar.Z and 
+xvt-..README. It is designed to offer xterm's functionality with lower swap 
+space and may be of particular use on systems driving many X terminals.
+
+	x is in XR contrib/.
+
+Also:
+	IBM sells a  emulator for the RS/ (part #-); it's based
+on Motif. 
+	
+	Century Software (--) sells a VT terminal emulator for X. 
+VT, Wyse  and SCO Color Console emulation are also available. 
+
+	Grafpoint's TGRAF-X provides emulation of Tektronix , , and 
+xx graphics terminals; it's available for most major platforms. Information
+(inc. free demo copies): --; Fax. --; uunet!grafpnt!sales.
+
+	IXI's X.deskterm, a package for integrating character-based 
+applications into an X environment, includes a number of terminal-emulation
+modules. Information: + () . [/]
+
+	Pericom produces Teem-X, a set of several emulation packages for a
+number of Tek, DEC, Westward, and Data General terminals. The software runs on
+Sun , Sun , Apollo, DEC, ISC, IBM/AIX. Information: US: --, 
+UK: + () . [/]
+
+	SCO's SCOterm (info@sco.COM), part of its Open Desktop environment, is
+a Motif-compliant SCO ANSI color console emulator.
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get an X-based editor or word-processor?
+
+	You can ftp a version of GNU Emacs, the extensible, customizable, 
+self-documenting, real-time display editor, including X support, from
+prep.ai.mit.edu [...]:/pub/gnu/emacs-..tar.Z or
+informatik.tu-muenchen.de:/pub/GNU/emacs/emacs-..tar.Z.
+	
+	Epoch is a modified version of Gnu Emacs () with additional 
+facilities useful in an X environment. Current sources are on cs.uiuc.edu 
+(...) in ~ftp/pub/epoch-files/epoch; the current [/] version is 
+.. [In Europe, try unido.informatik.uni-dortmund.de].  There are two 
+subdirectories:  epoch contains the epoch source, and gwm contains the source 
+to the programmable window manager GWM, with which epoch works well.] 
+You can get on the Epoch mailing list by sending a request to 
+epoch-request@cs.uiuc.edu.
+
+	Lucid Emacs is a version of GNU Emacs derived from an early version of
+Emacs version .  It currently requires X Windows to run;  X support is
+greatly enhanced over GNU Emacs version , including support for multiple X
+windows, input and display of all ISO-- (Latin) characters, Zmacs/Lispm
+style region highlighting, a customizable Motif-like menubar, more powerful
+keymap support, flexible text attributes, support on regional and screen-local
+basis through X resources and/or lisp, and support for the X selection
+mechanism. Lucid Emacs is free; the latest version (/) is ., and is
+available from labrea.stanford.edu in the pub/gnu/lucid/ directory.
+
+	The Andrew system on the X contrib tapes has been described as one of
+the best word-processing packages available. It supports word processing with 
+multi-media embedded objects: rasters, tables/spread sheets, drawings, style 
+editor, application builder, embedded programming language, &c. Release . 
+became available  June .  [Fred Hansen (wjh+@ANDREW.CMU.EDU)]
+	You may be able to use the Remote Andrew Demo service to try this 
+software; try "finger help@atk.itc.cmu.edu" for help.
+
+	The InterViews C++ toolkit contains a WYSIWIG editor called Doc; it 
+saves and loads files in a LaTeX-*like* format (not quite LaTeX).  The package 
+can also import idraw-PostScript drawings.
+
+	A simple editor aXe (by J.K.Wight@newcastle.ac.uk) is available on 
+export and arjuna.newcastle.ac.uk (...) as aXe-..tar.Z [/]. It 
+is based around the Xaw Text widget.
+
+	TED is a simple Motif-based text editor; it is a wrapper around the 
+Motif text widget which offers search/replace, paragraph formatting, and 
+navigation features. TED is available from ftp.eos.ncsu.edu (...) as 
+/pub/bill.tar.Z; here are also executables there.
+
+	Point, by crowley@unmvax.cs.unm.edu (Charlie Crowley), is Tcl/Tk-based
+and offers dyanimic configuration and programming in the Tcl macro language.
+The editor is available from unmvax.cs.unm.edu (...) as
+pub/Point/point.-tar.Z.
+
+	asedit, by Andrzej Stochniol (astoch@ic.ac.uk) is on export in 
+contrib/asedit.tar.Z. It is a simple text editor built around the Motif Text 
+widget. Version . was released /.
+
+Also:
+
+	Elan Computer Group (Mountain View, CA; --) has announced the
+Avalon Publisher ., an X/OPEN LOOK WYSIWYG electronic publishing system.
+
+	FrameMaker and FrameWriter are available as X-based binary products for
+several machines. Frame is at -- (CA: --).
+
+	WX (formerly InDepthEdit) is available from Non Standard Logics 
+(+ ()    ; requests@nsl.fr).
+
+	Buzzwords International Inc. has an editor called 'Professional Edit' 
+that runs under X/Motif for various platforms.  Info: +---.
+
+	DECwrite is available from DEC for some DEC hardware and SunWrite is
+available from Sun.
+
+	IslandWrite will soon be available from Island Graphics (--) 
+(info@island.com) for some HP & Apollo platforms.
+
+	Interleaf is currently available from Interleaf (--, 
+MA: --) on all Sun and DEC platforms; others are under development.
+
+	The Aster*x office integration tools from Applix (--APPLIX, 
+MA: --) include a multi-font WYSIWG document composer; for several 
+systems.
+
+	ArborText, Inc. provides an X version of its Electronic Publishing 
+program called "The Publisher". The Publisher is available on Sun, HP and 
+Apollo workstations. Contact Arbortext at --. [/]
+
+	Iris Computing Laboratories offers the "ie" editor. Info:  
++--- or info@spectro.com.
+
+	BBN/Slate from BBN Software Products includes a menu-driven word
+processor with multiple fonts and style sheets.  It supports X on
+multiple platforms. (-- or slate-offer@bbn.com) [/]
+
+	The powerful "sam" editor by Rob Pike is split into a host portion and 
+a front-end graphics portion, which now has an X implementation.  sam is now 
+available by anonymous ftp from research.att.com, in dist/sam/bundle.Z.  Watch 
+that space for updated versions.  There is a mailing list for sam users; 
+requests to <sam-fans-request@hawkwind.utcs.toronto.edu>. A set of extensions
+which augment the mouse activity with the keyboard is available from 
+uxc.cso.uiuc.edu in pub/sam/samx..shar.
+
+	Innovative Solutions (--; or Brian Zimbelman, 
+is!brian@bbx.basis.com) publishes the user-configurable Motif-based Xamine 
+editor.
+
+	Qualix offers a product. Information: info@qualix.com or --UNIX 
+(--).
+
+	Typex is a Motif-based editor available for several systems. 
+Information: Amcad Research, --, fax -.
+
+	WordPerfect offers an X-based version of WordPerfect . for several
+workstations. Information: -- or --.
+
+----------------------------------------------------------------------
+Subject:  )  Where can I get an X-based mailer?
+
+	xmh, an X interface to mh, is distributed with the X release.
+
+	Xmail is an X-based window interface to Berkeley-style mail handlers;
+it is styled primarily after the Sunview mailtool application and builds on
+most Unix systems. The current release [/] is ., available in the MIT 
+XR contrib tape and from export and uunet. Info: Jeff Markham,
+markham@cadence.com.
+
+	MMH (My Mail Handler), a motif interface to the MH mail handler, is 
+available from ftp.eos.ncsu.edu (...) in pub/bill.tar.Z; it is bundled
+with the TED editor, which it uses for composing messages. Motif . is 
+required; if you don't have it, look for DEC and SPARC executables in the same 
+place.  Information and problems to: Erik Scott, escott@eos.ncsu.edu. [/]
+
+	The Andrew Toolkit supports the Andrew Message System; it is available
+from export and many other X archives and from emsworth.andrew.cmu.edu 
+(...), or send email to susan+@andrew.cmu.edu. Release . became
+available  June .
+	You may be able to use the Remote Andrew Demo service to try this 
+software; try "finger help@atk.itc.cmu.edu" for help.
+
+	XMailTool is an Xaw-based interface to a BSD-style mail reader; version
+. was released /. Information: Bob Kierski, bobo@cray.com or --.
+
+	Cem is a Motif-based mailer using standard mailbox formats; it is on
+nelson.tx.ncsu.edu in pub/Cem. Information: Sam Moore (Sam_Moore@ncsu.edu).
+
+Also:
+
+        Alfalfa Software offers Poste, a UNIX-based mailer that has Motif- and 
+command-based interfaces.  It includes support for multimedia enclosures, and 
+supports both the Internet and X. mail standards.  Information: 
+info@alfalfa.com, + --.
+
+	Z-Code Software offers Z-Mail for most Unix systems; binaries support
+both tty and Motif interfaces. The mailer includes a csh-like scripting 
+language for customizing and extending mail capabilities.  Information: 
+info@z-code.com, +  -.
+
+	Several vendors' systems include X-based mailers. DEC offers dxmail; 
+Sun offers an X-based mailtool; SCO (info@sco.com) includes SCOmail in its Open
+Desktop product.
+
+Several integrated office-productivity tools include mailers:
+
+	The Aster*x office integration tools from Applix (--APPLIX, 
+MA: --) include a mailer.
+
+----------------------------------------------------------------------
+Subject:  )! Where can I get an X-based paint/draw program?
+
+	xpic is an object-oriented drawing program. It supports multiple font 
+styles and sizes and variable line widths; there are no rotations or zooms.
+xpic is quite suitable as an interactive front-end to pic, though the 
+xpic-format produced can be converted into PostScript. (The latest version is 
+on the R contrib tape in clients/xpic.)
+
+	xfig (by Brian V. Smith (bvsmith@lbl.gov)) is an object-oriented 
+drawing program supporting compound objects.  The xfig format can be converted 
+to PostScript or other formats. Recent versions are on the R contrib tape or 
+on export in /contrib/Rfixes (version .. [/]).
+
+        idraw supports numerous fonts and various line styles and arbitrary 
+rotations. It supports zoom and scroll and color draws and fills. The file 
+format is a PostScript dialect. It can import TIFF files. Distributed as a part
+of the InterViews C++ toolkit (current release ., from 
+interviews.stanford.edu) .
+
+	A version of Robert Forsman's (thoth@lightning.cis.ufl.edu) xscribble,
+an -bit paint program for X, is now on ftp.cis.ufl.edu in pub/thoth/. [/]
+
+	xpaint is available from ftp.ee.lbl.gov as xpaint.tar.Z.
+	A rewrite, Xpaint ., by David Koblas (koblas@netcom.com) was released
+/ as xpaintpl.tar.Z. xpaint is a bitmap/pixmap editing tool.
+
+	A new OpenWindows PostScript-based graphical editor named 'ice' is now 
+[/] available for anonymous ftp from Internet host lamont.ldgo.columbia.edu 
+(...).  ice (Image Composition Environment) is an imaging tool that
+allows raster images to be combined with a wide variety of PostScript 
+annotations in WYSIWYG fashion via X imaging routines and NeWS PostScript 
+rasterizing. (It may require OpenWindows and Sun C++ ..)
+
+	tgif by William Cheng (william@oahu.cs.ucla.edu) is available from most
+uucp sites and also from export and from cs.ucla.edu. It is frequently updated;
+version .-patch was released /.
+
+	The "pixmap" program (info: colas@sa.inria.fr) for creating pixmaps is 
+on the R contrib tape; it resembles the bitmap client. Version . is now 
+available. [/]
+
+	Although MetaCard is not generally classified as a paint program, a 
+full -bit color image editor is built into the program, which can be used for
+light image editing and for producing color icons (info@metacard.com). MetaCard
+is available via anonymous FTP from ftp.metacard.com, csn.org, or 
+....
+	
+	pixt by J. Michael Flanery produces XPM output.
+
+Also:
+
+	dxpaint is a bitmap-oriented drawing program most like MacPaint; it's 
+good for use by artists but commonly held to be bad for drawing figures or 
+drafting. dxpaint is part of DEC's Ultrix release.
+
+	FrameMaker has some draw capabilities. [/]
+
+	BBN/Slate from BBN Software Products includes a full-featured draw and
+paint program with object grouping and multiple patterns; multiple X platforms.
+(-- or slate-offer@bbn.com). [/]
+
+	Dux Ta-Dah!, ---
+
+	IslandGraphics offers IslandDraw, IslandPaint, IslandPresent.
+Info: --.
+
+	Corel Draw, --; ported to X by Prior Data Sciences 
+--
+
+	Arts&Letters Composer, --
+
+	Ficor AutoGraph, --
+
+	OpenWindows includes the olpixmap editor.
+	SCO ODT includes the SCOpaint editor.
+	HP VUE includes the vueicon editor.
+
+Several integrated office-productivity tools include draw/paint capabilities:
+
+	The Aster*x office integration tools from Applix (--APPLIX, 
+MA: --) include draw/paint capabilities.
+
+[thanks in part to Stephen J. Byers (af@cobcs.cummins.com) and to 
+J. Daniel Smith (dsmith@ann-arbor.applicon.slb.com)]
+	
+----------------------------------------------------------------------
+
+David B. Lewis 					faq%craft@uunet.uu.net
+
+		"Just the FAQs, ma'am." -- Joe Friday 

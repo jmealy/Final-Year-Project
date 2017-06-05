@@ -1,0 +1,17 @@
+[]
+
+	"These LPT, COM, disk controller are call devices.  There are
+	devices that requires exclusive interrupt ownership, eg. disk
+	controller (I) and keyboard (I).  There are also devices that
+	does not require exclusive ownership, ie. it will share an
+	interrupt with another device, eg. LPT"
+
+No.  In a standard ISA bus, the one that almost all non-laptop PCs use,
+two separate interface cards cannot share an interrupt.  This is due to
+a screwup in the bus design.  For example, if your Soundblaster wants
+to drive interrupt number , then it must hold a certain bus wire to 
+or  at all times, depending on whether or not it wants an interrupt.
+This precludes letting another card assert interrupt number .
+
+When two or more devices in an ISA bus PC share an interrupt, it's
+because they're implemented by a single card.

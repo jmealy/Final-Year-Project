@@ -1,0 +1,4 @@
+You need to add two K VRAM SIMMs;  K VRAM SIMMs will not work in any 
+of the Quadra or Centris machines.  There is already K of VRAM soldered 
+to the logic board.  You add the two K SIMMs to this to give you a 
+total of  MB.

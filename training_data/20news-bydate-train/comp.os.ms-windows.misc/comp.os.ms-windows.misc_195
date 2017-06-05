@@ -1,0 +1,9 @@
+Hi there,
+
+With a Megs of RAM, is there a need to run/load Smartdrv for
+Windows .?  If yes, can I run/load Ramdrive without Smartdrv?
+If I need both Ramdrive & Smartdrv, is the following Config.Sys
+settings OK:  ...SMARTDRV.SYS  
+              ...RAMDRIVE.SYS  /E
+
+Thanks in advance for e-mail reply.

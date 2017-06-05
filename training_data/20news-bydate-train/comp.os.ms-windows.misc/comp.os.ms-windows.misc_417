@@ -1,0 +1,9 @@
+: 
+: Does anyone know what the vfintd. device is used for in windows .?
+: It's under the [enh] section as
+: 	device=c:\dos\vfintd.
+: 
+I know Norton Desktop for Windows includes this file and its help file 
+mentioned something about floppy-disk access.
+
+Jeroen

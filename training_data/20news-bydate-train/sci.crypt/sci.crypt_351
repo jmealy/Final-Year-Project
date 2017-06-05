@@ -1,0 +1,10 @@
+What are the typical sizes for keys for commercial secret key algorithms?
+I know DES is  bits ("tripple DES" is  bits) and IDEA is  bits.  Is
+there anything made in the US that has  bit keys?  Anything anywhere
+that has larger keys?  I've heard that RC can be scaled to arbitrarily
+large keys, but is this actually implemented anywhere?
+
+Finally, can anyone even concieve of a time/place where  bit keys aren't
+sufficient?  (I certainly can't - even at a trillion keys a second, it
+would take about  billion years to search just one billionth of that keys
+space.)

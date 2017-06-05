@@ -1,0 +1,53 @@
+Facts:
+=====
+- A Netware Server A was roughly moved to a new location and left powered
+down for three months.
+- From memory it has an  MB hard drive.
+- Manuals and original disks are for SFT Netware  Level II V.a
+- When powered up, the CMOS was wiped. A technician examined it and 
+pronounced the disk drive unusable.
+
+My investigations indicate that drive C is a type  ( cylinders,  sides).
+When CMOS set this way, COMPSURF runs happily, with  bad blocks.
+
+I use PREPARE to Hotfix the one internal drive.
+
+Install will proceed "successfully", but when I try to boot the server, it
+reports that the software is not serialised for this hardware.
+
+Internal examination indicates that the keycard is present, and there is one
+disk drive (or at least one large single unit). 
+
+Attempts to configure a second drive in CMOS result in drive not ready
+errors.
+
+Questions:
+=========
+The software is Netware  Level II and I can see burnt on to the screen
+SFT Netware  Level II V.a. However, to configure netware for level II
+(mirrored or duplexed disks) requires a second disk, yes? 
+
+So how is the Novell Server A normally configured?
+
+. Can I install SFT Netware  Level II V.a as Level I, or is this what
+is causing my serialisation error?
+. Is the Novell Server A normally equipped with two hard drives, one of
+which has failed?
+. Would this mean I can not install the network software because it will not
+be serialised for this hardware with a failed drive?
+. What else can cause a serialisation error?
+. What happens if the keycard fails?
+. Am I doing something wrong? Can someone knowledgeable offer some comments
+and guides.
+
+Thanks for your time.
+
+Apology:
+=======
+I appreciate that I have posted this request somewhat widely. As I'm
+dealing with somewhat archaic hardware and software I'm hoping that by casting
+my net further, I'm more likely to capture someone who has met this system
+before. I believe I can justify the groups to which I am posting. Please
+feel free to correct me if you feel this is an inappropriate place to post
+this.
+

@@ -1,0 +1,10 @@
+It sounds like something/one may have set the 's separator to "." in
+Contol Panel (under International).  This makes , look like .
+and File Manager is chopping off what it thinks is the decimal part of
+the file size. ,, becomes .., and again, File Manager is
+confused by the decimal points where there should be commas, chopping
+off everything to the right of the first period.
+
+-- 
+Tony DeBari          FQDN: tonyd@ssc.sbwk.nj.us     CI$: ,
+                     UUCP: ...!uunet!ssc!tonyd      *P*: GHRWB

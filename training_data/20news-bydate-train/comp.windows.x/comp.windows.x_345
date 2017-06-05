@@ -1,0 +1,10 @@
+I've installed XR with patches for Solaris . on our SPARCstation LX /
+SPARCclassic pool. On the LX, XR runs fine, but on the classics,
+after giving the command startx, Xsun prints the following messages:
+	WARNING: cg_mmap: can't map dummy space!
+	Mapping cgc: No such device or address
+and exits.
+
+Does anybody know how to fix this problem?
+
+Thanks in advance.

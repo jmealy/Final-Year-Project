@@ -1,0 +1,18 @@
+R >>>JD> ALL PC parallel ports that are compatable with the IBM standard,
+R >>>JD> including the original IBM adaptor, are bi-directional.
+
+NOT ALL PARALLEL PORTS ARE BI-DIRECTIONAL WITHOUT MODIFICATION.
+
+My experience with the standard old zenith parallel port in their 
+original s proves that.  They had the input direction disactiviated by 
+tieing them R/W select line of the circuit to Vcc.  To make it bi ( which 
+I did ) I had to modify it by scraping off the trace and solder a jump to 
+the proper location.  I thought that this was just lazy on the part of 
+Zenith ( they were not Zenith-Bull Group at that time).
+
+-rdd
+
+---
+ . WinQwk .b# . Unregistered Evaluation Copy
+ * KMail .d W-NET HQ, halk.ann-arbor.mi.us, +    or 
+           

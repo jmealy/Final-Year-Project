@@ -1,0 +1,15 @@
+To clarify:  
+
+VC++ *is* considered an upgrade for C.  There will be no product
+called C . (although the command-line compiler of VC++ lists its
+version as .).  C is not a "DOS"-only product -- it is a C/C++
+compiler capable of producing executables for DOS or Windows, as is
+VC++ (Pro. Ed.).  The (significant) difference is that VC++ comes with
+many Windows-hosted tools (ide, etc) which assist developers in
+creating Windows executables much more quickly (basically by
+automating the thousands of lines of boilerplate code).  Initial
+impressions have been very favorable.
+
+Everyone who is a registered user of C should have received a
+considerable amount of info regarding the specifics of C. If you
+haven't, call Microsoft and I'm sure they'd be happy to send you some!

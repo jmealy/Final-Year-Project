@@ -1,0 +1,6 @@
+My impression -- it's not an area I've played with much -- is that the
+much-beloved NE is basically obsolete.  If you want to detect a kHz
+tone, set a switched-capacitor filter chip to that frequency, feed your
+input to it, and see if anything comes out the other end.  The NE was
+what you used when good clean bandpass filters were hard to do; nowadays
+they're easy, and the results are better.

@@ -1,0 +1,6 @@
+I have tested this on a  and it does work there.  So it would
+seem that the  and  are out though.  One way to tell is to
+go and open the PowerBook control panel(.).  There is a setting
+there that allows you to set the time to wake up the Mac.  If it
+is present when you open the control panel, then you can assume that
+SetWUTime will work.  

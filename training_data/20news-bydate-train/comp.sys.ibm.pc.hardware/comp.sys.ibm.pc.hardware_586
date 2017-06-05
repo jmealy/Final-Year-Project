@@ -1,0 +1,33 @@
+From article <qqiINNdqc@dns.NMSU.Edu>, by bgrubb@dante.nmsu.edu (GRUBB):
+
+[Tons of stuff deleted on SCSI vs. IDE question...]
+
+Wow, you guys are really going wild on this IDE vs. SCSI thing, and I think
+it's great!
+
+Like lots of people, I'd really like to increase my data transfer rate from
+the hard drive.  Right now I have a ms Mb IDE drive (Seagate A), and
+what I would say is a standard (not special, no cache I believe) IDE controller
+card on my ISA -.
+
+I'm currently thinking about adding another HD, in the Mb to Mb range.
+And I'm thinking hard (you should hear those gears a-grinding in my head)
+about buying a SCSI drive (SCSI for the future benefit).  I believe I'm getting
+something like Kb/sec transfer right now (according to NU).  How would this
+number compare if I bought the state-of-the-art SCSI card for my ISA PC, and
+the state-of-the-art SCSI hard drive (the wailing-est system I could hope for)?
+Obviously money factors into this choice as well as any other, but what would
+YOU want to use on your ISA system? And how much would it cost?
+
+Along those lines, what kind of transfer rate could I see with my IDE HD's if I
+were to buy the top-of-the-line IDE caching controller for my Mb, ms HD?
+And how much would it cost?
+
+I actually have a PAS-, and could (what a waste I guess it would be...) hook
+up a SCSI HD through it's SCSI port which yields an optimum of Kb/sec.
+Actually, I have a borrowed ms Fujitsu HD hooked up through it now (and
+own the Trantor HD drivers for the PAS- SCSI port).  Is this SCSI port a
+SCSI- port?  How could I tell?  Is the Fujitsu A a SCSI-?  Are all SCSI
+HD's SCSI-?
+
+Thanks for any comments on these rephrased questions.

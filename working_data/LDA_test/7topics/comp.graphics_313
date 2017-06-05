@@ -1,0 +1,6 @@
+Don't get too excited; Signetics, not Motorola, gave the  its number.
+The , if I understand rightly, uses the  instruction set, and has
+an on-chip serial port and DMA.  (It will run at up to  MHz--I'm typing
+at a computer using a  running at that rate, so I know that it can
+do so--so I seriously doubt the clock rate that ricardo@rchland.vnet.ibm.com
+claims.)

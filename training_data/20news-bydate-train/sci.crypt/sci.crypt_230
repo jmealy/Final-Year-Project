@@ -1,0 +1,6 @@
+
+Via K_P, of course.  Nothing was said about where K_P comes from.  It's
+the session key, though, and it's chosen however you usually choose
+session keys --- exponential key exchange, shared secret, RSA, etc.
+But however you choose it, the chip will apparently emit the escrow
+header when you do.

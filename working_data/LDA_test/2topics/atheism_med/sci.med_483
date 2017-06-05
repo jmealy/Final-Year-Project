@@ -1,0 +1,702 @@
+------------- cut here -----------------
+Volume  , Number                                            April , 
+
+              +------------------------------------------------+
+              !                                                !
+              !              Health Info-Com Network           !
+              !                Medical Newsletter              !
+              +------------------------------------------------+
+                         Editor: David Dodell, D.M.D.
+     North nd Street, Suite , Scottsdale, Arizona - USA
+                          Telephone + () -
+                              FAX + () -
+
+Compilation Copyright  by David Dodell,  D.M.D.  All  rights  Reserved.  
+License  is  hereby  granted  to republish on electronic media for which no 
+fees are charged,  so long as the text of this copyright notice and license 
+are attached intact to any and all republished portion or portions.  
+
+The Health Info-Com Network Newsletter is  distributed  biweekly.  Articles 
+on  a medical nature are welcomed.  If you have an article,  please contact 
+the editor for information on how to submit it.  If you are  interested  in 
+joining the automated distribution system, please contact the editor.  
+
+E-Mail Address:
+                                    Editor:  
+                          Internet: david@stat.com
+                              FidoNet = :/
+                           Bitnet = ATWH@ASUACAD 
+LISTSERV = MEDNEWS@ASUACAD.BITNET (or internet: mednews@asuvm.inre.asu.edu) 
+                         anonymous ftp = vm.nodak.edu
+               Notification List = hicn-notify-request@stat.com
+                 FAX Delivery = Contact Editor for information
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+                       T A B L E   O F   C O N T E N T S
+
+
+.  Comments & News from the Editor
+     OCR / Scanner News ...................................................  
+
+.  Centers for Disease Control and Prevention - MMWR
+     [ April ] Emerging Infectious Diseases .........................  
+     Outbreak of E. coli Infections from Hamburgers .......................  
+     Use of Smokeless Tobacoo Among Adults ................................ 
+     Gonorrhea ............................................................ 
+     Impact of Adult Safety-Belt Use on Children less than  years Age ... 
+     Publication of CDC Surveillance Summaries ............................ 
+
+.  Clinical Research News
+     High Tech Assisted Reproductive Technologies ......................... 
+
+.  Articles
+     Low Levels Airborne Particles Linked to Serious Asthma Attacks ....... 
+     NIH Consensus Development Conference on Melanoma ..................... 
+     National Cancer Insitute Designated Cancer Centers ................... 
+
+.  General Announcments
+     UCI Medical Education Software Repository ............................ 
+
+.  AIDS News Summaries
+     AIDS Daily Summary April  to April ,  ........................ 
+
+.  AIDS/HIV Articles
+     First HIV Vaccine Trial Begins in HIV-Infected Children .............. 
+     New Evidence that the HIV Can Cause Disease Independently ............ 
+     Clinical Consultation Telephone Service for AIDS ..................... 
+
+
+
+
+
+HICNet Medical Newsletter                                            Page    i
+Volume  , Number                                            April , 
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                        Comments & News from the Editor
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+I would like to continue to thank everyone who has sent in a donation for the 
+Mednews OCR/Scanner Fund.  We have reached our goal!  A Hewlett Packard
+Scanjet IIp was purchased this week.
+
+Thank you to the following individuals whose contributions I just received:
+
+John Sorenson
+Carol Sigelman
+Carla Moore
+Barbara Moose
+Judith Schrier
+
+Again, thank you to all who gave!
+
+I have been using Wordscan Plus for the past couple of weeks and would like to 
+review the product.  Wordscan Plus is a product of Calera Recognition Systems.  
+It runs under Windows . and supports that Accufont Technology of the Hewlett 
+Packard Scanners.  
+
+When initially bringing up the software, it lets you select several options; 
+() text / graphics () input source ie scanner, fax file, disk file () 
+automatic versus manual decomposition of the scanned image. 
+
+I like manual decomposition since the software then lets me select which 
+parts of the document I would like scanned, and in what order.
+
+Once an image is scanned, you can bring up the Pop-Up image verification.  The 
+software gives you two "errors" at this point.  Blue which are words that were 
+converted reliability, but do not match anything in the built-in dictionary.  
+Yellow shade, which are words that Wordscan Plus doesn't think it converted 
+correctly at all.  I have found that the software should give itself more 
+credit.  It is usually correct, instead of wrong.  If a word is shaded blue, 
+you can add it to your personal dictionary.  The only problem is the personal 
+dictionary will only handle about  words.  I find this to be very limited, 
+considering how many medical terms are not in a normal dictionary. 
+
+After a document is converted, you can save it in a multitude of word 
+processor formats.  Also any images that were captured can be stored in a 
+seperate TIFF or PCX file format.
+
+I was extremely impressed on the percent accuracy for fax files.  I use 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+an Intel Satisfaxtion card, which stores incoming faxs in a PCX/DCX format.  
+While most of my faxes were received in "standard" mode (x dpi), the 
+accuracy of Wordscan Plus was excellent. 
+
+Overall, a very impressive product.  The only fault I could find is the 
+limitations of the size of the user dictionary.   specialized words is just 
+too small. 
+
+If anyone has any specific questions, please do not hesitate to send me email.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+               Centers for Disease Control and Prevention - MMWR
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+                         Emerging Infectious Diseases
+                         ============================
+                   SOURCE: MMWR ()   DATE: Apr , 
+
+                                 Introduction
+
+     Despite predictions earlier this century that infectious diseases would 
+soon be eliminated as a public health problem (), infectious diseases remain 
+the major cause of death worldwide and a leading cause of illness and death in 
+the United States. Since the early s, the U.S. public health system has 
+been challenged by a myriad of newly identified pathogens and syndromes (e.g., 
+Escherichia coli O:H, hepatitis C virus, human immunodeficiency virus, 
+Legionnaires disease, Lyme disease, and toxic shock syndrome). The incidences 
+of many diseases widely presumed to be under control, such as cholera, 
+malaria, and tuberculosis (TB), have increased in many areas. Furthermore, 
+control and prevention of infectious diseases are undermined by drug 
+resistance in conditions such as gonorrhea, malaria, pneumococcal disease, 
+salmonellosis, shigellosis, TB, and staphylococcal infections (). Emerging 
+infections place a disproportionate burden on immunocompromised persons, those 
+in institutional settings (e.g., hospitals and child day care centers), and 
+minority and underserved populations. The substantial economic burden of 
+emerging infections on the U.S. health-care system could be reduced by more 
+effective surveillance systems and targeted control and prevention programs 
+(). 
+     This issue of MMWR introduces a new series, "Emerging Infectious 
+Diseases." Future articles will address these diseases, as well as 
+surveillance, control, and prevention efforts by health-care providers and 
+public health officials. This first article updates the ongoing investigation 
+of an outbreak of E. coli O:H in the western United States (). 
+
+References
+
+. Burnet M. Natural history of infectious disease. Cambridge, England: 
+Cambridge University Press, . 
+
+. Kunin CM. Resistance to antimicrobial drugs -- a worldwide calamity. Ann 
+Intern Med ;:-. 
+
+. Lederberg J, Shope RE, Oaks SC Jr, eds. Emerging infections: microbial 
+threats to health in the United States. Washington, DC: National Academy 
+Press, . 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+
+. CDC. Preliminary report: foodborne outbreak of Escherichia coli O:H 
+infections from hamburgers --western United States, . MMWR ;:-.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+            Update: Multistate Outbreak of Escherichia coli O:H
+             Infections from Hamburgers -- Western United States,
+                                   -
+            =======================================================
+                   SOURCE: MMWR ()   DATE: Apr , 
+
+     From November , , through February , , more than  
+laboratory-confirmed infections with E. coli O:H and four associated 
+deaths occurred in four states -- Washington, Idaho, California, and Nevada. 
+This report summarizes the findings from an ongoing investigation () that 
+identified a multistate outbreak resulting from consumption of hamburgers from 
+one restaurant chain. Washington 
+     On January , , a physician reported to the Washington Department of 
+Health a cluster of children with hemolytic uremic syndrome (HUS) and an 
+increase in emergency room visits for bloody diarrhea. During January -, a 
+case-control study comparing  of the first cases of bloody diarrhea or 
+postdiarrheal HUS identified with age- and neighborhood-matched controls 
+implicated eating at chain A restaurants during the week before symptom onset 
+(matched odds ratio OR=undefined; lower confidence limit=.). On January 
+, a multistate recall of unused hamburger patties from chain A restaurants 
+was initiated. 
+     As a result of publicity and case-finding efforts, during January-
+February ,  patients with bloody diarrhea or HUS were reported to the 
+state health department. A total of  persons had illnesses meeting the case 
+definition of culture-confirmed E. coli O:H infection or postdiarrheal HUS 
+(Figure ). Of the  persons,  (%) had close contact with a person with 
+confirmed E. coli O:H infection during the week preceding onset of 
+symptoms. Of the remaining  persons,  (%) reported eating in a chain A 
+restaurant during the  days preceding onset of symptoms. Of the  patients 
+who recalled what they ate in a chain A restaurant,  (%) reported eating 
+a regular-sized hamburger patty. Onsets of illness peaked from January  
+through January . Of the  casepatients,  (%) were hospitalized;  
+developed HUS, and three died. The median age of patients was . years 
+(range: - years). Idaho 
+     Following the outbreak report from Washington, the Division of Health, 
+Idaho Department of Health and Welfare, identified  persons with culture-
+confirmed E. coli O:H infection, with illness onset dates from December 
+, , through February ,  (Figure A). Four persons were 
+hospitalized; one developed HUS. During the week preceding illness onset,  
+(%) had eaten at a chain A restaurant. California 
+     In late December, the San Diego County Department of Health Services was 
+notified of a child with E. coli O:H infection who subsequently died. 
+Active surveillance and record review then identified eight other persons with 
+E. coli O:H infections or HUS from mid-November through mid-January . 
+Four of the nine reportedly had recently eaten at a chain A restaurant and 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+four at a chain B restaurant in San Diego. After the Washington outbreak was 
+reported, reviews of medical records at five hospitals revealed an overall % 
+increase in visits or admissions for diarrhea during December  and January 
+ compared with the same period  year earlier. A case was defined as 
+postdiarrheal HUS, bloody diarrhea that was culture negative or not cultured, 
+or any diarrheal illness in which stool culture yielded E. coli O:H, with 
+onset from November , , through January , . 
+     Illnesses of  patients met the case definition (Figure B). The 
+outbreak strain was identified in stool specimens of six patients. Fourteen 
+persons were hospitalized, seven developed HUS, and one child died. The median 
+age of case-patients was  years (range: - years). A case-control study of 
+the first  case-patients identified and age- and sex-matched community 
+controls implicated eating at a chain A restaurant in San Diego (matched 
+OR=; % confidence interval CI=.-). A study comparing case-patients 
+who ate at chain A restaurants with well meal companions implicated regular-
+sized hamburger patties (matched OR=undefined; lower confidence limit=.). 
+Chain B was not statistically associated with illness. Nevada 
+     On January , after receiving a report of a child with HUS who had eaten 
+at a local chain A restaurant, the Clark County (Las Vegas) Health District 
+issued a press release requesting that persons with recent bloody diarrhea 
+contact the health department. A case was defined as postdiarrheal HUS, bloody 
+diarrhea that was culture negative or not cultured, or any diarrheal illness 
+with a stool culture yielding the Washington strain of E. coli O:H, with 
+onset from December , , through February , . Because local 
+laboratories were not using sorbitol MacConkey (SMAC) medium to screen stools 
+for E. coli O:H, this organism was not identified in any patient. After 
+SMAC medium was distributed, the outbreak strain was detected in the stool of 
+one patient  days after illness onset. 
+     Of  persons whose illnesses met the case definition (Figure C), nine 
+were hospitalized; three developed HUS. The median age was . years (range: 
+- years). Analysis of the first  patients identified and age- and sex-
+matched community controls implicated eating at a chain A restaurant during 
+the week preceding illness onset (matched OR=undefined; lower confidence 
+limit=.). A case-control study using well meal companions of case-patients 
+also implicated eating hamburgers at chain A (matched OR=.; % CI=.-
+.). Other Investigation Findings 
+     During the outbreak, chain A restaurants in Washington linked with cases 
+primarily were serving regular-sized hamburger patties produced on November 
+, ; some of the same meat was used in "jumbo" patties produced on 
+November , . The outbreak strain of E. coli O:H was isolated from  
+lots of patties produced on those two dates; these lots had been distributed 
+to restaurants in all states where illness occurred. Approximately , 
+(%) of the implicated patties were recovered by the recall. 
+     A meat traceback by a CDC team identified five slaughter plants in the 
+United States and one in Canada as the likely sources of carcasses used in the 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+contaminated lots of meat and identified potential control points for reducing 
+the likelihood of contamination. The animals slaughtered in domestic slaughter 
+plants were traced to farms and auctions in six western states. No one 
+slaughter plant or farm was identified as the source. 
+     Further investigation of cases related to secondary transmission in 
+families and child day care settings is ongoing. 
+
+Reported by: M Davis, DVM, C Osaki, MSPH, Seattle-King County Dept of Public 
+Health; D Gordon, MS, MW Hinds, MD, Snohomish Health District, Everett; K 
+Mottram, C Winegar, MPH, Tacoma-Pierce County Health Dept; ED Avner, MD, PI 
+Tarr, MD, Dept of Pediatrics, D Jardine, MD, Depts of Anesthesiology and 
+Pediatrics, Univ of Washington School of Medicine and Children's Hospital and 
+Medical Center, Seattle; M Goldoft, MD, B Bartleson, MPH; J Lewis, JM 
+Kobayashi, MD, State Epidemiologist, Washington Dept of Health. G Billman, MD, 
+J Bradley, MD, Children's Hospital, San Diego; S Hunt, P Tanner, RES, M 
+Ginsberg, MD, San Diego County Dept of Health Svcs; L Barrett, DVM, SB Werner, 
+MD, GW Rutherford, III, MD, State Epidemiologist, California Dept of Health 
+Svcs. RW Jue, Central District Health Dept, Boise; H Root, Southwest District 
+Health Dept, Caldwell; D Brothers, MA, RL Chehey, MS, RH Hudson, PhD, Div of 
+Health, Idaho State Public Health Laboratory, FR Dixon, MD, State 
+Epidemiologist, Div of Health, Idaho Dept of Health and Welfare. DJ Maxson, 
+Environmental Epidemiology Program, L Empey, PA, O Ravenholt, MD, VH Ueckart, 
+DVM, Clark County Health District, Las Vegas; A DiSalvo, MD, Nevada State 
+Public Health Laboratory; DS Kwalick, MD, R Salcido, MPH, D Brus, DVM, State 
+Epidemiologist, Div of Health, Nevada State Dept of Human Resources. Center 
+for Food Safety and Applied Nutrition, Food and Drug Administration. Food 
+Safety Inspection Svc, Animal and Plant Health Inspection Svc, US Dept of 
+Agriculture. Div of Field Epidemiology, Epidemiology Program Office; Enteric 
+Diseases Br, Div of Bacterial and Mycotic Diseases, National Center for 
+Infectious Diseases, CDC. 
+
+Editorial Note: E. coli O:H is a pathogenic gram-negative bacterium first 
+identified as a cause of illness in  during an outbreak of severe bloody 
+diarrhea traced to contaminated hamburgers (). This pathogen has since 
+emerged as an important cause of both bloody diarrhea and HUS, the most common 
+cause of acute renal failure in children. Outbreak investigations have linked 
+most cases with the consumption of undercooked ground beef, although other 
+food vehicles, including roast beef, raw milk, and apple cider, also have been 
+implicated (). Preliminary data from a CDC -year, nationwide, multicenter 
+study revealed that when stools were routinely cultured for E. coli O:H 
+that organism was isolated more frequently than Shigella in four of  
+participating hospitals and was isolated from .% of all bloody stools, a 
+higher rate than for any other pathogen. 
+     Infection with E. coli O:H often is not recognized because most 
+clinical laboratories do not routinely culture stools for this organism on 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+SMAC medium, and many clinicians are unaware of the spectrum of illnesses 
+associated with infection (). The usual clinical manifestations are diarrhea 
+(often bloody) and abdominal cramps; fever is infrequent. Younger age groups 
+and the elderly are at highest risk for clinical manifestations and 
+complications. Illness usually resolves after - days, but %-% of patients 
+develop HUS, which is characterized by hemolytic anemia, thrombocytopenia, 
+renal failure, and a death rate of %-%. 
+     This report illustrates the difficulties in recognizing community 
+outbreaks of E. coli O:H in the absence of routine surveillance. Despite 
+the magnitude of this outbreak, the problem may not have been recognized in 
+three states if the epidemiologic link had not been established in Washington 
+(). Clinical laboratories should routinely culture stool specimens from 
+persons with bloody diarrhea or HUS for E. coli O:H using SMAC agar (). 
+When infections with E. coli O:H are identified, they should be reported 
+to local health departments for further evaluation and, if necessary, public 
+health action to prevent further cases. 
+     E. coli O:H lives in the intestines of healthy cattle, and can 
+contaminate meat during slaughter. CDC is collaborating with the U.S. 
+Department of Agriculture's Food Safety Inspection Service to identify 
+critical control points in processing as a component of a program to reduce 
+the likelihood of pathogens such as E. coli O:H entering the meat supply. 
+Because slaughtering practices can result in contamination of raw meat with 
+pathogens, and because the process of grinding beef may transfer pathogens 
+from the surface of the meat to the interior, ground beef is likely to be 
+internally contaminated. The optimal food protection practice is to cook 
+ground beef thoroughly until the interior is no longer pink, and the juices 
+are clear. In this outbreak, undercooking of hamburger patties likely played 
+an important role. The Food and Drug Administration (FDA) has issued interim 
+recommendations to increase the internal temperature for cooked hamburgers to 
+ F (. C) (FDA, personal communication, ). 
+     Regulatory actions stimulated by the outbreak described in this report 
+and the recovery of thousands of contaminated patties before they could be 
+consumed emphasize the value of rapid public health investigations of 
+outbreaks. The public health impact and increasing frequency of isolation of 
+this pathogen underscore the need for improved surveillance for infections 
+caused by E. coli O:H and for HUS to better define the epidemiology of E. 
+coli O:H. 
+
+References
+
+. CDC. Preliminary report: foodborne outbreak of Escherichia coli O:H 
+infections from hamburgers --western United States, . MMWR ;:-. 
+
+. Riley LW, Remis RS, Helgerson SD, et al. Hemorrhagic colitis associated 
+with a rare Escherichia coli serotype. N Engl J Med ;:-. 
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+
+. Griffin PM, Tauxe RV. The epidemiology of infections caused by Escherichia 
+coli O:H, other enterohemorrhagic E. coli, and the associated hemolytic 
+uremic syndrome. Epidemiol Rev ;:-. 
+
+. Griffin PM, Ostroff SM, Tauxe RV, et al. Illnesses associated with 
+Escherichia coli O:H infections: a broad clinical spectrum. Ann Intern Med 
+;:-. 
+
+. March SB, Ratnam S. Latex agglutination test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HICNet Medical Newsletter                                              Page  
+Volume  , Number                                            April , 
+
+            Use of Smokeless Tobacco Among Adults -- United States,
+                                     
+            =======================================================
+                   SOURCE: MMWR ()   DATE: Apr , 
+
+     Consumption of moist snuff and other smokeless tobacco products in the 
+United States almost tripled from  through  (). Long-term use of 
+smokeless tobacco is associated with nicotine addiction and increased risk of 
+oral cancer () -- the incidence of which could increase if young persons who 
+currently use smokeless tobacco continue to use these products frequently (). 
+To monitor trends in the prevalence of use of smokeless tobacco products, 
+CDC's  National Health Interview Survey-Health Promotion and Disease 
+Prevention supplement (NHIS-HPDP) collected information on snuff and chewing 
+tobacco use and smoking from a representative sample of the U.S. civilian, 
+noninstitutionalized population aged greater than or equal to  years. This 
+report summarizes findings from this survey. 
+     The  NHIS-HPDP supplement asked "Have you used snuff at least  
+times in your entire life?" and "Do you use snuff now?" Similar questions were 
+asked about chewing tobacco use and cigarette smoking. Current users of 
+smokeless tobacco were defined as those who reported snuff or chewing tobacco 
+use at least  times and who reported using snuff or chewing tobacco at the 
+time of the interview; former users were defined as those who reported having 
+used snuff or chewing tobacco at least  times and not using either at the 
+time of the interview. Ever users of smokeless tobacco included current and 
+former users. Current smokers were defined as those who reported smoking at 
+least  cigarettes and who were currently smoking and former smokers as 
+those who reported having smoked at least  cigarettes and who were not 
+smoking now. Ever smokers included current and former smokers. Data on 
+smokeless tobacco use were available for , persons aged greater than or 
+equal to  years and were adjusted for nonresponse and weighted to provide 
+national estimates. Confidence intervals (CIs) were calculated by using 
+standard errors generated by the Software for Survey Data Analysis (SUDAAN) 
+(). 
+     In , an estimated . million (.%) U.S. adults were current users 
+of smokeless tobacco, including . million (.%) men and , (.%) 
+women. For all categories of comparison, the prevalence of smokeless tobacco 
+use was substantially higher among men. For men, the prevalence of use was 
+highest among those aged - years (Table ); for women, the prevalence was 
+highest among those aged greater than or equal to  years. The prevalence of 
+smokeless tobacco use among men was highest among American Indians/Alaskan 
+Natives and whites; the prevalence among women was highest among American 
+Indians/Alaskan Natives and blacks. Among both men and women, prevalence of 
+smokeless tobacco use declined with increasing education. Prevalence was 
+substantially higher among residents of the southern United States and in 
+rural areas. Although the prevalence of smokeless tobacco use was higher among 
+
+HICNet Medical Newsletter                                              Page 
+Volume  , Number                                            April , 
+
+men and women below the poverty level, * this difference was significant only 
+for women (p less than .) (Table ). 
+     Among men, the prevalence of current use of snuff was highest among those 
+aged - years but varied considerably by age; the prevalence of use of 
+chewing tobacco was more evenly distributed by age group (Table ). Although 
+women rarely used smokeless tobacco, the prevalence of snuff use was highest 
+among those aged greater than or equal to  years. 
+     An estimated . million (.% % CI=.-.) adults reported being 
+former smokeless tobacco users. Among ever users, the proportion who were 
+former smokeless tobacco users was .% (% CI=.-.). Among persons 
+aged - years, the proportion of former users was lower among snuff users 
+(.% % CI=.-.) than among chewing tobacco users (.% % 
+CI=.-.). Among persons aged - years, the proportion of former users 
+was similar for snuff (.% % CI=.-.) and chewing tobacco (.% 
+% CI=.-.). 
+     Among current users of smokeless tobacco, .% (% CI=.-.) 
+currently smoked, .% (% CI=.-.) formerly smoked, and .% (% 
+CI=.-.) never smoked. In comparison, among current smokers, .% (% 
+CI=.-.) were current users of smokeless tobacco. 
+     Daily use of smokeless tobacco was more common among snuff users (.% 
+% CI=.-.) than among chewing tobacco users (.% % CI=.-
+.). 
+
+Reported by: Office on Smoking and Health, National Center for Chronic Disease 
+Prevention and Health Promotion; Div of Health Interview Statistics, National 
+Center for Health Statistics, CDC. 
+
+Editorial Note: The findings in this report indicate that the use of smokeless 
+tobacco was highest among young males. Adolescent and young adult males, in 
+particular, are the target of marketing strategies by tobacco companies that 
+link smokeless tobacco with athletic performance and virility. Use of oral 
+snuff has risen markedly among professional baseball players, encouraging this 
+behavior among adolescent and young adult males and increasing their risk for 
+nicotine addiction, oral cancer, and other mouth disorders (). 
+     Differences in the prevalence of smokeless tobacco use among 
+racial/ethnic groups may be influenced by differences in educational levels 
+and socioeconomic status as well as social and cultural phenomena that require 
+further explanation. For example, targeted marketing practices may play a role 
+in maintaining or increasing prevalence among some groups, and affecting the 
+differential initiation of smokeless tobacco use by young persons (,). 
+     In this report, one concern is that nearly one fourth of current 
+smokeless tobacco users also smoke cigarettes. In the  NHIS-HPDP, the 
+prevalence of cigarette smoking was higher among former smokeless tobacco 
+users than among current and never smokeless tobacco users. In a previous 
+study among college students, % of current smokeless tobacco users smoked 
+
+HICNet Medical Newsletter                                              Page 
+Volume  , Number                                            April , 
+
+occasionally (). In addition, approximately % of adults who formerly smoked 
+reported substituting other tobacco products for cigarettes in an effort to 
+stop smoking (). Health-care providers should recognize the potential health 
+implications of concurrent smokeless tobacco and cigarette use. 
+     The national health objectives for the year  have established special 
+population target groups for the reduction of the prevalence of smokeless 
+tobacco use, including males aged - years (to no more than % by the year 
+ objective .) and American Indian/Alaskan Native youth (to no more 
+than % by the year  objective .a) (). Strategies to lower the 
+prevalence of smokeless tobacco use include continued monitoring of smokeless 
+tobacco use, integrating smoking and smokeless tobacco-control efforts, 
+enforcing laws that restrict minors' access to tobacco, making excise taxes 
+commensurate with those on cigarettes, encouraging health-care providers to 
+routinely provide cessation advice and follow-up, providing school-based 
+prevention and cessation interventions, and adopting policies that prohibit 
+tobacco use on school property and at school-sponsored events (). 
+
+References
+
+. Office of Evaluations and Inspections. Spit tobacco and youth. Washington, 
+DC: US Department of Health and Human Services, Office of the Inspector 
+General, ; DHHS publication no. (OEI-)-. 
+
+. National Institutes of Health. The health consequences of using smokeless 
+tobacco: a report of the Advisory Committee to the Surgeon General. Bethesda, 
+Maryland: US Department of Health and Human Services, Public Health Service, 
+; DHHS publication no. (NIH)-. 
+
+. Shah BV. Software for Survey Data Analysis (SUDAAN) version . Software 
+documentation. Research Triangle Park, North Carolina: Research Triangle 
+Institute, . 
+
+. Connolly GN, Orleans CT, Blum A. Snuffing tobacco out of sport. Am J Public 
+Health ;:-. 
+
+. National Cancer Institute. Smokeless tobacco or health: an international 
+perspective. Bethesda, Maryland: US Department of Health and Human Services, 
+Public Health Service, National Institutes of Health, ; DHHS publication 
+no. (NIH)-. 
+
+. Foreyt JP, Jackson AS, Squires WG, Hartung GH, Murray TD, Gotto AM. 
+Psychological profile of college students who use smokeless tobacco. Addict 
+Behav ;:-. 
+
+. Glover ED, Laflin M, Edwards SW. Age of initiation and switching patterns 
+
+HICNet Medical Newsletter                                              Page 
+Volume  , Number                                            April , 
+
+between smokeless tobacco and cigarettes among college students in the United 
+States. Am J Public Health ;:-. 
+
+. CDC. Tobacco use in : methods and tabulations from Adult Use of Tobacco 
+Survey. Rockville, Maryland: US Department of Health and Human Services, 
+Public Health Service, CDC, ; DHHS publication no. (OM)-. 
+
+. Public Health Service. Healthy people : national health promotion and 
+disease prevention objectives. Washington, DC: US Department of Health and 
+Human Services, Public Health Service, ; DHHS publication no. (PHS)-
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------- end of part  ------------

@@ -1,0 +1,11 @@
+Here are some cool -D background patterns I made.
+
+Edit your CONTROL.INI and add the following lines to your [Patterns] section.
+
+Bricks=       
+Tile=       
+Tile (diagonal)=       
+Slats=       
+
+Make sure your desktop color is one of the standard  colors or the
+patterns might not work.  I like dark grey the best with these.

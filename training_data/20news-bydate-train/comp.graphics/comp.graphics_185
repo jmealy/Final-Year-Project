@@ -1,0 +1,61 @@
+> 
+  > I am looking for an algorithm to determine if a given point is bound by a 
+  > polygon. Does anyone have any such code or a reference to book containing
+  > information on the subject ?
+  > 
+  >                 Regards
+  > 
+  >                         Simon
+  > 
+/* +-------------------------------------------------------------------+
+   |                                                                   |
+   | Function    : PuntBinnenPolygoon                                  |
+   |                                                                   |
+   +-------------------------------------------------------------------+
+   |                                                                   |
+   | Auteur      : Cornelis Wessels                                    |
+   |                                                                   |
+   | Datum       : --                                          |
+   |                                                                   |
+   | Omschrijving: Bepaalt of de aangeboden VECTORD p binnen of op de |
+   |               rand van het polygoon P valt.                       |
+   |                                                                   |
+   +-------------------------------------------------------------------+
+   |                                                                   |
+   | Wijzigingen : -                                                   |
+   |                                                                   |
+   +-------------------------------------------------------------------+ */
+
+CLIBSTATUS PuntBinnenPolygoon ( POLYGOON *P, VECTORD *p )
+  {
+  VECTORD o, v, w;
+  INDEX    aantal_snijpunten, N, n;
+
+  aantal_snijpunten = ;
+  N                 = GeefPolygoonLengte(P);
+  GeefPolygoonRandpunt ( P, N, &o );
+
+  for ( n=; n<=N; n++ )
+    {
+    GeefPolygoonRandpunt ( P, n, &v );
+
+    if ( o.x >= p->x && v.x <  p->x ||
+	 o.x <  p->x && v.x >= p->x  )
+      {
+      w.x = p->x;
+      InterpoleerLineair ( &o, &v, &w );
+
+      if ( w.x == p->x && w.y == p->y )
+	return(CLIBSUCCES);
+      else if ( w.y > p->y )
+	aantal_snijpunten++;
+      }
+
+    KopieerVectord ( &v, &o );
+    }
+
+  if ( aantal_snijpunten% ==  )
+    return(CLIBERBUITEN);
+  else
+    return(CLIBSUCCES);
+  }

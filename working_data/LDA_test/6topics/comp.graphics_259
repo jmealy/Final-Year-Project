@@ -1,0 +1,8 @@
+Why would it have to be much faster (it probably is) ? Assuming an ARM
+is about as efficient as a MIPS R for integer calculations, doing
+a Compact-Video-like digital video codec is an easy task. For Software
+Motion Pictures (which is a lot like Compact Video, though it predates
+it), we get  frames/sec. at x on a DECstation /. That
+machine has a  Mhz MIPS R. 
+
+		Burkhard Neidecker-Lutz

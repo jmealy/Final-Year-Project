@@ -1,0 +1,17 @@
+Try putting one of the IRQs for your COM ports onto IRQ. The hardware will
+automagically wrap IRQ to IRQ on AT class machines (eg, anything with high
+IRQs). This is what I'm doing on my set up right now. 
+   I've got COM on IRQ (really IRQ - address it this way in software), COM
+on IRQ, SoundBlaster on IRQ, LPT on IRQ, and my ATI BusMouse port on one of
+the interrupts in between. Works just great.
+   If you need even more, there's a text file floating around somewhere that
+details how to hack up any serial card (and probably any others) to work on the
+higher IRQs. It basically involves cutting the trace to the low IRQ and running a wire over the a high IRQ pin on the bit expansion bus.
+
+  It will be best to put the modem's COM port onto IRQ/. This will be the 
+
+first IRQ serviced by the system, giving the modem a better response -- 
+especially handy under multitaskers like OS/ -- which I'm running with no
+problems.
+
+Justin

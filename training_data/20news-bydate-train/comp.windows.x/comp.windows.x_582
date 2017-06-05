@@ -1,0 +1,11 @@
+We have a Sun / and we have just acquired a cg frame buffer card.
+
+The cg is supposed to support both a -bit color visual and a monochrome visual.
+The default visual for the xnews server is the monochrome, and we are unable to change it to
+the -bit visual. We have tried using XGetVisualInfo to get a visual of depth , but had no
+success.  xdpyinfo gives no information about a -bit deep visual, only monochrome. 
+
+There are two possible solutions:
+	If someone has patches for XR Xsun server, could they forward them to us?
+
+	Otherwise, could someone instruct us how to access the -bit color in openwindows?

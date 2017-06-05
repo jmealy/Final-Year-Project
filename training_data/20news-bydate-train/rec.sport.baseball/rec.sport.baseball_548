@@ -1,0 +1,20 @@
+When is it did you say?  Well let me shell out here and run this
+handy dandy program....
+
+$ mlb -m pit phi
+
+And the answer is:
+
+           Monday,  / Pittsburg    at Philadelphia (: pm) 
+          Tuesday,  / Pittsburg    at Philadelphia (: pm) 
+        Wednesday,  / Pittsburg    at Philadelphia (: pm) 
+           Friday,  / Philadelphia at Pittsburg    (: pm) 
+         Saturday,  / Philadelphia at Pittsburg    (: pm) 
+           Sunday,  / Philadelphia at Pittsburg    (: am) 
+           Friday,  / Pittsburg    at Philadelphia (: pm) 
+         Saturday,  / Pittsburg    at Philadelphia (: pm) 
+           Sunday,  /  Pittsburg    at Philadelphia (: am) 
+           Monday,  / Philadelphia at Pittsburg    (: pm) 
+          Tuesday,  / Philadelphia at Pittsburg    (: pm) 
+        Wednesday,  / Philadelphia at Pittsburg    (: pm) 
+         Thursday,  / Philadelphia at Pittsburg    (: pm) 

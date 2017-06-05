@@ -1,0 +1,17 @@
+QUESTION:
+  What is the EXACT entry (parameter and syntax please), in the X-Terminal
+configuration file (loaded when the X-Terminal boots), to add another system 
+to the TCP/IP access control list?   
+
+  BACKGROUND:
+  I have two unix systems, . an AT&T B running XR and MIT's XR and 
+. a Sun SS without any X.  
+  I want to have a window to the Sun and the B on the NCD X-Terminal at the
+same time.  I can do this if I manually set the Network Parameter TCP/IP
+Access Control List to off, then login to my telnet session. Not Great!  
+  I've tried to get "xhost" to work and failed.  Either my syntax is wrong
+or the XR implementation is bogus.  
+  I am trying to edit the NCD configuration file that is loaded when the 
+NCD boots.  No matter what entry I add or edit, the NCD still boots with
+the TCP/IP Access Control list containing only the B.
+  My manuals are worthless so any help would be most appreciated!!  Thanks!

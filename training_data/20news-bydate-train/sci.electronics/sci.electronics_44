@@ -1,0 +1,19 @@
+I've found this works pretty well on noisy laminated power
+transformer cores and windings (the Hz kind). Likewise, if
+anybody has tried this on a flyback I'd like to hear about it.
+
+I would suspect it would not be as effective as it was on power
+transformers as the material wouldn't damp as well--something
+I suspect would be critical at the frequencies involved (in other
+words, you want absorption rather than prevention which would be
+real difficult at  KHz).
+
+-- 
+--------------------------------------------------------------------
+       Dave Medin			Phone:	() - (w)
+    SSD--Networking				() - (h)
+    Intergraph Corp.
+       M/S GD 		Internet: dtmedin@catbyte.b.ingr.com
+  Huntsville, AL 		UUCP:  ...uunet!ingr!b!catbyte!dtmedin
+
+   ******* Everywhere You Look (at least around my office) *******

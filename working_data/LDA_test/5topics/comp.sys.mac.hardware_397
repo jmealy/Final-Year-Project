@@ -1,0 +1,10 @@
+The previous article referred to the fact that you could only use ns SIMMs in
+a MHz machine, but that you could use ns SIMMs in slower machines. I just
+pointed out that if you could only use ns SIMMs in a MHz machine, you can't
+use ns SIMMs in anything faster than a . MHz machine. Bank switching and
+caches were not considered in either example (although both would help memory
+access).
+
+-- 
+Ravikumar Venkateswar
+rvenkate@uiuc.edu

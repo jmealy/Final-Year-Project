@@ -1,0 +1,3 @@
+I believe you are right.  Both SCSI and SCSI- support  devices on the bus
+(normally that would be the host controller and  targets) each of which
+may have up to  logical units (LUNs).

@@ -1,0 +1,5 @@
+In evolution of -x data path width has been doubled from 
+ to  t  bits but the speed of data processing has not increased at
+same rate.The question is Why? What is relationship bettween data path width and data processing speed?
+Thanks in advance for the input.
+Robert. 

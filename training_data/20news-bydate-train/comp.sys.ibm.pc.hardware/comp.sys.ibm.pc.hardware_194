@@ -1,0 +1,15 @@
+Computer: - mhz
+Bus: ISA (. mhz)
+Drive: Maxtor A ( mb)
+
+                                    config.sys / autoexec.bat
+
+                     MS DOS              no           WIN .
+                     smartdrv.sys        cache         smartdrv.exe
+
+CORE (V .)          k/sec           k/sec      k/sec
+Norton SI (V .)      k/sec            k/sec       k/sec
+
+I'd still like to here from people with VLB-IDE.
+I still want to know what VLB bus speed is used with IDE drives.
+I still want to know if some (most ?) IDE drives can handle bus speeds >  mhz.

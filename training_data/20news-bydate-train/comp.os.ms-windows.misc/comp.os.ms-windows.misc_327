@@ -1,0 +1,18 @@
+Hi.  I am having some interesting problems with my Boca graphics card, which 
+is based on the Cirrus Logic chipset (I am not sure exactly which one).  The
+problem is as follows:
+
+If I use any Windows driver at x except for the K-colour driver (ie
+ colour or  colour), the image on screen becomes too tall - no amount of
+resizing on the monitor will make it fit.  And if I use Excel with the K-
+colour driver, it hangs as soon as it loads.  Anyone out there used this
+card/experienced anything similar.
+
+Please reply by mail, and I will post any solutions here.
+
+Regards
+
+  - Simon
+
+
+--

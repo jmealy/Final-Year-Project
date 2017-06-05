@@ -1,0 +1,9 @@
+That is in fact the current version (it only came out in December).
+
+
+My test movie was created at * resolution, it wasn't being scaled up.
+Scaling was a very CPU-intensive operation with the original QuickTime (.);
+the current version has optimizations for ratios like : (* -> *),
+but even so, I'm prepared to believe that the performance isn't as good as
+with playing back an actual * movie. I haven't done any numerical
+measurements for scaled playback.

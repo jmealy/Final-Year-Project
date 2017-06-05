@@ -1,0 +1,13 @@
+Hi,
+I have a problem when compiled Wcl . in SCO ODT .:
+
+
+        cc -c -Ox  -I.. -I/usr/include XtGetResL.c
+XtGetResL.c
+XtGetResL.c() : error C: '_XtConstraintBit' : undefined
+*** Error code 
+
+Although I follow the instructions in file README_BUILD to build Wcl in SCO 
+platform, this problem didn't resolve.
+
+So I have some questions related to this matter:

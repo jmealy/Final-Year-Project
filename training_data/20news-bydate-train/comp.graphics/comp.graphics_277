@@ -1,0 +1,32 @@
+Peter,  there's a radiosity package ahead. The only problem is: there 
+are a few miles to sail ... ;-^
+
+Let's be serious... I'm working on a radiosity package, written in C++.
+I would like to make it public domain.  I'll announce it in c.g. the minute
+I finished it. 
+
+That were the good news. The bad news: It'll take another  months (at least) 
+to finish it. 
+
+In the meantime you may have a look at the file
+  Radiosity_code.tar.Z
+located at
+  compute.cc.ncsu.edu
+
+(there are some other locations; have a look at archie to get the nearest)
+
+Hope that'll help.
+
+Yours
+
+Stephan
+
+
+
+----------------------------------------------------------------------------
+
+ Stephan Amann     SIG Computer Graphics, University of Berne, Switzerland
+           amann@iam.unibe.ch
+	   Tel +    	   Fax +    
+
+ Projects: Radiosity, Raytracing, Computer Graphics

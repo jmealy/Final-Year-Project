@@ -1,0 +1,21 @@
+The higher memory limits apply to ISA cards only, as far as I know.  The VLB
+and EISA version should have no problems.
+ 
+
+Again, the memory aperture need only be disabled if you have more than M RAM
+(EISA and VLB) or  M (ISA).  M should not be a problem for you. 
+ 
+
+Nope.  I can use x at hz, -bit and x at hz, -bit, all
+non-interlaced.
+ 
+
+They aren't perfect, but are much improved.  I don't recall the last time which
+I had to leave mach  mode (ATI GUP mode) and switch to  or VGA mode due
+to software incompatibility.
+ 
+
+It's quite fast, but whether or not its the fastest is open to debate.
+ 
+
+I like it.

@@ -1,0 +1,10 @@
+. You need these resources :
+	XTerm*EightBitInput:    true
+	XTerm*EightBitOutput:    true
+
+. In the shell you need to do : 
+        stty cs -istrip 
+
+
+Good luck .
+Victor .

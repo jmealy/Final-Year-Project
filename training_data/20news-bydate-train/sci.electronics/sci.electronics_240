@@ -1,0 +1,71 @@
+: My next project is to come up with an IF/detector module for fast -- 
+: to  kB/sec -- packet radio use.  No fancy modulation scheme, just
+: wide FSK for use at  or  MHz.
+
+: I'm a bit familiar with the Motorola  chip, but I wonder if there
+: are newer designs that might work at higher input frequencies.
+
+: My goal is to come up with an inexpensive design for a receiver "back
+: end" with IF input on one end and an FSK demondulator on the other.  I'm
+: particularly interested in ways to use a higher IF than . -- do any
+: current chips work up to, say MHz with internal downconversion so a
+: normal IF filter can be used?
+
+: Any suggestions?
+
+: John
+
+  What you describe is very close to what I built and described in the
+th ARRL Computer Network Conference proceedings.
+
+  I built  watt FSK transceivers at  MHz.  They are essentially
+double conversion transverters with digital mod and demod at  MHz.
+The receiver uses the MC which is the same FSK receiver chip I used
+previouslyu in the  Mbps  GHz data link I first published in Ham
+Radio and which is now also in the ARRL handbook.
+
+  The MC, which includes a VHF converter section, could also be used
+at these speeds.  There is a newer and perhaps slightly improved design
+of this (the MC if I remember rightly).
+
+  While using this would have let me reduce the "external" IF count on
+receive, it didn't really offer all that much help on transmit so I
+didn't bother with it.
+
+  The radios I built were first designed and built for  kbps in a 
+MHz channel but later reduced to half that.  These  kbps radios
+actually have done quite well in across-the-bench tests at  kbps and
+speed is pretty much a function of filter design.  Handling the data
+stream is another matter entirely.
+
+  Some of the existing radios are currently deployed on hilltops in a
+"beacon" test mode.  While there is not yet end-end two-way data flow
+due to lack of resources to debug software for the digital hardware (MIO
+also shown in the CNC proceedings), data is perfect copy at ngn.  Even
+though the data clock is currently at about half speed, the a + kbytes
+of the test text (chapter  of Isaiah) takes only a little over / of
+a second.
+
+  I've been hoping that someone would get interested enough to step in
+and get involved in writing code to make the whole thing usable (Borland
+IDE environment with remote debugging possible as mentioned in the
+proceedings) but to date a couple of us have been on our own and running
+low on resources of time, money and energy.
+
+  If anyone in the SF bay area wants to check it out there is also a CW
+ID after the text on the mark side at . MHz from beacons on Sonoma
+Mtn and Black Mtn (overlooking Si valley).  The antenna is horizontally
+polarized.
+
+  I guess in retrospect my suggestions are that this is a fairly costly
+approach if the radios are intended for users rather than backbones and
+you might want to carefully consider your "target".  If you can't
+arrange your paths such that you have complete line-of-sight I think
+you'll want to address the inter-symbol-interference caused by
+multipath and probably link C/N budgets if paths are very far from LOS.
+For more details, see the th CNC.  I'm currently working on a spread
+spectrum, direct conversion design to address some of these problems.
+I'd be glad to help as I can with any design problems.
+
+
+Glenn Elmore ngn

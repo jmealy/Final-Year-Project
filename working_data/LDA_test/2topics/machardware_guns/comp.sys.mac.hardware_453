@@ -1,0 +1,19 @@
+Apple has really confused people with this whole thing. I think
+we'll be answering this question for about the next year or so. There is
+no "option" to get an FPU on a C. What you have is a choice of CPUs:
+there is the LC that does not have an integrated FPU like the full
+' and is only present in the base / model of the C (AppleUSA).
+And there is the full ' which you get when you order anything other
+than the base / configuration. Therefore, since you have ordered one
+of the MB versions with on-board Ethernet models you will not be
+getting the LC. But even if you wanted to have the LC you wouldn't
+be able to order a C with MB RAM, on-board Ethernet and an LC.
+It's not an "option."
+    Also, a note to people out there that have / Cs and Cs
+thinking that there is an optional FPU, the ' class chip cannot
+recognize an external FPU, so there is no socket on the motherboard for
+a FPU chip and you cannot go out and purchase an FPU on a PDS card or
+something like that. The only way to get an FPU in these machines is to
+replace the LC with a full '. And if you have a C, you will not
+need to worry about a heat sink if you do replace the LC with the
+full ', but if you have a / C you do need to have a heat sink.

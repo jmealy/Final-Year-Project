@@ -1,0 +1,17 @@
+Word .c doesn't show the period-centred character to indicate
+spaces if I use the TTFonts from CorelDraw.  Our editors need to
+be able to see how many spaces are in text but the character 
+displayed is a large hollow box.  They overlap each other and
+characters on each side, which is useless.
+
+I believe the character used by WW is the period-centred ().
+This character shows up with the windows Charmap display as the
+hollow box which tends to confirm this.  I have edited the corel
+font with Fontmonger and changing the font graphics for the 
+character makes no difference to the font output in Charmap or WW.
+Altering the paragraph () or cedilla () does alter their font
+graphics displayed however!!
+
+Is the WW character used to indicate spaces the period-centred
+character?  Has anyone been able to get this character displayed
+from a CorelDraw TTF?

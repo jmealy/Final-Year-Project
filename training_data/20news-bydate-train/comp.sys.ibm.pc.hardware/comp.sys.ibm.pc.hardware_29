@@ -1,0 +1,24 @@
+Hi. I recently switched my old Amiga  with a DX-. My computer
+configuration is :
+
+DX- Mhz. / kB EISA (Micronics Motherboard ASIC EISA Mhz)
+MB Ram
+STN  MB Harddisk, SCSI
+UltraStorF EISA Cache Controller
+
+When I use Norton. Harddisk benchmark, I get a Harddisk data transfer
+about  kb/sec. and sometimes MB/sec. Is that good ? I thought
+that with EISA I could get about MB/sec. 
+Somewhere in the manual for my harddisk I have read, that some host 
+adapters need to perform a low-level format to optimize the harddisk 
+performance in that system, do I need that ?
+A guy I know, gets a HD transfer about .MB/sec, and he has an STA and
+a ISA DX-, how can a ISA with the same system be faster ?
+
+Is there anything that I can do to get a speedier harddisk ?
+
+
+                                        Thanks.
+
+phantom@diku.dk   (e-mail is preffered)
+

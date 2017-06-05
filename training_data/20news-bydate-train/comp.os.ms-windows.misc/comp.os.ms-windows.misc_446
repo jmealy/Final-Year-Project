@@ -1,0 +1,25 @@
+(From the Windows Resource Toolkit (for WinWorkgroups)), add an entry to
+your "system.ini" file under the [NonWindowsApp] section:
+
+    CommandEnvSize=NNNN
+
+"This sets the COMMAND.COM env size, where NNNN must either be  or
+between  and .  A value of  disables the setting.  If this
+value is too small or too big, it is rounded up to  or down to .
+If the value is less than the current size of the actual environment,
+this setting is disabled, as if it were .  If you specify the
+environment size in a PIF file for COMMAND.COM, the PIF setting
+overrides this setting.  The default is  with MSDOS versions earlier
+than ..  Otherwise, the default value is the /e: option in the
+SHELL= command in CONFIG.SYS.  To set this value, you must edit your
+SYSTEM.INI [and reboot]."
+
+
+I have used this entry, as well as relied on the default /e: from
+the CONFIG.SYS shell= line, and both give larger environments.  If
+you don't use one of these, then the environment passed by windows
+to each new DOS box is just a little bit bigger than the environment
+_variables_ present when windows was started.  (No matter how big
+the DOS env was, when windows starts, it truncates all unused space
+except for a few bytes.)  This should allow your batch file to run,
+but your mileage may vary.

@@ -1,0 +1,8 @@
+I, too, have a XCRC math coprocessor, which I installed
+succesfully in my Mega Midget Racer (clocked at  MHz). I have tried
+clocking my FPU at  to  MHz and it all worked just fine. I have a
+MC- CPU. I don't know why my FPU has an XC (my original MHz FPU
+was label MC-), but it seems to work fine on my system. Maybe you
+just have a bad chip.
+
+Stefan

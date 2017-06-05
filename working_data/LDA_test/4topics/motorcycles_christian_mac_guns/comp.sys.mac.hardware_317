@@ -1,0 +1,13 @@
+Macintosh IIsi, /, ns.
+Clock-upgraded IIsi works well at MHZ, however, does not work with
+Nubus adaptor and k disk even though it can read/write k disk
+atMHz. Interestingly, upgraded IIsi overcomes basically the fighting
+between the Vedio and the System so that CPU never be reduced below  no
+mater whether the cache is on or off. This is pretty useful when you
+use the virtual memory of system . 
+
+                    MHz         MHZ                 MHz 
+     CPU            .(..)	   .(..)	.(..) .(VM)
+     Graf.   	    .           .        .        . 
+     Disk           .           .         .        .
+     Math.          .           .(FPU)   .        .

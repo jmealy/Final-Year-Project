@@ -1,0 +1,21 @@
+There is another useful method based on Least Sqyares Estimation of the sphere equation parameters.
+
+The points (x,y,z) on a spherical surface with radius R and center (a,b,c) can be written as 
+
+   (x-a)^ + (y-b)^ + (z-c)^ = R^
+
+This equation can be rewritten into the following form:  
+
+   ax + by + cz + R^ - a^ - b^ -c^ = x^ + y^ + z^
+
+Approximate the left hand part by   F(x,y,z) = p.x + p.x + p.z + p.
+
+For all datapoints, i.c. , determine the  parameters p..p which minimise the average error |F(x,y,z) - x^ - y^ - z^|^.
+
+In 'Numerical Recipes in C' can be found algorithms to solve these parameters.
+
+The best fitting sphere will have 
+- center (a,b,c) = (p/, p/, p/)
+- radius R = sqrt(p + a.a + b.b + c.c).
+
+So, at last, will this solve you sphere estination problem, at least for the most situations I think ?.

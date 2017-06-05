@@ -1,0 +1,12 @@
+The JP on the Speedstar x is for those systems with boot-up problems.
+If your system fails to boot-up proprtly, please pull off the jumper
+block from jp. This will not affect the proformance of the SpeedStar x.
+ 
+This is what my manual says about jp. I never knew that it was there
+but the card is a real ask kicker in my book. It beats the hell out
+of my junk Sony s to the point that I can't even use above x
+mode much...Sam
+Some times an upgrage turns out to be a big overkill, like driving a Sony
+with a x that the monitor can't handle. Or installing ns simms and
+then finding out that your mother board doesn't have a cmos wait state
+adjustment to take advantage of the new ns simms that you just bought!

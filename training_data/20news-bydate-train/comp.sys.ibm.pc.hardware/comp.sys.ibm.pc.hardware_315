@@ -1,0 +1,18 @@
+Hello,
+
+I already tried our national news group without success.
+
+I tried to replace a friend's original IBM floppy disk in his PS/-PC
+with a normal TEAC drive.
+I already identified the power supply on pins  (V) and  (V), shorted
+pin  (."/." switch) and inserted pullup resistors (K) on pins
+, , , , and .
+The computer doesn't complain about a missing FD, but the FD's light
+stays on all the time. The drive spins up o.k. when I insert a disk,
+but I can't access it.
+The TEAC works fine in a normal PC.
+
+Are there any points I missed?
+
+Thank you.
+	Volkmar

@@ -1,0 +1,549 @@
+Here's a document that I wrote some time back.  It's slightly
+out-of-date, now that DOS  has been released, but much of it is still
+useful.
+
+     -- Darryl Okahata
+	Internet: darrylo@sr.hp.com
+
+DISCLAIMER: this message is the author's personal opinion and does not
+constitute the support, opinion or policy of Hewlett-Packard or of the
+little green men that have been following him all day.
+
+===============================================================================
+$Id: adaptec.txt . // :: darrylo Rel darrylo $
+          Hints and Tips for the Adaptec / SCSI adapter
+
+
+     This document contains hints and tips for getting the Adaptec
+/ SCSI adapter to work with various hardware and software
+packages.  They are based upon my experiences with an Adaptec A
+controller, and will, hopefully, help others.  However, note that I
+cannot guarantee that the following will really help you (it works for
+me), and the information in this document could possibly cause you to
+lose some or all of your files on your hard disk.
+
+     IMPORTANT!  BACK UP THE ENTIRE CONTENTS OF YOUR HARD DISK BEFORE
+TRYING ANYTHING BASED UPON INFORMATION IN THIS DOCUMENT.
+
+     Copyright , by Darryl Okahata.  This document may be freely
+copied for personal use only, and may not be reprinted in a for-profit
+publication without the consent of the author.  Please note that I have
+no connection with Adaptec other than as a customer.
+
+Topics covered in this document:
+
+	* Windows . enhanced mode
+	* Floppy-controller-based tape backup devices
+	* Sound cards
+	* Miscellaneous info
+
+     Please note that parts of this document contain technical, and
+sometimes terse, descriptions of problems.
+
+For reference:
+
+	Adaptec technical support:	() -
+	Adaptec BBS (/):	() -
+
+Please send comments, corrections, etc. via email to me:
+
+	CompuServe:	,
+	Internet:	darrylo@sr.hp.com
+
+
+***** Windows . enhanced mode:
+
+     The Windows . install program should automatically configure DOS
+and Windows for use with the Adaptec .  However, just in case
+something went wrong, I'm going to describe some of the changes needed
+to get Windows . working with the .  Also, you may have noticed
+that installing Windows . makes your PC run much slower, even when
+you're not running Windows; methods of speeding it up are discussed in
+the section called, "Windows . runs slowly".
+
+
+* MSDOS configuration:
+
+     The Windows install program adds the SmartDrive disk cache to your
+CONFIG.SYS and AUTOEXEC.BAT files.  If you follow the instructions,
+you'll notice that you'll need to use double-buffering with SmartDrive
+(this is the default setup).  You'll also notice that your system runs
+much, much slower -- in both Windows *AND* MSDOS.  See the section
+called, "Windows . runs slowly", for some ways of speeding your system
+up.
+
+
+* Windows configuration:
+
+     To get the Adaptec  to work with Windows, make sure that the
+"[Enh]" section of the SYSTEM.INI file contains the entry:
+
+	VirtualHDIRQ=Off
+
+I believe that the Windows install program automatically adds this entry
+to SYSTEM.INI, but I'm not sure.  If this doesn't work for you, you
+might want to try adding some more lines:
+
+	VirtualHDIRQ=Off
+	SystemROMBreakPoint=false
+	EMMExclude=A-CFFF
+
+(You probably don't need the above lines, though.)  The
+"SystemROMBreakPoint" entry is used to enable support for memory
+managers like QEMM/MAX (only needed if you use such programs).
+
+
+* Windows . runs slowly:
+
+     Once you do get Windows . running with the , chances are that
+your system is running much slower than before.  If it's not, it's
+probably because:
+
+     . You happen to be using ASPIDOS.SYS version . in your
+	CONFIG.SYS file.  Congratulations -- this appears to be a
+	winning solution.
+
+     . You are very lucky.  Whether your luck will hold out remains to
+	be seen ....
+
+If your system is running much slower than before, this is almost
+definitely caused by Smartdrive with double-buffering.  According to the
+Windows documentation, and the Microsoft technical note #Q
+("SMARTDrive Double Buffering Required with ASPIDOS.SYS"), you must use
+Smartdrive with double-buffering enabled.  While this works, it really
+slows down your PC; I once estimated that this slowed my PC down by a
+factor of  (FIVE).  As I consider this unacceptable, I looked for other
+solutions.
+
+     Unfortunately, you cannot just disable double-buffering.  If you
+do, Windows . in enhanced mode will not work, and you might even
+destroy the contents of your hard disk by trying to run Windows ..
+What you can do is one of the following:
+
+     . Use other drivers that provide double-buffering.  It is my
+	opinion that the unbelievable slowness in Smartdrive is caused
+	either by horribly inefficient double-buffering, or by a bug in
+	Smartdrive.
+
+     . Use a driver that provides "VDS" services ("VDS" stands for
+	"Virtual DMA Services").  This is a standard, which is supported
+	by Windows ., that allows bus-mastering disk controllers (like
+	the ) to work with Windows.
+
+     After trashing my hard disk countless times, I found the following
+solutions, none of which require using Smartdrive (note, however, that I
+am now getting occasional parity errors, which are probably *NOT* caused
+by these solutions, but might be -- see below).  While the following
+does not require Smartdrive, using some kind of disk cache utility is
+strongly recommended, as this makes Windows run much, much faster:
+
+. If you do not have the ASPIDOS.SYS driver, or you do not need ASPI
+   functions (for controlling a CDROM, tape drive, more than two
+   physical hard disks, etc.), you can add the SCSIHA.SYS driver to your
+   CONFIG.SYS file, e.g.:
+
+	DRIVER=c:\SCSIHA.SYS /V
+
+   (Windows needs the "/V" option.)  This driver MUST be loaded into
+   LOW memory (it cannot be loaded into high memory), and it occupies
+   about -K.  As of November , the SCSIHA.SYS driver could be
+   obtained from the Adaptec BBS at ()-- (hopefully, it's
+   still there).
+
+. If you need ASPI functions and have the ASPIDOS.SYS driver, version
+   . or .a, you can use both the ASPIDOS.SYS and SCSIHA.SYS drivers
+   in your CONFIG.SYS file, e.g.:
+
+	DRIVER=c:\ASPIDOS.SYS
+	DRIVER=c:\SCSIHA.SYS /V
+
+   Amazingly enough, the SCSIHA.SYS driver can also be loaded high
+   (assuming you have DOS .); I would have thought that this would
+   crash my system, but it doesn't.  I asked Adaptec's technical support
+   about this, and they said that loading SCSIHA.SYS high should be fine
+   as long as ASPIDOS.SYS is loaded LOW.
+
+   On my system, NOT using SCSIHA.SYS with ASPIDOS .a would
+   occasionally cause Windows . to crash upon restarting or exiting
+   Windows, with the additional result of a corrupted disk (some of my
+   C:\WINDOWS\*.GRP files would be corrupted).  For me, these crashes
+   usually occurred while making a different program from PROGMAN.EXE
+   the default Windows shell, and vice-versa.  This is the reason
+   SCSIHA.SYS may be necessary.
+
+   I have absolutely no idea if SCSIHA.SYS is necessary with versions of
+   ASPIDOS earlier than ..
+
+   Note that many people can use ASPIDOS . or .a without
+   SCSIHA.SYS; they do not seem to have any problems at all.  I consider
+   these people lucky.  Others, like me, have had all sorts of problems.
+
+. In my opinion, the best, but not necessarily the easiest, solution is
+   to upgrade to ASPIDOS ..  The SCSIHA.SYS driver is no longer
+   needed.  Unfortunately, while you could get previous ASPIDOS
+   upgrades from the Adaptec BBS, the ASPIDOS . driver is not
+   available from the Adaptec BBS.  As far as I know, there are only
+   three ways to get a copy:
+
+      * You can buy the new (as of November ) Adaptec EZ SCSI driver
+	kit, which supposedly includes ASPIDOS . as well as other
+	drivers, such as CDROM drivers.  I believe the list price is
+	around $.
+
+      * If you already have a copy of an older version of ASPIDOS, you
+	can supposedly contact Adaptec to upgrade it to EZ SCSI for
+	around $.
+
+      * A copy of ASPIDOS . is included in Central Point PC Tools .
+	for MSDOS.  Note that the documentation and driver are stored in
+	different directories.  Note further that only ASPIDOS is
+	included; the CDROM drivers and drivers to support more than two
+	hard disks are not included.  This is where I obtained my copy
+	of ASPIDOS ..
+
+Note, however, that I am now getting occasional parity errors with
+Windows.  In all probability, defective hardware in my PC is causing
+this, as I upgraded my motherboard just after I found the above
+solutions.  However, because these parity errors occur only during disk
+accesses, there is a very small, but definite, possibility that the
+parity errors are driver-related (for example, changing the bus on/off
+timing for certain disk transfers might cause this).  I've run various
+memory tests for hours at a time, and these tests have found no
+problems.  This problem is probably caused by memory with marginal
+timing requirements, which cause parity errors during disk transfers
+(this is why the memory tests didn't find any problems -- the problems
+show up only under disk I/O).  However, I'm mentioning this just in case
+it isn't a hardware problem.
+
+
+***** Floppy-controller-based tape backup devices:
+
+     There are two possible problems with using the Adaptec  with a
+floppy-controller-based tape backup device, such as the Colorado Memory
+Systems Jumbo :
+
+. Tape backups/restores can take a very long time.  The tape drive
+   constantly starts, stops, starts, stops, etc.
+
+. Tape operations may be erratic, or encounter too many tape errors.
+   (This problem might be caused by defective hardware on my .
+   However, I've heard of other people having similar problems, and so
+   I'm mentioning this just in case it is not a hardware problem on my
+   .)
+
+
+* Tape backups/restores take a long time:
+
+     If you have a floppy-controller-based tape backup device, you may
+have to adjust the Adaptec / "bus on/off timing" for best
+results when using the tape drive.  Normally, while doing a tape backup
+or restore, the tape drive motor should be continuously running, with
+only an occasional pause.  However, the default bus timing on the
+Adaptec / may cause the tape drive motor to start and stop,
+start and stop, every few seconds.  This causes needless wear to the
+tape and tape drive (however, note that a dirty tape head or a defective
+tape drive can also cause this -- make sure your tape heads are clean).
+This also causes the tape backup or restore to take much, much longer
+than necessary.
+
+     The problem here is that these tape backups use the floppy DMA to
+transfer data in memory to/from the tape drive, and the Adaptec uses DMA
+to transfer data in memory to/from the hard disk.  The floppy DMA needs
+to feed data to the tape drive at a certain rate; if the tape drive is
+not fed data quickly enough by the floppy DMA, the tape drive stops,
+rewinds a bit, and restarts (once enough data is eventually fed to it).
+The default bus timing on the Adaptec (which is really DMA timing) is
+"too large".  For example, when a backup is done, data has to be
+transferred from a hard disk to memory, and then from memory to the
+tape.  Because the default timing on the Adaptec "hogs" the memory too
+much (too much time is spent transferring data from a hard disk to
+memory), not enough time is spent transferring data from memory to the
+tape drive.  As a result, the tape drive constantly starts and stops,
+because data is not fed to it quickly enough.
+
+     The solution is to change the Adaptec's bus on/off timing.  The
+default factory setting is  microseconds on, and  microseconds off.
+The "bus on" timing needs to be lowered to - microseconds.  This can
+be done in one of two ways:
+
+* If you have ASPIDOS, you can use the "/n" option.  For example, I use
+  a "bus on" timing of  microseconds, which means that I use the
+  following line in my CONFIG.SYS file:
+
+	DEVICE=c:\aspidos.sys /n
+
+  Note that there is NO space between the "/n" and the "".
+
+* If you don't have ASPIDOS, your only recourse is to try to find a
+  program called "SETSCSI.EXE", which is very difficult to find.  The
+  reason is that Adaptec, for reasons of their own, does not seem to
+  want this widely distributed.  I once asked someone who worked for
+  Adaptec, and they asked me to not upload it anywhere.  If you have
+  anonymous ftp access to the Internet, you could try using archie to
+  hunt down a copy; I believe that there are a couple of sites that have
+  it.  If you do find a copy, you run it like so:
+
+	setscsi -n:
+
+  This adjusts the "bus on" timing to  microseconds.  Running
+  SETSCSI.EXE without any arguments resets the bus timing back to the
+  factory defaults.
+
+  Note that it seems that you cannot use SETSCSI.EXE if you use
+  ASPIDOS; SETSCSI.EXE crashed my system if ASPIDOS was loaded.  I
+  could use SETSCSI.EXE with SCSIHA.SYS, however.
+
+Do not lower the "bus on" timing below  microseconds, or increase it
+above  microseconds.  If you lower it too low, the hard disk
+throughput will suddenly drop; your system will feel slower.  For me, 
+microseconds works fine.  This value may work fine for you, or you may
+have to adjust it downwards a little.
+
+     Once you've lowered the "bus on" timing, tape backups and restores
+should run faster.
+
+     Also, do not experiment with the bus on/off times (with the other
+options that I have intentionally not described), unless you know what
+you are doing.  Bad combinations can cause parity errors and worse, by
+starving memory refresh.
+
+     A program called BUSTIFIX.EXE exists on the Adaptec BBS.  Unless
+this has been upgraded since I last checked (which has been a while),
+this is a self-extracting archive containing a batch file and a couple
+of other files.  This batch file was supposed to allow one to set the
+bus on/off times for the / and others.  However, when I tried
+running this program with my A, my system crashed.  At the time, I
+was running SCSIHA.SYS, and I didn't check to see if there was a
+conflict with it.  Maybe this old program works only with the B,
+although the docs say that it works with the A?
+
+
+* Erratic tape operations or too many tape errors:
+
+     This "problem" may or may not exist.  Although it existed on my
+system, a hardware problem just on my particular  could cause it.
+However, I've heard of other people having similar problems, and so I'm
+mentioning this just in case it isn't a hardware problem just on my
+.
+
+     Symptoms of this "problem", which persists even after cleaning the
+tape head:
+
+. Backing up to tape encounters "unusable sector detected" errors,
+   resulting in an aborted tape backup.
+
+. Tape backup works, but the tape compare fails.
+
+. The tape drive starts, stops, starts, stops, etc. much too often.
+   Unlike the above-mentioned problem ("Tape backups/restores take a
+   long time"), where the tape drive starts and stops every few seconds,
+   this kind of starting/stopping occurs every few - seconds or so.
+
+. Fastback Plus . does not find/see any tape backup devices.  Other
+   programs, like Central Point Backup and the CMS Jumbo software
+   (assuming that you have a CMS Jumbo  tape drive) can find/see the
+   tape drive, but Fastback Plus . cannot.
+
+. Too many tape read errors.
+
+     Although I do not know what is causing this problem, I discovered
+that using a different floppy controller solves it.  A few months ago, I
+upgraded my motherboard, which contained an integrated floppy
+controller.  As I already had a floppy controller on the , I
+initially disabled the motherboard floppy controller.  After a while, I
+decided to try disabling the  floppy controller and using the one on
+the motherboard.  When I did this, the tape drive (a CMS Jumbo )
+reliability increased dramatically, and Fastback Plus . was suddenly
+able to find and use the tape drive.
+
+     I don't know if this was caused by a hardware problem on my .
+On the one hand, the floppy drives worked great when they were attached
+to the , which seems to say that there was nothing wrong with the
+.  On the other hand, the tape drive didn't work well attached to
+the  floppy controller, but it did work when attached to a different
+controller; this could be an indication of a hardware problem on my
+.  I did change floppy drive cables, and so it is conceivable that
+the problem was in the cables.  I don't know what the cause really is;
+however, if you're having similar problems, you might want to consider
+trying a new floppy controller.
+
+
+***** Sound cards:
+
+     Many popular sound cards can play or record digitized sound, and
+this is typically done using DMA.  Like the tape drive DMA, the
+Adaptec's DMA can conflict with the sound card DMA.  Unlike that of the
+tape DMA, this "conflict" usually manifests itself as a parity error
+(your system crashes with a parity error message).  What happens is
+that, data is being transferred so quickly by the sound card and the
+Adaptec, memory refresh cannot occur quickly enough, which causes a
+parity error.  Usually, getting a parity error means that there is a
+hardware problem with your system; in this case, however, the parity
+error is not a symptom of bad hardware.
+
+     I've found that such parity errors typically occur while recording
+digitized sound, and the chances of such errors increase as you increase
+the recording fidelity (e.g., higher sampling rate, recording in stereo,
+recording using -bits instead of , etc.).
+
+     Like the tape drive solution, the solution here is to lower the
+Adaptec's "bus on" timing.  See the section on tape drives for
+information on how this is done.  Note, however, that this may or may
+not solve the problem; it may only reduce the probability of a parity
+error.  The software used to record digitized sound can greatly affect
+this problem (i.e., some software is inefficient).  Disk caches, the
+speed of your hard disk, and the amount of disk fragmentation can also
+affect this.
+
+
+***** Miscellaneous info:
+
+     This section contains miscellaneous hints, tips, and rumors.  Much
+of it is merely information that I've heard or read about, and have not
+verified.  I believe that the following information is correct, but I'm
+not sure.  Use it at your own risk.
+
+* With QEMM ., ., and ., you need to specify the "DB="
+  parameter (e.g., "DB="), unless you are using the ASPIDOS driver.
+  If you don't, QEMM will crash/hang at bootup.  Although the QEMM
+  manual mentions this, the install program does not seem to detect that
+  a  is present and automatically add this option to the QEMM
+  command line (at least, this occurred with the QEMM . install
+  program -- I haven't tested any other version).  Earlier versions of
+  QEMM probably need this parameter, but I'm not sure (I've never used a
+  version earlier than .).
+
+  If you use ASPIDOS, you do not need to give QEMM the "DB=" parameter.
+
+* Some or all versions of the  do not support hard disks over one
+  gigabyte in size.  To support hard disks with capacities over GB, you
+  need to get a new ROM BIOS from Adaptec.  I'm not sure if this is
+  still true of the latest Bs being sold by Adaptec.
+
+* To connect a CDROM drive to the , you need a SCSI CDROM drive and
+  some drivers.  Note that some CDROM drives have proprietary interfaces
+  (non-SCSI); these drives cannot be used with the .  You have three
+  choices for CDROM drivers (I have no idea how well the following
+  solutions work, or even if they work -- the following is secondhand
+  information):
+
+     . You can buy Adaptec's EZ SCSI driver package, which lists for
+	something like $.  If you already have older Adaptec drivers,
+	you can supposedly upgrade to EZ SCSI for around $.  Contact
+	Adaptec for details.  The EZ SCSI package supposedly contains
+	everything that you need.
+
+     . You can buy the CorelSCSI! driver package, which is made by the
+	same people that make CorelDRAW!  This package contains CDROM
+	drivers, SCSI tape drivers, WORM drivers, etc.  I do not know
+	the list price, but I've seen this package sold for around
+	$-$.  Note that CorelSCSI! does not come with the ASPIDOS
+	driver, which is needed.  If you do not already have ASPIDOS,
+	you may be better off getting Adaptec's EZ SCSI instead.
+
+     . [This method is obsolete, as the following drivers have been
+	obsoleted by Adaptec's EZ SCSI kit, but I'm mentioning it in
+	case someone already has these drivers.]  You can use the
+	drivers in the Adaptec ASW- kit (ASPIDOS) and the ASW-
+	kit (ASPI CDROM drivers).  You will have to get a copy of
+	MSCDEX.EXE (a high-level CDROM driver), if it is not included in
+	the ASW- kit, but this is available from several bulletin
+	boards.
+
+* To use a SCSI tape drive with the , you need software that knows
+  how to talk to a SCSI tape drive.  Software that I've heard about are
+  (again, like the above section on CDROM drives, I have no idea how
+  well the following solutions work, or even if they work -- the
+  following is secondhand information):
+
+     . Central Point PC Tools . for MSDOS supposedly supports a large
+	number of SCSI tape drives.  It comes with SCSI drivers
+	(ASPIDOS .) as well as Central Point Backup.
+
+     . The CorelSCSI! driver package contains a SCSI tape backup
+	program (see the above section on CDROM drives for more
+	details).  However, note that CorelSCSI! does not come with, but
+	requires, ASPIDOS.
+
+* I've seen advertisements that sell the  in three configurations:
+
+     .  SCSI controller with hard disk ROM BIOS.
+     .  SCSI controller w/BIOS and Adaptec ASPI drivers.
+     .  SCSI controller w/BIOS, Adaptec ASPI drivers, and
+	CorelSCSI! drivers/programs.
+
+  I imagine that Adaptec now sells the  in a fourth configuration:
+
+     .  SCSI controller w/BIOS and EZ SCSI drivers (including ASPI
+	drivers).
+
+* Those people who use Unix might be interested in a version of GNU tar
+  for MSDOS that talks to a SCSI tape drive via the ASPIDOS driver (you
+  need this driver before you can use this program).  I've never used
+  this version of GNU tar, but I've heard that it works (I don't know
+  how well, though).  If you have anonymous ftp access to the Internet,
+  a copy can be found on wsmr-simtel.army.mil and mirror sites:
+
+	PD:<MSDOS.DSKUTL>
+	ASPIBIN.ZIP    Gnu Tar for SCSI tape drives, Adaptec xx
+	ASPIPAT.ZIP    Patches for ASPIBIN relative to Gnu Tar .
+	ASPISRC.ZIP   Src for Gnu Tar for SCSI tape, Adaptec ctrlr
+
+  I have no idea if a copy can be found on Compuserve; UNIXFORUM might
+  have it, if any forum does.
+
+* As far as MSDOS is concerned, the A and the B controllers are
+  the same; with MSDOS, the A should work as well as the B.
+  However, the hardware for these two boards is not % identical, and
+  there is at least one (NON-MSDOS) program that initially did not work
+  with a A, but did work with a B (BSD -- a  version of
+  BSD Unix).
+
+* In case anyone's curious, here's an edited copy of my CONFIG.SYS file:
+
+	FILES=
+	BUFFERS=
+	BREAK=ON
+	STACKS=,
+	DEVICE=c:\sys\dev\aspidos.sys /d /n
+	DEVICE=C:\QEMM\QEMM.SYS on RAM ROM DMA= ST:M X=F-FFFF
+	DOS=HIGH,UMB
+	DEVICEHIGH=c:\sys\dev\nnansi.sys
+	DEVICEHIGH=C:\DOS\SETVER.EXE
+	shell = c:\dos\command.com /p
+
+  Note that I'm using QEMM and ASPIDOS ..  If I were using ASPIDOS
+  . or .a, I'd probably have to use a CONFIG.SYS that looked like:
+
+	FILES=
+	BUFFERS=
+	BREAK=ON
+	STACKS=,
+	DEVICE=c:\sys\dev\aspidos.sys /d /n
+	DEVICE=C:\QEMM\QEMM.SYS on RAM ROM DMA= ST:M X=F-FFFF
+	DOS=HIGH,UMB
+	DEVICEHIGH=c:\sys\dev\scsiha.sys /V
+	DEVICEHIGH=c:\sys\dev\nnansi.sys
+	DEVICEHIGH=C:\DOS\SETVER.EXE
+	shell = c:\dos\command.com /p
+
+  If I weren't using ASPIDOS, I'd probably use something that looked
+  like:
+
+	FILES=
+	BUFFERS=
+	BREAK=ON
+	STACKS=,
+	DEVICE=c:\sys\dev\scsiha.sys /V
+	DEVICE=C:\QEMM\QEMM.SYS on RAM ROM DB= DMA= ST:M X=F-FFFF
+	DOS=HIGH,UMB
+	DEVICEHIGH=c:\sys\dev\nnansi.sys
+	DEVICEHIGH=C:\DOS\SETVER.EXE
+	shell = c:\dos\command.com /p
+
+  However, if I used a floppy-controller-based tape drive, or if I
+  planned to record high-quality sound from a sound card, I would still
+  need some way of changing the Adaptec's bus on/off times.  The first
+  two versions of CONFIG.SYS take care of this, but this last version
+  doesn't.
+

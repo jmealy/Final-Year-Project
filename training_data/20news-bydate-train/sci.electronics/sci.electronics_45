@@ -1,0 +1,13 @@
+I guess k, connecting pins - (x), - (y), - (x), and - (y).
+
+Or: Get an -bit DA-Converter (merely a couple of transistors and
+Resistors) and an OpAmp to compare its output to the voltage you want to
+measure, connect them to a spared printer port (if you have one), and do
+the rest by software (stepwise refinement). The port addresses for your
+printer ports are probably: &H (LPT), &H (LPT). This should work
+well enough for your purposes.
+
+Hope this helps
+
+--
+GMD,  Schloss Birlinghoven,  Postfach ,  D- St. Augustin ,  FRG

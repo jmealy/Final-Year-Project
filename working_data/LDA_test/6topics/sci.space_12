@@ -1,0 +1,525 @@
+Archive-name: space/probe
+Last-modified: $Date: // :: $
+
+PLANETARY PROBES - HISTORICAL MISSIONS
+
+    This section was lightly adapted from an original posting by Larry Klaes
+    (klaes@verga.enet.dec.com), mostly minor formatting changes. Matthew
+    Wiener (weemba@libra.wistar.upenn.edu) contributed the section on
+    Voyager, and the section on Sakigake was obtained from ISAS material
+    posted by Yoshiro Yamada (yamada@yscvax.ysc.go.jp).
+
+US PLANETARY MISSIONS
+
+
+    MARINER (VENUS, MARS, & MERCURY FLYBYS AND ORBITERS)
+
+    MARINER , the first U.S. attempt to send a spacecraft to Venus, failed
+    minutes after launch in . The guidance instructions from the ground
+    stopped reaching the rocket due to a problem with its antenna, so the
+    onboard computer took control. However, there turned out to be a bug in
+    the guidance software, and the rocket promptly went off course, so the
+    Range Safety Officer destroyed it. Although the bug is sometimes claimed
+    to have been an incorrect FORTRAN DO statement, it was actually a
+    transcription error in which the bar (indicating smoothing) was omitted
+    from the expression "R-dot-bar sub n" (nth smoothed value of derivative
+    of radius). This error led the software to treat normal minor variations
+    of velocity as if they were serious, leading to incorrect compensation.
+
+    MARINER  became the first successful probe to flyby Venus in December
+    of , and it returned information which confirmed that Venus is a
+    very hot ( degrees Fahrenheit, now revised to  degrees F.) world
+    with a cloud-covered atmosphere composed primarily of carbon dioxide
+    (sulfuric acid was later confirmed in ).
+
+    MARINER , launched on November , , was lost when its protective
+    shroud failed to eject as the craft was placed into interplanetary
+    space. Unable to collect the Sun's energy for power from its solar
+    panels, the probe soon died when its batteries ran out and is now in
+    solar orbit. It was intended for a Mars flyby with MARINER .
+
+    MARINER , the sister probe to MARINER , did reach Mars in  and
+    took the first close-up images of the Martian surface ( in all) as it
+    flew by the planet. The probe found a cratered world with an atmosphere
+    much thinner than previously thought. Many scientists concluded from
+    this preliminary scan that Mars was a "dead" world in both the
+    geological and biological sense.
+
+    MARINER  was sent to Venus in . It reconfirmed the data on that
+    planet collected five years earlier by MARINER , plus the information
+    that Venus' atmospheric pressure at its surface is at least  times
+    that of Earth's, or the equivalent of being , feet under the surface
+    of an ocean.
+
+    MARINER  and  were sent to Mars in  and expanded upon the work
+    done by MARINER  four years earlier. However, they failed to take away
+    the concept of Mars as a "dead" planet, first made from the basic
+    measurements of MARINER .
+
+    MARINER  ended up in the Atlantic Ocean in  when the rocket
+    launcher autopilot failed.
+
+    MARINER , the sister probe to MARINER , became the first craft to
+    orbit Mars in . It returned information on the Red Planet that no
+    other probe had done before, revealing huge volcanoes on the Martian
+    surface, as well as giant canyon systems, and evidence that water once
+    flowed across the planet. The probe also took the first detailed closeup
+    images of Mars' two small moons, Phobos and Deimos.
+
+    MARINER  used Venus as a gravity assist to Mercury in . The probe
+    did return the first close-up images of the Venusian atmosphere in
+    ultraviolet, revealing previously unseen details in the cloud cover,
+    plus the fact that the entire cloud system circles the planet in four
+    Earth days. MARINER  eventually made three flybys of Mercury from 
+    to  before running out of attitude control gas. The probe revealed
+    Mercury as a heavily cratered world with a mass much greater than
+    thought. This would seem to indicate that Mercury has an iron core which
+    makes up  percent of the entire planet.
+
+
+    PIONEER (MOON, SUN, VENUS, JUPITER, and SATURN FLYBYS AND ORBITERS)
+
+    PIONEER  through  failed to meet their main objective - to photograph
+    the Moon close-up - but they did reach far enough into space to provide
+    new information on the area between Earth and the Moon, including new
+    data on the Van Allen radiation belts circling Earth. All three craft
+    had failures with their rocket launchers. PIONEER  was launched on
+    October , , PIONEER  on November , and PIONEER  on December .
+
+    PIONEER  was a Moon probe which missed the Moon and became the first
+    U.S. spacecraft to orbit the Sun in . PIONEER  was originally
+    designed to flyby Venus, but the mission was scaled down and it instead
+    studied the interplanetary environment between Venus and Earth out to
+    . million kilometers in , a record until MARINER . PIONEER 
+    through  were placed into solar orbit from  to : PIONEER , ,
+    and  are still transmitting information at this time. PIONEER E (would
+    have been number ) suffered a launch failure in .
+
+    PIONEER  became the first spacecraft to flyby Jupiter in . PIONEER
+     followed it in , and then went on to become the first probe to
+    study Saturn in . Both vehicles should continue to function through
+     and are heading off into interstellar space, the first craft ever
+    to do so.
+
+    PIONEER Venus  () (also known as PIONEER Venus Orbiter, or PIONEER
+    ) burned up in the Venusian atmosphere on October , . PVO made
+    the first radar studies of the planet's surface via probe. PIONEER Venus
+     (also known as PIONEER ) sent four small probes into the atmosphere
+    in December of . The main spacecraft bus burned up high in the
+    atmosphere, while the four probes descended by parachute towards the
+    surface. Though none were expected to survive to the surface, the Day
+    probe did make it and transmitted for . minutes on the ground before
+    its batteries failed.
+
+
+    RANGER (LUNAR LANDER AND IMPACT MISSIONS)
+
+    RANGER  and  were test probes for the RANGER lunar impact series. They
+    were meant for high Earth orbit testing in , but rocket problems
+    left them in useless low orbits which quickly decayed.
+
+    RANGER , launched on January , , was intended to land an
+    instrument capsule on the surface of the Moon, but problems during the
+    launch caused the probe to miss the Moon and head into solar orbit.
+    RANGER  did try to take some images of the Moon as it flew by, but the
+    camera was unfortunately aimed at deep space during the attempt.
+
+    RANGER , launched April , , had the same purpose as RANGER , but
+    suffered technical problems enroute and crashed on the lunar farside,
+    the first U.S. probe to reach the Moon, albeit without returning data.
+
+    RANGER , launched October ,  and similar to RANGER  and , lost
+    all solar panel and battery power enroute and eventually missed the Moon
+    and drifted off into solar orbit.
+
+    RANGER  through  had more modified lunar missions: They were to send
+    back live images of the lunar surface as they headed towards an impact
+    with the Moon. RANGER  failed this objective in  when its cameras
+    did not operate. RANGER  through  performed well, becoming the first
+    U.S. lunar probes to return thousands of lunar images through .
+
+
+    LUNAR ORBITER (LUNAR SURFACE PHOTOGRAPHY)
+
+    LUNAR ORBITER  through  were designed to orbit the Moon and image
+    various sites being studied as landing areas for the manned APOLLO
+    missions of -. The probes also contributed greatly to our
+    understanding of lunar surface features, particularly the lunar farside.
+    All five probes of the series, launched from  to , were
+    essentially successful in their missions. They were the first U.S.
+    probes to orbit the Moon. All LOs were eventually crashed into the lunar
+    surface to avoid interference with the manned APOLLO missions.
+
+
+    SURVEYOR (LUNAR SOFT LANDERS)
+
+    The SURVEYOR series were designed primarily to see if an APOLLO lunar
+    module could land on the surface of the Moon without sinking into the
+    soil (before this time, it was feared by some that the Moon was covered
+    in great layers of dust, which would not support a heavy landing
+    vehicle). SURVEYOR was successful in proving that the lunar surface was
+    strong enough to hold up a spacecraft from  to .
+
+    Only SURVEYOR  and  were unsuccessful missions. The rest became the
+    first U.S. probes to soft land on the Moon, taking thousands of images
+    and scooping the soil for analysis. APOLLO  landed  feet from
+    SURVEYOR  in  and returned parts of the craft to Earth. SURVEYOR ,
+    the last of the series, was a purely scientific mission which explored
+    the Tycho crater region in .
+
+
+    VIKING (MARS ORBITERS AND LANDERS)
+
+    VIKING  was launched from Cape Canaveral, Florida on August ,  on
+    a TITAN E-CENTAUR D rocket. The probe went into Martian orbit on June
+    , , and the lander set down on the western slopes of Chryse
+    Planitia on July , . It soon began its programmed search for
+    Martian micro-organisms (there is still debate as to whether the probes
+    found life there or not), and sent back incredible color panoramas of
+    its surroundings. One thing scientists learned was that Mars' sky was
+    pinkish in color, not dark blue as they originally thought (the sky is
+    pink due to sunlight reflecting off the reddish dust particles in the
+    thin atmosphere). The lander set down among a field of red sand and
+    boulders stretching out as far as its cameras could image.
+
+    The VIKING  orbiter kept functioning until August , , when it ran
+    out of attitude-control propellant. The lander was switched into a
+    weather-reporting mode, where it had been hoped it would keep
+    functioning through ; but after November , , an errant command
+    had been sent to the lander accidentally telling it to shut down until
+    further orders. Communication was never regained again, despite the
+    engineers' efforts through May of .
+
+    An interesting side note: VIKING 's lander has been designated the
+    Thomas A. Mutch Memorial Station in honor of the late leader of the
+    lander imaging team. The National Air and Space Museum in Washington,
+    D.C. is entrusted with the safekeeping of the Mutch Station Plaque until
+    it can be attached to the lander by a manned expedition.
+
+    VIKING  was launched on September , , and arrived in Martian orbit
+    on August , . The lander touched down on September ,  in
+    Utopia Planitia. It accomplished essentially the same tasks as its
+    sister lander, with the exception that its seisometer worked, recording
+    one marsquake. The orbiter had a series of attitude-control gas leaks in
+    , which prompted it being shut down that July. The lander was shut
+    down on April , .
+
+    The orbits of both VIKING orbiters should decay around .
+
+
+    VOYAGER (OUTER PLANET FLYBYS)
+
+    VOYAGER  was launched September , , and flew past Jupiter on March
+    ,  and by Saturn on November , . VOYAGER  was launched
+    August ,  (before VOYAGER ), and flew by Jupiter on August ,
+    , by Saturn on August , , by Uranus on January , , and
+    by Neptune on August , . VOYAGER  took advantage of a rare
+    once-every--years alignment to slingshot its way from outer planet to
+    outer planet. VOYAGER  could, in principle, have headed towards Pluto,
+    but JPL opted for the sure thing of a Titan close up.
+
+    Between the two probes, our knowledge of the  giant planets, their
+    satellites, and their rings has become immense. VOYAGER & discovered
+    that Jupiter has complicated atmospheric dynamics, lightning and
+    aurorae. Three new satellites were discovered. Two of the major
+    surprises were that Jupiter has rings and that Io has active sulfurous
+    volcanoes, with major effects on the Jovian magnetosphere.
+
+    When the two probes reached Saturn, they discovered over  ringlets
+    and  satellites, including the predicted shepherd satellites that keep
+    the rings stable. The weather was tame compared with Jupiter: massive
+    jet streams with minimal variance (a -year great white spot/band cycle
+    is known). Titan's atmosphere was smoggy. Mimas' appearance was
+    startling: one massive impact crater gave it the Death Star appearance.
+    The big surprise here was the stranger aspects of the rings. Braids,
+    kinks, and spokes were both unexpected and difficult to explain.
+
+    VOYAGER , thanks to heroic engineering and programming efforts,
+    continued the mission to Uranus and Neptune. Uranus itself was highly
+    monochromatic in appearance. One oddity was that its magnetic axis was
+    found to be highly skewed from the already completely skewed rotational
+    axis, giving Uranus a peculiar magnetosphere. Icy channels were found on
+    Ariel, and Miranda was a bizarre patchwork of different terrains. 
+    satellites and one more ring were discovered.
+
+    In contrast to Uranus, Neptune was found to have rather active weather,
+    including numerous cloud features. The ring arcs turned out to be bright
+    patches on one ring. Two other rings, and  other satellites, were
+    discovered. Neptune's magnetic axis was also skewed. Triton had a
+    canteloupe appearance and geysers. (What's liquid at K?)
+
+    The two VOYAGERs are expected to last for about two more decades. Their
+    on-target journeying gives negative evidence about possible planets
+    beyond Pluto. Their next major scientific discovery should be the
+    location of the heliopause.
+
+
+SOVIET PLANETARY MISSIONS
+
+    Since there have been so many Soviet probes to the Moon, Venus, and
+    Mars, I will highlight only the primary missions:
+
+
+    SOVIET LUNAR PROBES
+
+    LUNA  - Lunar impact attempt in , missed Moon and became first
+	     craft in solar orbit.
+    LUNA  - First craft to impact on lunar surface in .
+    LUNA  - Took first images of lunar farside in .
+    ZOND  - Took first images of lunar farside in  since LUNA . Was
+	     also a test for future Mars missions.
+    LUNA  - First probe to soft land on the Moon in , returned images
+	     from surface.
+    LUNA  - First probe to orbit the Moon in .
+    LUNA  - Second successful Soviet lunar soft landing mission in .
+    ZOND  - First successful circumlunar craft. ZOND  through 
+	     accomplished similar missions through . The probes were
+	     unmanned tests of a manned orbiting SOYUZ-type lunar vehicle.
+    LUNA  - First probe to land on Moon and return samples of lunar soil
+	      to Earth in . LUNA  accomplished similar mission in
+	      .
+    LUNA  - Delivered the first unmanned lunar rover to the Moon's
+	      surface, LUNOKHOD , in . A similar feat was accomplished
+	      with LUNA /LUNOKHOD  in .
+    LUNA  - Last Soviet lunar mission to date. Returned soil samples in
+	      .
+
+
+    SOVIET VENUS PROBES
+
+    VENERA  - First acknowledged attempt at Venus mission. Transmissions
+	       lost enroute in .
+    VENERA  - Attempt to image Venus during flyby mission in tandem with
+	       VENERA . Probe ceased transmitting just before encounter in
+	       February of . No images were returned.
+    VENERA  - Attempt to place a lander capsule on Venusian surface.
+	       Transmissions ceased just before encounter and entire probe
+	       became the first craft to impact on another planet in .
+    VENERA  - First probe to successfully return data while descending
+	       through Venusian atmosphere. Crushed by air pressure before
+	       reaching surface in . VENERA  and  mission profiles
+	       similar in .
+    VENERA  - First probe to return data from the surface of another planet
+	       in . VENERA  accomplished a more detailed mission in
+	       .
+    VENERA  - Sent first image of Venusian surface in . Was also the
+	       first probe to orbit Venus. VENERA  accomplished similar
+	       mission.
+    VENERA  - Returned first color images of Venusian surface in .
+		VENERA  accomplished similar mission.
+    VENERA  - Accomplished radar mapping with VENERA  of sections of
+		planet's surface in  more detailed than PVO.
+    VEGA  - Accomplished with VEGA  first balloon probes of Venusian
+	     atmosphere in , including two landers. Flyby buses went on
+	     to become first spacecraft to study Comet Halley close-up in
+	     March of .
+
+
+    SOVIET MARS PROBES
+
+    MARS  - First acknowledged Mars probe in . Transmissions ceased
+	     enroute the following year.
+    ZOND  - First possible attempt to place a lander capsule on Martian
+	     surface. Probe signals ceased enroute in .
+    MARS  - First Soviet Mars probe to land - albeit crash - on Martian
+	     surface. Orbiter section first Soviet probe to circle the Red
+	     Planet in .
+    MARS  - First successful soft landing on Martian surface, but lander
+	     signals ceased after  seconds in .
+    MARS  - Attempt at orbiting Mars in , braking rockets failed to
+	     fire, probe went on into solar orbit.
+    MARS  - First fully successful Soviet Mars mission, orbiting Mars in
+	     . Returned images of Martian surface comparable to U.S.
+	     probe MARINER .
+    MARS  - Landing attempt in . Lander crashed into the surface.
+    MARS  - Lander missed Mars completely in , went into a solar orbit
+	     with its flyby bus.
+    PHOBOS  - First attempt to land probes on surface of Mars' largest
+	       moon, Phobos. Probe failed enroute in  due to
+	       human/computer error.
+    PHOBOS  - Attempt to land probes on Martian moon Phobos. The probe did
+	       enter Mars orbit in early , but signals ceased one week
+	       before scheduled Phobos landing.
+
+    While there has been talk of Soviet Jupiter, Saturn, and even
+    interstellar probes within the next thirty years, no major steps have
+    yet been taken with these projects. More intensive studies of the Moon,
+    Mars, Venus, and various comets have been planned for the s, and a
+    Mercury mission to orbit and land probes on the tiny world has been
+    planned for . How the many changes in the former Soviet Union (now
+    the Commonwealth of Independent States) will affect the future of their
+    space program remains to be seen.
+
+
+JAPANESE PLANETARY MISSIONS
+
+    SAKIGAKE (MS-T) was launched from the Kagoshima Space Center by ISAS on
+    January  , and approached Halley's Comet within about  million km
+    on March , . The spacecraft is carrying three instru- ments to
+    measure interplanetary magnetic field/plasma waves/solar wind, all of
+    which work normally now, so ISAS made an Earth swingby by Sakigake on
+    January ,  into an orbit similar to the earth's. The closest
+    approach was at hms (JST=UTC+h) on January , . The
+    geocentric distance was , km. This is the first planet-swingby for
+    a Japanese spacecraft.
+
+    During the approach, Sakigake observed the geotail. Some geotail
+    passages will be scheduled in some years hence. The second Earth-swingby
+    will be on June ,  (at  Re (Earth's radius)), and the third
+    October ,  (at  Re).
+
+
+    HITEN, a small lunar probe, was launched into Earth orbit on January ,
+    . The spacecraft was then known as MUSES-A, but was renamed to Hiten
+    once in orbit. The  lb probe looped out from Earth and made its first
+    lunary flyby on March , where it dropped off its  lb midget
+    satellite, HAGOROMO. Japan at this point became the third nation to
+    orbit a satellite around the Moon, joining the Unites States and USSR.
+
+    The smaller spacecraft, Hagoromo, remained in orbit around the Moon. An
+    apparently broken transistor radio caused the Japanese space scientists
+    to lose track of it. Hagoromo's rocket motor fired on schedule on March
+    , but the spacecraft's tracking transmitter failed immediately. The
+    rocket firing of Hagoromo was optically confirmed using the Schmidt
+    camera (-cm, F.) at the Kiso Observatory in Japan.
+
+    Hiten made multiple lunar flybys at approximately monthly intervals and
+    performed aerobraking experiments using the Earth's atmosphere. Hiten
+    made a close approach to the moon at : JST (UTC+h) on February ,
+     at the height of  km from the moon's surface (.N, .E) and
+    fired its propulsion system for about ten minutes to put the craft into
+    lunar orbit. The following is the orbital calculation results after the
+    approach:
+
+	Apoapsis Altitude: about , km
+	Periapsis Altitude: about , km
+	Inclination	: . deg (to ecliptic plane)
+	Period		: . days
+
+
+PLANETARY MISSION REFERENCES
+
+    I also recommend reading the following works, categorized in three
+    groups: General overviews, specific books on particular space missions,
+    and periodical sources on space probes. This list is by no means
+    complete; it is primarily designed to give you places to start your
+    research through generally available works on the subject. If anyone can
+    add pertinent works to the list, it would be greatly appreciated.
+
+    Though naturally I recommend all the books listed below, I think it
+    would be best if you started out with the general overview books, in
+    order to give you a clear idea of the history of space exploration in
+    this area. I also recommend that you pick up some good, up-to-date
+    general works on astronomy and the Sol system, to give you some extra
+    background. Most of these books and periodicals can be found in any good
+    public and university library. Some of the more recently published works
+    can also be purchased in and/or ordered through any good mass- market
+    bookstore.
+
+    General Overviews (in alphabetical order by author):
+
+      J. Kelly Beatty et al, THE NEW SOLAR SYSTEM, .
+
+      Merton E. Davies and Bruce C. Murray, THE VIEW FROM SPACE:
+       PHOTOGRAPHIC EXPLORATION OF THE PLANETS, 
+
+      Kenneth Gatland, THE ILLUSTRATED ENCYCLOPEDIA OF SPACE
+       TECHNOLOGY, 
+
+      Kenneth Gatland, ROBOT EXPLORERS, 
+
+      R. Greeley, PLANETARY LANDSCAPES, 
+
+      Douglas Hart, THE ENCYCLOPEDIA OF SOVIET SPACECRAFT, 
+
+      Nicholas L. Johnson, HANDBOOK OF SOVIET LUNAR AND PLANETARY
+       EXPLORATION, 
+
+      Clayton R. Koppes, JPL AND THE AMERICAN SPACE PROGRAM: A
+       HISTORY OF THE JET PROPULSION LABORATORY, 
+
+      Richard S. Lewis, THE ILLUSTRATED ENCYCLOPEDIA OF THE
+       UNIVERSE, 
+
+      Mark Littman, PLANETS BEYOND: DISCOVERING THE OUTER SOLAR
+       SYSTEM, 
+
+      Eugene F. Mallove and Gregory L. Matloff, THE STARFLIGHT
+       HANDBOOK: A PIONEER'S GUIDE TO INTERSTELLAR TRAVEL, 
+
+      Frank Miles and Nicholas Booth, RACE TO MARS: THE MARS
+       FLIGHT ATLAS, 
+
+      Bruce Murray, JOURNEY INTO SPACE, 
+
+      Oran W. Nicks, FAR TRAVELERS,  (NASA SP-)
+
+      James E. Oberg, UNCOVERING SOVIET DISASTERS: EXPLORING THE
+       LIMITS OF GLASNOST, 
+
+      Carl Sagan, COMET, 
+
+      Carl Sagan, THE COSMIC CONNECTION, 
+
+      Carl Sagan, PLANETS,  (LIFE Science Library)
+
+      Arthur Smith, PLANETARY EXPLORATION: THIRTY YEARS OF UNMANNED
+       SPACE PROBES, 
+
+      Andrew Wilson, (JANE'S) SOLAR SYSTEM LOG, 
+
+    Specific Mission References:
+
+      Charles A. Cross and Patrick Moore, THE ATLAS OF MERCURY, 
+       (The MARINER  mission to Venus and Mercury, -)
+
+      Joel Davis, FLYBY: THE INTERPLANETARY ODYSSEY OF VOYAGER , 
+
+      Irl Newlan, FIRST TO VENUS: THE STORY OF MARINER , 
+
+      Margaret Poynter and Arthur L. Lane, VOYAGER: THE STORY OF A
+       SPACE MISSION, 
+
+      Carl Sagan, MURMURS OF EARTH,  (Deals with the Earth
+       information records placed on VOYAGER  and  in case the
+       probes are found by intelligences in interstellar space,
+       as well as the probes and planetary mission objectives
+       themselves.)
+
+    Other works and periodicals:
+
+    NASA has published very detailed and technical books on every space
+    probe mission it has launched. Good university libraries will carry
+    these books, and they are easily found simply by knowing which mission
+    you wish to read about. I recommend these works after you first study
+    some of the books listed above.
+
+    Some periodicals I recommend for reading on space probes are NATIONAL
+    GEOGRAPHIC, which has written articles on the PIONEER probes to Earth's
+    Moon Luna and the Jovian planets Jupiter and Saturn, the RANGER,
+    SURVEYOR, LUNAR ORBITER, and APOLLO missions to Luna, the MARINER
+    missions to Mercury, Venus, and Mars, the VIKING probes to Mars, and the
+    VOYAGER missions to Jupiter, Saturn, Uranus, and Neptune.
+
+    More details on American, Soviet, European, and Japanese probe missions
+    can be found in SKY AND TELESCOPE, ASTRONOMY, SCIENCE, NATURE, and
+    SCIENTIFIC AMERICAN magazines. TIME, NEWSWEEK, and various major
+    newspapers can supply not only general information on certain missions,
+    but also show you what else was going on with Earth at the time events
+    were unfolding, if that is of interest to you. Space missions are
+    affected by numerous political, economic, and climatic factors, as you
+    probably know.
+
+    Depending on just how far your interest in space probes will go, you
+    might also wish to join The Planetary Society, one of the largest space
+    groups in the world dedicated to planetary exploration. Their
+    periodical, THE PLANETARY REPORT, details the latest space probe
+    missions. Write to The Planetary Society,  North Catalina Avenue,
+    Pasadena, California  USA.
+
+    Good luck with your studies in this area of space exploration. I
+    personally find planetary missions to be one of the more exciting areas
+    in this field, and the benefits human society has and will receive from
+    it are incredible, with many yet to be realized.
+
+    Larry Klaes  klaes@verga.enet.dec.com

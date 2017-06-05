@@ -1,0 +1,58 @@
+Ok.  I have a record that shows a IIsi with and without a KB cache.
+It's small enough that I will attach it.
+
+I have also measured some real programs with and without the  KB
+cache.  The speedup varies a lot from app to app, ranging from % to
+%.  I think an average of %-% is about right.  The subjective
+difference is not great, but is sometimes noticable.  A simple cache
+card certainly does not transform a IIsi into something enormously
+better.  I do not have an FPU.
+
+The conventional wisdom says that cache cards from all of the makers
+offer about the same speedup and that there is not much difference
+between K and K caches.  I bought mine from Third Wave for well
+under $.  I have had absolutely no problems at all with it.
+
+If you get *complete* speedometer runs for a K cache, I'd like to
+see them.  Let's check the conventional wisdom!  The so called
+"Performance Rating" numbers by themselves are of no interest. 
+
+Cheers.
+
+(This file must be converted with BinHex .)
+:#@KBfKP,Q`G!"e"$!!!!!!'A!!!!!$qK%"a+!!!!BGJ&CfGiGfH(H
+)GhQ!QSQBUC!!@SQUU(QSCfPhGhL(H+HCL&KjQTU)LDH)HBL*UCUCJ!U@GQhGiK
+hCAKRSPiJ)QRQ)QUJ+N(J!UCLD#U#S!!S!QUUTQC#U#DLJ)#LT#UU)QUUBUT!
+!S!L!!UU#!QJS+UT!!QJS*UD#TUUQCQ!*!!UCFJ!!%cACSL'D)L)D!#!!)#!!
+!!!!!!!!)!!!!!!!!J!B*%@LA"i!!G`!!G`B!!(J)"i###B!P[US),B")Z
+-I"k-cQFM-VXMHhA!irdjPcVr,lUCVSZSIj@,-l,jPI`F#lZqA"ALXRHjf,
+[LJ"aZTVl!$lN@eAP@Rei(VIpIQkfDK$-ZV[b+[TlkCXZLGhf(Ik&
+a$Lkh*Q-qhhMIlc*QIq$p([GeSp(ejN!"bHMdHll$&Qh'lR`EC(QBqSrMM
+pa-k()jPGXqcpRrYReYd,*Mh,hrj*hA%pcLHRSGPFeIYmcrISEFp+
+CGE@Vr$[TRAFA(QkA`pGJkS[@femcBikFQC(,(K[U&h""rr"BDDT(i%XPZ$
+VLDFeUVK-U#JaD@*fZa`EZr-eGTYkNXHSjFEi[G*el[VZ'j[
+Vf($bTBHjlEXPeKJ,ZKH!Cc+fJ%kHGZC*BHhNV+DCXd$[SDFD"pJ%ei
+q#CXHkEL`@d%&PYYY"frG`jmrJTCYMiBKbB'pUBQ)PU'q"*mmiHG#YR`b
+eUNG'mSAP#mR`i-*K`l[DiNq'MQjZA(,bq"$*Mimq(KC@@(-Mc'"feU&
+F'YUeXb("+TD@(Rae+Padk"CAK!*EaSThLiAHF!H&&Da@[,[bA!p
+VIr&TI)!V`%S!*eJ#GS!Q!!QqD#P!*MmIdHhmfrUqEk))Ge"Vi)+rQJ
+C[`%m#+E&jf"YIql`VI&qHH!R[`'hY)TR+ZkXI!pQRQKCU%edR&Cr
+!QCiUk+ZmEf)IYI&bqMEffkTbB`JhYlK[PXVeB@@*@UamD`A`h+cC)Xl
+IEjfS+#`a[PpZC&HajcYBR"JDM`F%lJ&bI+SCJh([qeTfVKrR
+ZVIq[+Rb-TH'Bfr$h''cP%"UY'jUjY@P(RCdPAXAfrl"Xrhf#Y"dmVi$
+%Dm@T+fNMlPjd-XN(KC'R@)QbCKeh%V-kiaRA-NTa`b(YYLTM*
+F#bUFFLGJ%,DQA*R`eUQSj!!pb'"cLEFR@%KpDGj,bijhNaDH,mrm
+(qpJITeraM+RHJ*aJ%f`#HJ!RJJXDKe!CabDK)jkRqr[IcrC`[c!Krd(
+$mVrbJCX!NR)FrcHYPk(rCHJjiJ#Hk%'Jpq+#+$a&r&bZ,FfV,-KGqG
+MbmUPGXkUeX$Gl!Gl!Gl!GE!khrX(FIXIRNYkb"M%rSbN`mqPqrAd[j
+FhRC#(PeIRFhY+j-GH'!P*S)h!#HN!RJJXbf'b!clJkfbqGmMclEe,S
+mHpfbarQ$Q%%PLK"q(@I[qRmmS[l`"fP!"CpjY,DDApAlE#eIPBDc
+rL,PeXj[%k`HFZ,ZKGNhA+b-Tl)RDf'aX"'-#VbKJ[!ME*!Tlp-
+QckRpM@JeBN*f&jHN*[Vp-#f+F(J)PQXJNlYRLpQC,%`CmlE[MP"cXZ`)B
+mpVS)PY@XTBFqaSr"XrmrZfiLXSV,pPVjICFMRrekXdDI`FHmT[Q!VL`T
+aalMchGUr@"MeYarIDI&YLpEHPaI#fhNFmq$qLchVC(dUajJ%eb%(NdIH
+p#jqEd#XcGDTVmDY+@Pi,MrJeR&pq`q@"AacVkC[lZi-Z-PZk%f$Vrd
+HfR&mci,&Nqhr"e%"jVe$rN`AbfB"Qqlk$C`@LKQRh(-MKhNYA+UC&Qhq
+kajHReFqR,HbZ!SLfG!!TPmiF!!!+PcDeMB@SC%!!!!)@S(
+C$R$)JJT`b+%!ADmicJ!#!!!a!!!!!!!!B!!!!!,AP!!!:
+-- 

@@ -1,0 +1,30 @@
+Help!  I'm trying to program my VGA!  I've got it working
+with in pascal with the following routines for mode $h
+(**).  I've got a VESA compatable Trident C w/meg
+and need to program in * mode.  I don't care how many colors.
+ 
+Could someone take this code and help me write  new procedures to
+replace them so that it'll work in ** or **?
+ 
+That'd be GREAT!  Thanks...
+ 
+Here is the code I currently have for ** mode:
+ 
+  Procedure GraphMode;
+ 
+    Begin { VideoMode }
+      Asm
+        Mov  AH,
+        Mov  AL,h
+        Int  h
+      End;
+    End;  { VideoMode }
+ 
+  Procedure PlotPoint (x, y, c : Integer);
+ 
+    Begin
+      Mem[$A:x+y*]:=c;
+    End;
+ 
+
+-- 

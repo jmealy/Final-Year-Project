@@ -1,0 +1,5 @@
+See the article "An Efficient Ray-Polygon Intersection," p.  in
+Graphics Gems (ISBN ---).  The second step, intersecting the
+polygon, does what you want.  There is sample code in the book.
+
+							spl

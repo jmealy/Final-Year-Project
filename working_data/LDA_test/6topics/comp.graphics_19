@@ -1,0 +1,13 @@
+By ' grey level images' you mean  items of bit images?
+It does work(!), but it doesn't work if you have more than bit
+in your screen and if the screen intensity is non-linear.
+
+With  bit per pixel; there could be *c_ + *c_ timing,
+this gives  levels, but they are linear if screen intensity is
+linear.
+With *c_ + *c_ it works, but we have to find the best
+compinations -- there's  levels, but  choises; best  must be
+chosen. Different compinations for the same level, varies a bit, but
+the levels keeps their order.
+
+Readers should verify what I wrote... :-)

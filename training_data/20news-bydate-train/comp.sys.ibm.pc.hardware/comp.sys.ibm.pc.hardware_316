@@ -1,0 +1,9 @@
+With a sound card on interrupt , two serial ports (one for modem on i,
+one for Miracle Piano on i) and a printer port on i, I have run out of
+low interrupts.  What I would like is a mouse port with an interrupt of
+, , or  (which ever interrupt the PS/ mouse port uses) in in ISA
+i computer.  I called technical support of Microsoft, Logitech, & ATI
+(checked what interrupts the mouse port on the ATI video cards can use)
+and they all said the only interrupts possible on these cards was ones
+lower than .  Does anyone know of any board for an ISA bus which will
+allow a mouse port (or even a serial port) with high interrupts?

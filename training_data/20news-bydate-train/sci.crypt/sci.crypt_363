@@ -1,0 +1,13 @@
+Thousands?  Tens of thousands?  Do some arithmetic, please...  Skipjack
+has ^ possible keys.  Let's assume a brute-force engine like that
+hypothesized for DES:   microsecond per trial,  million chips.  That's
+^ trials per second, or about , years for ^ trials.  Well,
+maybe they can get chips running at one trial per nanosecond, and build
+a machine with  million chips.  Sure -- only . years for each solution.
+
+IDEA uses -bit keys.  Shall I bother doing the calculations for you?
+Hint:  multiply . years by ^(-).  And you can't do IDEA at that
+speed; key setup takes much too long.  I wouldn't be surprised if that
+were the case for Skipjack, too, though there's no way of knowing just
+yet.  DES used only xor because that's what was feasible with mid-'s
+technology.  Modern chips can do a lot more.

@@ -1,0 +1,45 @@
+[ Article crossposted from comp.windows.ms ]
+[ Author was Kevin Routh ]
+[ Posted on  Apr  :: GMT ]
+
+For your information:
+
+I hooked up my ImageWriter I to my COM serial port and used the C-Itoh
+ driver in Windows ..  The cable I am using is a straight-thru
+cable connected to a Null Modem Adapter I got at Radio Shack (catalog
+#-a) for $..  It seems to work fine with both DOS and Windows.
+I used the following command in DOS
+
+	C:\DOS\mode COM:,n,,,p
+
+and set up the port the same way in the Windows Ports setup.
+
+the Null Modem connections are as follows:
+
+		to	
+		to	
+		to	
+		to	
+		to	
+	+	to	
+		to	+
+		to	
+
+I printed from several applications and all seems OK.  
+
+-- 
+Kevin C. Routh                     Internet:    krouth@slee.srl.ford.com
+Ford Electronics                   IBMmail (PROFS):               USFMCTMF
+ELD IC Engineering
+ Rotunda Drive, B-         Voice mail:              () -
+Dearborn, MI  -           Facsimile:               () -
+
+
+
+--
+Kevin C. Routh                     Internet:    krouth@slee.srl.ford.com
+Ford Electronics                   IBMmail (PROFS):               USFMCTMF
+ELD IC Engineering
+ Rotunda Drive, B-         Voice mail:              () -
+Dearborn, MI  -           Facsimile:               () -
+

@@ -1,0 +1,7 @@
+And why they are considering using WinBench as a test, they may want
+to read everything Steve Gibson has said on the subject in his
+InfoWorld column the past couple of month.  In short, virtually
+every board manufacturer cheats on the test by writing things in the
+driver that is there only to make the board appear faster on the
+WinBench suite.  So the WinBench score has no bearing in reality to
+how cards stack up on real world tasks.

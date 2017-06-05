@@ -1,0 +1,18 @@
+The most current orbital elements from the NORAD two-line element sets are
+carried on the Celestial BBS, () -, and are updated daily (when
+possible).  Documentation and tracking software are also available on this
+system.  As a service to the satellite user community, the most current
+elements for the current shuttle mission are provided below.  The Celestial
+BBS may be accessed  hours/day at , , , , or  bps using
+ data bits,  stop bit, no parity.
+
+Element sets (also updated daily), shuttle elements, and some documentation
+and software are also available via anonymous ftp from archive.afit.af.mil
+(...) in the directory pub/space.
+
+STS      
+ U    A .  .  -  -    
+   . .  .  . .  
+ B  
+ U    B .  .  -  -     
+   . .  .  . .   

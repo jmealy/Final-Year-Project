@@ -1,0 +1,11 @@
+I have an ATI Graph. Ultra Pro VLB w/ megs, and have a small question
+about Graphics Workshop for Windows.  When I exit from it it says my
+current driver can handle on  colors when I am actually in 
+xx color mode.  Is this a driver problem, a GWS error, or
+what?  I am using the .() driver under Win ..  It correctly
+states that I can display M colors when I switch to xxbit,
+though.
+Another question- Anybody know of any Viewers that support this card
+other than Windows viewers?
+Any help would be appreciated.
+

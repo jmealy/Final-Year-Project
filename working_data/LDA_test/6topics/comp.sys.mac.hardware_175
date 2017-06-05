@@ -1,0 +1,8 @@
+
+
+of course it was in Dale's post, just not in the words that MacUser 
+used.  ROM accelerated video just means that some quickdraw commands
+has been rewritten (inside the ROM) to take advantage of the 
+addressing modes.  commands that do fills should be slightly faster
+since the new instructions fetch  bytes at a time versus one.
+

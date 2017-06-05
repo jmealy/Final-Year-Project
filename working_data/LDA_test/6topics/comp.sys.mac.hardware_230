@@ -1,0 +1,11 @@
+Even the  can fetch two bytes at a time.
+
+The new instruction in the  is MOVE which fetches  bytes
+at a time instead of  which the  has; that means  bit
+pixels instead of one.
+
+Cheers,
+
+					/ h+
+-- 
+ -- Jon W{tte, h+@nada.kth.se, Mac Hacker Deluxe --

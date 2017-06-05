@@ -1,0 +1,14 @@
+Hello,
+I purchased my new  with a NoName graphics card installed which is obviously 
+Speedstar  compatible. Its name is "VGA  TrueColor".
+It is accompanied with some drivers and the utilities VMODE, XMODE and
+at least one more MODE, as well as some drivers for Lotus, Windows, etc.
+Only one of the drivers is told to provide the TrueColor mode, namely
+the Windows . driver.
+Nowhere else, except in the ad, is any pointer to the TrueColor mode.
+Some articles in this group about the Speedstar  and some other facts
+made me believe that my card is compatible to that one.
+
+Does anybody out there know how this mode can be adjusted? How can I write
+a driver which allows me to have . millions of colors with a resolution
+of  x  with  Hz interlaced ?

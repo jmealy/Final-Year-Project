@@ -1,0 +1,53 @@
+I have just installed a Diamond Stealth  ISA card in
+a 'DX- system with K cache, and  megs of memory,
+that gets about a  SI . CPU Benchmark rating.  Using
+the xx color driver under Windows, I am getting a
+Winbench Winmarks rating of only about . Million.  Since
+I have heard that others get -to- million for this card,
+I assume that something is very wrong with my setup.
+
+What are some possible causes of the card slowing down like this?
+
+I ran the Qualitas ASQ diagnostic program on memory, and I noted
+the following memory timings on my machine:
+
+ASQ v. by Qualitas  SYSTEM ANALYSIS  Mon Apr ,   ::AM    page: 
+-------------------------------------------------------------------------------- 
+ACCESS TIMING 
+
+    Hex     KB     KB   Access Speed Ratio (%)
+  Start  Start   Size  Time us           
+  
+                    ******************
+                   *****************
+                   ********************
+                   ********************
+                  ********************
+                  ********************
+                 ********************
+                  ********************
+                  ********************
+                  ********************
+                  ********************
+                  ********************
+  A               **************
+  B               ************
+  C                *******************
+  C                ********************
+  E               *
+  F                *******************
+
+Note two things on this chart:
+
+) The video memory appears to be many orders of magnitude slower than
+system memory.  Are there wait states being inserted here, and what would
+cause that?
+
+) The EMS Page frame seems to be ridiculously slow, even though
+it is being mapped to the fast XMS memory in my system through
+EMM.  What's going on there?
+
+Note that my Stealth 's video BIOS at C-CFF is being shadowed
+through the AMI BIOS.  
+
+Any ideas on what might be happening here?

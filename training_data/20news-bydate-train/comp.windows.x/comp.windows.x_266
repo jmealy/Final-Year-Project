@@ -1,0 +1,14 @@
+I recently compiled the XRpl sources using gcc-.. on
+a Sun/. Everything seems to work fine. Usually. But at
+seemingly random times the server will just hang. I will
+click the mouse somewhere (never happens while my back is turned),
+and without warning, it will freeze there, requiring the server
+to be killed. Sometimes it will run fine for weeks, sometimes
+only for minutes.
+
+(Os: ..; frame buffer: bw).
+
+Has anyone seen this before, any ideas? (anything at all?)
+
+thanks,
+	--jeff

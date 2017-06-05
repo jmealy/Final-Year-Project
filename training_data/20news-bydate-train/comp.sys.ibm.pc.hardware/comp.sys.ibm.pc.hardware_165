@@ -1,0 +1,9 @@
+I have a  /" drive as drive A.  How can I make the system boot from
+my  /" B drive?  (Optimally, the computer would be able to boot
+from either A or B, checking them in order for a bootable disk.  But
+if I have to switch cables around and simply switch the drives so that
+it can't boot  /" disks, that's OK.  Also, boot_b won't do the trick
+for me.)
+
+Thanks,
+  Davebo

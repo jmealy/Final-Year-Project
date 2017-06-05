@@ -1,0 +1,14 @@
+In Windows I created a permanent Swap-file of Kb as win.
+recommended me to do that (bit access).
+If I use EMM.EXE, after win. startup I have K of memory
+free, if I leave EMM.EXE out of my config.sys I have K
+of memory free, and windows recommends me a swap file of K.
+
+I use DOS, with memmaker, have MB of internal Memory and a DX,
+
+Does anybody knows why this is happening (possibly win needs
+some UMB's to manage virtual memory?, If true, which UMB's, those
+that EMM can find without including suspicious parts?)
+
+I need an optimized DOS-environment, because i develop applications for
+DOS using a windows programming environment.

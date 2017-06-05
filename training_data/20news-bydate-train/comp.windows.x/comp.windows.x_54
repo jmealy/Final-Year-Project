@@ -1,0 +1,4 @@
+I use xwd and xwdps. To do it from within a program I use
+xwd -id xxxxx where xxxxx is the window id obtained from XtWindow(widget).
+--
+-----------------------------------------------------------------------

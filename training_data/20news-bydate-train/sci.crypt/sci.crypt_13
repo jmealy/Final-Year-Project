@@ -1,0 +1,1131 @@
+I got a number of requests for code.
+So, here it is.
+Its written in x ASM. 
+Borland TASM will do.
+
+TASM LGA.ASM
+TLINK /t LGA.ASM
+
+
+The code:
+
+;----------------------------------------------------------------------
+; LGA ncryption
+; (C) by Nick Nassuphis
+;----------------------------------------------------------------------
+
+CODE	SEGMENT
+	ASSUME	CS:CODE, DS:CODE
+	
+	ORG	h
+
+Start:
+	JMP	Begin
+
+;----------------------------------------------------------------------
+;
+; Gas particle assigment:
+;
+; BIT     particle moving EAST
+; BIT     particle moving WEST
+; BIT     particle moving NORTH
+; BIT     particle moving SOUTH
+;
+; BIT     particle moving EAST
+; BIT     particle moving WEST
+; BIT     particle moving NORTH
+; BIT     particle moving SOUTH
+;
+;
+; Collisiong Rules:
+;
+; . Gas Rules
+;
+; IF (E & W) AND !(N & S) THEN (E,W)->(N,S)
+; IF (N & S) AND !(E & W) THEN (N,S)->(E,W)
+;
+; for nibbles:
+;
+;  -> 
+;  -> 
+;
+; and for bytes:
+;
+;  -> 
+;  -> 
+;  -> 
+;  -> 
+;  -> 
+;  -> 
+;  -> 
+;  -> 
+;
+;
+; . Reflection Rules
+;
+; just swap bits along directions
+;
+;----------------------------------------------------------------------
+
+;
+; This look-up table implements two particle collisions
+; for the HPP lattice gas
+;
+HPPRule:
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+
+;
+; This rule implements the velocity-reversal needed to
+; run the gas evolution in reverse. Its called a WallRule
+; because its the same as is all particles hit a wall
+; head on.
+;
+WallRule:
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+DB   B   ;
+
+
+MAXBYTE	EQU	
+LINENO	EQU	
+
+SrcPtr	DW	OFFSET Buffer
+DesPtr	DW	OFFSET Buffer
+
+SaveBuff:
+	DB	MAXBYTE*(LINENO+) DUP()
+	
+Buffer:
+	DB	MAXBYTE*(LINENO+) DUP()
+	DB	 DUP()
+
+Buffer:
+	DB	MAXBYTE*(LINENO+) DUP()
+	DB	 DUP()
+
+;----------------------------------------------------------------------
+;
+;
+;
+;----------------------------------------------------------------------
+
+Data:
+DB	"                                                       "
+DB	"                                                       "
+DB	"                                                       "
+DB	" This is a test for a Lattice Gas based encryption     "
+DB	" algorithm. The data is encoded as particles of a      "
+DB	" digital gas, whose time evolution is then simulated   "
+DB	" with a cellular-automaton type algorithm. Decryption  "
+DB	" can be achieved by running the simulation in reverse. "
+DB	" A thermodynamic argument ensures that even if a single"
+DB	" bit is flipped, no decryption of the data is possible "
+DB	"                                                       "
+DB	" After the gas is let to evolve for  timesteps,     "
+DB	" one can either run the reverse evolution by pressing  "
+DB	" space, or flip a bit and then run by pressing ''     "
+DB	"                                                       "
+DB	" For a cryptographic application, the key would consist"
+DB	" of the number of time steps and the time and location "
+DB	" of specific bit inversions.                           "
+DB	"                                                       "
+DB	"                                                       "
+DB	"                                                       "
+DB	"                                                       "
+DB	"                                                       "
+
+;
+; Fill the gas with a piece of code
+;
+InitGas:
+	MOV	DI,CS:SrcPtr
+	MOV	SI,OFFSET Data
+
+	MOV	CX,LINENO
+IG:
+	PUSH	DI
+	PUSH	CX
+	MOV	CX,MAXBYTE
+IG:
+	MOV	AL,CS:[SI]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	LOOP	IG
+	POP	CX
+	POP	DI
+	ADD	DI,MAXBYTE
+	LOOP	IG
+	MOV	SI,CS:SrcPtr
+	MOV	DI,OFFSET InitGas
+	MOV	CX,MAXBYTE*
+	MOV	AL,
+LG:
+	MOV	BYTE PTR CS:[SI],AL
+	NOT	AL
+	INC	SI
+	LOOP	LG
+	RET
+
+;----------------------------------------------------------------------
+;
+; Display gas molecules bouncing around
+;
+ShowGas:
+	PUSH	ES
+	PUSH	SI
+	PUSH	DI
+	PUSH	CX
+	PUSH	BX
+
+	MOV	AX,Bh
+	MOV	ES,AX
+	MOV	SI,CS:SrcPtr
+	MOV	DI,*+*
+	MOV	CX,LINENO-
+	ADD	SI,MAXBYTE*
+SG:
+	PUSH	CX
+	PUSH	DI
+
+	MOV	CX,MAXBYTE
+SG:
+	MOV	AL,CS:[SI]
+	MOV	BYTE PTR ES:[DI],AL
+	INC	SI
+	ADD	DI,
+	DEC	CX
+	JNZ	SG
+
+	POP	DI
+	POP	CX
+	ADD	DI,
+	LOOP	SG
+	
+	POP	BX
+	POP	CX
+	POP	DI
+	POP	SI
+	POP	ES
+	RET
+
+;----------------------------------------------------------------------
+;
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+;
+ScanOneMiddleLine:
+;
+; first byte is a special case because of warparound
+;
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+(MAXBYTE-)]	; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+;
+; middle bytes can be handled in a loop 
+;
+	MOV	CX,MAXBYTE-
+SOL:
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	LOOP	SOL
+;
+; last byte is also special
+;
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]	; NORTH is one line "up" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]	; SOUTH is one line "down" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI-(MAXBYTE-)]	; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	RET
+
+
+;----------------------------------------------------------------------
+;
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+;
+ScanFirstLine:
+;
+; first byte is a special case because of warparound
+;
+	MOV	BL,				
+	MOV	BH,CS:[SI+MAXBYTE*(LINENO-)]	
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+MAXBYTE-]	; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+;
+; middle bytes can be handled in a loop 
+;
+	MOV	CX,MAXBYTE-
+SFL:
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI+MAXBYTE*(LINENO-)]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	LOOP	SFL
+;
+; last byte is also special
+;
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI+MAXBYTE*(LINENO-)]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI+MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI-(MAXBYTE-)]	; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	RET
+
+
+;----------------------------------------------------------------------
+;
+; CS:SI 	->	Sourse of Data
+; CS:DI		->	Destination of Data
+;
+ScanLastLine:
+;
+; first byte is a special case because of warparound
+;
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI-MAXBYTE*(LINENO-)]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI+(MAXBYTE-)]	; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+;
+; middle bytes can be handled in a loop 
+;
+	MOV	CX,MAXBYTE-
+SLL:
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI-MAXBYTE*(LINENO-)]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI+]		; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	LOOP	SLL
+;
+; last byte is also special
+;
+	MOV	BL,			; AL is the "assembled" byte.
+	MOV	BH,CS:[SI-MAXBYTE]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; OR them into the assembled byte
+	MOV	BH,CS:[SI-MAXBYTE*(LINENO-)]
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH			; place the stuff into AL
+	MOV	BH,CS:[SI-]		; WEST is one byte "left" (lower)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,CS:[SI-(MAXBYTE-)]	; EAST is one byte "right" (higher)
+	AND	BH,B		; and at bits  and 
+	OR	BL,BH
+	MOV	BH,
+	MOV	AL,BYTE PTR CS:[BX + OFFSET HPPRule]
+	MOV	CS:[DI],AL
+	INC	SI
+	INC	DI
+	RET
+
+
+
+;----------------------------------------------------------------------
+;
+; Invert all velocities in the gas
+;
+InvertAll:
+	PUSH	BX
+	PUSH	CX
+	PUSH	SI
+	MOV	SI,CS:SrcPtr
+	MOV	BX,
+	MOV	CX,LINENO
+IA:
+	PUSH	CX
+	MOV	CX,MAXBYTE
+IA:
+	MOV	BL,CS:[SI]
+	MOV	AL,BYTE PTR CS:[BX + (OFFSET WallRule)]
+	MOV	CS:[SI],AL
+	INC	SI
+	LOOP	IA
+	POP	CX
+	LOOP	IA
+	POP	SI
+	POP	CX
+	POP	BX
+	RET
+
+;----------------------------------------------------------------------
+; 
+;
+IterateOnce:
+	MOV	SI,CS:SrcPtr
+	MOV	DI,CS:DesPtr
+	MOV	CS:SrcPtr,DI
+	MOV	CS:DesPtr,SI
+
+	PUSH	SI
+	PUSH	DI
+	CALL	ScanFirstLine
+	POP	DI
+	POP	SI
+	ADD	SI,MAXBYTE
+	ADD	DI,MAXBYTE	
+	MOV	CX,LINENO-		; dont scan first and last
+L:
+	PUSH	SI
+	PUSH	DI
+	PUSH	CX
+	CALL	ScanOneMiddleLine
+	POP	CX
+	POP	DI
+	POP	SI
+	ADD	SI,MAXBYTE
+	ADD	DI,MAXBYTE
+	LOOP	L
+
+	PUSH	SI
+	PUSH	DI
+	CALL	ScanLastLine
+	POP	SI
+	POP	DI
+L:
+	RET
+
+;----------------------------------------------------------------------
+;
+; Iterate HPP rule CX times
+;
+Iterate:
+	PUSH	CX
+	CALL	IterateOnce
+	POP	CX
+	CALL	ShowGas
+	LOOP	Iterate
+	RET
+
+;----------------------------------------------------------------------
+;
+; Iterate HPP rule CX times
+;
+IterateUntil:	
+	MOV	SI,
+	MOV	CX,OFFSET IU - OFFSET IU
+IU:
+	MOV	AL,BYTE PTR CS:[SI + OFFSET IU]
+	XOR	BYTE PTR CS:[SI + OFFSET IU],AL
+	INC	SI
+	LOOP	IU
+IU:
+	CALL	IterateOnce
+	CALL	ShowGas
+	MOV	SI,CS:SrcPtr
+	MOV	CX,MAXBYTE*
+	MOV	BX,
+	MOV	AH,
+	MOV	AL,
+IU:
+	MOV	BL,BYTE PTR CS:[SI]
+	MOV	DL,BYTE PTR CS:[BX+WallRule]
+	NOT	AH
+	XOR	DL,AH
+	AND	AL,DL
+	INC	SI
+	LOOP	IU
+	MOV	SI,
+	MOV	CX,OFFSET IU - OFFSET IU
+IU:
+	MOV	AH,BYTE PTR CS:[SI+OFFSET IU]
+	AND	AH,AL
+	XOR	BYTE PTR CS:[SI+OFFSET IU],AH
+	INC	SI
+	LOOP	IU
+	JMP	IU
+IU:
+	MOV	AX,OFFSET IU
+	PUSH	AX
+	RET
+	DB	 DUP(h)
+IU:
+	PUSH	AX
+	PUSH	BX
+	PUSH	CX
+	PUSH	DX
+	PUSH	DS
+
+	MOV	AH,
+	MOV	DX,CS:MsgPtr
+	INT	H
+
+	POP	DS
+	POP	DX
+	POP	CX
+	POP	BX
+	POP	AX
+	RET
+
+	DB	 DUP(h)
+
+MsgPtr	DW	OFFSET Msg
+Msg	DB	"This message is printed out by",,
+	DB	"code decrypted using data from the lattice",,
+	DB	"which was applied to the decoding routine",,
+	DB	"after every time step",,
+	DB	"The decoding function left the code unchanged",,
+	DB	"except after the gas evolution had completelly",,
+	DB	"reversed the thermalization",,,"$"
+
+
+TIMES	EQU			;  repetitions are enough to
+				; "equilibrate" the gas
+
+Begin:
+	MOV	AX,h
+	MOV	BH,
+	MOV	DH,
+	MOV	DL,
+	MOV	CX,
+	INT	h
+
+	MOV	AH,
+	MOV	BH,
+	MOV	DH,
+	MOV	DL,
+	INT	h
+
+	CALL	InitGas
+	CALL	ShowGas
+	MOV	AH,
+	INT	h
+	PUSH	CX
+	MOV	CX,TIMES
+	CALL	Iterate
+	CALL	InvertAll
+	CALL	ShowGas
+	MOV	AH,
+	INT	h
+	CMP	AL,""
+	JNE	Begin
+	MOV	SI,CS:SrcPtr
+	XOR	BYTE PTR CS:[SI],B
+Begin:
+	MOV	CX,TIMES
+	CALL	IterateUntil
+	CALL	InvertAll
+	CALL	ShowGas
+	MOV	AX,Ch
+	INT	h
+	

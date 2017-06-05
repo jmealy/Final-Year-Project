@@ -1,0 +1,4 @@
+One more thing to add, the Orchid board vesa bios is only
+able to handle the  meg dram on board, the Viper however can
+utilize the  meg vram on board to support vesa modes such as
+xx, xx mil. and xx under Dos.

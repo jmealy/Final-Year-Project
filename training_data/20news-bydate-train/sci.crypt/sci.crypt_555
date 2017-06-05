@@ -1,0 +1,6 @@
+
+You're right, and I retract the suggestion.  Still, I wonder.  That
+there are only  bits of key information should, in principle, be
+detectable.  Maybe some variant of the tests Rivest et al. did to
+demonstrate that DES was probably not a group?  It should make an
+interesting paper -- a black-box analysis of a cryptosystem.

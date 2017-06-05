@@ -1,0 +1,21 @@
+It would depend on the requirements of the poster's data, for some
+purposes / resolution (with or without calibration curve).
+
+
+Otherwise the other possibilities would be:
+
+) get a digital voltameter with serial output & connect to serial
+port on mac, collect data with some communications program.
+
+) Buy an A/D chip from Analog devices, Burr-Brown, etc, connect to
+a parallel to serial converter, use serial port for acquisition
+(nah. too much soldering and trouble shooting :-)
+
+) Get a board from National Instruments, Data Translation, Omega,
+etal.  The finest solution, but possibly the most costly.
+
+
+
+To the original poster:  if the signal is too large, why not
+use a voltage divider? Two resistors, cost very cheap...
+-- 

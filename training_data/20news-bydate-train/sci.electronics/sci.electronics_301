@@ -1,0 +1,77 @@
+Here's something I posted about this a few years ago.  It's not fully
+up to date with all the new variations (some of which are just different
+manufacturer's synonyms):
+
+------
+In practical terms, ignoring the technological details, this is my view
+of the families (NB I am not a giant corporation, which influences my
+views on things like availability and backward compatibility):
+
+	The original.  Speed good, power consumption fair.  Effectively
+	obsolete now; use LS or later, except for a *very* few oddball
+	functions like  which are hard to find in newer families.
+
+H	Modification of  for higher speed, at the cost of higher
+	power consumption.  Very obsolete; use F.
+
+L	Modification of  for lower power, at the cost of lower speed.
+	Very obsolete; use CMOS.
+
+S	Later modification of  for even higher speed, at some cost in
+	power consumption.  Effectively obsolete; use F.
+
+LS	Combination of L and S, for speed comparable to  with lower
+	power consumption.  Best all-round TTL now, widest variety of
+	devices.
+
+F	Fast as blazes, power not too bad.  The clear choice for high
+	speed in TTL.  Availability and prices generally good.
+
+AS	Failed competitor to F, although a few AS parts do things
+	that are hard to find in F and thus are still useful.
+
+ALS	Possible replacement for LS.  Generally souped up.  Still fairly
+	new, availability and prices possibly a problem.
+
+C	Fairly old family, CMOS devices with TTL pinouts.  Competed with
+	 series, not too successfully.  Obsolete; use  or newer
+	CMOS  families.
+
+	(Thrown in as the major non- non-ECL logic family.)  The old CMOS
+	family, still viable because of *very* wide range of devices, low
+	power consumption, and wide range of supply voltages.  Not fast.
+	Very forgiving and easy to work with (beware static electricity,
+	but that comment applies to many other modern logic families too).
+	There are neat devices in this family that exist in no other.  The
+	clear choice when speed is not important.
+
+HC	A new attempt at -pinout CMOS.  Fast compared to old CMOS, power
+	consumption often lower than TTL.  Possibly a good choice for
+	general-purpose logic, assuming availability and affordability.
+	CMOS logic levels, *not* TTL ones.  Beware very limited range of
+	supply voltages compared to older CMOS, also major rise of power
+	consumption at faster speeds.
+
+HCT	HC with TTL logic levels.  Much the same comments as HC.  Read
+	the fine print on things like power consumption -- TTL compatibility
+	in CMOS involves some compromises.
+
+K	(Thrown in for speed freaks.)  The low end of ECL.  Various sources
+	claim that it is *easier* to work with than super-fast TTL for
+	serious high-speed work.  Less forgiving, though:  read and follow
+	the rules or it won't work.  Availability to hobbyists limited,
+	can be expensive.
+
+K	(For real speed freaks.)  Hot ECL.  Harder to handle than K, and
+	inconvenient packages.  Much more useful datasheets, however.
+
+As for compatibility between families:  the  families (except C and
+HC) are all more or less logic-level compatible, but how many X devices
+you can drive from one Y output varies enormously with X and Y.  You just
+have to read the specs and do the arithmetic.  C and HC are compatible
+with the others with a bit of hassle.   compatibility can be a bit of
+hassle or a lot of hassle depending on what supply voltage  is using.
+K or K to anything else is considerable hassle.
+
+Me?  I use  and LS with a sprinkling of F.  HC[T] and K are
+interesting but I haven't used either significantly yet.

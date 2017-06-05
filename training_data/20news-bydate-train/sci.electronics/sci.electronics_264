@@ -1,0 +1,10 @@
+AllTall Cool OneWhat's a good IC for RS
+
+TC>From: rky@uxa.cso.uiuc.edu (Tall Cool One )
+TC>Organization: University of Illinois at Urbana
+TC>I'm looking for an IC that will convert RS voltage levels to TTL vo
+TC>levels.  Something relatively inexpensive would be nice, too.  Anyone 
+TC>a suggestion??  Thanks.
+
+Try a Maxim "MAXCPE"  pin dil, converts V to V for commms.
+What a clever little gizmo!

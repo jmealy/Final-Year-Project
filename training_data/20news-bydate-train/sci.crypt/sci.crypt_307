@@ -1,0 +1,131 @@
+The following document summarizes the Clipper Chip, how it is used,
+how programming of the chip is coupled to key generation and the
+escrow process, and how law enforcement decrypts communications.
+Since there has been some speculation on this news group about my
+own involvement in this project, I'd like to add that I was not in
+any way involved.  I found out about it when the FBI briefed me on
+Thursday evening, April .  Since then I have spent considerable
+time talking with the NSA and FBI to learn more about this, and I
+attended the NIST briefing at the Department of Commerce on April .  
+The document below is the result of that effort. 
+
+Dorothy Denning
+---------------
+
+                     THE CLIPPER CHIP: A TECHNICAL SUMMARY
+
+                               Dorothy Denning
+
+                                April , 
+
+
+INTRODUCTION
+
+On April , the President announced a new initiative that will bring
+together the Federal Government and industry in a voluntary program
+to provide secure communications while meeting the legitimate needs of
+law enforcement.  At the heart of the plan is a new tamper-proof encryption
+chip called the "Clipper Chip" together with a split-key approach to
+escrowing keys.  Two escrow agencies are used, and the key parts from
+both are needed to reconstruct a key.
+
+
+CHIP STRUCTURE
+
+The Clipper Chip contains a classified -bit block encryption
+algorithm called "Skipjack."  The algorithm uses  bit keys (compared
+with  for the DES) and has  rounds of scrambling (compared with 
+for the DES).  It supports all  DES modes of operation.  Throughput is
+ Mbits a second.
+
+Each chip includes the following components:
+
+   the Skipjack encryption algorithm
+   F, an -bit family key that is common to all chips
+   N, a -bit serial number
+   U, an -bit secret key that unlocks all messages encrypted with the chip
+
+
+ENCRYPTING WITH THE CHIP
+
+To see how the chip is used, imagine that it is embedded in the AT&T
+telephone security device (as it will be).  Suppose I call someone and
+we both have such a device.  After pushing a button to start a secure
+conversation, my security device will negotiate a session key K with
+the device at the other end (in general, any method of key exchange can
+be used).  The key K and message stream M (i.e., digitized voice) are then
+fed into the Clipper Chip to produce two values:
+
+   E[M; K], the encrypted message stream, and 
+   E[E[K; U] + N; F], a law enforcement block.  
+
+The law enforcement block thus contains the session key K encrypted
+under the unit key U concatenated with the serial number N, all
+encrypted under the family key F.
+
+
+CHIP PROGRAMMING AND ESCROW
+
+All Clipper Chips are programmed inside a SCIF (secure computer
+information facility), which is essentially a vault.  The SCIF contains
+a laptop computer and equipment to program the chips.  About  chips
+are programmed during a single session.  The SCIF is located at
+Mikotronx.
+
+At the beginning of a session, a trusted agent from each of the two key
+escrow agencies enters the vault.  Agent  enters an -bit value S
+into the laptop and agent  enters an -bit value S. These values
+serve as seeds to generate keys for a sequence of serial numbers.
+
+To generate the unit key for a serial number N, the -bit value N is
+first padded with a fixed -bit block to produce a -bit block N.
+S and S are then used as keys to triple-encrypt N, producing a
+-bit block R:
+
+        R = E[D[E[N; S]; S]; S] .
+
+Similarly, N is padded with two other -bit blocks to produce N and
+N, and two additional -bit blocks R and R are computed:  
+
+        R = E[D[E[N; S]; S]; S] 
+        R = E[D[E[N; S]; S]; S] .
+
+R, R, and R are then concatenated together, giving  bits. The
+first  bits are assigned to U and the second  bits to U.  The
+rest are discarded.  The unit key U is the XOR of U and U.  U and U
+are the key parts that are separately escrowed with the two escrow
+agencies.
+
+As a sequence of values for U, U, and U are generated, they are
+written onto three separate floppy disks.  The first disk contains a
+file for each serial number that contains the corresponding key part
+U.  The second disk is similar but contains the U values.  The third
+disk contains the unit keys U.  Agent  takes the first disk and agent
+ takes the second disk.  The third disk is used to program the chips.
+After the chips are programmed, all information is discarded from the
+vault and the agents leave.  The laptop may be destroyed for additional
+assurance that no information is left behind.
+ 
+The protocol may be changed slightly so that four people are in the
+room instead of two.  The first two would provide the seeds S and S,
+and the second two (the escrow agents) would take the disks back to
+the escrow agencies.
+
+The escrow agencies have as yet to be determined, but they will not
+be the NSA, CIA, FBI, or any other law enforcement agency.  One or
+both may be independent from the government.
+
+
+LAW ENFORCEMENT USE
+
+When law enforcement has been authorized to tap an encrypted line, they
+will first take the warrant to the service provider in order to get
+access to the communications line.  Let us assume that the tap is in
+place and that they have determined that the line is encrypted with
+Clipper.  They will first decrypt the law enforcement block with the
+family key F.  This gives them E[K; U] + N.  They will then take a
+warrant identifying the chip serial number N to each of the key escrow
+agents and get back U and U.  U and U are XORed together to produce
+the unit key U, and E[K; U] is decrypted to get the session key K.
+Finally the message stream is decrypted.  All this will be accomplished
+through a special black box decoder operated by the FBI.

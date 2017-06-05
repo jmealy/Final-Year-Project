@@ -1,0 +1,8 @@
+As far as I know ISDN (call it Swissnet here, and it's being plugged in) it's
+ bit Hz (gives you one channel of kBit/sec) I guess you should not go
+below a sampling rate of  Hz if you want to have same quality as on an
+analog-line. Anybody knows compression-algorithms & -factors for voice ?
+
+Greetings,
+
+	Germano Caronni

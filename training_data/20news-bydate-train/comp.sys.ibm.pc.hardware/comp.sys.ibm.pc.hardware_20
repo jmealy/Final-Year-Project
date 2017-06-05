@@ -1,0 +1,16 @@
+Help....
+
+I need to implement COM and COM on a board that I'm designing and I'm
+finding it dificult to track down a definition (hardware that is) of COM
+and COM.
+
+I have the IO adresses and the fact that COM shares IRQ with COM and COM
+shares IRQ with COM, except exactly how this IRQ sharing is done is not
+clear especially if the existing COM/ does not allow IRQ sharing. Does the
+standard??? allow for a different IRQ to be used and if so how.
+
+Please answer by email to :-
+
+      neil@stone.oz.au
+
+thanks in advance

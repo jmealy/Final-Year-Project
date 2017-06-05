@@ -1,0 +1,111 @@
+% telnet csrc.ncsl.nist.gov 
+       Trying...
+       Connected to csrc.ncsl.nist.gov.
+       Escape character is '^]'.
+        first.org sendmail ./NIST ready at Sat,  Apr  :: EDT
+       expn clipper
+       -<csspab@mail-gw.ncsl.nist.gov>
+       -<denning@cs.georgetown.edu>
+       -<hoffman@seas.gwu.edu>
+       -<mkapor@eff.org>
+       -<rotenberg@cpsr.org>
+       -<rivest@mit.edu>
+       -<mhellman@stanford.edu>
+       -<alanrp@aol.com>
+       -<dparker@sri.com>
+       -<jim@rsa.com>
+       -<branstad@tis.com>
+        <mgrsplus@csmes.ncsl.nist.gov>
+       quit
+        first.org closing connection
+       Connection closed.
+
+Note also:
+
+% telnet csmes.ncsl.nist.gov 
+Trying ......
+Connected to csmes.ncsl.nist.gov.
+Escape character is '^]'.
+ csmes.ncsl.nist.gov sendmail ./NIST(rbj/dougm) ready at Sat,  Apr  :: EDT
+expn mgrsplus
+-<mcnulty@ecf.ncsl.nist.gov>
+-Irene Gilbert <igilbert>
+-Dennis Branstad <branstad>
+-Robert Rosenthal <rmr>
+-Gene Troy <troy>
+-<smid@st.ncsl.nist.gov>
+-Dennis Steinauer <dds>
+ <katzke@st.ncsl.nist.gov>
+
+telnet mail-gw.ncsl.nist.gov 
+Trying ......
+Connected to mail-gw.ncsl.nist.gov.
+Escape character is '^]'.
+ mail-gw.ncsl.nist.gov sendmail ./rbj/jck- ready at Sat,  Apr  :: EDT
+expn csspab
+-<burrows@ecf>
+-<mcnulty@ecf>
+-Bill Colvin <colvin>
+-<Gangemi@dockmaster.ncsc.mil>
+-John Kuyers <kuyers>
+-<slambert@cgin.cto.citicorp.com>
+-<lipner@mitre.org>
+-<gallagher@dockmaster.ncsc.mil>
+-<cindy_rand@postmaster.dot.gov>
+-<walker@tis.com>
+-<willis@rand.org>
+-Eddie Zeitler <zeitler>
+-Cris Castro <castro>
+ <whitehurst@vnet.ibm.com>
+
+% telnet st.ncsl.nist.gov 
+Trying ......
+Connected to st.ncsl.nist.gov.
+Escape character is '^]'.
+ st.ncsl.nist.gov SEndMaIl ./NBS-rbj. rEadY At Sat,  Apr  :: EDT
+expn smid
+ Miles Smid <smid>
+expn katzke
+ Stuart Katzke <katzke>
+quit
+ st.ncsl.nist.gov closing connection
+Connection closed by foreign host.
+
+% telnet ecf.ncsl.nist.gov 
+Trying ......
+Connected to ecf.ncsl.nist.gov.
+Escape character is '^]'.
+ ECF.NCSL.NIST.GOV TGV/MultiNet SMTP service ready.
+expn burrows
+ Burrows, James <burrows>
+expn mcnulty
+ McNulty, Lynn <mcnulty>
+quit
+ ECF.NCSL.NIST.GOV TGV/MultiNet SMTP service complete.
+
+% whois -h rs.internic.net first.org
+National Institute of Standards and Technology (FIRST-DOM)
+   /A
+   	 NIST
+   	 GAITHERSBURG, MD 
+
+   Domain Name: FIRST.ORG
+
+   Administrative Contact:
+      Wack, John P.  (JPW)  WACK@ENH.NIST.GOV
+      () - (FTS) -
+   Technical Contact, Zone Contact:
+      Hunt, Craig W.  (CWH)  Hunt@ENH.NIST.GOV
+      () - (FTS) -
+
+   Record last updated on -Dec-.
+
+   Domain servers in listed order:
+
+   DOVE.NIST.GOV		...
+   AMES.ARC.NASA.GOV		...
+
+
+The InterNIC Registration Services Host ONLY contains Internet Information
+(Networks, ASN's, Domains, and POC's).
+Please use the whois server at nic.ddn.mil for MILNET Information.

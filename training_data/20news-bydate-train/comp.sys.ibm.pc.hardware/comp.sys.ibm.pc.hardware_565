@@ -1,0 +1,729 @@
+Configuration of IDE Harddisks
+		    ==============================
+
+
+last update:	..
+
+collected by Carsten Grammes (phhucg@rz.uni-sb.de)
+and published regularly on comp.sys.ibm.pc.hardware.
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+There is explicitly NO WARRANTY
+that the given settings are correct or harmless. (I only collect, I do
+not check for myself!!!). There is always the possibility that the
+settings may destroy your hardware!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Since I hope however that only well-minded people undergo the effort of
+posting their settings the chance of applicability exists. If you should
+agree or disagree with some setting, let me know immediately in order
+to update the list.
+
+If you possess a HD not mentioned here of which you know BIOS and/or
+jumper settings, please mail them to me for the next update of the list!
+
+Only IDE (AT-Bus) Harddisks will be accounted for.
+If not specified the Landing Zone should be set equal to the number of
+cylinders. If not specified the 'Write Precompensation' should be set
+. (There are BIOSes that don't even ask for it).
+
+Another statement (maybe right):
+IDE harddisk don't have Precomp and LZone. The precomp is a built-in parameter
+and lzone isn't used because most if not every IDE disk has autopark.
+
+The jumpers' names are given as printed on the HD's board, often only a
+jumper number (JP means the jumper ''). A zero means that the jumper
+is left open, a one means that the jumper is closed.
+
+
+
+***************************   C O N N E R   ***************************
+
+
+		Conner Peripherals Drive Geometry
+
+IDE/AT
+
+Conner drives are low level formatted at the factory. It is only necessary
+to run SETUP, FDISK, and DOS FORMAT.
+
+Model   Heads  Cylinders  Sectors   PComp   L-Zone  Type  Table    LED
+
+CP                                    *UT           N/A
+CP                                    *UT           N/A
+CP                                    *UT           N/A
+CP                                    *UT            A
+CP                                    *UT            A
+CP                                    *UT            A(?)
+CP                                   *UT            B
+CP                                   *UT            B
+CP                                   *UT            B
+CP                                   *UT            B
+CPE                                  *UT            C
+CPE                                  *UT            C
+CP                                  *UT            C
+CP                                   *UT            D
+CP                                   *UT            D
+CP                                   *UT            D
+CP                                 *UT            B
+
+Table                                   Table 
+
+       Jumper Settings                          Jumper Settings
+
+Single Drive = Jumper ACT and C/D        Single Drive = Jumper C/D
+Master Drive = Jumper ACT, C/D and DSP   Master Drive = Jumper C/D & DSP
+Slave Drive = No jumpers installed       Slave Drive = No jumpers installed
+
+
+Table 
+                                     All Conner  Mbyte drives use
+        Jumper Settings              Drive type .  All Conner 
+                                     Mbyte drives use Drive type .
+Single & Master Drive = Jumper C/D
+Slave Drive = No jumpers installed   *UT = Universal translate.
+                                     Select a drive type that is
+                                     close to but does not exceed
+                                     the megabyte capacity of the
+                                     drive.  The drive will
+                                     translate to the megabyte
+                                     capacity that you have
+                                     selected.
+
+  LED
+
+  A:           B:                       C:         D:
+  J-          J-                      J-        J-
+  Pin  = +    Pin  = +                Pin  = -  Pin  = +
+  Pin  = -    Pin  = -                Pin  = -  Pin  = -
+
+
+
+
+
+***************************    F U J I T S U      ***************************
+
+DETAILS OF FUJITSU DRIVES MxT (Standard)
+
+                   MET     MET     MET     MT
+
+Heads (physical)                                        
+Cyl (physical)                              
+Sec/trk                                             
+Speed (rpm)                                 
+Capacity           MB       MB        MB        MB
+
+
+              +-----------------------------------------------+
+              |                                               |
+              +--+                                            |
+        PSU   |  |      CNH-                                 |
+              +--+                                           |
+             |  |          .                    LED          |
+              |  | CNH-          CNH-      Connector       |
+              |  |              ..            o o          |
+      -way  |  |   .                           | |          |
+        IDE   |  |   .                                        |
+              |  |   .                                        |
+              |  |                                          |
+              +--+                                            |
+              +-----------------------------------------------+
+
+
+
+                 Pin        Function
+                 Position
+
+                 *  -     Active mode
+                    -     Slave present mode
+                    -     Pin =IOCHRDY
+CNH- JUMPERS    *  -     Pin =RESERVED
+                    -      drive system
+                 *  -      drive system
+                   -    Pin =IRQ : Pin =RESERVED
+                 * -    Pin =IRQ : Pin =RESERVED
+
+
+                 Pin        Function
+                 Position
+
+                    -     SLAVE drive mode
+CNH- JUMPERS    *  -     MASTER drive mode
+                    -     ECC  bytes
+                 *  -     ECC  bytes
+
+
+                 Pin        Function
+                 Position
+
+                    -     Write protect enabled
+CNH- JUMPERS    *  -     Write protect disabled
+                    -  - Reserved
+
+Key:  * (I guess!) marks factory default setting for jumper
+
+
+BIOS SETTINGS
+
+BIOS setting for the MET in my system is  cylinders,  sectors
+and  heads.
+
+
+
+
+MODEL      CYLINDERS   HEADS    SECTORS   CAPACITY (Million bytes)
+
+MT                               .
+MT                               .
+MT                                .
+
+
+There are  switches on the switch block on these drives.  Only  of 
+them have a use that I am aware of (from my MT manual):
+
+Master/Slave        Master (*)      SW- OFF
+                    Slave           SW- ON
+ECC bytes            bytes (*)     SW- OFF
+                     bytes         SW- ON
+Write Protect       Disabled (*)    SW- OFF
+                    Enabled         SW- ON
+IO Channel Ready    Disabled (*)    SW- OFF
+                    Enabled         SW- ON
+
+I have no idea about the function of SW- and SW-.  The values 
+listed with a (*) are the factory default settings.
+
+
+***************************   K A L O K     ***************************
+
+KALOK	KL	   MB
+BIOS:	cyl      heads 	sectors 
+
+KALOK   KL     MB
+BIOS:	 Cyl      heads      sectors 
+
+The following jumper settings have been reported for KL but are probably
+also valid for other Kalok drives.
+
+Single HD:
+o o o o o
+
+o o o o-o    <-- same row as pin  of the IDE connector.
+
+Master (disk ):
+o o o o o
+    |
+o o o o o
+
+Slave:
+o o o o o
+      |
+o o o o o
+
+These  pairs of pins are at the righthand side of the disk.
+
+
+
+***************************   M A X T O R   ***************************
+
+Model           Cyls    Heads   Sectors Precomp Landing Zone
+----------	-----	-----	-------	-------	------------
+LXT-A					
+LXT-A					
+LXT-A					
+LXTA						
+LXTA						
+
+Jumpers are as follows:
+
+The bottom of the drive looks like this (well, sort of):
+
++[POWER] [IDE CONNECTOR]-----+
+
+				Single drive	  Dual Drive System
+Pin numbers	Jumper		System		Master		Slave
+-----------	------		------------	------		-----
+-		Slave Drive	remove		remove		install
+-		Activity LED	optional	optional	optional
+-		Slave Present	remove		remove		optional
+-		Master Drive	remove		install		remove
+-		Sync Spindle	remove (n/a)	optional*	remove
+
+* only one drive (the master) in an array should have this jumper installed.
+
+
+
+Maxtor A                , J closed, J closed
+Maxtor A                , J open,   J open
+Maxtor A                 , J closed, J open
+Maxtor A                 , J open,   J closed
+
+Maxtor A               , J closed, J closed
+Maxtor A              , j open,   J open
+Maxtor A                , J closed, J open
+Maxtor A               , J open,   J closed
+Maxtor A                , J
+
+Jumpers for the above  drives:
+
+                  J  I/O-channel ready ( open: disabled; close: enabled )
+                  J  see above
+                  J  see above
+                  J  operation-status ( open: normal; close: factory )
+       J J J J J            
+           
+           
+
+Power  data-cable
+
+J: Idle mode latch ( open: disabled; close: enabled )
+J: drive model ( open: A; close A )
+J: ECC Bytes ( open:  bytes; close:  bytes )
+
+Master/Slave: drive is master and alone    : J closed, J closed
+              drive is master of two drives: J closed, J open
+              drive is slave of two drives : J open  , J closed
+
+
+Maxtor A
+
+Default (power-up) AT BIOS Translation Parameters (others possible)
+Cyl   Hds  SpT  MBytes
+         
+
+There are two sets of jumpers. A set of  and a set of
+. With the power and IDE connector toward you, the set of  is
+numbered (left to right) J - J  , and the set of  is numbered
+(bottom to top) J-J. 
+
+The only jumper of normal interest is J. Jumper it for only
+drive in a single drive system, or master drive in a dual drive
+system.
+ 
+Remove the jumper J for slave drive in a dual drive system. 
+
+J is a dummy and may be used to store the spare shunt if the 
+drive is configured for a slave mode.
+
+Jumpers J, J, J, J are factory reserved. Abnormal operation
+may occur if jumpered.
+
+Jumper  is sync spindle enabled/disabled  (open=disabled)
+Jumper  is sync slave/master              (open=slave)
+Jumper  is I/O Channel Ready              (open=disabled)
+
+
+Maxtor A (Mb IDE; self-parking; Universal Translate):
+Drive type : User defineable
+Cyl    Hds    WPC    LZ     S/T
+                           (WPC and LZ optional)
+
+Master():  J closed
+Slave():   J open (use J for shunt storage)
+Single:     J closed
+
+
+**********************   M I C R O P O L I S   ****************************
+
+
+Drive		A		A
+----------------------------------------
+Unformatted MB			
+Formatted MB			
+Platters			
+Heads				
+Cylinders			
+----------------------------------------
+
+Performance (both):
+
+	Track to track (read)		. msec
+	Track to track (write)		. msec
+	Average				 msec
+	Max				 msec
+	Avg Rotational Latency		. msec
+	Rotational speed		 rpm (+/- %)
+	Data Transfer Rate		upto Mbytes/sec
+	Internal data rate		- Mbits/sec
+
+BIOS Settings:
+
+A		 cyl	 heads	 sectors
+A*	master	 cyl	 heads	 sectors
+	slave	 cyl	 heads	 sectors
+		
+* the A emulates both master and slave
+
+
+Jumpers (labelled J on the drive)
+
+	----
+	|oo| W\ only these  are used
+	|oo| W/
+	|oo|
+	|oo|
+	|oo|
+	----
+
+	W	W
+	--	--
+	in	in	A only - drive emulates both master + slave
+	in	out	Drive is master, slave is present
+	out	in	Drive is slave
+	out	out	Drive is master, no slave present (ie single drive)
+
+
+**********************   M I C R O S C I E N C E   ****************************
+
+MicroScience 
+
+Model: -
+Heads: 
+Cylinders: 
+S/T:  (?)
+Size: M
+
+
+Model # -.
+Size M  hd/sec/cyl
+
+**********************   M I N I S C R I B E    ****************************
+
+Miniscribe
+
+MODEL   AT               CAP   CYC  H  RWC  WPC ENC  RATE ACCESS  SPT COMMENTS 
+AT            ."           -    -             MS    
+AT            ."           -    -             MS    
+AT            ."           -    -             MS    
+
+Master():  -
+Slave():   -
+Single:     - (shunt storage)
+
+
+***************************   N E C   *********************************
+
+NEC     D,   MB
+BIOS:	Cyl      Head 	sect 
+
+NEC	D,	 MB
+BIOS:	Cyl      Head 	sect 
+
+NEC	D,	 MB
+BIOS:	Cyl 	    Head 	sect 		WPcom 		LZone 
+ 
+
+Jumper	JP	JP	    (for all above NEC drives)
+Single         
+Master		
+Slave          
+
+There have been reported difficulties in using WD Caviar as Master and
+NEC drives as slave - the other way it works.
+
+
+
+***************************   Q U A N T U M   *************************
+
+Logical Specs for Quantum AT Drives
+COMPLIMENTS OF COMPUTER BROKERS OF CANADA
+
+
+Model       Cap     Avg Acc	Cylinders     Heads    Sectors/Track
+            (MB)     (ms)
+
+AT                                                 
+AT                                                
+AT                                               
+AT                                              
+AT                                              
+AT                                             
+LPS  AT                                            
+LPS  AT                                           
+LPS AT                                          
+LPS AT                                           
+LPS AT                                          
+
+=================================================
+Legend:  =Jumper Installed  =No Jumper
+=================================================
+
+ &  AT Jumpers
+
+DS  SS   Meaning
+       Single drive configuration
+       Master of dual drive
+       Slave of dual drive
+       Self-Seek Test
+
+=======================================================
+
+, ,  &  AT Jumpers
+
+DS  SP  SS   Meaning
+          Slave when the Master is Quantum PRODRIVE other than /A
+          Slave in PRODRIVE /A mode
+          Slave when Master is non Quantum Drive
+          Not Used
+          Master drive PDIAG mode checking DASP for slave
+          Master in PDIAG mode using SP to check if slave present
+          Master in /A mode using SP to check if slave present
+          Single drive
+
+=======================================================
+
+LPS , , ,  &  AT Jumpers
+DS  SP  DM*  Meaning
+          Slave in standard PDIAG mode for compatibility with drives that use
+             PDIAG-line to handle Master/Slave communications
+          Slave in PRODRIVE /A mode compat. without using PDIAG line
+          Self Test
+          Self Test
+          Master in PDIAG mode using DASP to check for Slave
+          Master in /A Mode using DASP to check for Slave
+          Master in PDIAG mode using SP to check for Slave without
+             checking DASP
+          Master in /A mode using SP to check for Slave without
+             checking DASP
+
+
+======================================================================
+* While my Spec form marked the jumper name DM, it is labeled as CS on
+  my LPS AT drive.
+
+
+
+The QUANTUM ELS series:
+
+Model       Cap     Avg Acc     Cylinders     Heads    Sectors/Track
+            (MB)     (ms)
+ 
+ELSAT                -                                  
+ELSAT                -                                 
+ELSAT              -                                 
+ELSAT              -                                
+
+Write precomp =  for all Quantum drives ( probably no significance)
+Landing Zone = Cylinders
+
+Straps: If an ELS drive is 
+	master only, use DS
+	master with slave, DS or, DS and SP in some cases
+	slave, no strap
+
+
+***************************   R O D I M E    *********************************
+
+Information for RO A and RO A series hard disk drives:
+
+Drive Types
+
+   Model	Cyls	Hds	Sectors/Trk	 No. blocks	Formatted Cap.
+  -------	----	---	-----------	 ----------	--------------
+  ROA		 	    		   ,	 . MByets
+  ROA		 	    		  ,	 . MByets
+  ROA		 	    		  ,	 . MByets
+  ROA		 	    		  ,	. MByets
+  ROA		 	    		  ,	. MByets
+ 
+  ROA			    		   ,	 . MByets
+  ROA			    		  ,	 . MByets
+  ROA			    		  ,	. MByets
+  ROA			    		  ,	. MByets
+  ROA			    		  ,	. MByets
+  ROA			    		  ,	. MByets
+
+
+Link Options
+
+   In order to install the Rodime Ro A series drives the dumpers for 
+the single/dual drive and LED operation on the drive need to be set as 
+described in the relevant product specification.
+   I a single drive environment the drive is described as a Master.
+   In a dual drive environment the drives are described as a Master and a
+Slave. This is due to the protocal the takes place between the two drives 
+when performing diagnostics.
+   There are four links, LK, LK, LK and LK, adjacent to the  way 
+interface connector. They have the following functions and are described 
+in order as viewed from the end of the drive, with the first jumper 
+described nearest the  way interface connector.
+
+LK: LED 
+     When fitted, this jumper connects the LED drive to pin  of the
+     interface. This allows a LED to be connected to the interface. An
+     external current limiting resistor needs to be fitted in series with
+     the LED when this option is selected. The value of the resistor will
+     be dependant on the LED type chosen but will be in the range of 
+     Ohms ot  Ohms.
+
+LK: Dual Drives
+     This jumper must be fitted when two drives are attached to a single
+     bus. It fallows communication across the  way interface connector,
+     indicating, to the Master drive, the presence of a Slave.
+
+LK: Master
+     When fitted this signifies that the drive jumpered is a Master. If
+     there are two drives connected on a single bus then only one may be
+     jumpered in this way.
+
+LK: IOChRdy
+     When fitted this connects the IOChRdy signal to the drive, it is 
+     fitted when the drive is used in host systems that have a higher
+     data transfer rate than the drive i.e. greater than  MBytes per
+     second when using : interleave. This jumper is not normally 
+     fitted as most hosts transfer at a lower rate than  MBytes per
+     second.
+
+   There are four possible Master/Slave configurations in which a drive(s)
+may be jumpered:
+
+     Master, single drive with LED on interface		LK & LK fitted.
+     Master, single drive without LED on interface	LK only fitted.
+     Master, dual drive without LED on interface	LK & LK fitted.
+     Slave, dual drive without LED on interface		No jumpers fitted.
+     Master, dual drive with LED on interface		LK, LK & LK fitted.
+     Slave, dual drive with LED on interface		LK only fitted.
+
+   The Master drive will delay power-up for approximately two seconds to
+reduce power surges in applications where dual drives are used.
+
+   The other connections for a LED will be found close to the  way 
+connector at the other end of the drive. This LED driver is not affected
+by the link options. An internal current limiting resistor is on the 
+drive for this LED driver. Refer to the product specification for further
+details.
+
+
+
+
+***************************   S E A G A T E   *************************
+
+There is a list of most Seagate HD (including MFM, SCSI, ESDIand IDE) on
+every Simtel mirror under
+
+/msdos/dskutl/seagate.zip
+
+It contains info about the following drives:
+
+	    sta	sta	    sta	sta
+sta     sta	sta     sta	stax
+sta     sta	sta     sta	sta
+sta     sta	sta     sta	sta
+sta     sta	sta	    sta	sta
+sta     sta	sta     sta	sta
+sta     sta	sta     stax
+
+
+*********************	T E A C   **************
+
+Model: SD-
+
+                Cyls.   Heads   Sect/T  PreCmp  LZone   Capacity
+                ------  ------  ------  ------  ------  ---------
+Physical                             -       -   
+BIOS (AMI)                                       (.M)
+     (Award)                                     (.M)
+     (Phoenix)                                   (.M)
+
+Connectors and Jumpers:
+
+   +----+                               Jumper  Function
+   |....| +---+ +-------/ /---+               ON:  -ACT selected (ext.LED)
+   |    | |...| |::::::/ /::::|  ::::            OFF: -SLV PRESENT selected
+   +----+ +---+ +-----/ /-----+               ON:  Two HDD's
+     J     J      J         ----            OFF: Single HDD
+   Power (Power)    Signal      Jumpers         ON:  Master (/Single)
+                                                 OFF: Slave (with  units used)
+                                                ON:  -I/O CH RDY not output
+                                                 OFF: -I/O CH RDY is output
+Master Slave Settings:
+
+Jumper no.:        
+-----------------------
+Single....:                                    , ON  = jumpered
+Master....:                                    , OFF = not jumpered
+Slave.....:        
+
+
+
+*********************	W E S T E R N	 D I G I T A L	 **************
+
+Caviar series:
+
+Name        Size (Mb)    Cylinders   Heads   Sectors
+----------------------------------------------------
+WDAC      .                             
+WDAC      .                            
+WDAC    .                           
+WDAC    .                            
+WDAC    .                            
+WDAC    .                           
+
+Please note that these are the *recommended* CMOS parameters. All the disks 
+support so-called dynamic translation, and should thus be able to work with
+any parameters having fewer sectors than the total number of sectors on
+the disk.
+
+Now, according to the manual, the jumper settings are as follows:
+
+Jumper                               CP   MA   SL
+-------------------------------------------------
+Single                                        
+Master                                        
+Slave                                         
+Slave with Conner CP or CP                
+
+
+Maybe there are  kinds of Caviar's floating around: 
+
+If your jumpers read MA SL and SI then use:
+Jumper	SI	MA	SL
+Single			
+Master			
+Slave			
+
+There have been reported difficulties in using WD Caviar as Master and
+NEC drives as slave - the other way it works.
+
+
+WD-A  ( MB)
+BIOS-Settings 
+ cyln,  heads,  sect, LZone:  ( wenn sie sie braucht )
+
++-------+ +---+---+---+  : drive is master
++-------+ +---+---+---+  : second drive is a conner-drive
+
+No jumper set: this is the only drive.
+
+
+
+********************  Useful telephone numbers...  ********************
+
+Miniscribe:     
+  --
+
+Maxtor:
+  Info/tech support: --
+  FAX-back: --
+  BBS: --
+  They list their  number as ()-MAXTOR.
+
+Quantum:
+  --
+  -- (Support)
+  -- (FAX)
+  -- (BBS)
+
+Seagate:
+  Info/tech support: --
+  FAX-back: --
+  BBS: --
+
+
+*******************   last but not least   *****************
+
+If I could help you with my little collection and if you live in a
+part of the world far away from me, how about a postcard for my pinboard?
+I will surely answer!

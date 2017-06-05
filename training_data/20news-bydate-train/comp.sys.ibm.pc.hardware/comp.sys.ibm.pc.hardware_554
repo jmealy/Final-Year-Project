@@ -1,0 +1,13 @@
+Is it possible to buy a serial I/O card with the  UART's built in
+(rather than having to buy them separately, and socketing them in)?
+
+My current I/O card uses 's (correct number? The braindead ones anyway).
+It also controls two floppy drives, and two IDE hard drives.
+
+Ideally, I'd like to get a new multi I/O card, that had  serial ports with
+'s and could also control another  IDE HD's. It would have to have
+configurable addresses for both the serial ports, and the IDE controller, so
+it could co-exist with my existing card.
+
+Does such a beast exist? Now the hard part - where can I get one in Australia,
+preferably Brisbane?

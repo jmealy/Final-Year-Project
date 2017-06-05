@@ -1,0 +1,648 @@
+Archive-name: typing-injury-faq/keyboards
+Version: $Revision: . $ $Date: // :: $
+
+-------------------------------------------------------------------------------
+      Answers To Frequently Asked Questions about Keyboard Alternatives
+-------------------------------------------------------------------------------
+
+The Alternative Keyboard FAQ
+Copyright , By Dan Wallach <dwallach@cs.berkeley.edu>
+
+The opinions in here are my own, unless otherwise mentioned, and do not
+represent the opinions of any organization or vendor.
+
+[Current distribution: sci.med.occupational, sci.med, comp.human-factors,
+ {news,sci,comp}.answers, and e-mail to c+health@iubvm.ucs.indiana.edu,
+ sorehand@vm.ucsf.edu, and cstg-L@vtvm.cc.vt.edu]
+
+Changes since previously distributed versions are marked with change        ||
+bars to the right of the text, as is this paragraph.                        ||
+
+Information in this FAQ has been pieced together from phone conversations,
+e-mail, and product literature.  While I hope it's useful, the information
+in here is neither comprehensive nor error free.  If you find something
+wrong or missing, please mail me, and I'll update my list.  Thanks.
+
+All phone numbers, unless otherwise mentioned, are U.S.A. phone numbers.
+All monetary figures, unless otherwise mentioned, are U.S.A. dollars.
+
+Products covered in this FAQ:
+    Using a PC's keyboard on your workstation / compatibility issues
+    Apple Computer, Inc.
+    Key Tronic FlexPro
+    Dragon Systems
+    The Bat
+    DataHand
+    Comfort Keyboard System
+    Kinesis Ergonomic Keyboard
+    Maltron
+    The Tony! Ergonomic KeySystem
+    The Vertical
+    The MIKey
+    The Wave
+    The Minimal Motion Computer Access System
+    Twiddler
+    Half-QWERTY
+    Microwriter
+    Braille 'n Speak
+    Octima
+    AccuKey
+
+GIF pictures of many of these products are available via anonymous ftp
+from soda.berkeley.edu:pub/typing-injury.  (...)  I highly
+recommend getting the pictures.  They tell much more than I can fit
+into this file.
+
+If you can't ftp, send me mail, and I'll uuencode and mail them to you
+(they're pretty big...)
+
+==============
+Using a PC's keyboard on your workstation / compatibility issues
+
+    Mini outline:
+        . Spoofing a keyboard over the serial port
+        . X terminals
+        . NeXT
+        . Silicon Graphics
+        . IBM RS/
+	. Other stuff
+
+    . Spoofing a keyboard over the serial port
+
+	If you've got a proprietary computer which uses its own keyboard
+	(Sun, HP, DEC, etc.) then you're going to have a hard time finding
+	a vendor to sell you a compatible keyboard.  If your workstation
+	runs the X window system, you're in luck.  You can buy a cheap used
+	PC, hook your expensive keyboard up to it, and run a serial cable
+	to your workstation.  Then, run a program on the workstation to read
+	the serial port and generate fake X keyboard events.
+
+	The two main programs I've found to do this are KT and AX.
+
+	ax is a sophisticated program, capable of controlling the mouse, and
+	even moving among widgets on the screen.  It requires a server
+	extension (XTEST, DEC-XTRAP, or XTestExtension).  To find out if your
+	server can do this, run 'xdpyinfo' and see if any of these strings
+	appear in the extensions list.  If your server doesn't have this,
+	you may want to investigate compiling XR, patchlevel  or later,
+	or bugging your vendor.
+
+	kt is a simpler program, which should work with unextended X servers.
+	Another program called xsendevent also exists, but I haven't seen it.
+
+	Both ax and kt are available via anonymous ftp from soda.berkeley.edu.
+
+    . X terminals
+
+	Also, a number of X terminals (NCD, Tektronics, to name a few) use
+	PC-compatible keyboards.  If you have an X terminal, you may be all
+	set.  Try it out with a normal PC keyboard before you go through the
+	trouble of buying an alternative keyboard.  Also, some X terminals add
+	extra buttons -- you may need to keep your original keyboard around
+	for the once-in-a-blue-moon that you have to hit the Setup key.
+
+    . NeXT
+
+	NeXT had announced that new NeXT machines will use the Apple Desktop
+	Bus, meaning any Mac keyboard will work.  Then, they announced they
+	were cancelling their hardware production.  If you want any kind of
+	upgrade for an older NeXT, do it now!
+
+    . Silicon Graphics
+
+	Silicon Graphics has announced that their newer machines (Indigo^ and
+	beyond) will use standard PC-compatible keyboards and mice.  I don't
+	believe this also applies to the Power Series machines.  It's not
+	possible to upgrade an older SGI to use PC keyboards, except by
+	upgrading the entire machine.  Contact your SGI sales rep for more
+	details.
+
+    . IBM RS/
+
+	IBM RS/ keyboards are actually similar to normal PC keyboards.  ||
+	Unfortunately, you can't just plug one in.  You need two things: a  ||
+	cable converter to go from the large PC keyboard connector to the   ||
+	smaller PS/ style DIN-, and a new device driver for AIX.  Believe ||
+	it or not, IBM wrote this device driver recently, I used it, and it ||
+	works.  However, they don't want me to redistribute it.  I've been  ||
+	told Judy Hume () - is a potential contact.  If you learn ||
+	anything new, please send me e-mail.				    ||
+    
+    . Other stuff
+
+	Some vendors here (notably: Health Care Keyboard Co. and AccuCorp)
+	support some odd keyboard types, and may be responsive to your
+	queries regarding supporting your own weird computer.  If you can
+	get sufficient documention about how your keyboard works (either
+	from the vendor, or with a storage oscilloscope), you may be in
+	luck.  Contact the companies for more details.
+
+
+Apple Adjustable Keyboard
+    Apple Computer, Inc.
+    Sales offices all over the place.
+
+    Availability: February, 
+    Price: $
+    Supports: Mac only
+
+    Apple has recently announced their new split-design keyboard.  The
+    keyboard has one section for each hand, and the sections rotate
+    backward on a hinge.  The sections do not tilt upward.  The keys are
+    arranged in a normal QWERTY fashion.
+
+    The main foldable keyboard resembles a normal Apple Keyboard.
+    A separate keypad contains all the extended key functions.
+
+    The keyboard also comes with matching wrist rests, which are not
+    directly attachable to the keyboard.
+
+    As soon as soda comes back up, I'll have a detailed blurb from
+    TidBITS available there.
+
+
+FlexPro Keyboard
+    Key Tronic
+    Phone: --
+    Possible contact: Denise Razzeto, --
+    Sold by many clone vendors and PC shops
+
+    Availability: Spring,  (?)
+    Price: $ (?)
+    Supports: PC only (highly likely)
+
+    Keytronic apparently showed a prototype keyboard at Comdex.  It's
+    another split-design.  One thumb-wheel controls the tilt of both
+    the left and right-hand sides of the main alphanumeric section.
+    The arrow keys and keypad resemble a normal -key PC keyboard.
+
+    Keytronic makes standard PC keyboards, also, so this product will
+    probably be sold through their standard distribution channels.
+
+
+DragonDictate-K (and numerous other Dragon products)
+    Dragon Systems, Inc.
+     Nevada Street
+    Newton, MA  
+
+    Phone: -TALK-TYP or --
+    Fax: --
+
+    Shipping: Now.
+
+    Price: DragonDictate-K -- $ (end user system)
+	   DragonWriter  -- $ / $ (end user/developer system)
+	   various other prices for service contracts, site licenses, etc.
+    
+    Compatibility:  (or higher) PC only
+		   (rd party support for Mac)
+
+	Free software support for X windows is also available -- your
+	PC with Dragon hardware talks to your workstation over a
+	serial cable or network.  The program is called ax, and is
+	available via anonymous ftp:
+
+	soda.berkeley.edu:pub/typing-injury/ax.tar.Z
+	export.lcs.mit.edu:contrib/ax.tar.Z (most current)
+
+	If you want to use your Dragon product with X windows, you may want
+	to ask for Peter Cohen, an salesman at Dragon who knows more about
+	this sort of thing.
+
+    Dragon Systems sells a number of voice recognition products.
+    Most (if not all) of them seem to run on PC's and compatibles
+    (including PS/'s and other MicroChannel boxes).  They sell you
+    a hardware board and software which sits in front of a number
+    of popular word processors and spreadsheets.
+
+    Each user `trains' the system to their voice, and there are provisions
+    to correct the system when it makes mistakes, on the fly.  Multiple
+    people can use it, but you have to load a different personality file
+    for each person.  You still get the use of your normal keyboard, too.
+    On the DragonDictate-K you need to pause /th sec between
+    words.  Dragon claims typical input speeds of - words per minute.
+    I don't have specs on the DragonWriter .
+
+    The DragonDictate-K can recognize , words at a time.
+    The DragonWriter  can recognize (you guessed it)  words at a time.
+
+    Dragon's technology is also part of the following products
+    (about which I have no other info):
+
+	Microsoft Windows Sound System (Voice Pilot)
+	IBM VoiceType
+	Voice Navigator II (by Articulate Systems -- for Macintosh)
+	EMStation (by Lanier Voice Products -- "emergency medical workstation")
+
+
+The Bat
+    old phone number: --
+    current phone number: --
+
+    Infogrip, Inc.
+     North Blvd.
+    Baton Rouge, Louisiana , U.S.A.
+
+    Ward Bond (main contact)
+    David Vicknair (did the Unix software)  --
+
+    Shipping: Now.
+
+    Supports: Mac, IBM PC (serial port -- native keyboard port version
+    coming very soon...).  No other workstations supported, but serial
+    support for Unix with X Windows has been written.  PC and Mac are
+    getting all the real attention from the company.
+
+    A chording system.  One hand is sufficient to type everything.
+    The second hand is for redundancy and increased speed.
+
+    Price:
+	$ (dual set -- each one is a complete keyboard by itself)
+	$ (single)
+
+	(cheaper prices were offered at MacWorld Expo as a show-special.)
+
+
+DataHand   --
+    Industrial Innovations, Inc.
+     North th Street
+    Scottsdale, Arizona -, U.S.A.
+
+    Mark Roggenbuck (contact)
+
+    Supports: PC and Mac
+
+    Shipping: In beta.  "Big backlog" -- could take + months.
+
+    Price: $/unit ( unit ==  pods). (new price!)			    ||
+
+    Each hand has its own "pod".  Each of the four main fingers has five
+    switches each: forward, back, left, right, and down.  The thumbs have
+    a number of switches.  Despite appearances, the key layout resembles
+    QWERTY, and is reported to be no big deal to adapt to.  The idea is
+    that your hands never have to move to use the keyboard.  The whole pod
+    tilts in its base, to act as a mouse.
+
+    (see also: the detailed review, written by Cliff Lasser <cal@THINK.COM>
+     available via anonymous ftp from soda.berkeley.edu)
+
+
+Comfort Keyboard System   --
+    FAX: --
+
+    Health Care Keyboard Company
+    N W Appleton Ave
+    Menomonee Falls, Wisconsin  U.S.A.
+
+
+    Jeffrey Szmanda (Vice President -- contact)
+
+    Shipping: Now.
+
+    Supports: PC (and Mac???)						    ||
+    
+    Planned future support:
+	IBM -key layout (-style, I believe)
+	Sun Sparc
+	Decision Data
+	Unisys UTS-
+	Silicon Graphics
+
+	Others to be supported later.  The hardware design is relatively
+	easy for the company to re-configure.
+
+    Price: $, including one system "personality module".		    ||
+
+    The idea is that one keyboard works with everything.  You purchase
+    "compatibility modules", a new cord, and possibly new keycaps, and
+    then you can move your one keyboard around among different machines.
+
+    It's a three-piece folding keyboard.  The layout resembles the
+    standard -key keyboard, except sliced into three sections.  Each
+    section is on a "custom telescoping universal mount."  Each section
+    independently adjusts to an infinite number of positions allowing each
+    individual to type in a natural posture.  You can rearrange the three
+    sections, too (have the keypad in the middle if you want).  Each
+    section is otherwise normal-shaped (i.e.: you put all three sections
+    flat, and you have what looks like a normal -key keyboard).
+
+
+Kinesis Ergonomic Keyboard   --
+    -- (fax)
+
+    Kinesis Corporation
+     Pacific Highway South,
+    Seattle, Washington , U.S.A.
+
+    Shirley Lunde (VP Marketing -- contact)
+
+    Shipping: Now.
+
+    Supports: PC.  Mac and Sun Sparc in the works.
+
+    Price: $.  Volume discounts available.  The $ includes one foot
+	pedal, one set of adhesive wrist pads, and a TypingTutor program.
+	An additional foot pedal and other accessories are extra.
+
+    The layout has a large blank space in the middle, even though the
+    keyboard is about the size of a normal PC keyboard -- slightly
+    smaller.  Each hand has its own set of keys, laid out to minimize
+    finger travel.  Thumb buttons handle many major functions (enter,
+    backspace, etc.).
+
+    You can remap the keyboard in firmware (very nice when software won't
+    allow the reconfig).
+
+    Foot pedals are also available, and can be mapped to any key on the
+    keyboard (shift, control, whatever).
+
+
+Maltron		(+)    (United Kingdom)
+    P.C.D. Maltron Limited
+     Orchard Lane
+    East Molesey
+    Surrey KT OBN
+    England
+
+    Pamela and Stephen Hobday (contacts)
+
+    U.S. Distributor:
+	Jim Barrett
+	Applied Learning Corp.
+	 Glen Hardie Road
+	Wayne, PA  
+
+	Phone: --
+
+    Supports: PC's, Amstrad /, BBC B, BBC Master,
+	      Mac apparently now also available
+
+
+    Price:  pounds
+	   $ shipped in the U.S.A. (basically, converted price + shipping)
+
+	   The cost is less for BBC computers, and they have a number of 
+	   accessories, including carrying cases, switch boxes to use both
+	   your normal keyboard and the Maltron, an articulated arm that
+	   clamps on to your table, and training 'courses' to help you learn
+	   to type on your Maltron.
+
+	   You can also rent a keyboard for  pounds/week + taxes.
+	   U.S. price: $/month, and then $ off purchase if you want it.
+
+    Shipping: Now (in your choice of colors: black or grey)
+    
+    Maltron has four main products -- a two-handed keyboard, two one-handed
+    keyboards, and a keyboard designed for handicapped people to control with
+    a mouth-stick.
+
+    The layout allocates more buttons to the thumbs, and is curved to
+    bring keys closer to the fingers.  A separate keypad is in the middle.
+
+
+AccuKey
+    AccuCorp, Inc.
+    P.O. Box 
+    Christiansburg, VA  , U.S.A.
+ 
+    -- (Pete Rosenquist -- Sales)
+    -- (Larry Langley -- President)
+ 
+    Shipping: Now.
+    Supports: PC, Mac, IBM , Sun Sparc, and TeleVideo  and .
+    Cost: $ + shipping.
+ 
+    Doesn't use conventional push-keys.  Soft rubber keys, which rock
+    forward and backward (each key has three states), make chords for
+    typing keys.  Learning time is estimated to be - hours, for getting
+    started, and maybe two weeks to get used to it.
+
+    Currently, the thumbs don't do anything, although a thumb-trackball
+    is in the works.
+ 
+    The company claims it takes about a week of work to support a
+    new computer.  They will be happy to adapt their keyboard to
+    your computer, if possible.
+
+
+Twiddler	--, or --
+    Handykey
+     Mt. Sinai Ave.
+    Mt. Sinai, NY 
+
+    Chris George (President)
+
+    Shipping: now.
+
+    Price: $.
+
+    Supports: PC only.  Mac and X Windows in the works.
+
+    The Twiddler is both a keyboard and a mouse, and it fits in one hand.
+    You type via finger chords.  Shift, control, etc. are thumb buttons.
+    When in "mouse" mode, tilting the Twiddler moves the mouse, and mouse
+    buttons are on your fingers.
+
+    The cabling leaves your normal keyboard available, also.
+
+    Most applications work, and Windows works fine.  DESQview has trouble.
+    GEOWorks also has trouble -- mouse works, keyboard doesn't.
+
+
+Braille 'n Speak     --
+    Blazie Engineering
+     Mill Green Rd.
+    Street, Md , U.S.A.
+
+    (information provided by Doug Martin <martin@nosc.mil>)
+
+    The Braille N Speak uses any of several Braille codes for entering
+    information: Grade I, Grade II, or computer Braille.  Basically,
+    letters a-j are combinations of dots , , , and .  Letters k-t are
+    the same combinations as a-j with dot  added. Letters u, v, x, y, and
+    z are like a-e with dots  and  added.  (w is unique because Louis
+    Braille didn't have a w in the French alphabet.)
+
+
+The Tony! Ergonomic KeySystem        --
+    Tony Hodges
+    The Tony! Corporation
+     Thompson Court
+    Mountain View, CA  , U.S.A.
+
+    Supports: Mac, PC, IBM , Sun, and DEC.
+    
+    Shipping: ???
+
+    Price: $ (you commit now, and then you're in line to buy the
+    keyboard.  When it ships, if it's cheaper, you pay the cheaper price.
+    If it's more expensive, you still pay $)
+
+    The Tony! should allow separate positioning of every key, to allow
+    the keyboard to be personally customized.  A thumb-operated mouse
+    will also be available.
+
+
+The Vertical
+    Contact: Jeffrey Spencer or Stephen Albert, --
+    P.O. Box 
+    La Jolla, CA  , U.S.A.
+
+    Supports: no info available, probably PC's
+    Available: Summer, 
+    Price: $
+
+    The Vertical Keyboard is split in two halves, each pointing straight up.
+    The user can adjust the width of the device, but not the tilt of each
+    section.  Side-view mirrors are installed to allow users to see their
+    fingers on the keys.
+
+
+The MIKey     --
+    Dr. Alan Grant
+     Woodhollow Drive
+    Chevy Chase, Maryland , U.S.A.
+
+    Shipping: As of July, : "Should be Available in One Year."
+
+    Supports: PC, Mac (maybe)
+
+    Price: $ (estimated)
+
+    The keyboard is at a fixed angle, and incorporates a built-in mouse
+    operated by the thumbs.  Function keys are arranged in a circle at
+    the keyboard's left.
+
+
+The Wave	(was: -)  --
+    FAX: --
+
+    Iocomm International Technology
+     Yukon Avenue
+    Hawthorne, California , U.S.A.
+
+    Robin Hunter (contact -- in sales)
+
+    Cost: $. + $ for a set of cables
+
+    Supports: PC only.
+
+    Shipping: now.
+
+    Iocomm also manufactures "ordinary" -key keyboard (PC/AT) and
+    -key keyboard (PC/XT), so make sure you get the right one.
+
+    The one-piece keyboard has a built-in wrist-rest.  It looks *exactly*
+    like a normal -key PC keyboard, with two inches of built-in wrist
+    rest.  The key switch feel is reported to be greatly improved.
+    
+
+The Minimal Motion Computer Access System 	--
+    -- (fax)
+
+    Equal Access Computer Technology
+    Dr. Michael Weinreigh
+     Oneida Rd.
+    Acton, MA  , U.S.A.
+
+    Price: InfoGrip-compatible: "a few hundred dollars" + a one-handed Bat
+	  For their own system: $ (DOS software) + "a few hundred dollars"
+    
+    Shipping: these are custom-made, so an occupational therapist would
+	  make moulds/do whatever to make it for you.  You can buy one now.
+    
+    Supports: PC only, although the InfoGrip-compatible version might
+	  work with a Mac.
+
+    In a one-handed version, there is exactly one button per finger.  In a
+    two-handed version, you get four buttons per finger, and the thumbs
+    don't do anything.  You can also get one-handed versions with three
+    thumb buttons -- compatible with the InfoGrip Bat.  Basically, get it
+    any way you want.
+
+    They also have a software tutorial to help you learn the chording.
+
+    Works on a PC under DOS, not Windows.  Planning on Macintosh and
+    PC/Windows support.  No work has been done on a Unix version, yet.
+
+
+Half-QWERTY	(Canada) --
+    The Matias Corporation
+     Thistledown Boulevard
+    Rexdale, Ontario, Canada
+    MV K
+
+    E-mail: ematias@dgp.toronto.edu
+
+    Supports: Mac and PC (but, not Windows)
+
+    Demo for anonymous ftp: explorer.dgp.toronto.edu:/pub/Half-QWERTY	    ||
+
+    Price:   $. (higher in Canada, quantity discounts available)
+    Shipping: Now.
+    
+    This thing is purely software.  No hardware at all.
+
+    The software will mirror the keyboard when you hold down the space
+    bar, allowing you type one-handed.
+
+
+Octima	(Israel) --
+    FAX: (+)  
+
+    Ergoplic Keyboards Ltd.
+    P.O. Box 
+    Kiryat Ono , Israel
+
+    (info from Mandy Jaffe-Katz <RXHFUN@HAIFAUVM.BITNET>)
+    A one-handed keyboard.
+
+
+Microwriter AgendA (U.K.) (+)   
+    FAX: (+)   
+
+    Microwriter Systems plc
+    M.S.A. House
+     Albany Court
+    Albany Park
+    Frimley
+    Surrey GU XA, United Kingdom
+
+    (Info from Carroll Morgan <Carroll.Morgan@prg.oxford.ac.uk>)
+
+    The AgendA is a personal desktop assistant (PDA) style machine.  You
+    can carry it along with you.  It has chording input.  You can also
+    hook it up to your PC, or even program it.
+
+    It costs just under  pounds, with K memory.
+===========
+
+Thanks go to Chris Bekins <AS.CCB@forsythe.stanford.edu> for providing
+the basis for this information.
+
+Thanks to the numerous contributors:
+
+Doug Martin <martin@nosc.mil>
+Carroll Morgan <Carroll.Morgan@prg.oxford.ac.uk>
+Mandy Jaffe-Katz <RXHFUN@HAIFAUVM.BITNET>
+Wes Hunter <Wesley.Hunter@AtlantaGA.NCR.com>
+Paul Schwartz <pschwrtz@cs.washington.edu>
+H.J. Woltring <WOLTRING@NICI.KUN.NL>
+Dan Sorenson <viking@iastate.edu>
+Chris VanHaren <vanharen@MIT.EDU>
+Ravi Pandya <ravi@xanadu.com>
+Leonard H. Tower Jr. <tower@ai.mit.edu>
+Dan Jacobson <Dan_Jacobson@ATT.COM>
+Jim Cheetham  <jim@oasis.icl.co.uk>
+Cliff Lasser <cal@THINK.COM>
+Richard Donkin <richardd@hoskyns.co.uk>
+Paul Rubin <phr@napa.Telebit.COM>
+David Erb <erb@fullfeed.com>
+Bob Scheifler <rws@expo.lcs.mit.edu>
+Chris Grant <Chris.Grant@um.cc.umich.edu>
+Scott Mandell <sem@postoffice.mail.cornell.edu>
+
+and everybody else who I've probably managed to forget.
+
+The opinions in here are my own, unless otherwise mentioned, and do not
+represent the opinions of any organization or vendor.

@@ -1,0 +1,16 @@
+/* Apologies for those who have read this before but no-one has solved this */
+/* one yet so I'm posting again! Sorry :-)                                  */
+
+I'm having problems creating a cursor bigger than x, I'm using Motif .
+XR running HP-UX . - all the functions return valid results but no
+cursor appears when the bitmap is bigger than the aforementioned size. I tried
+
+using the following code:
+
+unsigned int w,h;
+XQueryBestCursor(XtDisplay(programArea), XtWindow(programArea), , , &w,
+&h);
+
+to return the nearest size to what I require however it returns  and  as
+the width and height respectively. What am I doing wrong? and if not how can I
+get round the problem!!

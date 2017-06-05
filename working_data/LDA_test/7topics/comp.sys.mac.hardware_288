@@ -1,0 +1,23 @@
+Hi there,
+
+
+I have a question regarding Quadras VRAM. I have tried to find info on this
+but I could not get precise answers.
+
+On one hand, we have a Quadra  with a " monitor, which is capable of
+-bit color. How much VRAM does it have?
+On the other hand, we have a Quadra  with a " monitor, which is capable
+of -bit color only, so it must have  Ko of VRAM.
+
+I would like to take VRAM SIMMs for the  and put them in the  so that
+both machines have -bit color capability.
+Is it possible, and if yes, how many VRAM SIMMs should I take from the ?
+From the documentation I have, the Quadra  must get  Mo VRAM to have
+-bit color, is that correct?
+
+Bonus question: where do VRAM SIMMs hide? From the  documentation, they
+seem to be *behind* the power supply. Do I really have to take off the power
+supply to access the VRAM SIMMs?
+
+
+Thanks for your help!

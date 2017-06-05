@@ -1,0 +1,15 @@
+They don't have a conflict because technically LPT: does not use
+IRQ!.
+     The Parallel printer processor (the actual number escapes
+me) contains a printer control register which enables the chip
+to transmit an interrupt to the interrupt controller as IRQ,
+then onto the main processor as Int xF. By default the parallel
+printer processor does not enable it's interrupt line therefore
+no Int xF's will be sourced from the printer controller chip,
+thus enabling other devices to use the actual IRQ.
+
+     Note, this applies to COM ports also which by default do not
+route interrupts to the system bus, although COM's software
+usually enable this feature as it make monitoring COM port
+activity easier than polling the serial UART, thus probably
+getting the sound card slighty confused!.

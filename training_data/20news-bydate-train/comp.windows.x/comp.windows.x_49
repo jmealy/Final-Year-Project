@@ -1,0 +1,11 @@
+We have recently purchased a Tektronix xterminal, and I'm having
+a problem with it. We have a graphics widget that we wrote to
+display waveforms, and it doesn't work on the xterminal. the buttons,
+etc, all show up, and it seems to take the 'right' amount of time to
+draw, but nothing is visible in the graphics window. I
+have no clue as to where to start looking: the program works fine
+on all our suns (s and s, color and B&W). could anyone suggest a
+line of attack for this problem?
+
+TekXpress XP color xterminal running ... host is a Sun IPX
+running SunOS .. and XR, PL.

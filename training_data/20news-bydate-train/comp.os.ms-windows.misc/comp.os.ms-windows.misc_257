@@ -1,0 +1,14 @@
+Hi,
+
+I have a /MHz SYS based PC with M RAM and a problem.
+
+What is the best way to configure high memory with QEMM/MAX ??
+I have a SPEEDSTAR X video card and use Hyperdisk disk cache
+software. The problem is running Windows . in Enhanced mode and
+having any high memory to load stuff high?
+
+Note :
+I tried, as recommended to exclude the region A-CFF but Windows
+insists on starting in Standard mode.
+
+Any suggestions?

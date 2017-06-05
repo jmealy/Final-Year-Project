@@ -1,0 +1,4 @@
+. Get the friend to uninstall it.
+    . Read the manual (though from your post I infer that you are using
+    pirated software.)
+    . Go into SYS.INI and change the SHELL= line to read SHELL=PROGMAN.EXE

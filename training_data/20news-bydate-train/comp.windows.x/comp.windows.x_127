@@ -1,0 +1,36 @@
+Hi.
+
+I use Emacs and I want to customize my keyboard better.
+When I set up stuff in my .emacs with a keymap and define-keys,
+I can only access certain of the keys on my X-Terminal's
+keyboard. I can't get e.g. F, Home, End, PgUp, PgDn; they all
+seem to have either the same or no keycode. I have a feeling
+this can't be fixed in emacs itself, but that I need to do some
+xmodmap stuff. Can someone help me?
+
+By the way, I've checked the X-FAQ and posted a similar message
+to gnu.emacs.help to no response.
+
+Currently I have the following in my .emacs file (inside a 'cond'):
+
+ ((string-match "^xterm" (getenv "TERM"))
+;; done by aj /. I don't know what most of this does...
+   (defvar xterm-map (make-sparse-keymap) "Keymap for xterm special keys")
+   (define-key esc-map "[" 'xterm-prefix)
+   (fset 'xterm-prefix xterm-map)
+  ;;Keys F to F
+   (define-key xterm-map "z" 'goto-line)        ;F
+   (define-key xterm-map "z" 'what-line)        ;F
+   (define-key xterm-map "z" 'rmail)            ;F
+   (define-key xterm-map "z" 'replace-string)   ;F
+   (define-key xterm-map "z" 'end-of-line)      ;F
+   (define-key xterm-map "z" 'kill-line)        ;F
+   (define-key xterm-map "z" 'yank)             ;F
+   (define-key xterm-map "z" 'beginning-of-line);F
+   (define-key xterm-map "z" 'end-of-line)      ;F
+   (define-key xterm-map "z" 'scroll-down)      ;F
+   (define-key xterm-map "z" 'scroll-up)        ;F
+ ;;Keys F, up, down, etc. ??????? can't get the keys 
+   (define-key xterm-map "-z" 'set-mark-command))
+)
+

@@ -1,0 +1,279 @@
+I have posted disp.zip to alt.binaries.pictures.utilities
+
+
+******   You may distribute this program freely for non-commercial use
+         if no fee is gained.
+******   There is no warranty. The author is not responsible for any
+         damage caused by this program.
+
+
+Important changes since version .:
+    Fix bugs in file management system (file displaying).
+    Improve file management system (more user-friendly).
+    Fix bug in XPM version  reading.
+    Fix bugs in TARGA reading/writng.
+    Fix bug in GEM/IMG reading.
+    Add support for PCX and GEM/IMG writing.
+    Auto-skip macbinary header.
+
+
+() Introduction:
+  This program can let you READ, WRITE and DISPLAY images with different
+  formats. It also let you do some special effects(ROTATION, DITHERING ....)
+  on image. Its main purpose is to let you convert image among different
+  formts.
+  Include simple file management system.
+  Support 'slide show'.
+  There is NO LIMIT on image size.
+  Currently this program supports , , ,  bits display.
+  If you want to use HiColor or TrueColor, you must have VESA driver.
+  If you want to modify video driver, please read section ().
+
+
+() Hardware Requirement:
+  PC  or better. MSDOS . or higher.
+  min amount of ram is M bytes(Maybe less memory will also work).
+  (I recommend min M bytes for better performance).
+  Hard disk for swapping(virtual memory).
+
+  The following description is borrowed from DJGPP.
+
+  Supported Wares:
+
+  * Up to M of extended memory (expanded under VCPI)
+  * Up to M of disk space used for swapping
+  * SuperVGA -color mode up to x
+  * 
+  * XMS & VDISK memory allocation strategies
+  * VCPI programs, such as QEMM, DESQview, and MAX
+
+  Unsupported:
+
+  * DPMI
+  * Microsoft Windows
+
+  Features:  emulator, -bit unix-ish environment, flat memory
+  model, SVGA graphics.
+
+
+() Installation:
+  Video drivers, emu and go.exe are borrowed from DJGPP.
+  (If you use Western Digital VGA chips, read readme.wd)
+  (This GO.EXE is a modified version for vesa and is COMPLETELY compatible
+   with original version)
++  *** But some people report that this go.exe is not compatible with
++      other DJGPP programs in their system. If you encounter this problem,
++      DON'T put go.exe within search path.
+
+  *** Please read runme.bat for how to run this program.
+
+  If you choose xxxxx.grn as video driver, add 'nc ' to environment
+    GO.
+
+  For example, go=driver x:/xxxxx/xxxxx.grn nc 
+
+  If you don't have x, add 'emu x:/xxxxx/emu' to environment GO.
+
+  For example, go=driver x:/xxxxx/xxxxx.grd emu x:/xxxxx/emu
+
+  **** Notes: . I only test tr.grn, et.grn and vesa.grn.
+                 Other drivers are not tested.
+              . I have modified et.grn to support , , ,  bits
+                 display. You don't need to use vesa driver.
+                 If et.grn doesn't work, please try vesa.grn.
+              . For those who want to use HiColor or TrueColor display,
+                 please use vesa.grn(except et users).
+                 You can find vesa BIOS driver from :
+                   wuarchive.wustl.edu: /mirrors/msdos/graphics
+                   godzilla.cgl.rmit.oz.au: /kjb/MGL
+
+
+() Command Line Switch:
+
++   Usage : display [-d|--display initial_display_type]
++                   [-s|--sort sort_method]
++                   [-h|-?]
+
+    Display type: (SVGA,default), , (HiColor), (TrueColor)
++   Sort method: 'name', 'ext'
+
+
+() Function Key:
+
+    F : Change disk drive
+
++   CTRL-A -- CTRL-Z : change disk drive.
+
+    F : Change filename mask (See match.doc)
+
+    F : Change parameters
+
+    F : Some effects on picture, eg. flip, rotate ....
+
+    F : Make Directory
+
+    t : Tag file
+
+    + : Tag group files (See match.doc)
+
+    T : Tag all files
+
+    u : Untag file
+
+    - : Untag group files (See match.doc)
+
+    U : Untag all files
+
+    Ins : Change display type (,,,) in 'read' & 'screen' menu.
+
+    F,m,M : Move file(s)
+
+    F,d,D : Delete file(s)
+
+    r,R : Rename file
+
+    c,C : Copy File(s)
+
+    z,Z : Display first  bytes in Ascii, Hex and Dec modes.
+
++   f,F : Display disk free space.
+
+    Page Up/Down : Move one page
+
+    TAB : Change processing target.
+
+    Arrow keys, Home, End, Page Up, Page Down: Scroll image.
+      Home: Left Most.
+      End: Right Most.
+      Page Up: Top Most.
+      Page Down: Bottom Most.
+      in 'screen' & 'effect' menu :
+        Left,Right arrow: Change display type(, , ,  bits)
+
+    s,S : Slide Show. ESCAPE to terminate.
+
+    ALT-X : Quit program without prompting.
+
++   ALT-A : Reread directory.
+
+    Escape : Abort function and return.
+
+
+() Support Format:
+
+  Read: GIF(.gif), Japan MAG(.mag), Japan PIC(.pic), Sun Raster(.ras),
+        Jpeg(.jpg), XBM(.xbm), Utah RLE(.rle), PBM(.pbm), PGM(.pgm),
+        PPM(.ppm), PM(.pm), PCX(.pcx), Japan MKI(.mki), Tiff(.tif),
+        Targa(.tga), XPM(.xpm), Mac Paint(.mac), GEM/IMG(.img),
+        IFF/ILBM(.lbm), Window BMP(.bmp), QRT ray tracing(.qrt),
+        Mac PICT(.pct), VIS(.vis), PDS(.pds), VIKING(.vik), VICAR(.vic),
+        FITS(.fit), Usenix FACE(.fac).
+
+        the extensions in () are standard extensions.
+
+  Write: GIF, Sun Raster, Jpeg, XBM, PBM, PGM, PPM, PM, Tiff, Targa,
+         XPM, Mac Paint, Ascii, Laser Jet, IFF/ILBM, Window BMP,
++        Mac PICT, VIS, FITS, FACE, PCX, GEM/IMG.
+
+  All Read/Write support full color( bits), grey scale, b/w dither,
+      and  bits image, if allowed for that format.
+
+
+() Detail:
+
+   Initialization:
+      Set default display type to highest display type.
+      Find allowable screen resolution(for .grn video driver only).
+
+   . When you run this program, you will enter 'read' menu. Whthin this
+      menu you can press any function key except F. If you move or copy
+      files, you will enter 'write' menu. the 'write' menu is much like
+      'read' menu, but only allow you to change directory.
++       The header line in 'read' menu includes "(d:xx,f:xx,t:xx)".
++         d : display type. f: number of files. t: number of tagged files.
+      pressing SPACE in 'read' menu will let you select which format to use
+        for reading current file.
+      pressing RETURN in 'read' menu will let you reading current file. This
+        program will automatically determine which format this file is.
+        The procedure is: First, check magic number. If fail, check
+        standard extension. Still fail, report error.
+      pressing s or S in 'read' menu will do 'Slide Show'.
+        If delay time is , program will wait until you hit a key
+          (except ESCAPE).
+        If any error occurs, program will make a beep.
+        ESCAPE to terminate.
+      pressing Ins in 'read' menu will change display type.
+      pressing ALT-X in 'read' menu will quit program without prompting.
+
+   . Once image file is successfully read, you will enter 'screen' menu.
+      Within this menu F is turn on. You can do special effect on image.
+      pressing RETURN: show image.
+        in graphic mode, press RETURN, SPACE or ESCAPE to return to text
+        mode.
+      pressing TAB: change processing target. This program allows you to do
+        special effects on -bit or -bit image.
+      pressing Left,Right arrow: change display type. , , ,  bits.
+      pressing SPACE: save current image to file.
+        B/W Dither: save as black/white image( bit).
+        Grey Scale: save as grey image( bits).
+        Full Color: save as color image( bits).
+        True Color: save as -bit image.
+
+        This program will ask you some questions if you want to write image
+        to file. Some questions are format-dependent. Finally This program
+        will prompt you a filename. If you want to save file under another
+        directory other than current directory, please press SPACE. after
+        pressing SPACE, you will enter 'write' menu. You can change
+        directory to what you want. Then,
+
+        pressing SPACE: this program will prompt you 'original' filename.
+        pressing RETURN: this program will prompt you 'selected' filename
+                      (filename under bar).
+
+
+  . This program supports , , ,  bits display.
+
+  . This Program is MEMORY GREEDY. If you don't have enough memory,
+     the performance is poor.
+
+  . If you want to save  bits image :
+       try GIF then TIFF(LZW) then TARGA then Sun Raster then BMP then ...
+
+     If you want to save  bits image (lossless):
+       try TIFF(LZW) or TARGA or ILBM or Sun Raster
+       (No one is better for true bits image)
+
+  . I recommend Jpeg for storing  bits images, even  bits images.
+
+  . Not all subroutines are fully tested
+
+  . This document is not well written. If you have any PROBLEM, SUGGESTION,
+     COMMENT about this program,
+     Please send to u@bicmos.ee.nctu.edu.tw (...).
+     I need your suggestion to improve this program.
+     (There is NO anonymous ftp on this site)
+
+
+() Tech. information:
+  Program (user interface and some subroutines) written by Jih-Shin Ho.
+  Some subroutines are borrowed from XV(.) and PBMPLUS(dec ).
+  Tiff(V.) and Jpeg(V) reading/writing are through public domain
+    libraries.
+  Compiled with DJGPP.
+  You can get whole DJGPP package from SIMTEL or mirror sites.
+    For example, wuarchive.wustl.edu: /mirrors/msdos/djgpp
+
+
+() For Thoese who want to modify video driver:
+   . get GRX source code from SIMTEL or mirror sites.
+   . For HiColor and TrueColor:
+         bits : # of colors is set to .
+         bits : # of colors is set to xc.
+         bits : # of colors is set to xc.
+
+
+Acknowledgment:
+  I would like to thank the authors of XV and PBMPLUS for their permission
+    to let me use their subroutines.
+  Also I will thank the authors who write Tiff and Jpeg libraries.
+  Thank DJ. Without DJGPP I can't do any thing on PC.

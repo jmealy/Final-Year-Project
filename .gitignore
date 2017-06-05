@@ -1,11 +1,9 @@
 # ignore temporary files
-dump.py
-test.txt
+#dump.py
+temp.py
 /.idea/
 .idea/workspace.xml
 *.pyc
 classifiers
-training_data
-working_data
-lda_example.py
-lda_example_alternate.py
+#training_data
+#working_data

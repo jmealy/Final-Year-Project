@@ -1,0 +1,121 @@
+Hello.  I hope somebody out here can help me.  I am currently working
+on a project where I am trying to communicate from an IBM  with
+Phoenix BIOS, using C++, to a board that I made with an Intel  CPU
+with UART chip.  The board works fine with the TRANSMIT command and 
+Terminal Emulation mode of Kermit, but there seems to be something wrong
+with the initialization or protocol used when I try C++.  I need to
+access the unit I built using C, because I have a sizable chunk of C
+code that I will be using to perform calculations and operations that
+will be very difficult to code in assembly language for the .
+
+I have included the assembly code that I am running and the C++ code
+that I am trying to use.  If anyone can show me something that I
+am doing blatantly incorrectly or that I am missing because of my lack
+of knowledge about RS- serial communications, please e-mail me.
+I wrote the assembly language to wait for a character to be received and
+then to check it against the x character, if a x is received, 
+the LEDs will indicate this.  Two C++ programs that I have written do
+nothing, but set up COM port  and send the x character.  One uses
+the bioscom() function in bios.h the other uses the software interrupt
+int() function in dos.h.  I have triple checked the baud rate (  )
+the parity ( none ) the stop bits (  ) the character length (  bits )
+and the interrupt calls for ( x ).  Currently, I am at a loss as
+to what may be wrong.  Any hardware gurus out there want to comment?
+
+
+						Thanks alot,
+						Hubert De Jesus
+						dejesus@eniac.seas.upenn.edu
+
+
+  				INTEL ASM
+
+COMMAND     EQU     H                ;Command Register on 
+PORTA       EQU     H                ;Port A on 
+TIMERLO     EQU     H                ;High  bits of  Timer
+TIMERHI     EQU     H                ;Low  bits of  Timer
+UARTDATA    EQU     EH                ;UART Data Register
+UARTCMD     EQU     EH                ;UART Command Register
+
+            ORG     H                ;SRAM location
+	    MVI     A,H		 ;Set Low Timer Bits
+            STA     TIMERLO
+            MVI     A,H		 ;Set High Timer Bits
+            STA     TIMERHI
+            MVI     A,B          ;Start Timer & Enable Port A
+            STA     COMMAND
+
+            MVI     A,H                ;Display  on -segment LEDs
+            STA     PORTA
+
+            MVI     A,H		 ;Clear UART Command
+            STA     UARTCMD
+            STA     UARTCMD
+            STA     UARTCMD
+            MVI     A,B		 ;Internally reset UART 
+            STA     UARTCMD
+	    LDA     UARTDATA             ;Remove extraneous data
+ 	    MVI     A,B          ;Init UART for  data bits,
+            STA     UARTCMD              ;  no parity,  stop bit, x async
+            MVI     A,B          ;Enable Transmit and Receive
+            STA     UARTCMD
+
+INIT:       LDA     UARTCMD		 ;Read Status Register
+            ANI     H                  ;Is RxRDY?
+            JZ      INIT                 ;No, loop
+
+            LDA     UARTDATA             ;Read Data Character
+            CPI     ' '                  ;Is Character = x?
+            JNZ     INIT                 ;No, loop
+     
+            MVI     A,H                ;Character received, 
+            STA     PORTA                ;  Display  on -segment LEDs
+            HLT
+            END
+
+                              C++ using BIOSCOM()
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <bios.h>
+
+#define INIT          
+#define SEND          
+#define RECEIVE       
+#define STATUS        
+
+#define COM          
+
+void
+main()
+{
+   char abyte;
+
+   abyte = xa;
+   bioscom( INIT, abyte, COM );
+   printf( "Initialized COMM PORT \n" );
+
+   while( !( bioscom( STATUS, , COM ) & x ) )
+     ;
+   abyte = ' ';
+   bioscom( SEND, abyte, COM );
+   printf( "Sent start character\n" );
+}
+
+
+        			C++ using INT()
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <dos.h>
+#include <bios.h>
+
+main()
+{
+   union REGS registers;
+  
+   registers.h.ah = x;
+   registers.h.al = xa; 
+   registers.x.dx = x;
+   int( x, &registers, &registers );
+   printf( "COM Initialized\n" );

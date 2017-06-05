@@ -1,0 +1,22 @@
+Briefly, StarNet Communications has four PC X server packages.
+
+	Micro X-lite		$ .
+		Includes integrated tcp/ip, runs in KB, no arcs().
+
+	Micro X-enlite		$.
+		Includes integrated tcp/ip, runs under DOS, shape extension
+		   "     interface to Novell tcp/ip
+
+	Micro X-DOS		$.		($ ea. in a -pack)
+		Includes integrated tcp/ip, runs under DOS, shape extension
+		   "     interface to Novell tcp/ip, FTP's PC/TCP, & PC-NFS.
+
+	Micro X-WIN		$.		($ ea. in a -pack)
+		Includes Lanera TCPOpen tcp/ip stack & utilities
+		   "     interface to FTP's PC/TCP, Sun's PC-NFS, & WinSock.
+
+For more information contact:
+----------------------------------------------------------------
+StarNet Communications		FAX:	   ---
+ Lawrence Expressway	Voice:	   ---
+Santa Clara, Ca.  		E-mail     microx@starnet.com

@@ -1,0 +1,7 @@
+For what it's worth (I haven't confirmed it), a Diamond tech-rep told
+me that ALL S-based video cards use port addresses xE and xE.
+If this is true, it appears that you canNOT use more than one S card
+in your system.
+
+Lance Hartmann (lance%hartmann.austin.ibm.com@ibmpa.awdpa.ibm.com)
+               Yes, that IS a '%' (percent sign) in my network address.

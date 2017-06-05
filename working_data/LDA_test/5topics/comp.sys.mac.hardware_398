@@ -1,0 +1,14 @@
+If you get the Centris  with CD configuration, you are getting a Mac with
+a RC processor that has built-in math coprocessor support.  My 
+understanding is that the "optional fpu" refers to your option of purchasing
+the Centris  / without FPU OR one of the other configurations WITH FPU.
+
+Apple does not offer an upgrade from the non-FPU system to become an FPU
+system.  And, it is unclear whether the ' processor on the non-FPU system
+(a LC) can be replaced with a RC supplied by another vendor.
+Apple did send a memo out at one point sating that the Centris , which ONLY
+comes with a non-FPU LC processor CANNOT be upgraded to support an FPU -
+the pin configurations of the two chips apparently do not match so you cannot
+swap one for another (again, according to Apple's memo).
+
+Hope that helps.

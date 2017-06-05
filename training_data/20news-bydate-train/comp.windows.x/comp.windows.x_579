@@ -1,0 +1,19 @@
+X Window installation on a Sun/ with CG alone and with CG as
+screen:. and CG as screen:..
+
+Questions:
+)  Are there any hardware configuration changes on the CG and/or
+CG devices that need to be made other than pulling out and inserting the
+CG frame buffer in the vme bus?
+
+)  The CG is called a 'graphics accelerator' as apposed to a 'frame buffer'.
+What is the significance of this to the X server and how do we install
+the SunOS driver / X to be compatable.
+
+-----------------------
+I would appreciate any information on this. 
+I am posting this on the behalf of Dr. John Charlton (who does not have net
+access). Please reply to him directly at charlton@bme.unc.edu or just send
+it at this address and I will forward it. 
+
+Thank you for your help!

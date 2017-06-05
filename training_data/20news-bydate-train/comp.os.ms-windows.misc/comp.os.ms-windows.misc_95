@@ -1,0 +1,13 @@
+[...]
+
+	I struggled with the margin problem for ages as well, until I
+finally got hold of the shareware binary editor BEAV, and dug into
+NOTEPAD.EXE (there is no SETUP facility to force NOTEPAD to default to 
+. margins- it's hardwired into code!!!). 
+
+	Do a SEARCH for ".", then change the offending bytes to ".", 
+et viola. Who are the guys who hardcode these "options" anyway?
+
+	I'm interested in whether the problem only rears it's ugly head for 
+certain printers- I'm using an old Epson LX- (or is that EX-? never can 
+remember).

@@ -1,0 +1,29 @@
+} 
+} 
+} 
+} }   Hey,
+} 
+} }   could somebody tell me, how it is possible to work with the mouse
+} }   in a NON-Windows application, which runs in an window. We use
+} }   MS-WINDOWS . and have CLIPPER applications. Exists there any
+} }   routines or something else ? Please mail me your informations.
+} 
+} }   Thanks for your efforts,
+} 
+} }     Oliver
+} }-- 
+} } NAME : O.Kretzschmar                      Inst.IKE / University Stuttgart
+} } PHONE: +                              Pfaffenwaldring 
+} } FAX  : +                                Stuttgart 
+} } EMAIL: wnkretz@ikesg.energietechnik.uni-stuttgart.de
+} 
+} Very simple.  You have to have the MOUSE.COM or MOUSE.SYS loaded in DOS
+} before you run Windows.  Note that you don't need to have these files loaded
+} to use the mouse in Windows.
+
+
+... and you need a video driver which is completely Windows . compatible, and
+your mouse driver has to be completely compatible as well.  Not quite so simple.
+(I never could get my logitech mouse to work % in a DOS window with my
+old Paradise card:  now I have a Diamond SSX and the . mouse drivers, and
+everything works perfectly).

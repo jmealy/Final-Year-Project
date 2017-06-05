@@ -1,0 +1,11 @@
+
+It is used to create a TIN (triangulated irregular network), which is
+basically a bunch of triangles which form a surface over a group of
+points.  What is special about it is that the triangles formed are the 
+most equalateral possible.  Check out "Proceedings of AutoCarto N" where
+N is ...  Sorry, I don't have a specific reference describing the
+process.
+-Michael
+
+
+

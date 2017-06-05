@@ -1,0 +1,10 @@
+I was recently talking to a possible employer ( mine! :-) ) and he made a reference to a
+-bit graphics computer/image processing system.  I seem to remember it being called IMAGE or
+something akin to that.  Anyway, he claimed it had -bit color + a -bit alpha channel.  That's
+ bits of info--what could that possibly be for?  Specifically the -bit color?  That's 
+trillion colors, many more than the human eye can resolve.  Is this an anti-aliasing thing?  Or
+is this just some magic number to make it work better with a certain processor.
+
+	Also, to settle a bet with my roommate, what are SGI's flagship products?  I know of
+Iris, Indigo, and Crimson, but what are the other ones, and which is their top-of-the-line?
+(sadly, I have access to none of them.  Just a DEC /.  Sigh.)

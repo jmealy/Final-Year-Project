@@ -1,0 +1,2 @@
+That is correct.  in DOS you can use IRQ  for your SB.You can't do
+that under OS/ because it uses IRQ  for the printer

@@ -1,0 +1,186 @@
+Archive-name: space/constants
+Last-modified: $Date: // :: $
+
+CONSTANTS AND EQUATIONS FOR CALCULATIONS
+
+    This list was originally compiled by Dale Greer. Additions would be
+    appreciated.
+
+    Numbers in parentheses are approximations that will serve for most
+    blue-skying purposes.
+
+    Unix systems provide the 'units' program, useful in converting
+    between different systems (metric/English, etc.)
+
+    NUMBERS
+
+	 m/s	 ()  -- Earth orbital velocity at  km altitude
+	 m/s	 ()  -- Earth orbital velocity at  km (geosync)
+	 km		 ()  -- Mean radius of Earth
+	 km		 ()  -- Equatorial radius of Earth
+	 km		 ()  -- Mean radius of Moon
+	.e kg	 (e)  -- Mass of Earth
+	.e kg	 (e)  -- Mass of Moon
+	.e kg	 (e)  -- Mass of Sun
+	.e m^/s^ (e)  -- Gravitational constant times mass of Earth
+	.e m^/s^ (e)  -- Gravitational constant times mass of Moon
+	.e m^/s^ (e) -- Gravitational constant times mass of Sun
+	 km	 ( e)  -- Mean Earth-Moon distance
+	.e m	 (e) -- Mean Earth-Sun distance (Astronomical Unit)
+
+	 megaton (MT) TNT = about .e J or the energy equivalent of
+	about . kg ( gm) of matter. Ref: J.R Williams, "The Energy Level
+	of Things", Air Force Special Weapons Center (ARDC), Kirtland Air
+	Force Base, New Mexico, . Also see "The Effects of Nuclear
+	Weapons", compiled by S. Glasstone and P.J. Dolan, published by the
+	US Department of Defense (obtain from the GPO).
+
+    EQUATIONS
+
+	Where d is distance, v is velocity, a is acceleration, t is time.
+	Additional more specialized equations are available from:
+
+	    ames.arc.nasa.gov:pub/SPACE/FAQ/MoreEquations
+
+
+	For constant acceleration
+	    d = d + vt + .at^
+	    v = v + at
+	  v^ = ad
+
+	Acceleration on a cylinder (space colony, etc.) of radius r and
+	    rotation period t:
+
+	    a =  pi** r / t^
+
+	For circular Keplerian orbits where:
+	    Vc	 = velocity of a circular orbit
+	    Vesc = escape velocity
+	    M	 = Total mass of orbiting and orbited bodies
+	    G	 = Gravitational constant (defined below)
+	    u	 = G * M (can be measured much more accurately than G or M)
+	    K	 = -G * M /  / a
+	    r	 = radius of orbit (measured from center of mass of system)
+	    V	 = orbital velocity
+	    P	 = orbital period
+	    a	 = semimajor axis of orbit
+
+	    Vc	 = sqrt(M * G / r)
+	    Vesc = sqrt( * M * G / r) = sqrt() * Vc
+	    V^  = u/a
+	    P	 =  pi/(Sqrt(u/a^))
+	    K	 = / V** - G * M / r (conservation of energy)
+
+	    The period of an eccentric orbit is the same as the period
+	       of a circular orbit with the same semi-major axis.
+
+	Change in velocity required for a plane change of angle phi in a
+	circular orbit:
+
+	    delta V =  sqrt(GM/r) sin (phi/)
+
+	Energy to put mass m into a circular orbit (ignores rotational
+	velocity, which reduces the energy a bit).
+
+	    GMm (/Re - /Rcirc)
+	    Re = radius of the earth
+	    Rcirc = radius of the circular orbit.
+
+	Classical rocket equation, where
+	    dv	= change in velocity
+	    Isp = specific impulse of engine
+	    Ve	= exhaust velocity
+	    x	= reaction mass
+	    m	= rocket mass excluding reaction mass
+	    g	= . m / s^
+
+	    Ve	= Isp * g
+	    dv	= Ve * ln((m + x) / m)
+		= Ve * ln((final mass) / (initial mass))
+
+	Relativistic rocket equation (constant acceleration)
+
+	    t (unaccelerated) = c/a * sinh(a*t/c)
+	    d = c**/a * (cosh(a*t/c) - )
+	    v = c * tanh(a*t/c)
+
+	Relativistic rocket with exhaust velocity Ve and mass ratio MR:
+
+	    at/c = Ve/c * ln(MR), or
+
+	    t (unaccelerated) = c/a * sinh(Ve/c * ln(MR))
+	    d = c**/a * (cosh(Ve/C * ln(MR)) - )
+	    v = c * tanh(Ve/C * ln(MR))
+
+	Converting from parallax to distance:
+
+	    d (in parsecs) =  / p (in arc seconds)
+	    d (in astronomical units) =  / p
+
+	Miscellaneous
+	    f=ma    -- Force is mass times acceleration
+	    w=fd    -- Work (energy) is force times distance
+
+	Atmospheric density varies as exp(-mgz/kT) where z is altitude, m is
+	molecular weight in kg of air, g is local acceleration of gravity, T
+	is temperature, k is Bolztmann's constant. On Earth up to  km,
+
+	    d = d*exp(-z*.e-)
+
+	where d is density, d is density at km, is approximately true, so
+
+	    d@km ( ft) = d*.
+	    d@ km ( ft) = d*.
+	    d@ km ( ft) = d*.
+	    d@ km ( ft) = d*.
+
+		    Atmospheric scale height	Dry lapse rate
+		    (in km at emission level)	 (K/km)
+		    -------------------------	--------------
+	    Earth	    .			    .
+	    Mars	    			    .
+	    Venus	    .			    .
+	    Titan	    			    .
+	    Jupiter	    			    .
+	    Saturn	    			    .
+	    Uranus	    			    .
+	    Neptune	    			    .
+	    Triton	    			    
+
+	Titius-Bode Law for approximating planetary distances:
+
+	    R(n) = . + . * ^N Astronomical Units (N = -infinity for
+	    Mercury,  for Venus,  for Earth, etc.)
+
+	    This fits fairly well except for Neptune.
+
+    CONSTANTS
+
+	.e- J-s  (e-) -- Planck's Constant "h"
+	.e- J-s (e-) -- Planck's Constant / ( * PI), "h bar"
+	.e- J/K	(.e-) - Boltzmann's Constant "k"
+	.e- W/m^/K (e-) -- Stephan-Boltzmann Constant "sigma"
+    .e- N m^/kg^ (e-) -- Newton's Gravitational Constant "G"
+	. m K	 (e-)  -- Wien's Constant "sigma(W)"
+	.e W	 (e)  -- Luminosity of Sun
+	 W / m^	 ()  -- Solar Constant (intensity at  AU)
+	.e m	 (e)	 -- radius of Sun
+	 km		 (e)	 -- radius of Moon
+	 m/s	  (e)  -- speed of light in vacuum "c"
+	.e m	  (e) -- light year
+	. AU	  (e)  -- \
+	. light years ()	 --  --> parsec
+	.e m	 (e)  -- /
+
+
+Black Hole radius (also called Schwarzschild Radius):
+
+	GM/c^, where G is Newton's Grav Constant, M is mass of BH,
+		c is speed of light
+
+    Things to add (somebody look them up!)
+	Basic rocketry numbers & equations
+	Aerodynamical stuff
+	Energy to put a pound into orbit or accelerate to interstellar
+	    velocities.
+	Non-circular cases?

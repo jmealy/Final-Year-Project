@@ -1,0 +1,5 @@
+The PowerBook  hardware doesn't have a wakeup timer.  Nor does the .
+The Mac Portable had one, and I think the PowerBook  had one.  I don't
+know about the newer PowerBooks, but I kind of doubt it.  I got bit by
+this too, and it took my a while rooting around on the developer CD
+before I found this out.

@@ -1,0 +1,10 @@
+Are you sure that he needs a two way converter? If he wants only
+RS->TTL I would suggest the MC, its very cheap (. DM in
+Germany). This chip needs only +V. The MC TTL->RS-Converter
+uses +V and -V.
+
+BTW... The MAX and compatibles seem to be expensive in the USA...
+I paid . DM for a ITS (made by Harris), its absolutely
+compatible with the MAX or the ICL.
+
+Gerrit

@@ -1,0 +1,25 @@
+According to my TI databook, the pinouts for the TIL display are as
+follows:
+ 
+ Pin  - LED supply voltage
+ Pin  - Latch data input B
+ Pin  - Latch data input A
+ Pin  - Left decimal point cathode
+ Pin  - Latch strobe input
+ Pin  - Omitted
+ Pin  - Common ground
+ Pin  - Blanking input
+ Pin  - Omitted 
+ Pin  - Right decimal point cathode
+ Pin  - Omitted
+ Pin  - Latch data input D
+ Pin  - Latch data input C
+ Pin  - Logic supply voltage, Vcc
+ 
+The logic supply voltage is V @ -mA. The LED supply is also V, but
+it need not be particularly well regulated. The LED drivers on the chip
+use a constant current source, so LED intensity is not affected by the
+supply voltage.
+ 
+
+-- 

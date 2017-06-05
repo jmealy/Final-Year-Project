@@ -1,0 +1,31 @@
+Thanks for the resposes as they were all good ideas and I am looking at using a
+couple of the ideas. I recieved in the mail today the spec sheets on the mil.
+spec version of Exar's XR- timer/counter chip. It is stable down to - C
+and sucks very little power. They show an application for a ultra-long time
+delay (up to several years depending on the RC time constant). In this
+application, they have two of them cascaded together. The reset and trigger
+pins of both chips are tied together and the timebase of the second chip is
+disabled. In this configuration, the output is high when the system is reset.
+When triggered, the output goes low and stays that way for a total of , x
+the timing cycle of the first chip. The total timing cycle of the two chips can
+be programmed from To =  x R x C to , x R x C in  steps by selecting
+any combination of the counter outputs to the timer output. The beauty of it
+is, the timebase chip would only have to have a uF timing cap and a K
+resistor for . seconds per timing cycle. So I can get a maximum of
+,,. seconds between timing cycles (. x , or about  days !)
+Of course, that's much more than I need ( days). But the counter allows for
+ binary steps that can be selected for the output for the 'pellet puker'.
+After the first  days and it trips, it would reset its self for the next 
+day timing cycle and so forth.
+
+Power is still a problem though. A few ideas that you suggested was to bury the
+electronics in a hole dug in the snow (as an insulator) and put the pellet
+puker up on a tower above the estimated snow fall with a solar panel on it to
+keep a charge on a lithium battery pack. I like that idea ;-) This thing has to
+work for at least six weeks for three samples and the gas valves are  volts
+to spit the pellets out onto the snow. Anyway, I ordered the XR-'s to see
+what I can do with them. Should be interesting (as long as I'm not the one that
+has to go digging up the pellets in the middle of Antartica freezing my buns
+off ;-)
+
+Thanks again everyone...

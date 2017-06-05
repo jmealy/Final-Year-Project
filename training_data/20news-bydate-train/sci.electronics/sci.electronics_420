@@ -1,0 +1,11 @@
+Check out Xicor's new goodie in the April th edition of EETimes
+XC - an k *  EPROM with built in latch AND bootloader setup.
+You hook it directly to your ', power it up, the prom initialises the
+serial port on the ', you load in your code via RXD, this gets blatted
+onto the EPROM, then you reset and run - i'm sure Dallas also does
+something like this too, i suppose it would boil down to relative
+prices, and the Dallas part freeing up P & P completely. I wonder
+if ANYONE has ever managed to design a single sided PCB with an
+, , EPROM, SRAM and >>NO LINKS<< ?
+cheers
+Mike.

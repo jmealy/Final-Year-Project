@@ -1,0 +1,18 @@
+Hi, netters!
+
+I've just built XR pl  under Solaris .. I've used the multi-screen 
+patch, as well as the R.SunOS... patch and everything builds great, except 
+"Cannot set default font path '[stuff deleted]'" and "Cannot set default font
+'fixed'". If I supply the -fp option, it doesn't complain about the font path
+but still complains about the font. I have symlinks from /usr/lib/ to the 
+place where my distribution lives.
+
+Could somebody help me?
+
+	-joel
+
+-- 
+-----------------------------------------------------------------------------
+Joel Reymont    !   Z-Code Software Corporation    ! e-mail: joel@z-code.com 
+-----------------------------------------------------------------------------
+ Redwood Hwy, Suit B., San Rafael, CA 

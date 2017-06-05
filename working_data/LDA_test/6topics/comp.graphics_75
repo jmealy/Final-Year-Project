@@ -1,0 +1,70 @@
+I have posted a DOS MPEG decoder/player to alt.binaries.pictures.utilities.
+
+Here is a short description and some technical information, taken from the
+accompanying documentation:
+
+
+                              DMPEG V.
+
+                       Public Domain MPEG decoder
+
+                           by Stefan Eckart
+
+
+. Features
+===========
+
+DMPEG/DMPLAY is another MPEG decoder/player for the PC:
+
+
+ - decodes (nearly) the full MPEG video standard
+   (I,P,B frames, frame size up to at least x supported)
+
+ - saves decoded sequence in  or bit raw file for later display
+
+ - optional on-screen display during decoding (requires VGA)
+
+ - several dithering options: ordered dither, Floyd-Steinberg, grayscale
+
+ - color-space selection
+
+ - runs under DOS, KB RAM, no MS-Windows required
+
+ - very compact (small code / small data models,  bit arithmetic)
+
+ - real time display of the raw file by a separate player for
+   VGA and many Super-VGAs
+
+...
+
+. Technical information
+========================
+
+The player is a rather straightforward implementation of the MPEG spec [].
+The IDCT is based on the Chen-Wang  multiplication algorithm []
+(not quite the optimum, I know). Blocks with not more than eight non-zero
+coefficients use a non-separated direct multiply-accumulate D-IDCT
+(sounds great, doesn't it?), which turned out to be faster than a 'fast'
+algorithm in this (quite common) case. Dithering is pretty standard. Main
+difference to the Berkeley decoder (except for the fewer number of supported
+algorithms) is the use of  instead of  colors, the (default) option to
+use a restricted color-space and the implementation of a color saturation
+dominant ordered dither. This leads to a significantly superior quality of
+the dithered image (I claim, judge yourself).
+
+Restricted color-space means that the U and V components are clipped to
++/-. (instead of +/-.) and the display color-space points are distributed
+over this restricted space. Since the distance between color-space points
+is thus reduced by a factor of two, the color resolution is doubled at the
+expense of not being able to represent fully saturated colors.
+
+Saturation dominant ordered dither is a method by which a color, lying
+somewhere between the points of the display color space, is approximated
+by primarily alternating between two points of constant hue instead of
+constant saturation. This yields subjectivly better quality due to the
+lower sensitivity of the human viewing system to saturation changes than
+to hue changes (the same reasoning as used by the PAL TV standard to improve
+on NTSC). The improvement is particularly visible in dark brown or redish
+areas.
+
+...

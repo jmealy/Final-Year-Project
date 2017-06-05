@@ -1,0 +1,22 @@
+I am interfacing some simple circuits that run on V to my
+cpu board which runs at -V.  The optoisolator is a N.
+On the led side, I put the signal I want through a k resistor
+to the base of a N.  On the transistor side, I tie my
+cpu input line to the collector which has a pull-up resistor
+of k.
+
+It functions OK, but seems VERY slow.  I can detect pulses
+that occur at about kHz, but not much faster.  Isn't the
+rise/fall time of this device, something like uS?  I should
+be able to detect my target of kHz, but I can't get kHz.
+This is done using wire-wrap and the wires going to the cpu
+and to the test pin are about  inches long, but I'm not
+doing anything high-speed.
+
+In the Art of Electronics, it mentions tying the base of the
+phototransistor to ground through a resistor to improve the
+speed.  Is that what I need to do?  How do I calculate the
+resistor value?
+
+
+-- 

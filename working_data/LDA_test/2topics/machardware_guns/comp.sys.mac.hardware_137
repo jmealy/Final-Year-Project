@@ -1,0 +1,7 @@
+The FGx has a maximum horizontal scan rate of KHz, so driving it
+at .KHz to get  x  on the Mac is WAY BEYOND the tolerance            The FG is spec'ed at KHz, so going .KHz is only -% above
+the minimally guaranteed figure.
+
+I too doubt if the Damark monitor would sync to a Mac at  x .            Like most things, you get what you pay.  That's the deal.
+
+-John Rutirasiri.

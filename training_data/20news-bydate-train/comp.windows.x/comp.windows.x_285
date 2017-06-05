@@ -1,0 +1,42 @@
+I think you are running Xapollo , it's a XR server ...
+
+If you want a XR server you should install PSKQ (..) or .
+  so you can run Xdomain . 
+
+
+In XKeysymDB you could add : 
+!		Apollo specific keysyms
+!
+apLineDel            : FF
+apCharDel            : FF
+apCopy               : FF
+apCut                : FF
+apPaste              : FF
+apMove               : FF
+apGrow               : FF
+apCmd                : FF
+apShell              : FF
+apLeftBar            : FF
+apRightBar           : FFA
+apLeftBox            : FFB
+apRightBox           : FFC
+apUpBox              : FFD
+apDownBox            : FFE
+apPop                : FFF
+apRead               : FF
+apEdit               : FF
+apSave               : FF
+apExit               : FF
+apRepeat             : FF
+apKP_parenleft       : FFA
+apKP_parenright      : FFA
+
+
+--
+Victor .
+
+                                            \     /
+                                              ^ ^  
+______victor@hpfrcu.france.hp.com_______oOOo_o_oOOo_________________
+
+Victor GATTEGNO 

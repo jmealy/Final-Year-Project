@@ -1,0 +1,18 @@
+The Delaunay triangulation is the geometrical dual of the 
+Voronoi tessellation and both constructions are derived from
+natural neighbor order.
+
+Aurenhammer, F., , Voronoi Diagrams - A Survey of a 
+Fundamental Geometric Data Structure:
+ACM Computing Surveys, (), p. -. 
+
+Okabe, A., Boots, B., and Sugihara, K., , Spatial 
+tessellations : concepts and applications of Voronoi diagrams: 
+Wiley & Sons, New York, ISBN    , p.
+
+Watson, D.F., , Computing the n-dimensional Delaunay 
+tessellation with application to Voronoi polytopes: 
+The Computer J., (), p. -.}
+
+Watson, D.F., , Natural neighbour sorting: The Australian 
+Computer J., (), p. -. 

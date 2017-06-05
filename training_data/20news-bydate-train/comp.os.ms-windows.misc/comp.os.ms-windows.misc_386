@@ -1,0 +1,8 @@
+For Logitech rodents use  the lmouse driver that comes with windows....
+also you need to be using a video driver that supports use of the mouse,
+both the VGA and SUPERVGA that come with Windows . will support it. 
+both of these are  color drivers, if you're lucky the manufacturer of
+your video card might have a driver that is compatable and will support a
+mouse.  
+
+Steve

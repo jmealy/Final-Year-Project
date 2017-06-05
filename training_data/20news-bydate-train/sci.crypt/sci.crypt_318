@@ -1,0 +1,24 @@
+Other alternatives include output of vmstat, iostat, pstat and friends
+with various flags, or even better crash. 
+
+e.g. on an RS/ (AIX .) you can get lots of relatively
+unpredicatble data out of crash. (the output from the following script 
+usually gives about k of goo on a moderately busy system.)
+
+#!/bin/sh
+crash <<!
+proc -
+tty
+stack
+pcb
+callout
+vfs -
+socket
+vnode
+inode -
+mbuf
+file
+mst
+buffer
+le
+!

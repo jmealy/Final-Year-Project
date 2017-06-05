@@ -1,0 +1,8 @@
+
+I don't know about the Instrutech boards (though I plan to check them out),
+but you need to be very careful checking the monotonicity and S/N ratio of
+many of the " bit" boards out there. The NI boards are very clearly
+specified in terms of monotonicity, S/N ratio, accuracy, etc; and the
+NB-A and NB-A have all the dyynamic range and freedom from
+distortion that you'd expect from a good, true  bit converter. This is
+not true for the Spectral Innovations boards, for example.

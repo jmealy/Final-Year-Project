@@ -1,0 +1,34 @@
+Hello,
+  I've been trying to bump map a gif onto a sphere for a while and I
+can't seem to get it to work.  Image mapping works, but not bump
+mapping.  Here's a simple file I was working with, could some kind
+soul tell me whats wrong with this.....
+
+#include "colors.inc"
+#include "shapes.inc"
+#include "textures.inc"
+ 
+camera {
+  location  <  ->
+  direction <  .>
+  up        <  >
+  right     <.  >
+  look_at   <  >
+}
+ 
+object { light_source { <  -> color White }
+       }
+ 
+object {
+  sphere { <  >  }
+   texture {
+     bump_map {  <  > gif "surf.gif"}
+   }
+}
+
+NOTE: surf.gif is a plasma fractal from Fractint that is using the
+landscape palette map.
+
+  
+	Thanks in advance
+	   -Daniel-

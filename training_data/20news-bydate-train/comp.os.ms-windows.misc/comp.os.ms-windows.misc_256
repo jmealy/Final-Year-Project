@@ -1,0 +1,43 @@
+: Hello all you windows freaks out there.
+: 
+: I bought Windows . (dutch version) some time ago, and run it on a
+: . I recently upgraded my computer to a DX, K cache, M memory,
+: M Maxtor HD. Works real fine, but not with windows.
+: 
+: When playing Patience (SOL) or minesweeper, suddenly the system hangs:
+: - I just can't move my mouse anymore.
+: or
+: - Screen goes blank, nothing further
+: or
+: - Screen goes blank, computer seems to reboot, but stops before reaching
+: the end of the memory test.
+: 
+: Once (or maybe even twice) I got a message about some illegal kernel call
+: or something (accompanied by a hex adress) and a close-button. When pressing
+: it, the application wouldn't close, though.
+: 
+: I haven't experienced this problem with other programs than these, but that's
+: mainly because I haven't really used other programs. I suspect them to hang 
+: too.
+: 
+: Anything known about this problem. (Or, better, any patches available?)
+: 
+: 
+: Oh, forgot to tell, if, in CMOS RAM, I make the computer faster (higher
+: bus speed, less wait states, enable both caches etc), the crash comes
+: faster (after  min. or so). If I deliberately slow the system down
+: (slow bus speed, wait states, disable internal/external cache, no
+: shadowing) the crash comes later, but comes.
+: 
+: Hope anyone can help.
+: 
+: Wouter.
+: 
+: 
+
+Hi,
+
+I got a problem too, with a DX- VLB,  Mb RAM,  Mb disk.
+Sometimes, when I switch on the computer, it starts Windows (. Dutch)
+Windows switches to x, switches back to text-mode and exits
+to DOS. After one or two resets, the system works fine...

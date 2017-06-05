@@ -1,0 +1,38 @@
+The above does not tell the proper story of SCSI:
+SCSI-I: -bit asynchronous {~.MB/s ave}, synchronous {MB/s max} transfer 
+base.
+SCSI-{faster} this requires a SCSI- controller chip and provides
+ SCSI- {-bit to -bit} speeds with SCSI- controlers.
+SCSI-: -MB/s with MB/s burst{-bit}, -MB/s with MB/s burst {-bit}, 
+and -MB/s with MB/s burst{-bit/wide and fast}.  -bit SCSI can be
+wide or fast, it depends on how the port is designed{The Quadras will support
+fast SCSI but not wide when the OS SCSI manager is rewritten since the
+Quardas use a SCSI- {non-wide} port}.
+
+The article in PC Mag //: was talking about SCSI- {SCSI- uses
+TEN () devices in it native mode, outside its native mode it behaves a
+lot like SCSI- ( devices, slower through put}
+
+From your own figures SCSI- is indeed twice ESDI as the article pointed out
+as for "% faster then IDE" that seems to be -bit SCSI- using a SCSI- 
+contoler chip {The Mac Quadra uses a SCSI- controler chip for its SCSI-
+and gets MB/s through put for asynchronous {-bit} SCSI-, far in excess of a
+normal SYNCHRONOUS SCSI- output} % of . is . which is near
+the burst of a SCSI- machine with a SCSI- controller chip.
+
+The PC world seems to have SCSI- and SCSI- mixed up.  Fact is SCSI- 
+controler chips allow near SCSI- speeds through a SCSI- device
+{As shown in the Mac Quadra} which skews some of the data of SCSI- vs
+IDE or ESDI test. I agree that the article COULD have stated that the "%
+faster then IDE" came off a SCSI- device with a SCSI- chip.  Maybe it
+was there and the EDITOR killed it because the article was dealing with
+SCSI- NOT SCSI- and he did not understand the effect of a SCSI- device
+with a SCSI- controller chip.
+SCSI- chips are limited to /MB max.  SCSI- devices with SCSI- chips
+{becoming common} produce up to Mb/s in -bit mode and MB/s in -bit
+mode {the fast version, SCSI- ports cannot use wide SCSI}.  Of cource
+the prime piece of wierdness is that SCSI- devices HAVE SCSI- chips
+{or more accurately the machine does}. This allows the best of BOTH
+worlds: high SCSI- speeds and cheeper SCSI- costs {FULL SCSI- hardware
+(port, electronic controller, etc) is VERY expensive.  It ALSO creates
+a logistic NIGHTMARE as to how fast SCSI- goes.

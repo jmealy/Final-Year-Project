@@ -1,0 +1,33 @@
+I presume it is the M- from Teltone Corporation.
+
+Pin	Description
+
+	+ input
+	- input
+	GS (gain select through use of feed back resistor)
+	Vref (reference voltage OUTPUT, about Vdd/)
+	connect to Vss
+	connect to Vss
+	osc clock input
+	osc clock output (connect crystal across pins  and )
+	Vss
+	OE output enable (logic high allows data output)
+	Q data output
+	Q data output
+	Q data output
+	Q data output
+	StD Delayed Steering Output (any other company would call this 'data valid'.)
+	ESt Early Steering output, sort of like "I'm starting to hear a tone".
+	St/GT Steering input/guard time output
+	Vdd
+
+Power Supply	: .V min., .V max.
+Current		: .mA Typ, .mA max.
+
+BUT.......
+
+You really should have bought the Motorola part from me.  :-)
+(I still have them in stock)
+
+John
+

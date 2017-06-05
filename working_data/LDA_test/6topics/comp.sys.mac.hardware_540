@@ -1,0 +1,8 @@
+Hi there,
+
+when I run Disk First Aid on my external hard drive (Quantum LPS ) I get the followinf
+message: Error -: Missing thread record (TarID=; TarBlock )
+Disk First Aid is not able to fix this problem, Norton Utils doesn't find it at all.
+When I use Norton Disk editor to look at TarBlock  I can read something like "DirReservedArea"
+
+My question: How can I get rid of this error (without reformatting of course)

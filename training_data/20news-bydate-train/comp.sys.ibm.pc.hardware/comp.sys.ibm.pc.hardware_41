@@ -1,0 +1,17 @@
+Hi,
+I have got a Quantum ProDrive AT IDE harddisk and would
+like to format it. When trying to format it (*no* low-level
+format, just FDISK and DOS FORMAT), I somehow messed up the
+parameters... I had entered FDISK /MBR not exactly knowing
+what this does.
+The suggested drive type  formats the drive only to MB.
+I tried type , but this gives only around MB and not
+the nominal MB.
+Could I use user type ? However, I don't know the actual
+parameters (cylinders, heads,...) Could someone give me them?
+And how does FDISK work together with user type ?
+Please reply by email to GERTHD@MVS.SAS.COM
+Thank you,
+Thomas
++-------------------------------------------------------------------+
++-------------------------------------------------------------------+

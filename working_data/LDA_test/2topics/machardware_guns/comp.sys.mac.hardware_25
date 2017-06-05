@@ -1,0 +1,71 @@
+Well, here are the results of the Mathematica test which I posted to
+this newsgroup.  The "test" was the following command:
+
+
+
+I was just curious how fast the plot command would be executed on
+various Macintosh machines as well as other personal computers and
+workstations.  The results are posted below:
+
+Machine		System		Math vers.	# of trials	time, min
+
+PB 		.. with	.				:
+		tuneup/MB
+		RAM/MB for
+		Mathematica
+
+DEC 	Ultrix v.a	. for				:
+		DEC RISC	
+					
+IIsi		./cache@MB	.fEnh.			:
+		MHz/MB RAM/
+		MB for Math./
+		w/ 
+
+C		./MB RAM					:
+
+Q		MB/Cache@/	.				:
+		MB for Math.	
+
+Sparc		SunOS..					:
+Station		MB RAM
+
+SGI Iris/D	R RISC					<:
+		processor
+		version
+
+Sparc		SunOS..	. 				:
+Station
+
+IIsi		.						:
+
+NeXT		NeXTSTEP .	.				:
+Cube		 based/
+		w/ coprocessor	
+
+NeXT		NeXTSTEP .	.		(ave)		:
+Cube		/MHz/
+		 MB RAM
+
+IIsi		MB/MB for	. Enha			:
+		Math.			
+		w/ 
+
+NeXT		MB RAM/			 		:
+		 MHz /
+		Workspace
+		Manager .
+
+Funny how the IIsi running at  MHz is slower than other equivalent
+machines, lots slower in fact.  Perhaps the version of Mathematica
+makes a difference or the fact that not much RAM was allocated.
+Another interesting thing is how fast the SGI did it.  Wow. 
+
+Basically, though, I wouldn't draw any conclusions from this data.  It
+seems that Mathematica's speed is dependant on a lot of variables.  I
+was just curious how different machines would measure up.  
+
+Well, if you have any questions or if I forgot something, just drop me
+a line at "cmmiller@iastate.edu".  
+
+Chad

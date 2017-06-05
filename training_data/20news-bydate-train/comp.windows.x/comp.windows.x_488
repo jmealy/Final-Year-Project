@@ -1,0 +1,10 @@
+fix the table in .../XR/mit/server/ddx/sun/ or
+use xmodmap().
+
+put
+  stty pass; setenv LC_CTYPE iso__; setenv LESSCHARSET latin
+in your .login. the first prevents the stripping of bit .
+the second sets the locale. the third makes less() show the character
+instead of the octal representation.
+
+rj

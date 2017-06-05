@@ -1,0 +1,4 @@
+If you bought your IDE drive from a dealer, you shouldn 't have to 
+perform a low level format. Even if the st HD is already partitioned
+into C and D, FDISK will automatically assign the  nd HD to D and 
+change the nd partition of st drive to E.

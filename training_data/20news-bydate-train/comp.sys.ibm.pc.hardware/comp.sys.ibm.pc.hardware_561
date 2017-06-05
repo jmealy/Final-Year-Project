@@ -1,0 +1,17 @@
+From a recent BYTE magazine i got the following:
+
+[Question and part of the answer deleted]
+
+  If you are handy with a soldering iron, the loopback plugs are easy to
+make.  On a serial RS- nine-pin port, use a female DB- connector and
+connect pins  to  to ;  to ; and  to  to .  For serial RS- 
+-pin ports, you'll need a female DB- connector with pins  to ;
+ to ;  to  to ;  to  to  to ;  to  to ; and  to 
+connected.  To test a Centronics -pin parallel port, you'll need to
+connect pins  to ;  to ;  to ;  to ; and  to  in a male
+DB- connector.
+
+					-Stan Wszola
+---
+
+I haven't tried it. Use at own risk.

@@ -1,0 +1,14 @@
+I have WD-WA ESDI controller with ROM BIOS v...
+It has been working fine until I recently upgraded motherboard to -MHz.
+Now, my Maxter drive goes crazy making lots of seeking sound even when the
+drive is not accessed.  Of course, with numourous hard disk controller errors.
+These symptoms disappear when I switch to non-turbo mode ( MHz).
+I suspect some timing dependent Rom Bios routines. (There's a newer version
+.x) Could anybody help me on this?
+By the way, my new mother board has AMI Bios, k Cache,  MHz bus, and
+works fine with my old MFM drives (I had to dig them up). :-(
+Also, I will appreciate it very much if somebody send me the phone numbers
+(tech support/BBS) for Western Digital.
+Many thanks in advance.
+
+Jay

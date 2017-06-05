@@ -1,0 +1,14 @@
+Greetings,
+
+My question is whether the upcoming release of XR will provide
+(strong) authentication between the X clients and server(s). If so,
+will this feature be based on the Kerberos authentication mechanism
+(and, if so, will Kerberos Version  be used)? Please reply via email.
+
+Thanks,
+
+--Andre
+-- 
+Andre S. Cosma         | RRC N-          |  Bellcore - Security and
+andre@bae.bellcore.com |  Hoes Lane       |       Data Services
+() -         | Piscataway, NJ |

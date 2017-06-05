@@ -1,0 +1,13 @@
+I believe that any VL/EISA/ISA motherboard that uses the HINT chipset
+is limited to -bit EISA DMA (where 'real' EISA DMA is -bit).  The
+HINT EISA DMA has the  mb ram addressing limitation of ISA.  For this
+reason I would pass.  I own one of these (HAWK VL/EISA/ISA) and am look-
+ing to replace it for exactly this reason.
+
+Please double-check me on this.  In other words, call the motherboard
+manufacturer and ask them if the motherboard supports true -bit EISA
+DMA.
+
+Other than this limitation, the motherboard works quite well (I am using
+mine with DOS , Windows ., and UNIX SR.).  Also with Adaptec a
+EISA SCSI host adapter.

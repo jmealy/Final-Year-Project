@@ -1,0 +1,20 @@
+I need some help with a multi port serial board of unknown origin.  I'm
+hoping someone knows what this board is, or, even better, what the various
+switches and jumbers are used for.
+
+Anyway, here's  description of the card:  It is a -bit card, although
+I noticed that none of the contacts in the -bit extension are connected
+to anything.  It has  NSAN chips in sockets, and  corresponding
+connecters labeled COM - COM.  There is also an external female connector
+with  pins.  There are  banks of  switches,  banks of  switches, and
+ jumpers.  I believe that I have determined, by following traces, that
+SW and SW ( switches in all) control the interrupt level for each of
+the COM ports.  SW[-] are for IRQ, SW[-] are for IRQ, and SW[-]
+are for IRQ.  The other switches are beyond my meager ability to follow.
+	     
+The only identification printed on the board is "MULTI SERIAL PORT BOARD"
+across the bottom.  There is a box for serial number, but it is blank.
+Immediately below the words "SERIAL NO", but not in the box left for
+the S/N, are the numbers "  ".
+
+Anyone have any clues?  Your help is greatly appreciated.

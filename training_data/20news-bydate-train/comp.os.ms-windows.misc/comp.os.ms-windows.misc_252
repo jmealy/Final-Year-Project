@@ -1,0 +1,9 @@
+We had a similar problem in converting a .EPS file. The solution was simple.
+We changed the first line from %!PS-Adobe-. to
+
+%!PS-Adobe-.
+
+This fouled the converter, the .EPS file only contained very simple 
+move and draw statements.
+
+Mario

@@ -1,0 +1,10 @@
+There you go.  COM and COM use the same IRQ, therefore you can't use
+a mouse on COM and a modem on COM, or vice versa.  It's a limitation
+of DOS.
+
+And in fact Windows will not see a mouse on anything other than COM
+or COM.  Accept this fact, and either get a bus mouse, or get a new
+computer.
+
+
+No.  The advice above applies....

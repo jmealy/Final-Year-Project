@@ -1,0 +1,28 @@
+>> 
+  >>    Environment:
+  >>       mach/arch : sparc/sun  (IPX)
+  >>       OS	: SunOS ..
+  >>       X	: XR (patchlevel )
+  >>       Motif	: ..
+  >> 
+  >> I bring up X server using 'startx' and /usr/bin/X/Xsun. The following sequence
+  >> of actions crashes the X server (SIGPIPE, errno=, 'xinit' reports that connexion 
+  >> to X server lost):
+  >
+  >I had this problem as well - It had to do with the CG graphics card that
+  >comes with the IPX.  What fixed the problem for me was to apply the "sunGX.uu"
+  >that was part of Patch #.  Patch # also used this file so perhaps you
+  >didn't apply the one that came with Patch #.
+  >
+  >jeff
+  >-
+  >Jeff W. Boote  <boote@ncar.ucar.edu>      *********************************
+  >Scientific Computing Division             * There is nothing good or bad  *
+  >National Center for Atmospheric Research  * but thinking makes it so.     *
+  >Boulder                                   *                   Hamlet      *
+  >                                          *********************************
+
+Thanx, Jeff. You're a lifesaver. I imported the new sun GX emulator that came in
+with patch #. The problem has since disappeared.
+
+Thanx to der (schoene) Mouse for his help too.

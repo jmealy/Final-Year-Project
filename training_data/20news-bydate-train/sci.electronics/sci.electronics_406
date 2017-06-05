@@ -1,0 +1,25 @@
+I was looking at the amps diagram for Sony / receivers, and I
+was amazed to find a difference between the US and Canadian model
+on the capacitor(s) that hangs off the output to the speakers:
+
+                         ------\/\/\----- to speaker (identical both models
+from amp ---------------|
+(idnetical both models) >
+                        <   
+                        >
+                        |
+                       -----                        
+                      |     |                        
+        .        ---   ---        Canadian model only!
+     US model        ---   --- . 
+     and world-wide   |     |
+     model only.      |    ---        Candian model only!
+                      |    ---  .
+                      |     |
+                       ----------- gound
+
+The board itself is also identical, with room for all three caps. The
+US/Can versions is clearly indicated in both places.
+
+How does that make sense? ./ is ., essentially . for caps
+(there are just standard caps, no special W/type/precision). 

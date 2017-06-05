@@ -1,0 +1,11 @@
+I have just finished building XR on a  running Interactive Unix (SysVR)
+and I am having a problem with xterm.  On any font larger that x it messes up
+characters that are types, the cursor seems to be "too" large, or splits into
+a / reverse video, / outline block (which changes when the pointer is moved
+into the window).  I am trying to use monospaced fonts (not -p- fonts).  Is
+there any way of changing the appearence of the block cursor is an Xterm?
+
+ Thanks
+    
+
+--

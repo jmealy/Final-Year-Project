@@ -1,0 +1,24 @@
+There's only one physical size for VRAM SIMMs (unlike DRAM SIMMs which 
+come in many, many sizes and pinouts), although they do come with 
+differing amounts of VRAM on them.  The ones you need are KB SIMMs, are 
+organized as K x , and have two K x  VRAM chips on them.  This is 
+the only size which the Quadra and Centris machines can use.
+
+
+Two.
+
+
+Both SIMM slots must be filled; putting a SIMM in only one slot does 
+nothing for you.
+
+
+ ns for the Q and C,  ns for the C.
+
+
+There are certain VRAM chip manufacturers whose parts are not compatible 
+with the Quadra and Centris video hardware.  Make sure that the source you 
+get them from guarantees compatiblity.  In general, if it works in a Q,
+it will work in a Q.
+
+
+Trust me.  ;-)

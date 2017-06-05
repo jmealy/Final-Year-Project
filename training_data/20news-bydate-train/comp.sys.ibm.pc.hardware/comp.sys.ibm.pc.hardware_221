@@ -1,0 +1,76 @@
+I just purchased a Viewsonic  and and Orchid P.  In short, I am happy
+with the monitor and unhappy with the card.  I have spent a lot more time
+futzing with the card, so that is what I am going to write about.  The monitor
+is pretty.  The moires I had under Simcity on my " Magnavox went away.  It
+isn't as heavy as I thought it would be ( lbs, I think).  So much for the
+monitor.  On to the bitch session and test results.
+
+In going with the modern trend, the Orchid P card only supports  colors
+in x mode without a driver.  Of course, this breaks any DOS program
+which uses SVGA modes (like most of my CD-ROMs).  The Compudyne Whiplash VGA,
+Orchid Fahrenheit , and Orchid F. VLB all share this limitation.  Those
+are all S cards, which means it is an S problem for them (the P uses
+a Weitek VGA chip which also doesn't support them).  The Hercules Graphite
+card does seem to have these modes, but I didn't run the same test cases as
+I did on the other boards during the brief time I had it.  It was able to
+print the splash screen for the Grolier's Encyclopedia, though, which the S
+cards just printed as hash, which is why I suspect the SVGA modes are supported.
+
+The supported resolutions really annoy me.  You can do x at Hz if
+you tell the driver you have an NEC FG (they only have about six monitors
+listed plus 'Generic', and if you choose Generic you can't get any high
+refreshes at ALL).  But at x you are limited to Hz.  Seems to me
+that the hardware should be able to support the bandwidth (if it can do Hz
+at  it sure should be able to do it at !).  Higher vertical resolution
+was the main reason I bought the card over the Orchid F. VLB I currently have,
+and it will do xx Hz as well.
+
+The higher graphics modes all crash HP Dashboard.  I just got off the phone
+with Orchid, and with the . drivers (I don't know what I have) he was unable
+to recreate the problem.  On the plus side, their tech rep was as helpful as
+he could be and booted up the program on his computer to verify he didn't have
+the problem.  He didn't know why they limited the refresh to  Hz either.
+
+The board is faster that the OFVLB for most things according to the Hercules
+Speedy program. This program tests various operations and reports the results
+in pixels/second.  I don't have the numbers for the Graphite card, but they
+were close to half of the OFVLB (ie, slower) but that was running in a MHz
+, ISA, so the numbers aren't really comparable.  The following numbers
+were all obtained using a ,  MHz, AIR motherboard (UMC chipset), with
+ MB memory.  I give ranges because the program reports the numbers as it
+computes them, and these tend to jump around a bit.
+
+
+K means thousand (not ), M means million, pixels per second
+
+             Orchid Fahrenheit VLB                  Orchid P
+Chip                 S                           Weitek 
+DIB to Screen        K - K                     K - K
+Memory to Screen     .M - .M                     .M - .M
+Screen to Screen     M - .M                     M - .M
+Vector, solid        .M                            .M - .M
+Vector, styled       K - K                       K - K
+Polygon, shaded      .M - .M                     .M - .M
+Polygon, hatched     .M - .M                     .M - .M
+Ternary Rops         .M - .M                     K - K
+Font                 K - K                     K - K / .M
+
+The DIB to Screen test takes a device independent bitmap of a face and transfers
+it to the screen.  I have no idea what is being done internally as far as
+conversions go.  The memory to screen takes the same face and copies it to
+the screen, my guess is after it has been rasterized into a bitmap that can
+just be copied to the video display.  The screen to screen test copies that
+face from place to place on the screen.  Awesome!  Interestingly, the solid
+vectors and shaded polygons show no improvement, and hatched polygons (ie,
+filled with cross-hatching) and Ternary Rops (whatever they are.  Graphics
+operations like XORs maybe????) are a dead loss on the .  I give two
+numbers for the  fonts, because I think they are caching.
+When the fonts are first drawn on the screen they are done fairly slowly --
+/ the speed of the OFVLB.  Then the speed increases dramatically.  Sounds
+like programming to a benchmark to me....
+
+I make no claims that these numbers mean anything at all.  Its just what
+I saw when I ran them on my computer.  I normally don't write disclaimers,
+but this time maybe I'd better.  My testing is totally unconnected with my
+work (I program under UNIX on Decstations) is done completely without the
+knowledge, blessing, or equipment of my company.

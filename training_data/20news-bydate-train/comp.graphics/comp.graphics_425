@@ -1,0 +1,15 @@
+I've used that reference, and found that I needed to go to their
+original tech report:
+
+	Maureen Stone and Tony DeRose,
+	"Characterizing Cubic Bezier Curves"
+	Xerox  EDL--, December 
+
+This report can be obtained for free from:
+Xerox Corporation
+Palo Alto Research Center
+ Coyote Hill Road
+Palo Alto, California 
++---
+
+The TOG paper was good, but this tech report had more interesting details ;-)

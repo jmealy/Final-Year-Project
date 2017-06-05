@@ -1,0 +1,425 @@
+Archive-name: cryptography-faq/part
+Last-modified: //
+
+
+FAQ for sci.crypt, part : Product ciphers
+
+This is the fifth of ten parts of the sci.crypt FAQ. The parts are
+mostly independent, but you should read the first part before the rest.
+We don't have the time to send out missing parts by mail, so don't ask.
+Notes such as ``[KAH]'' refer to the reference list in the last part.
+
+The sections of this FAQ are available via anonymous FTP to rtfm.mit.edu 
+as /pub/usenet/news.answers/cryptography-faq/part[xx].  The Cryptography 
+FAQ is posted to the newsgroups sci.crypt, sci.answers, and news.answers
+every  days.
+
+
+Contents:
+
+* What is a product cipher?
+* What makes a product cipher secure?
+* What are some group-theoretic properties of product ciphers?
+* What can be proven about the security of a product cipher?
+* How are block ciphers used to encrypt data longer than the block size?
+* Can symmetric block ciphers be used for message authentication?
+* What exactly is DES?
+* What is triple DES?
+* What is differential cryptanalysis?
+* How was NSA involved in the design of DES?
+* Is DES available in software?
+* Is DES available in hardware?
+* Can DES be used to protect classified information?
+* What are "ECB", "CBC", "CFB", and "OFB" encryption?
+
+
+* What is a product cipher?
+
+  A product cipher is a block cipher that iterates several weak
+  operations such as substitution, transposition, modular
+  addition/multiplication, and linear transformation. (A ``block
+  cipher'' just means a cipher that encrypts a block of data--- bytes,
+  say---all at once, then goes on to the next block.) The notion of
+  product ciphers is due to Shannon [SHA]. Examples of modern
+  product ciphers include LUCIFER [SOR], DES [NBS], SP-networks
+  [KAM], LOKI [BRO], FEAL [SHI], PES [LAI], Khufu and Khafre
+  [MEa]. The so-called Feistel ciphers are a class of product
+  ciphers which operate on one half of the ciphertext at each round,
+  and then swap the ciphertext halves after each round. LUCIFER,
+  DES, LOKI, and FEAL are examples of Feistel ciphers.
+
+  The following table compares the main parameters of several product 
+  ciphers:
+
+  cipher   |   block length   |   key bits   |   number of rounds
+  LUCIFER                                         
+  DES                                               
+  LOKI                                              
+  FEAL                                         ^x, x >= 
+  PES                                               
+
+* What makes a product cipher secure?
+
+  Nobody knows how to prove mathematically that a product cipher is
+  completely secure. So in practice one begins by demonstrating that the
+  cipher ``looks highly random''. For example, the cipher must be
+  nonlinear, and it must produce ciphertext which functionally depends
+  on every bit of the plaintext and the key. Meyer [MEY] has shown
+  that at least  rounds of DES are required to guarantee such a
+  dependence. In this sense a product cipher should act as a ``mixing''
+  function which combines the plaintext, key, and ciphertext in a
+  complex nonlinear fashion.
+
+  The fixed per-round substitutions of the product cipher are
+  referred to as S-boxes. For example, LUCIFER has  S-boxes, and DES
+  has  S-boxes. The nonlinearity of a product cipher reduces to a
+  careful design of these S-boxes. A list of partial design criteria
+  for the S-boxes of DES, which apply to S-boxes in general, may be
+  found in Brown [BRO] and Brickell et al. [BRI].
+
+* What are some group-theoretic properties of product ciphers?
+
+  Let E be a product cipher that maps N-bit blocks to N-bit blocks.
+  Let E_K(X) be the encryption of X under key K. Then, for any fixed K,
+  the map sending X to E_K(X) is a permutation of the set of N-bit
+  blocks. Denote this permutation by P_K. The set of all N-bit
+  permutations is called the symmetric group and is written S_{^N}.
+  The collection of all these permutations P_K, where K ranges over all
+  possible keys, is denoted E(S_{^N}). If E were a random mapping from
+  plaintexts to ciphertexts then we would expect E(S_{^N}) to generate
+  a large subset of S_{^N}.
+
+  Coppersmith and Grossman [COP] have shown that a very simple
+  product cipher can generate the alternating group A_{^N} given a
+  sufficient number of rounds. (The alternating group is half of the
+  symmetric group: it consists of all ``even'' permutations, i.e., all
+  permutations which can be written as an even number of swaps.)
+  Even and Goldreich [EVE] were able to extend these results to show
+  that Feistel ciphers can generate A_{^N}, given a sufficient number
+  of rounds.
+
+  The security of multiple encipherment also depends on the
+  group-theoretic properties of a cipher. Multiple encipherment is an
+  extension over single encipherment if for keys K, K there does
+  not exist a third key K such that
+
+  E_K(E_K(X)) == E_(K)(X)                (**)
+
+  which indicates that encrypting twice with two independent keys
+  K, K is equal to a single encryption under the third key K.  If
+  for every K, K there exists a K such that eq. (**) is true then
+  we say that E is a group.
+
+  This question of whether DES is a group under this definition was
+  extensively studied by Sherman, Kaliski, and Rivest [SHE]. In their
+  paper they give strong evidence for the hypothesis that DES is not a
+  group. In fact DES is not a group [CAM].
+
+* What can be proven about the security of a product cipher?
+
+  Recall from above that P_K is a permutation produced by E under
+  some key K. The goal of the designer of E is to ensure that P_K
+  appears to be a random element of S_{^N}, the symmetric group.
+  Let R be an element of S_{^N} selected randomly. We will say that P_K
+  and R are indistinguishable if an observer given P_K and R in some
+  order cannot distinguish between these two permutations in polynomial
+  time. That is, with time bounded resources, the observer cannot
+  determine which of the permutations is produced by E: the optimal
+  decision is no better than simply guessing.
+
+  Luby and Rackoff [LUB] have shown that a class of Feistel ciphers
+  are secure in this sense when the round mapping is replaced by
+  random boolean functions.
+
+* How are block ciphers used to encrypt data longer than the block size?
+
+  There are four standard "modes of operation" (and numerous non-standard
+  ones as well).  The standard modes of operation are defined in the U.S.
+  Department of Commerce Federal Information Processing Standard (FIPS) ,
+  published in .  See the question about "ECB" below for more details.
+
+  Although they are defined for the DES block cipher, the "modes of
+  operation" can be used with any block cipher.
+
+* Can symmetric block ciphers be used for message authentication?
+
+  One may use a symmetric cryptosystem block cipher to prove to himself
+  that he did or did not generate a message, and to prove to himself 
+  whether his message was altered or unaltered since generation.  But one
+  cannot prove these things to another without revealing the key, and 
+  thereafter that key cannot be used to prove anything about any messages
+  that were authenticated using that key.
+  
+  See ANSI X.- and FIPS  () for a standard method of message
+  authentication using DES.
+
+* What exactly is DES?
+
+  DES is the U.S. Government's Data Encryption Standard - a product 
+  cipher that operates on -bit blocks of data, using a -bit key.  
+
+  It is defined in FIPS - () [which supersedes FIPS  ()].
+  FIPS are Federal Information Processing Standards published by NTIS.
+  DES is identical to the ANSI standard Data Encryption Algorithm (DEA)
+  defined in ANSI X.-. 
+
+* What is triple DES?
+
+  Triple DES is a product cipher which, like DES, operates on -bit 
+  data blocks.  There are several forms, each of which uses the DES
+  cipher  times.  Some forms use two -bit keys, some use three.
+  The "DES modes of operation" may also be used with triple-DES.
+
+  Some people refer to E(K,D(K,E(K,x))) as triple-DES.
+
+  This method is defined in chapter . of the ANSI standard X.-
+  "Financial Institution Key Management" and is intended for use in
+  encrypting DES keys and IVs for "Automated Key Distribution".  Its
+  formal name is "Encryption and Decryption of a Single Key by a Key
+  Pair", but it is referenced in other standards documents as EDE.
+
+  That standard says (section ..): "Key encrypting keys may be a single
+  DEA key or a DEA key pair.  Key pairs shoud be used where additional
+  security is needed (e.g., the data protected by the key(s) has a long
+  security life).  A key pair shall not be encrypted or decrypted using a
+  single key."
+
+  Others use the term "triple-DES" for E(K,D(K,E(K,x))) or
+  E(K,E(K,E(K,x))).
+
+  One of us (Carl Ellison) keeps advocating DES triple use in the form
+  E(K, TRAN( E(K, TRAN( E(K, COMPRESS( x )))))), where each DES instance
+  has its own key and IV (for CBC mode) and TRAN has been posted on
+  sci.crypt.  (It is a large-block transposition program taking its key
+  from the data stream itself, so that it is not an encryption program on
+  its own part.)
+
+* What is differential cryptanalysis?
+
+  Differential cryptanalysis is a statistical attack that can be
+  applied to any iterated mapping (ie. any mapping which is based on
+  a repeated round function). The method was recently popularized by
+  Biham and Shamir [BIH], but Coppersmith has remarked that the
+  S-boxes of DES were optimized against this attack some  years ago.
+  This method has proved effective against several product ciphers,
+  notably FEAL [BIa].
+
+  Differential cryptanalysis is based on observing a large number of
+  ciphertexts Y, Y' whose corresponding plaintexts X, X' satisfy a
+  known difference D = X+X', where + is componentwise XOR. In the
+  basic Biham-Shamir attack, ^{} such plaintext pairs are required
+  to determine the key for DES. Substantially fewer pairs are required
+  if DES is truncated to  or  rounds. In these cases, the actual key
+  can be recovered in a matter of minutes using a few thousand pairs.
+  For full DES this attack is impractical because it requires so many
+  known plaintexts.
+
+  The work of Biham and Shamir on DES revealed several startling
+  observations on the algorithm. Most importantly, if the key
+  schedule was removed from DES and a * = -bit key was used,
+  the key could be recovered in less than ^{} steps. Thus
+  independent subkeys do not add substantial security to DES.
+  Further, the S-boxes of DES are extremely sensitive in that
+  changing even single entries in these tables yields significant
+  improvement in the differential attack.
+
+  Adi Shamir is quoted to say (NYTimes Oct  ), ``I would say
+  that, contrary to what some people believe, there is no evidence
+  of tampering with the DES so that the basic design was weakened.''
+
+* How was NSA involved in the design of DES?
+
+  According to Kinnucan [KIN], Tuchman, a member of the group that
+  developed DES at IBM is quoted as saying, ``We developed the DES
+  algorithm entirely within IBM using IBMers. The NSA did not
+  dictate a single wire!'' Tuchman and Meyer (another developer of
+  DES) spent a year breaking ciphers and finding weaknesses in
+  Lucifer. They then spent two years strengthening Lucifer. ``Their
+  basic approach was to look for strong substitution, permutation,
+  and key scheduling functions ... IBM has classified the notes
+  containing the selection criteria at the request of the NSA....
+  `The NSA told us we had inadvertently reinvented some of the deep
+  secrets it uses to make its own algorithms,' explains Tuchman.''
+  
+  On the other hand, a document called ``Involvement of the NSA in
+  the development of DES: unclassified summary of the United States
+  Select Committee on Intelligence'', printed in the IEEE
+  Communications Magazine, p-, , states: ``In the development
+  of DES, NSA convinced IBM that a reduced keysize was sufficient;
+  indirectly assisted in the development of the S-box structures; and
+  certified that the final DES algorithm was, to the best of their
+  knowledge, free from any statistical or mathematical weakness.''
+
+  Clearly the key size was reduced at the insistence of the NSA.
+  The article further states that the NSA did not tamper with the
+  algorithm itself, just the parameters, which in some sense
+  resolves the apparent conflict in the remarks of Meyer and Tuchman
+  presented above.
+
+* Is DES available in software?
+
+  Several people have made DES code available via ftp (see part  for
+  pathnames): Stig Ostholm [FTPSO]; BSD [FTPBK]; Eric Young [FTPEY];
+  Dennis Furguson [FTPDF]; Mark Riordan [FTPMR]; Phil Karn [FTPPK].
+  A Pascal listing of DES is also given in Patterson [PAT].
+
+  FIPS - says "The algorithm specified in this standard is to be
+  implemented ... using hardware (not software) technology.  ...
+  Software implementations in general purpose computers are not in
+  compliance with this standard."  Despite this, software
+  implementations abound, and are used by government agencies.
+
+* Is DES available in hardware?
+
+  The following paragraphs are quoted from messages sent to the editors.
+  We don't vouch for the quality or even existence of the products.
+
+  encryption/decryption device for use on standard, digital Kbps PCM
+  telecom data streams. It is capable of processing data in real time,
+  e.g. one sample/frame. It is the DS. Their phone number is
+  --. You would probably need to talk with Dewight in Telecom
+  marketing.''
+
+  Cryptech CRYC: .Mbit/s according to Data Sheet, with  Bit
+  interface. We use this one, because it was the only one available when
+  we started the project. No problems !  . Pijnenburg PCC: Mbit/s
+  according to Data Sheet. Address: PIJNENBURG B.V., Boxtelswweg ,
+  NL- NE Vught, The Netherlands.  . INFOSYS DES Chip (Germany):
+  S-Boxes must be loaded by software. So you can modify the Algorithm.
+  Sorry, I don't have the data sheet handy. Please E-Mail me if you need
+  further information.''
+
+  DES and Proprietary Storage for  -bit keys Key stream generator
+  Integrated hardware DES procedure Extended mode with  bit keys;
+  Computer Elektronik Infosys; -A Herndon Parkway,; Herndon, VA
+  ; ()-
+
+  an AM compatible DES chip that operates at MHz, performs a
+  round of encryption in  clocks, has a three-stage pipeline,
+  supports ECB, CBC, CFB- and >>> CFB- <<<<.  Further it is very
+  reasonable priced as opposed to other high-end DES chips.  Call
+  Newbridge Microsystems, Ottawa, () -.  (... there are no
+  import/export issues with Canada and the US).  If you require custom
+  DES or Public Key ICs then Timestep Engineering developed
+  Newbridge's crypto chips and ICs for other commercial and
+  educational establishments. They can be reached at () -.
+
+* Can DES be used to protect classified information?
+
+  "This standard will be used by Federal departments and agencies for
+  the cryptographic protection of computer data when the following
+  conditions apply: .  ...  cryptographic protection is required; and
+  . the data is not classified according to the National Security Act
+  of , as amended, or the Atomic Energy Act of , as amended."
+
+* What are "ECB", "CBC", "CFB", and "OFB" encryption?
+
+  These are methods for using block ciphers, such as DES, to encrypt 
+  messages, files, and blocks of data, known as "modes of operation."
+  Four "modes of operation" are defined in FIPS  ( December ), 
+  and also in ANSI X.-.   
+
+  FIPS  specifies that when -bit ASCII data is sent in octets, the
+  unused most-significant bit is to be set to .
+  FIPS  also specifies the padding for short blocks.
+
+  The four DES modes of operation are: 
+	Electronic Code Book  (ECB), 
+	Cipher Block Chaining (CBC), 
+	K-bit Cipher FeedBack (CFB), and 
+	K-bit Output FeedBack (OFB).
+
+  These methods are explained below in a c-language-like notation.
+
+  Some symbols:
+
+  P[n]	The n'th block of plaintext, input to encryption, output from
+  	decryption.  Size of block determined by the mode.
+
+  C[n]	The n'th block of ciphertext, output from encryption, input to
+  	decryption.  Size of block determined by the mode.
+
+  E(m)	The DES encryption function, performed on -bit block m, using
+  	the -key schedule derived from some -bit key.
+
+  D(m)	The DES decryption function, performed on -bit block m, using
+  	the same key schedule as in E(m), except that the  keys
+  	in the schedule are used in the opposite order as in E(m).
+
+  IV	A -bit "initialization vector", a secret value which, along with
+  	the key, is shared by both encryptor and decryptor.
+
+  I[n]	The n'th value of a -bit variable, used in some modes.
+  R[n]	The n'th value of a -bit variable, used in some modes.
+
+  LSB(m,k) The k least significant (right-most) bits of m.
+  	e.g.  m & (( << k) - )
+
+  MSB(m,k) The k most significant (left-most) bits of m.
+  	e.g.  (m >> (-k)) & (( << k) - )
+
+  = ^ << >> &  operators as defined in the c langage.
+
+
+  Electronic Code Book (ECB):
+
+  	  P[n] and C[n] are each -bits long.
+
+  	  Encryption:			Decryption:
+  	  C[n] = E(P[n])		P[n] = D(C[n])
+
+
+  Cipher Block Chaining (CBC):
+
+  	  P[n] and C[n] are each -bits long.
+
+  	  Encryption:			Decryption:
+  	  C[] = E(P[]^IV)		P[] = D(C[])^IV
+  (n>)	  C[n] = E(P[n]^C[n-])		P[n] = D(C[n])^C[n-]
+
+
+  k-bit Cipher FeedBack (CFB):
+
+  	  P[n] and C[n] are each k bits long,  <= k <= .  
+
+  	  Encryption:			Decryption:
+  	  I[] = IV			I[] = IV
+  (n>)	  I[n] = I[n-]<<k | C[n-]	I[n] = I[n-]<<k | C[n-]	
+  (all n) R[n] = MSB(E(I[n]),k)		R[n] = MSB(E(I[n]),k)
+  (all n) C[n] = P[n]^R[n]		P[n] = C[n]^R[n]
+
+  	  Note that for k==, this reduces to:
+
+  	  I[] = IV			I[] = IV
+  (n>)	  I[n] = C[n-]			I[n] = C[n-]	
+  (all n) R[n] = E(I[n])		R[n] = E(I[n])
+  (all n) C[n] = P[n]^R[n]		P[n] = C[n]^R[n]
+
+  CFB notes: Since I[n] depends only on the plain or cipher text from the
+  previous operation, the E() function can be performed in parallel with
+  the reception of the text with which it is used.
+
+
+  k-bit Output FeedBack (OFB):
+
+  	  P[n] and C[n] are each k bits long,  <= k <= .  
+
+  	  Encryption:			Decryption:
+  	  I[] = IV			I[] = IV
+  (n>)	  I[n] = I[n-]<<k | R[n-]	I[n] = I[n-]<<k | R[n-]	
+  (all n) R[n] = MSB(E(I[n]),k)		R[n] = MSB(E(I[n]),k)
+  (all n) C[n] = P[n]^R[n]		P[n] = C[n]^R[n]
+
+  	  Note that for k==, this reduces to:
+
+  	  I[] = IV			I[] = IV
+  (n>)	  I[n] = R[n-]			I[n] = R[n-]	
+  (all n) R[n] = E(I[n])		R[n] = E(I[n])
+  (all n) C[n] = P[n]^R[n]		P[n] = C[n]^R[n]
+
+  OFB notes: encryption and decryption are identical.  Since I[n] is
+  independent of P and C, the E() function can be performed in advance of
+  the receipt of the plain/cipher text with which it is to be used.
+
+
+  Additional notes on DES "modes of operation":

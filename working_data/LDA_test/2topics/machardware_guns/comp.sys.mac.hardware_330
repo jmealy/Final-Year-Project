@@ -1,0 +1,16 @@
+I am continuing to collect user results to produce a more comprehensive
+report on IIsi clock oscillator upgrades. I you have attempted the modification
+please drop me a note with details of your experience. The more reports 
+obtained, the more accurate the numbers I will generate.
+
+If possible, please include the following:
+  ) Top speed achieved
+  ) System configuration at top Mhz setting
+       a) speed rating of the CPU (the last two digits printed on CPU #)
+       b) presence of additional heat sinks
+       c) Nubus & FPU cards used
+       d) floppy drive functionality on both  and . M disks
+  ) Damage incurred during modification
+  ) Damage due to higher speed use
+  ) Average length of time the CPU is on. (i.e.  hours a day)
+  ) Unusual other modifications to the usual procedure

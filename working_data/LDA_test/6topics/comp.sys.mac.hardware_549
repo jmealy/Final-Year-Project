@@ -1,0 +1,11 @@
+). 
+
+  A K DRAM chip is a  kilobit chip whereas a K SIMM is a 
+kilobyte memory module. The SIMM is a PCB with a  pin connector edge
+and on the SIMM are   kilobit DRAM chips (making the total memory 
+KBytes.
+ 
+  You are correct assuming that SIMMs will not fit into a LaserWriter.
+Apple printers either require  pin SIMMs like those in the Mac IIfx or
+special memory chips. Contact your Apple dealer to find out exactly what
+kind of chips you need.

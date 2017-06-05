@@ -1,0 +1,67 @@
+: I also have a DX/ and a Maxtor . I have a local bus IDE controller (generic) and I get
+:  KB/s. I tried swapping my local bus IDE controller for an ISA IDE controller and my
+: transfer rate went to  KB/s. The specs for this drive show a maximum platter to controller
+: transfer rate of . MB/s. I dont know how to get there from here. The local bus interface
+: got me a little, but certainly not as much as I had hoped. I am also looking for a way to 
+
+What is the deal with the IDE transfer rates?  Is anybody getting throughput
+anywhere close to the platter->controller rate?  I haven't seen anything
+even close to the MB/sec limit of the IDE interface.  These drives are :
+(non-interleaved), aren't they?
+
+Here are the rates I get:
+
+) sequential read (MSDOS C program that uses bios calls to read -sector
+                    blocks sequentially from outside (first) track inward)
+
+                     mhz bus    mhz bus
+                     --------    ---------
+   MAXTOR LXT:    KB/sec   KB/sec
+   QUANTUM LPS:   KB/sec   KB/sec
+
+) disk buffer read (same C program, but re-reads the same block repeatedly
+                     so in effect is reading the RAM buffer on the drive)
+
+                     mhz bus    mhz bus
+                     --------    ---------
+   MAXTOR LXT:   KB/sec  KB/sec
+   QUANTUM LPS:  KB/sec  KB/sec
+
+) CORETEST V. transfer rate (seems to agree with () above)
+
+                     mhz bus    mhz bus
+                     --------    ---------
+   MAXTOR LXT:   KB/sec  KB/sec
+   QUANTUM LPS:  KB/sec  KB/sec
+
+I managed to get hold of the QUANTUM LPSAT product manual and it goes
+into excrutiating detail describing how the bits get from the platter,
+through the controller, and out the IDE interface.  Nowhere do I see
+anything like "after the bits are whipped of the platter at high speed
+they sit around in a buffer to thaw before they are sent to the host"
+(even though I SWEAR that's whats happening ;->).  Here are some relevent
+quotes from the manual:
+
+  "Data is transferred from the disk to the read buffer at a rate of
+   . MB/s maximum, .MB/s minimum."  (My calculations show KB/sec
+   maximum and KB/sec minimum...  disk spins at  RPM with 
+   sectors per track on the outside and  on the inside)
+
+  "Single burst errors of up to  bits within one sector can be corrected
+   'on-the-fly', in real time as they occur, allowing a high degree of
+   data integrity with no impact to the drive's performance."  (I take
+   this to mean error correction isn't the bottleneck)
+
+  "For page-mode operations, the data-transfer rate to and from the buffer
+   RAM is up to . MB/s. This high transfer rate allows the AT Interface
+   IC to communicate over the AT bus at a data-transfer rate of . MB/s,
+   while the DCS simultaneously controls disk-to-RAM transfers"
+                 ^^^^^^^^^^^^^^
+So the thing can even do it's cache pre-fetch WHILE it's sending the
+requested sector (it has  KB read buffers for pre-fetching, I guess
+you could call that a cache :-|).
+
+So when I do a sequential read on the outer tracks, WHY am I getting a
+measly KB/sec when I should be getting around MB/sec???
+
+Any of you hard-disk engineers out there know?

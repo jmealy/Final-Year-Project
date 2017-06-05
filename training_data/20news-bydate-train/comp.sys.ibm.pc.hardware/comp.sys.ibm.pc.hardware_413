@@ -1,0 +1,4 @@
+Contrary to what others might have thought, I actually did have a SCSI drive
+once.  It was the Seagate N and the ST- controller.  I found that the
+controller couldn't keep up with a : interleave, so the best I could do
+with the drive was a : interleave and a data transfer of about  k/sec.

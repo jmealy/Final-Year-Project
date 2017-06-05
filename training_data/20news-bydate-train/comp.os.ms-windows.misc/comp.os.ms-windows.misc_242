@@ -1,0 +1,146 @@
+Hi.
+
+While running the MS Quick C compiler in a DOS window under Windows . 
+this evening, I got a "program has violated system integrity... close all 
+applications, exit windows and restart your computer" error.
+
+I started to do this when I immediately got a "Serious disk error" message
+from Windows.  "hit return to retry".  I did that about  times and then
+rebooted to find that quite a few files have been corrupted somehow.
+(I am including the chkdsk output below.)
+
+Questions:
+
+)  Is there an easy way to restore everything to working order?
+What might be some better approaches?
+
+)  What might have caused this?  Does the SMARTDRV cache make me more
+vulnerable?  (I'm suspicious of hard drive caches especially when they
+cache data writing.)
+
+The straightforward approach would be to run chkdsk with the /f option to 
+fix the disk and then it looks like I would probably have to reinstall Windows
+and a few other things.
+
+Thanks for your comments and suggestions.
+
+Brad Banko
+
+ps:  this is a sx machine with a Mb hard drive and  Mb of RAM.
+
+
+chkdsk output:
+======================================================================
+Volume Serial Number is -D
+Errors found, F parameter not specified
+Corrections will not be written to disk
+
+C:\GFX\VPIC\CVPIC.EXE
+   Allocation error, size adjusted
+C:\GFX\VPIC\VPIC.TXT
+   Allocation error, size adjusted
+C:\GFX\VPIC\VIDEO.CFG
+   Allocation error, size adjusted
+C:\GFX\VPIC\ORCPRO.CFG
+   Allocation error, size adjusted
+C:\GFX\VPIC\VGA.CFG
+   Allocation error, size adjusted
+C:\GAME\GOOSE\BIRD.X
+   Allocation error, size adjusted
+C:\WINMISC\ADV\WINADV.EXE
+   Allocation error, size adjusted
+
+    lost allocation units found in  chains.
+     bytes disk space would be freed
+
+C:\GFX\VPIC\CVPIC.EXE
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\GENO.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\TRIB.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\TSHI.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\CONFIG.DOC
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\VPIC.TXT
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\VIDEO.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\DEFINCON.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\ATIWONDR.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\GENO.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\OAK.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\HIRES.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\AHEADA.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\VPIC.DOC
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\ORCPRO.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\EVERX.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\WAIT.COM
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\MAXXON.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\WAIT.DOC
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\EVERX.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\EGA.CFG
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\CONFIG.EXE
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\README.ST
+   Is cross linked on allocation unit 
+C:\GFX\VPIC\VGA.CFG
+   Is cross linked on allocation unit 
+C:\GAME\GOOSE\BIRD.X
+   Is cross linked on allocation unit 
+C:\WINDOWS\SYSTEM\SOUND.DRV
+   Is cross linked on allocation unit 
+C:\WINDOWS\GAMES.GRP
+   Is cross linked on allocation unit 
+C:\WINDOWS\MAD-.BMP
+   Is cross linked on allocation unit 
+C:\MAGE\DEMO_A.KIN
+   Is cross linked on allocation unit 
+C:\MAGE\DEMO_B.KIN
+   Is cross linked on allocation unit 
+C:\MAGE\PKIN__.EXE
+   Is cross linked on allocation unit 
+C:\WINMISC\GAMES\DIALWORD.EXE
+   Is cross linked on allocation unit 
+C:\WINMISC\GAMES\DIALWORD.TXT
+   Is cross linked on allocation unit 
+C:\WINMISC\ADV\WINADV.WRI
+   Is cross linked on allocation unit 
+C:\WINMISC\ADV\ADV.KEY
+   Is cross linked on allocation unit 
+C:\WINMISC\ADV\ADV.REC
+   Is cross linked on allocation unit 
+C:\WINMISC\ADV\FREEZER
+   Is cross linked on allocation unit 
+C:\SPART.PAR
+   Is cross linked on allocation unit 
+C:\BNG.MBX
+   Is cross linked on allocation unit 
+
+   bytes total disk space
+    bytes in  hidden files
+     bytes in  directories
+   bytes in  user files
+    bytes available on disk
+
+       bytes in each allocation unit
+      total allocation units on disk
+        available allocation units on disk
+
+     total bytes memory
+     bytes free

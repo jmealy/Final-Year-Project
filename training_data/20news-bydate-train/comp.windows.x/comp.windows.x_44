@@ -1,0 +1,10 @@
+After having OpenWindows 
+(Version  for SunOS .) or Xwindows
+running continuously on my machine for - days,
+the following message appears  when trying to open
+a new window, or to run any program that needs to open windows.
+
+XView error: Cannot open connection to window server: :. (Server
+package)
+
+I would greatly appreciate any suggestions to solve this problem.

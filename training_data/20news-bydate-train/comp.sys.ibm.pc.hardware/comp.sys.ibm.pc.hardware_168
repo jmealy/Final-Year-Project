@@ -1,0 +1,33 @@
+Re: Problems with S-initialization
+
+As described the manual the following steps must be done for th initialization
+of the S card.
+
+InitDisplay;
+	(*BIOS-Call
+		with AX-Reg = FH
+		with BX-Reg = H for  x  x  resolution
+		Interrupt H *)
+Unlock Register Lock  (CR)
+	(* For access to S Register Set *)
+Unlock Register Lock  (CR)
+	(* For access to Syst. Control and Syst. Extension Register *)
+Unlock Graphic Command Group (CR)
+	(* Set Bit  to  in Syst. Configuration Register *)
+Unlock Advanced Display Functions
+	(* Set Bit  to  in Function Control Register *)
+
+After these operations the FIFO-stack of the S should be empty.
+When we watch the status (Graph. Proc. Status), we always get
+the value FH instead of H.
+Full would mean FFH ( places occupied), empty would mean H
+( places occupied).
+
+It is possible to read this register in two different ways. 
+Both times we get different results.
+
+
+
+Our machine is a  DX/ with EISA bus and a S C local bus. 
+
+--> any ideas?

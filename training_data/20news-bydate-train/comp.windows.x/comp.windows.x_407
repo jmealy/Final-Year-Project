@@ -1,0 +1,11 @@
+Alright.  Ignore this.  I have delved a bit deeper (XKeyEvent) and
+found what I was looking for.
+
+ev->state   has a bunch of masks to check against (LockMask is the one
+for CapsLock).  Unfortunately, it appears that the NumLock mask varies
+from server to server.  How does one tell what mask is numlock and
+which are for Meta (ModMask, ModMask, ModMask, ModMask, ModMask).
+eg, SGI's vendor server has ModMask being NumLock, whereas Solaris
+.. OpenWindows . has ModMask for NumLock.  Is there an
+unambiguous means of determining NumLock's mask at runtime for any
+given server?  Sorry for the wasted bandwidth and my appalling ignorance.

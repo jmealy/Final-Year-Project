@@ -1,0 +1,10 @@
+I would like to program Tseng ET to nonstandard x mode by
+switching to standard x mode using BIOS and than changing some
+timing details (xD registers x-xF) but I don't know how to
+select  MHz pixel clock I need. The BIOS function selects  MHz.
+
+Is there anybody who knows where to obtain technical info about this.
+I am also interested in any other technical information about Tseng ET
+and Trident  and  chipsets.
+
+			thanks very much

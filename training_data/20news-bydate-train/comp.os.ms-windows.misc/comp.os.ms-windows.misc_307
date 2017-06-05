@@ -1,0 +1,8 @@
+
+
+Presumeably, you mean without a _permanent_ swap file. If Windows needs a
+swap file, it will upo and create one if a permanent one doesn't exist.
+Permanent is generally faster though. I don't know why Mathcad wouldn't
+be happy with either type--Ver. . is and so should any program conforming
+to the Win specification.
+

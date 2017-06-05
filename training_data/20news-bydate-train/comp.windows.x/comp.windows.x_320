@@ -1,0 +1,26 @@
+It works on xterms. At least I have no problem with it. - Back to the original
+question:
+
+I usually start new xterms by selecting the proper menu entry in my desktop
+menu. Here is a sample command:
+
+	xterm -sl  -n lsi -title lsi -e rlogin lsi &
+
+The -n and -title options give the text for window and icon. As I use the
+tcsh (a wonderful extension of the csh), I can do the following:
+
+I have an
+
+	alias precmd echo -n '^[]\;${HOST}:$cwd^G'
+
+in my ~/.tcshrc. This is a special alias for tvtwm. It is executed each time
+before printing the prompt. So, I have the current host name and the current
+directory path in the title bar of my xterms.
+
+------------------------------------------------------------------------------
+      ____                                                                    
+  UniDo  /  Ingolf Markhof  University of Dortmund, LS Informatik XII         
+ ___/   /                   P.O. Box  , D- Dortmund , F.R. Germany
+ \  \  /                    Phone: + ()  , Fax: + ()    
+  \__\/                     Email: markhof@ls.informatik.uni-dortmund.de    
+                                                                              

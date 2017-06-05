@@ -1,0 +1,10 @@
+I have a Maxtor MB on an ISA IDE controller, although my machine is
+DX/ VLB. I has the save transfer rate of . MB/s regardless of
+the variations of the ISA bus speed. I tested it with speed between
+.MHz and .MHz. Not _any_ difference. The problem is not the
+interface between the controller and the memory.
+
+My advice: Buy Megs of RAM, save $ and enjoy performance.
+
+--
+Penio Penev  x ()- (w) Internet: penev@venezia.rockefeller.edu

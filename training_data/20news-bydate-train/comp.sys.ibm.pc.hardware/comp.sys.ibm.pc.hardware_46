@@ -1,0 +1,12 @@
+. Dont rely on benchmarks. They often show incorrect due to different
+   TSR programs.
+
+. SCSI often needs a driver to get the speed from the card.
+
+. Make sure the card is operating in synchronus mode which is x faster.
+
+. You can disable disconnect and get some kB/s but just to loose the mouse
+   or other int`s when diskaccesing.
+
+(I get .MB/s with DX LB and SCSI LB and Maxtor LXTSY - Coretest)
+(I get .MB/s                                              - Sysinfo)

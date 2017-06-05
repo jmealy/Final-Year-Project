@@ -1,0 +1,35 @@
+I am having a problem with the high order bit of a character being 
+clipped when entered in an xterm window under motif. I have reprogrammed
+the F key to transmit a <ff> <be> character sequence by using the
+following line in .Xdefaults:
+
+~Ctrl ~Shift ~Alt <Key> F : string(xff) string(xbe) \n\
+
+I merge in this line with xrdb -merge and then create the new xterm
+which has the remapped F key. The problem that arises is that the 
+application which is recieving input at the time only sees a <f> <e>
+sequence, which is <ff> <be> with the high order bit of each
+character being filtered or ignored.
+
+When I run xev and press the F key, I get the correct value showing 
+up in the following two key events:
+
+  KeyPress event, serial , synthetic NO, window x,
+  root x, subw x, time , (,), root:(,),
+  state x, keycode  (keysym xffbe, F), same_screen YES,
+  XLookupString gives  characters:  ""
+
+  KeyRelease event, serial , synthetic NO, window x,
+  root x, subw x, time , (,), root:(,),
+  state x, keycode  (keysym xffbe, F), same_screen YES,
+  XLookupString gives  characters:  ""
+
+Notice that the keysym being transmitted is correct; xffbe.
+But when I use the F key while in vi or in a program I wrote to 
+spit back the hex values of keyboard input, I only get <f> <e>.
+
+Does anyone know why the high order bit is being filtered and what
+I can do to make sure that the entire bits make it through to
+the final application? Any help is greatly appreciated.
+
+Please *email* any responses.

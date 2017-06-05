@@ -1,0 +1,9 @@
+Since your MOSFET is a  vintage, it's probably not a very good one by 
+today's standards.  If you have an idea about its voltage and current 
+ratings, e.g. VDC @ A, you can probably get away with replacing it with 
+anything with better specs.  Early MOSFETS had a gate-source voltage rating 
+of approximately +/-  VDCmax, and they would usually turn completely "ON" 
+at +VDC.  Otherwise, MOSFETS are not really mysterious -- they're more or 
+less voltage controlled current sources.  If the MOSFET in your circuit is 
+used as an open-loop, voltage controlled current source, you may have to 
+experiment with various gain-altering techniques.

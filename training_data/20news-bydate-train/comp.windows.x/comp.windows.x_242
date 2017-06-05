@@ -1,0 +1,51 @@
+Environment:
+      mach/arch : sparc/sun  (IPX)
+      OS	: SunOS ..
+      X	: XR (patchlevel )
+      Motif	: ..
+
+I bring up X server using 'startx' and /usr/bin/X/Xsun. The following sequence
+of actions crashes the X server (SIGPIPE, errno=, 'xinit' reports that connexion 
+to X server lost):
+
+   . xinit -- Xsun
+   . start mwm
+   . start a client with a dpi/dpi font.
+   . move the window by dragging the title bar.
+
+The server dumps core due to SIGPIPE. One of the two messages is printed:
+
+  "Connection to X server lost"
+
+or
+  
+  "Connection broken (errno=)"
+
+(I believe the first is reported by a client and the second by the server itself).
+
+Next, I ran xdm in debug level = . After the same set of actions, xdm reports:
+
+  select returns -
+  Server for : terminated unexpectedly: status 
+
+
+Note:
+ * The problem doesn't occur with other window managers (twm or olwm). 
+ * I have not set LD_LIBRARY_PATH. 
+ * I am not running font server. 
+ * If I start the client with fixed width font, I do not see this problem.
+ * My font path:
+     /usr/lib/X/fonts/misc/,/usr/lib/X/fonts/Speedo/,/usr/lib/X/fonts/dpi/,/usr/lib/X/fonts/dpi
+
+   (I did mkfontdir in /usr/lib/X/fonts/dpi, /usr/lib/X/fonts/dpi,
+   /usr/lib/X/fonts/PEX, /usr/lib/X/fonts/Speedo,
+   and in /usr/lib/X/fonts/misc).
+
+ * This problem seems to occur only on IPX machines. I do not see this 
+   problem on IPC workstations.
+
+Questions:
+ * What the hell is goin on ? :-)
+ * What does "status " mean (of the server).
+
+I'd greatly appreciate any hints as to the cause of the problem.

@@ -1,0 +1,13 @@
+Assuming HC...
+In expanded muxed mode, you *could* do it. Much easier if you get a DRAM
+controller IC. The MMI  could be used to implement this, or you
+could use a counter and a huge multiplexer to provide row/column/refresh
+address multiplexing. The thing with DRAMs is that they require wierd
+timing, address multiplexing, and refresh.
+
+Actually, if you wanted to use a  IC, you could look at AN, which
+has a neat controller built in. There is also the xx, I think one
+of those has the DRAM controller built in. This one is for the 
+DRAM, however, the  has only one more address line, adding only
+another component or so. The k SIMMs are basically  or  
+DRAM chips (or their equivalent in fewer packages).

@@ -1,0 +1,19 @@
+dhk@ubbpc.uucp (Dave Kitabjian) writes ...
+
+     
+
+
+ fastest, then Pentium, with the first versions of the PowerPC
+somewhere in the vicinity.
+
+
+No.  Computer speed is only partly dependent of processor/clock speed.
+Memory system speed play a large role as does video system speed and
+I/O speed.  As processor clock rates go up, the speed of the memory
+system becomes the greatest factor in the overall system speed.  If
+you have a MHz processor, it can be reading another word from memory
+every ns.  Sure, you can put all ns memory in your computer, but
+it will cost  times as much as the slower ns SIMMs.
+
+And roughly, the  is twice as fast at a given clock
+speed as is the .

@@ -1,0 +1,13 @@
+The equation of the sphere through the  points (x,y,z),...,(x,y,z) is
+  | x^+y^+z^  x^+y^+z^  ...  x^+y^+z^ |
+  |      x             x        ...        x       |
+  |      y             y        ...        y       | = 
+  |      z             z        ...        z       |
+  |                            ...                |
+When this  by  determininant is expanded on its first column you get the
+equation in the form
+  A(x^+y^+z^) + Bx + Cy + Dz + E = 
+If you need the center and radius, jyst divide through by A (it cannot be
+zero if the  given points form a non-degenerate tetrahedron) and complete
+the square on x, y, and z to obtain
+  (x-xc)^ + (y-yc)^ + (z-zc)^ = r^

@@ -1,0 +1,27 @@
+SC
+  Maximum Ratings:
+    VCBO = V
+    VCEO = V
+    IC   = A
+    PC   = W (T=C)
+
+  ICBO max = uA
+  VCB = V
+  COB = pF
+
+  at Q-point VCE=, IC=A --> hfe = 
+
+SA
+  Maximum Ratings:
+    VCBO = -V
+    VCEO = -V
+    IC   = -A
+    PC   = W (T=C)
+
+  ICBO max = -uA
+  VCB = -V
+  COB = pF
+
+  at Q-point VCE = -V, IC = -A --> hfe = 
+
+That's all i can get from my data book, hope that helps.

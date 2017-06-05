@@ -1,0 +1,80 @@
+Moscow Scientific Inductrial Association "Spectrum" offer
+       VIDEOSCAN vision system for PC/AT,wich include software and set of
+       controllers.
+
+                     SOFTWARE
+
+            For support VIDEOSCAN family program kit was developed. Kit
+       includes more then  different functions for image processing.
+            Kit works in the interactive regime, and has include Help for
+       non professional users.
+            There are next possibility:
+       - input frame by any board of VIDEOSCAN family;
+       - read - white image to - from disk;
+       - print image on the printer;
+       - makes arithmetic with  frames;
+       - filter image;
+       - work with gistogramme;
+       - edit image.
+       - include users exe modules.
+
+                     CONTROLLER VS
+
+       The function of VS- controller is to load TV-images into  PC/AT.
+       VS- controller allows one to load a fragment of the TV-frame from
+       a field of x pixels.
+       The clock rate is , MHz when loading an image with  pixel in
+       the line and , MHz when loading a  pixels image. This
+       provides the equal pixel size of input image in both horizontal
+       and vertical directions.
+       The number of gray levels in any input modes is .
+       Video signal capture time - .s.
+
+                     CONTROLLER VS
+
+       The purpose of the controller is to enter the TV images into a IBM
+       PC AT or any other machine of that type. The controller was
+       created on the base of modern elements, including user
+       programmable gate arrays.
+       The controller allows to digitize a input signal with different
+       resolutions. Its flexible architecture makes possible to change
+       technical parameters. Instead of TV signal one can process any
+       other analog signal (including signals from slow-speed scanning
+       devices).
+       The controller has the following technical characteristics:
+       - memory volume - from  K to  Mb ;
+       - resolution when working with standard video signal - from x
+       to x pixels ;
+       - resolution when working in slow input regime - up to x
+       pixels;
+       - video signal capture time -  ms.
+       - maximum size of a screen when memory volume is Mb - x
+       pixels ;
+       - number of gray level -  ;
+       - clock rate for input - up to  MHz ;
+       -  input video multiplexer ;
+       - input/output lookup table (LUT);
+       - possibility to realize "scroll" and "zoom";
+
+
+
+
+
+
+
+
+
+
+
+
+
+       -  lines for external synchronization (an input using external
+       controlling signal) ;
+       - electronic adjustment of black and white reference for analog -
+       digital converter;
+       - possibility output image to the color RGB monitor.
+       One can change all listed above functions and parameters of the
+       controller by reprogramming it.
+
+
+              IMAGE PROCESSOR VS

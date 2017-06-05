@@ -1,0 +1,4 @@
+
+Sounds like the original poster of the bitmap uuencoded the file
+on a DOS machine, and you tried to uudecode it on a Un*x machine, and your
+uudecode program balked at the carraige-returns.

@@ -1,0 +1,42 @@
+as someone else already mentioned, don't "carry thru" the other  pins.
+
+plan A, minimal null modem:
+	SG()   -  SG()
+	TD()   -  RD()
+	RD()   -  TD()
+if you're transfering files betwen  PCs, this ought to work (unless
+you have a persnickity comm program).
+
+plan B, null modem with modem control:
+	SG()   -  SG()
+	TD()   -  RD()
+	RD()   -  TD()
+	DCD()  -  DTR()
+	DTR() -  DCD()
+some comm software will wait for DCD before transferring anything.
+such software will raise DTR to enable the modem to accept a call.
+with this cable, each side's DTR will drive the other's DCD.
+
+plan C, null modem with hardware flow control:
+	SG()   -  SG()
+	TD()   -  RD()
+	RD()   -  TD()
+	RTS()  -  CTS()
+	CTS()  -  RTS()
+for high-speed transfers, you want the flow control.
+
+plan D, deluxe null modem (combine B and C):
+	SG()   -  SG()
+	TD()   -  RD()
+	RD()   -  TD()
+	RTS()  -  CTS()
+	CTS()  -  RTS()
+	DCD()  -  DTR()
+	DTR() -  DCD()
+this one is ideal.  it leaves out DSR and RI (rarely used anymore).
+if you're really paranoid, or you just have an th wire to spend,
+you might add:
+	FG()   -  FG()
+
+the pin numbers above are (obviously) for -pin connectors.
+i don't have a -pin pinout handy.

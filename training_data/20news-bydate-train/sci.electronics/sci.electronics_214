@@ -1,0 +1,4 @@
+The Casio  lectric diary has a -wire serial interface with param
+setting like RS, for which one get a magic but expensive cable to
+connect to a PC. Does anyone know the spec of this interface, e.g., it
+needs inverting and boosting from CMOS signals to match RS lines?

@@ -1,0 +1,36 @@
+I'm trying to transfer some software between two machines 
+	and I'm having real trouble.  My own Intel .k (
+	v/vbis/v/vbis) works fine--I just talk to it
+	at k and everything comes out clear.  This other modem,
+	at the other machine, is a "Turbomodem+" from "The 
+	Complete PC" (the machines are in seperate houses, 
+	so a direct serial link is impossible, and copying this
+	much data to disk is a pain--easier to turn the machines
+	on for a few hours and go see a movie--no, this is not
+	pirated software).
+
+	I am having no end of trouble trying to set it up.  It will
+	dial and connect just fine--at  baud.  But if I try to
+	set the comm at k, .k or kbps, the stupid thing
+	connects, but just gives garbage (it connects .k).  
+	His machine (a dx) has a AFN UART, so that's
+	not the problem.
+
+	It seems to me that the stupid thing wants to talk to 	
+	a comm program _at_ .bps, even though it will take
+	dialing instructions at k (and respond OK, etc. to 
+	other commands).  I don't have a comm program that can
+	do precisely .k.  
+
+	I looked at the manual but it was unclear.  All I know is,
+	I didn't have this trouble with the Intel--it came
+	ready to connect this way.  Do I need to initialize it
+	any way in particular?
+
+	Also, it's _using_ V.bis and V. (and MNP) when connecting
+	here (i.e., at , since our tests at k are zip so far)
+	but it doesn't _say_ so there.  any ideas?
+
+	(BTW:  I tried the initialization string that I use for
+	my modem, but it just gives ERROR on that one)
+

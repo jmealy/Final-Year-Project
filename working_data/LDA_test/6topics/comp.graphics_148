@@ -1,0 +1,12 @@
+Sketch:  Rotate so cylinder axis is || Z axis.
+
+Intersect X/Y projection of line with projected cylinder (similar to,
+but easier than, sphere intersection).  Result: no intersection, one
+intersection, or two intersections, parameterized along line by t and
+t.  Now look at Z, and compute intersections of line with top and
+bottom planes of cylinder.  This gives t' and t'.  The interval of
+intersection is then the bit of the line from [t,t] INTERSECT [t',t'].
+
+Details left as an exercise for the reader.
+
+=S

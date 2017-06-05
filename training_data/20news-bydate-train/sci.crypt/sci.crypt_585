@@ -1,0 +1,81 @@
+Well, after a lot of trawling through archives, I found the post
+I reproduce in full below.  Is it time to get together to develop
+a tcp/ip standard for crypto voice that we could then layer on
+point-to-point SLIP as *the* free standard for crypto voice like
+pgp is for mail?
+
+(PS Note the date of this post.  Appropriate, huh? :-) )
+
+---
+From jpcampb@afterlife.ncsc.mil Thu Jul   :: 
+From: jpcampb@afterlife.ncsc.mil (Joe Campbell)
+Newsgroups: comp.compression.research
+Subject: Re: sound compression algorithms
+Date:  Jul  :: GMT
+Organization: The Great Beyond
+
+
+In case you'd like to experiment with CELP, you can obtain a software
+implementation of the  bps Fed Std CELP coder for free:
+
+The U.S. DoD's Federal-Standard- based  bps code excited linear
+prediction voice coder version . (CELP .) Fortran and C simulation source
+codes are now available for worldwide distribution at no charge (on DOS
+diskettes, but configured to compile on Sun SPARC stations) from:
+
+Bob Fenichel
+National Communications System
+Washington, D.C.  
+---
+--- (fax)
+
+In addition to the source codes, example input and processed speech files
+are included along with a technical information bulletin to assist in
+implementation of FS- CELP.  (An anonymous ftp site is being considered
+for future releases.)
+
+Copies of the actual standard "Federal Standard , Telecommunications:
+Analog to Digital Conversion of Radio Voice by , bit/second Code
+Excited Linear Prediction (CELP)" are available for $. each from:
+
+GSA Rm 
+th & D St SW
+Washington, D.C.  
+---
+
+The following articles describe the Federal-Standard- .-kbps CELP
+coder (it's unnecessary to read more than one):
+
+Campbell, Joseph P. Jr., Thomas E. Tremain and Vanoy C. Welch,
+"The Federal Standard   bps CELP Voice Coder," Digital Signal
+Processing, Academic Press, , Vol. , No. , p. -.
+
+Campbell, Joseph P. Jr., Thomas E. Tremain and Vanoy C. Welch,
+"The DoD . kbps Standard (Proposed Federal Standard ),"
+in Advances in Speech Coding, ed. Atal, Cuperman and Gersho,
+Kluwer Academic Publishers, , Chapter , p. -.
+
+Campbell, Joseph P. Jr., Thomas E. Tremain and Vanoy C. Welch, "The
+Proposed Federal Standard   bps Voice Coder:  CELP," Speech
+Technology Magazine, April/May , p. -.
+
+For U.S. FED-STD- ( bps CELP) _realtime_ DSP code
+and information about products using this code, contact:
+
+John DellaMorte
+DSP Software Engineering
+ Middlesex Tpk, Suite 
+Bedford, MA  
+---
+--- (fax)
+dspse.bedford@channel.com
+
+DSP Software Engineering's code can run on a DSP Research's Tiger  board
+(a PC board with a TMSCx and analog interface suited to development work)
+or on Intellibit's AE TMSC based " by ." card.
+
+DSP Research                Intellibit
+ E. Duane Ave.          P.O. Box 
+Sunnyvale, CA          McLean, VA  -
+()-               ()-
+()- (fax)         ()- (fax)

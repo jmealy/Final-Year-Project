@@ -1,0 +1,18 @@
+SW,SW	number of ." drives
+,	 drive
+,	 drives
+,	 drives
+,	 drives
+
+SW,SW	type of display
+,	reserved
+,	x color (mono mode)
+,	x color (mono mode)
+,	mono x
+
+SW,SW	amount of memory on system board
+	k chips	k chips
+,	k		k
+,	k		k
+,	k		k
+,	k		k

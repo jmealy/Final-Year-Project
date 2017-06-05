@@ -1,0 +1,17 @@
+Imake support for xmosaic
+	=========================
+
+Although xmosaic is a great program in general, it unfortunately comes
+without Imake support. So I created one. Until Marc Andreessen finds the
+time to incorporate it in an official xmosaic release, you can easily do it
+yourself. Use anonymous FTP to get
+
+	ftp.germany.eu.net:/pub/X/misc/xmosaic.Imake.tar.z
+
+The file's size is  Byte. You will need gzip to unpack it. Have fun!
+
+-- 
+  Dipl.-Inform. Rainer Klute      I R B :  immer richtig beraten
+  Univ. Dortmund, IRB
+  Postfach          |)|/    Tel.: +  -
+D-W Dortmund        |\|\    Fax : +  -

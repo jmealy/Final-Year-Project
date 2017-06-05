@@ -1,0 +1,14 @@
+
+I don't want texture mapped, cause if I did I'd asked for them. :)  Just
+a simple and fast routine to do filled polygons.  As for the processor, it'd
+be for a minimum of a ... maybe  if I can't find a good one for s.
+Ideally, I want a polyn function that can clip to a user-defined viewport,
+and write to an arbitrary location in memory.  Of course the chances of
+finding something like that are pretty remote, so I guess I'd need the source
+with it.  Oh, and I guess it would need to be in ASM otherwise it'd be too
+slow.  I've seen some polygon routines in C, and they've all been waaay too
+slow.  Its for a D vector graphics program.  I've been hunting high and low
+for a polyn function in ASM, and I can't find one anywhere that I can use.
+I've found one or two polyn functions, but my ASM is pretty bad, so I won't
+even try to rewrite them. :)
+		//Lucas.

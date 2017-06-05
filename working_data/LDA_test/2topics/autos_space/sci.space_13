@@ -1,0 +1,189 @@
+Archive-name: space/launchers
+Last-modified: $Date: // :: $
+
+ORBITAL AND PLANETARY LAUNCH SERVICES
+
+The following data comes from _International Reference Guide to Space Launch
+Systems_ by Steven J. Isakowitz,  edition.
+
+Notes:
+    * Unless otherwise specified, LEO and polar paylaods are for a  nm
+	orbit.
+    * Reliablity data includes launches through Dec, . Reliabity for a
+	familiy of vehicles includes launches by types no longer built when
+	applicable
+    * Prices are in millions of  $US and are subject to change.
+    * Only operational vehicle families are included. Individual vehicles
+	which have not yet flown are marked by an asterisk (*) If a vehicle
+	had first launch after publication of my data, it may still be
+	marked with an asterisk.
+
+
+Vehicle        |     Payload  kg  (lbs)   | Reliability | Price | Launch Site
+(nation)       |  LEO	   Polar    GTO   |		|	| (Lat. & Long.)
+--------------------------------------------------------------------------------
+
+Ariane					    /  .%	  Kourou
+(ESA)								 (. N, . W)
+  AR		,	  ,    ,    /		  $m
+	       (,)  (,)  (,)
+  ARP		,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+  ARP		,	  ,    ,    / ?	  $m
+	       (,)  (,) (,)
+  ARL		,	  ,    ,    / ?	  $m
+	       (,)  (,) (,)
+  ARLP	,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+  ARL		,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+
+* AR	       ,	   ???	   ,    /		  $m
+	      (,)		  (,)
+	       [nm]
+
+
+Atlas					   / .%	 Cape Canaveral
+(USA)								 (. N, .W)
+  Atlas E	 --	   	     --     /	  $m	 Vandeberg AFB
+			  (,)				(. N, .W)
+
+  Atlas I	,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+
+  Atlas II	,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+
+  Atlas IIA	,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+
+* Atlas IIAS	,	  ,    ,    /		  $m
+	       (,)  (,) (,)
+
+
+Delta					   / .%	 Cape Canaveral
+(USA)								 Vandenberg AFB
+  Delta 	,	  ,    ,   /	  $m
+	       (,)	 (,)  (,)
+
+  Delta 	,	  ,    ,    /		  $m
+	       (,)  (,)  (,)
+
+
+Energia					    /  %		 Baikonur
+(Russia)							 (. N . E)
+  Energia      ,	 ,     ???     /		  $m
+	      (,) (,)
+
+
+H series				    / %		 Tangeshima
+(Japan)								(. N . E)
+* H-	       ,	 ,	   ,    /		  $m
+	      (,)	(,)  (,)
+
+
+Kosmos					   / .%	 Plestek
+(Russia)							 (. N . E)
+  Kosmos       -   ( - )		 $???	 Kapustin Yar
+	      [ km orbit ??? inclination]			 (. N . E)
+
+
+Long March				    / .%		 Jiquan SLC
+(China)								 ( N	 E)
+* CZ-D		 	  ???	         /		  $m	 Xichang SLC
+		(,)		   ()			 ( N	 E)
+								 Taiyuan SLC
+  CZ-C		,	  ,    ,    /	  $m	 ( N	 E)
+	       (,)	 (,)  (,)
+
+  CZ-E		,	   ???	   ,    /		  $m
+	       (,)		  (,)
+
+* CZ-E/HO     ,	   ???	   ,    /		  $???
+	      (,)		  (,)
+
+  CZ-		???	   ???	   ,    /		  $m
+				  (,)
+
+* CZ-A		???	   ???	   ,    /		  $???m
+				  (,)
+
+  CZ-		,	   ???	   ,    /		  $???m
+	       (,)		  (,)
+
+
+Pegasus/Taurus				    /   %		Peg:  B-/L
+(USA)								Taur: Canaveral
+  Pegasus	 	   	         /		  $m	  or Vandenberg
+		(,)   ()    ()
+
+* Taurus	,	  ,          /		  $m
+	       (,)	 (,)   ()
+
+
+Proton					   / .%	 Baikonour
+(Russia)
+  Proton       ,	   ???	   ,   /	  $-m
+	      (,)		  (,)
+
+
+SCOUT					    / .%	Vandenberg AFB
+(USA)								Wallops FF
+  SCOUT G-	 	   	    	    /	  $m	(. N  . W)
+		()	  ()    ()			San Marco
+								(. S	. E)
+* Enhanced SCOUT 	   	   	    /		  $m
+		(,)   ()   ()
+
+
+Shavit					    /   %		Palmachim AFB
+(Israel)							( ~ N)
+  Shavit	 ???	   	   ???	    /		  $m
+			  ()
+
+Space Shuttle				    /  .%	Kennedy Space
+(USA)								Center
+  Shuttle/SRB  ,	   ???	   ,    /	  $m (. N . W)
+	      (,)		  (,)		  [FY]
+
+* Shuttle/ASRM ,	   ???	   ???	    /
+	      (,)
+
+
+SLV					    /    .%	SHAR Center
+(India)       (km)  (km polar)				(. N . E)
+  ASLV			   ???	    ???     /		  $???m
+	       ()
+
+* PSLV		,	  ,          /		  $???m
+	       (,)	 (,)   ()
+
+* GSLV		,	   ???	   ,    /		  $???m
+	       (,)		  (,)
+
+
+Titan					    / .%	Cape Canaveral
+(USA)								Vandenberg
+  Titan II	 ???	  ,     ???     /		   $m
+			 (,)
+
+  Titan III    ,	  ???	   ,    /		   $m
+	      (,)		  (,)
+
+  Titan IV/SRM ,	 ,    ,    /		   $m-$m
+	      (,)	(,)  (,)
+
+ Titan IV/SRMU ,	 ,    ,    /		   $???m
+	      (,)	(,)  (,)
+
+
+Vostok					    / .%	Baikonur
+(Russia)		 [km]				Plesetsk
+  Vostok	,	  ,     ???     ?/	   $m
+	      (,)	(,)
+
+  Soyuz		,	   ???	    ???     ?/	   $m
+	      (,)
+
+  Molniya	kg ( lbs) in	    ?/	   $???M
+		Highly eliptical orbit

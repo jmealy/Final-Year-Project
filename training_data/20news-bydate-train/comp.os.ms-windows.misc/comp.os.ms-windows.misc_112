@@ -1,0 +1,10 @@
+As a followup, this is a co-worker's machine.  He has the latest . drivers.
+It only happens using the xx driver.  Sometimes it takes a minute
+or so for the cursor to wig out, but it eventually does in this mode.  I
+susect something is stepping on memory the video card wants.  I excluded
+a-cff in the EMM line and in system.ini  The problem persisted.
+Perhaps it is something specific to the Gateway machine or it's components.
+It is a mhz DX/ Eisa bus with an Ultrastore (xx?) controller.  Ah well,
+I was hoping this was some kind of 'known problem' or somebody had seen it
+before.  Perhaps a call to Gateway is in order, but I do find folks here
+usually are far more in the know.

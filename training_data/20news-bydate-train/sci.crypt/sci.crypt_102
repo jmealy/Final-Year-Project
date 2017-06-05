@@ -1,0 +1,318 @@
+Archive-name: cryptography-faq/part
+Last-modified: //
+
+
+FAQ for sci.crypt, part : References
+
+This is the tenth of ten parts of the sci.crypt FAQ. The parts are
+mostly independent, but you should read the first part before the rest.
+We don't have the time to send out missing parts by mail, so don't ask.
+Notes such as ``[KAH]'' refer to the reference list in this part.
+
+The sections of this FAQ are available via anonymous FTP to rtfm.mit.edu 
+as /pub/usenet/news.answers/cryptography-faq/part[xx].  The Cryptography 
+FAQ is posted to the newsgroups sci.crypt, sci.answers, and news.answers 
+every  days.
+
+
+Contents
+
+* Books on history and classical methods
+* Books on modern methods
+* Survey articles
+* Reference articles
+* Journals, conference proceedings
+* Other
+* Electronic sources
+* RFCs (available from [FTPRF])
+* Related newsgroups
+
+
+* Books on history and classical methods
+
+  [CF]    Lambros D. Callimahos, William F. Friedman, Military Cryptanalytics.
+	  Aegean Park Press, ?.
+  [DEA] Cipher A. Deavours & Louis Kruh, Machine Cryptography and
+          Modern Cryptanalysis. Artech House,  Washington St.,
+          Dedham, MA , .
+  [FRIE] William F. Friedman, Solving German Codes in World War I.
+          Aegean Park Press, ?.
+  [GAI] H. Gaines, Cryptanalysis, a study of ciphers and their
+          solution. Dover Publications, .
+  [HIN] F.H.Hinsley, et al., British Intelligence in the Second
+          World War. Cambridge University Press. (vol's , , a, b
+          & , so far).  XXX Years and authors, fix XXX
+  [HOD] Andrew Hodges, Alan Turing: The Enigma. Burnett Books
+          Ltd., 
+  [KAH] David Kahn, Seizing the Enigma. Houghton Mifflin, .
+  [KAH] D. Kahn, The Codebreakers. Macmillan Publishing, .
+          [history] [The abridged paperback edition left out most
+          technical details; the original hardcover edition is
+          recommended.]
+  [KOZ] W. Kozaczuk, Enigma. University Publications of America, 
+  [KUL] S. Kullback, Statistical Methods in Cryptanalysis. Aegean
+          Park Press, .
+  [SIN] A. Sinkov, Elementary Cryptanalysis. Math. Assoc. Am. .
+  [WEL] Gordon Welchman, The Hut Six Story. McGraw-Hill, .
+  [YARDL] Herbert O. Yardley, The American Black Chamber. Aegean Park
+          Press, ?.
+
+* Books on modern methods
+
+  [BEK] H. Beker, F. Piper, Cipher Systems. Wiley, .
+  [BRA] G. Brassard, Modern Cryptology: a tutorial.
+          Spinger-Verlag, .
+  [DEN] D. Denning, Cryptography and Data Security. Addison-Wesley
+          Publishing Company, .
+  [KOB] N. Koblitz, A course in number theory and cryptography.
+          Springer-Verlag, .
+  [KON] A. Konheim, Cryptography: a primer. Wiley, .
+  [MEY] C. Meyer and S. Matyas, Cryptography: A new dimension in
+          computer security. Wiley, .
+  [PAT] Wayne Patterson, Mathematical Cryptology for Computer
+          Scientists and Mathematicians. Rowman & Littlefield, .
+  [PFL] C. Pfleeger, Security in Computing. Prentice-Hall, .
+  [PRI] W. Price, D. Davies, Security for computer networks. Wiley, . 
+  [RUE] R. Rueppel, Design and Analysis of Stream Ciphers.
+          Springer-Verlag, .
+  [SAL] A. Saloma, Public-key cryptography. Springer-Verlag, .
+  [WEL] D. Welsh, Codes and Cryptography. Claredon Press, .
+
+* Survey articles
+
+  [ANG] D. Angluin, D. Lichtenstein, Provable Security in Crypto-
+          systems: a survey. Yale University, Department of Computer
+          Science, #, .
+  [BET] T. Beth, Algorithm engineering for public key algorithms.
+          IEEE Selected Areas of Communication, (), --,
+          .
+  [DAV] M. Davio, J. Goethals, Elements of cryptology. in Secure
+          Digital Communications, G. Longo ed., --, .
+  [DIF] W. Diffie, M. Hellman, Privacy and Authentication: An
+          introduction to cryptography. IEEE proceedings, (),
+          --, .
+  [DIF] W. Diffie, The first ten years of public key cryptography.
+          IEEE proceedings, (), --, .
+  [FEI] H. Feistel, Cryptography and Computer Privacy. Scientific 
+          American, (), --, .
+  [FEI] H. Feistel, H, W. Notz, J. Lynn Smith. Some cryptographic
+          techniques for machine-to-machine data communications,
+          IEEE IEEE proceedings, (), --, .
+  [HEL] M. Hellman, The mathematics of public key cryptography.
+          Scientific American, --, .
+  [LAK] S. Lakshmivarahan, Algorithms for public key
+          cryptosystems. In Advances in Computers, M. Yovtis ed.,
+          , Academic Press, --, .
+  [LEM] A. Lempel, Cryptology in transition, Computing Surveys,
+          (), --, .
+  [MAS] J. Massey, An introduction to contemporary cryptology, IEEE
+          proceedings, (), --, .
+  [SIM] G. Simmons (ed.), Contemporary Cryptology: the Science of
+          Information Integrity. IEEE press, .
+
+* Reference articles
+
+  [AND] D. Andelman, J. Reeds, On the cryptanalysis of rotor and
+          substitution-permutation networks. IEEE Trans. on Inform.
+          Theory, (), --, .
+  [BEN] John Bennett, Analysis of the Encryption Algorithm Used in
+          the WordPerfect Word Processing Program. Cryptologia (),
+          --, .
+  [BER] H. A. Bergen and W. J. Caelli, File Security in WordPerfect
+          .. Cryptologia (), --, January .
+  [BIH] E. Biham and A. Shamir, Differential cryptanalysis of
+          DES-like cryptosystems. Journal of Cryptology, vol. , #,
+          --, .
+  [BIa] E. Biham, A. Shamir, Differential cryptanalysis of Snefru,
+          Khafre, REDOC-II, LOKI and LUCIFER. In Proceedings of CRYPTO
+          ', ed. by J. Feigenbaum, --, .
+  [BOY] J. Boyar, Inferring Sequences Produced by Pseudo-Random
+          Number Generators. Journal of the ACM, .
+  [BRI] E. Brickell, J. Moore, M. Purtill, Structure in the
+          S-boxes of DES. In Proceedings of CRYPTO ', A. M. Odlyzko
+          ed., --, .
+  [BRO] L. Brown, A proposed design for an extended DES, Computer
+          Security in the Computer Age. Elsevier Science Publishers
+          B.V. (North Holland), IFIP, W. J. Caelli ed., --, .
+  [BRO] L. Brown, J. Pieprzyk, J. Seberry, LOKI - a cryptographic
+          primitive for authentication and secrecy applications.
+          In Proceedings of AUSTCRYPT , --, .
+  [CAE] H. Gustafson, E. Dawson, W. Caelli, Comparison of block
+          ciphers. In Proceedings of AUSCRYPT ', J. Seberry and J.
+          Piepryzk eds., --, .
+  [CAM] K. W. Campbell, M. J. Wiener, Proof the DES is Not a Group.
+          In Proceedings of CRYPTO ', .
+  [ELL] Carl M. Ellison, A Solution of the Hebern Messages. Cryptologia,
+          vol. XII, #, -, Jul .
+  [EVE] S. Even, O. Goldreich, DES-like functions can generate the
+          alternating group. IEEE Trans. on Inform. Theory, vol. ,
+          #, --, .
+  [GAR] G. Garon, R. Outerbridge, DES watch: an examination of the
+          sufficiency of the Data Encryption Standard for financial
+          institutions in the 's. Cryptologia, vol. XV, #,
+          --, .
+  [GIL] Gillogly, ?. Cryptologia (), .
+  [GM]  Shafi Goldwasser, Silvio Micali, Probabilistic Encryption and
+	  How To Play Mental Poker Keeping Secret All Partial Information.
+	  Proceedings of the Fourteenth Annual ACM Symposium on Theory of
+	  Computing, .
+  [HUM] D. G. N. Hunter and A. R. McKenzie, Experiments with
+          Relaxation Algorithms for Breaking Simple Substitution
+          Ciphers. Computer Journal (), .
+  [KAM] J. Kam, G. Davida, A structured design of substitution-
+          permutation encryption networks. IEEE Trans. Information
+          Theory, (), --, .
+  [KIN] P. Kinnucan, Data encryption gurus: Tuchman and Meyer.
+          Cryptologia, vol. II #, --XXX, .
+  [KRU] Kruh, ?. Cryptologia (), .
+  [LAI] X. Lai, J. Massey, A proposal for a new block encryption 
+          standard. EUROCRYPT , --, .
+  [LUB] C. Rackoff, M. Luby, How to construct psuedorandom
+          permutations from psuedorandom functions. SIAM Journal of
+          Computing, vol. , #, --, .
+  [MAS] J. Massey, An introduction to contemporary cryptology.
+          IEEE proceedings, (), --, .
+  [MEa] R. Merkle, Fast software encryption functions. In Proceedings
+          of CRYPTO ', Menezes and Vanstone ed., --, .
+  [MEY] C. Meyer, Ciphertext/plaintext and ciphertext/key
+          dependence vs. number of rounds for the Data Encryption
+          Standard. AFIPS Conference proceedings, , --,
+          .
+  [NBS] Data Encryption Standard. National Bureau of Standards,
+          FIPS PUB , Washington, DC, January .
+  [REE] J. Reeds, `Cracking' a Random Number Generator.
+          Cryptologia (), --, .
+  [REE] J. A. Reeds and P. J. Weinberger, File Security and the UNIX
+          Crypt Command. AT&T Bell Laboratories Technical Journal,
+          Vol.  #, part , --, October, .
+  [SHA] C. Shannon, Communication Theory of Secrecy Systems. Bell
+          System Technical Journal (), --, .
+  [SHE] B. Kaliski, R. Rivest, A. Sherman, Is the Data Encryption
+          Standard a Group. Journal of Cryptology, vol. , #,
+          --, .
+  [SHI] A. Shimizu, S. Miyaguchi, Fast data encipherment algorithm
+          FEAL. EUROCRYPT ', --, .
+  [SOR] A. Sorkin, LUCIFER: a cryptographic algorithm.
+          Cryptologia, (), --, .
+	
+* Journals, conference proceedings
+
+  CRYPTO
+  Eurocrypt
+  IEEE Transactions on Information Theory
+  Cryptologia: a cryptology journal, quarterly since Jan .
+          Cryptologia; Rose-Hulman Institute of Technology; Terre Haute
+          Indiana  [general: systems, analysis, history, ...]
+  Journal of Cryptology; International Association for Cryptologic
+          Research; published by Springer Verlag (quarterly since
+          ).
+  The Cryptogram (Journal of the American Cryptogram Association);
+           West Hickory Street; Mundelein, IL ; [primarily
+          puzzle cryptograms of various sorts]
+  Cryptosystems Journal, Published by Tony Patti, P.O. Box ,
+          Newtown PA, USA - or tony_s_patti@cup.portal.com.
+	  Publisher's comment: Includes complete cryptosystems with
+	  source and executable programs on diskettes. Tutorial. The
+	  typical cryptosystems supports multi-megabit keys and Galois
+	  Field arithmetic. Inexpensive hardware random number
+	  generator details.
+
+  Computer and Communication Security Reviews, published by Ross Anderson.
+	  Sample issue available from various ftp sites, including
+	  black.ox.ac.uk.  Editorial c/o rja@cl.cam.ac.uk.  Publisher's
+	  comment: We review all the conference proceedings in this field,
+	  including not just Crypto and Eurocrypt, but regional gatherings
+	  like Auscrypt and Chinacrypt. We also abstract over  journals,
+	  and cover computer security as well as cryptology, so readers can
+	  see the research trends in applications as well as theory.
+
+* Other
+
+  Address of note: Aegean Park Press, P.O. Box , Laguna Hills, CA
+  -. Answering machine at --.
+
+  The ``Orange Book'' is DOD .-STD, published December  as
+  part of the ``rainbow book'' series. Write to Department of Defense,
+  National Security Agency, ATTN: S,  Savage Road, Fort Meade, MD
+  -, and ask for the Trusted Computer System Evaluation
+  Criteria. Or call --.
+
+  [BAMFD] Bamford, The Puzzle Palace. Penguin Books, ?.
+  [GOO] I. J. Good, Good Thinking: the foundations of probability and
+          its applications. University of Minnesota Press, .
+  [KNU] D. E. Knuth, The Art of Computer Programming, volume :
+          Seminumerical Algorithms. Addison-Wesley, .
+  [KUL] Soloman Kullbach, Information Theory and Statistics.
+          Dover, .
+  [YAO] A. Yao, Computational Information Theory. In Complexity in
+          Information Theory, ed. by Abu-Mostafa, .
+
+* How may one obtain copies of FIPS and ANSI standards cited herein?
+
+  Many textbooks on cryptography contain complete reprints of the FIPS
+  standards, which are not copyrighted.
+
+  The following standards may be ordered from the
+      U.S. Department of Commerce, National Technical Information Service,
+      Springfield, VA .
+
+      FIPS PUB - "Data Encryption Standard"  (this is DES)
+      FIPS PUB    "Guidelines for Implementing as Using the NBS DES"
+      FIPS PUB    "DES Modes of Operation"
+      FIPS PUB   "Computer Data Authentication" (using DES)
+
+  The following standards may be ordered from the
+      American National Standards Institute Sales Office,
+       Broadway, New York, NY .
+      Phone ..
+
+      ANSI X.-  "Data Encryption Algorithm" (identical to FIPS -)
+      ANSI X.- "DEA Modes of Operation"    (identical to FIPS )
+
+  Notes:  Figure  in FIPS PUB - is in error, but figure  in X.-
+      is correct.  The text is correct in both publications.
+
+
+* Electronic sources
+
+  Anonymous ftp:
+
+  [FTPBK] ftp.uu.net:bsd-sources/usr.bin/des/
+  [FTPCB] ftp.uu.net:usenet/comp.sources.unix/volume/cbw/
+  [FTPDF] ftp.funet.fi:pub/unix/security/destoo.tar.Z
+  [FTPEY] ftp.psy.uq.oz.au:pub/DES/
+  [FTPMD] rsa.com:?
+  [FTPMR] cl-next.cl.msu.edu:pub/crypt/newdes.tar.Z
+  [FTPOB] ftp.com.com:Orange-book
+  [FTPPF] prep.ai.mit.edu:pub/lpf/
+  [FTPPK] ucsd.edu:hamradio/packet/tcpip/crypto/des.tar.Z
+  [FTPRF] nic.merit.edu:documents/rfc/
+  [FTPSF] beta.xerox.com:pub/hash/
+  [FTPSO] chalmers.se:pub/des/des...tar.Z
+  [FTPUF] ftp.uu.net:usenet/comp.sources.unix/volume/ufc-crypt/
+  [FTPWP] garbo.uwasa.fi:pc/util/wppass.zip
+
+* RFCs (available from [FTPRF])
+
+
+  Kaliski, B.  Privacy Enhancement for Internet Electronic Mail: Part IV:
+      Key Certification and Related Services.   February;  p. (Format:
+      TXT= bytes)
+
+  Balenson, D.  Privacy Enhancement for Internet Electronic Mail: Part
+      III: Algorithms, Modes, and Identifiers.   February;  p. (Format:
+      TXT= bytes)  (Obsoletes RFC )
+
+  Kent, S.  Privacy Enhancement for Internet Electronic Mail: Part II:
+      Certificate-Based Key Management.   February;  p. (Format:
+      TXT= bytes)  (Obsoletes RFC )
+
+  Linn, J.  Privacy Enhancement for Internet Electronic Mail: Part I:
+      Message Encryption and Authentication Procedures.   February;  p.
+      (Format: TXT= bytes)  (Obsoletes RFC )
+
+
+* Related newsgroups
+
+  There are other newsgroups which a sci.crypt reader might want also to
+  read.  Some have their own FAQ as well.

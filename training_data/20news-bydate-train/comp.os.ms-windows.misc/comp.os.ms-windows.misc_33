@@ -1,0 +1,15 @@
+Has anyone else experienced problems with windows hanging
+after the installation of DOS ?  I have narrowed the
+problem down to EMM.
+
+If if remove (or disable) EMM, windows is ok.  If EMM
+is active, with NOEMS, windows hangs.  If I use AUTO with
+EMM, the system hangs on bootup.
+
+Dave.
+
+
+-- 
+-------------------------------------------------------------------
+David Clarke   ...the well is deep...wish me well...
+ac@Freenet.carleton.ca  David_Clarke@mtsa.ubc.ca  clarkec@sfu.ca

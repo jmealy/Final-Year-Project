@@ -1,0 +1,21 @@
+Our group recently bought a Mitsubishi PU video printer and I could use some
+help with it.  We bought this thing because it () has a parallel data input in
+addition to the usual video signal inputs and () claimed to print  gray
+level images.  However, the manual that came with it only describes how to
+format the parallel data to print  and  bit/pixel images.  After some initial
+problems with the parallel interface I now have this thing running from a
+parallel port of an Hewlett-Packard workstation and I can print  and 
+bit/pixel images just fine.  I called the Mitsubishi people and asked about the
+ level claim and they said that was only available when used with the video
+signal inputs.  This was not mentioned in the sales literature.  However they
+did say the PU can do  bit/pixel ( level) images in parallel mode, but
+they didn't have any information about how to program it to do so, and they
+would call Japan, etc.
+
+Frankly, I find it hard to believe that if this thing can do  bit/pixel images
+from the video source, it can't store  bits/pixel in the memory.  It's not
+like memory is that expensive any more.  If anybody has any information on
+getting  bit/pixel (or even  bit/pixel) images out of this thing, I would
+greatly appreciate your sending it to me.
+
+Thanks.

@@ -1,0 +1,5 @@
+I think it's simply because DOS doesn't use the IRQ for anything. OS/ does,
+so with that you can't share the IRQ.
+
+Anssi
+

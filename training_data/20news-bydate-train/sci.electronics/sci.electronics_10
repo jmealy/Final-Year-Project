@@ -1,0 +1,21 @@
+For an upcoming project I want to use  Megs of DRAM configured as two 
+Meg banks of  bit data.  I was wondering if anyone out there knows of a
+DRAM controller which will handle refreshing the data.  It's ok if the
+controller doesn't handle bank switching - that part is easy.
+
+The only controllers I know of are the ones out of the National
+Semiconductor DRAM Management Handbook ( edition) eg. DP.  I would
+like to know if another manufacturer produces one which may be easier to
+implement in my circuit.
+
+BTW, if anyone is wanting to hook up DRAM to a microcontroller, Dallas
+Semiconductor makes a neat chip: the DS Serial DRAM Nonvolatizer
+Chip.  It uses the SPI (IC) bus and refreshes/controls up to Mx of DRAM
+memory.  It can use an external battery to refresh the DRAM when the
+power is off.  Price is $. from Dallas (quan ).  I wish I could use
+this chip but its maximum SPI clock rate is  MHz (too slow for me...).
+
+Thanks in advance,
+
+Wayne Schellekens
+<schellew@wu.wl.aecl.ca>

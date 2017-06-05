@@ -1,0 +1,23 @@
+Except from clock frequency, what are the differences between the
+various types of  and  processors?
+The following is a list with what I know (or perhaps only what I
+think I know!). Can anybody extend & correct?
+
+
+:  True  bit processor.
+        (cache?)
+
+SX:  Emulates  with a  bit bus.
+
+:  True  bit processor.
+        Internal mathematical coprocessor (Correct?)
+        Internal cache (Correct? How big?)
+        (extended instruction set in any way?)
+
+SX:  Probably sorta like ...
+
+DX:  Probably sorta like ...
+
+
+Well, it's not much, but I'm sure there is a lot of people out there
+who can add a lot of information. Post or email as you prefer.

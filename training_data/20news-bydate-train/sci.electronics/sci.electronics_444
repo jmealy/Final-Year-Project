@@ -1,0 +1,15 @@
+--
+
+I would like to be able to detect the angular position (low accuracy) of an
+IR emitting source at a distance of about  meters (more is better) in
+daylight.  The IR source could be emitting a signature; I'm leaning toward
+ KHz square wave with % duty cycle.
+
+I am considering the use of a quadrant detector from Centronic Inc. to give
+information to a pan/tilt head to point the sensor and thus determine the
+angles.  For the source I am considering wazing the heck out of an IR LED(s),
+possibly an Optek OP or Motorola MLED.  Wazing would mean at least  Amp
+current pulses.  At this current the duty cycle of the LED drops to % and I
+would need to cycle five of them in turn to get the % required.
+
+Has anyone done something like this?

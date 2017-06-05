@@ -1,0 +1,28 @@
+Off the top of my head, I might try:
+
+Given: p_, p_, p_, p_
+
+Find:  p_c (center of sphere determined by p_, ..., p_), 
+       dist(p_c, p_i) (radius)
+
+p_c is the same distance from our four points, so
+dist(p_c,p_) = dist(p_c,p_) = dist(p_c,p_) = dist(p_c,p_) 
+
+Of course, we can square the whole thing to get rid of square roots:
+distsq(p_c,p_) = distsq(p_c,p_) = distsq(p_c,p_) = distsq(p_c,p_) 
+
+Plug in the variables into the distance formula, simplify, and the 
+x^_c, y^_c, and z^_c terms cancel out, leaving you with three 
+linearly independent equations and three unknowns (x_c, y_c, z_c).  
+Solve using your favorite method.  :)
+
+
+All the best,
+
+- John :)
+
+-------------------------------------------------------------------------------
+Dr. John S. Eickemeyer                 ::     "The Lord God is subtle,
+Information Technology Institute      ::::     but malicious He is not."
+National Computer Board, Singapore     ::
+Email: johne@iti.gov.sg                ::                     - Albert Einstein

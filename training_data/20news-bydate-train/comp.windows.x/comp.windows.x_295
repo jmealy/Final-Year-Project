@@ -1,0 +1,9 @@
+I have a Sun / that has a mono framebuffer (bwtwo ?) built on the
+motherboard.  The same system also has a cgfour (cgfour and bwtwo ?)
+daughterboard.  I have been using this system with a color monitor having a
+color "front" screen from the cgfour, and a mono "back" screen from the
+bwtwo, both on the same tube.  I recentley picked up a  x  Sun mono
+monitor, and I would like to make a two headed system with the cgfour and the
+bwtwo.  I do not care if I loose the "back" screen on the color tube from the
+bwtwo.  After looking through the Xsun man page I am not sure if this is
+possible.  Has anybody sucessfuly done this before?  

@@ -1,0 +1,4 @@
+I was having the same problems compiling XR on a IPC sunos ...
+If you compile with 'make -k World' it will not stop on the
+ld errors. As was stated in another post the clients with the
+errors still run correctly.
